@@ -1,0 +1,11 @@
+@article{2004.06688v2,
+Author        = {Anuroop Sriram and Jure Zbontar and Tullie Murrell and Aaron Defazio and C. Lawrence Zitnick and Nafissa Yakubova and Florian Knoll and Patricia Johnson},
+Title         = {End-to-End Variational Networks for Accelerated MRI Reconstruction},
+Eprint        = {2004.06688v2},
+ArchivePrefix = {arXiv},
+PrimaryClass  = {eess.IV},
+Year          = {2020},
+Month         = {Apr},
+Url           = {http://arxiv.org/abs/2004.06688v2},
+File          = {2004.06688v2.pdf}
+}

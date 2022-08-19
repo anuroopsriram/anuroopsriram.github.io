@@ -1,0 +1,19 @@
+- name: Anuroop Sriram
+  photo: anuroop.png
+  info: Research Engineer & Scientist
+  email: anuroop.sriram@gmail.com
+  github: https://github.com/anuroopsriram
+  # researchgate: 
+  scholar: https://scholar.google.com/citations?user=D4uRc_UAAAAJ&hl=en
+  # cv: 
+  number_educ: 5
+  education1: (2018-Present) Research Engineer & Scientist, Meta FAIR
+  education2: (2015-2018) Senior Research Scientist, Baidu SVAIL
+  education3: (2013-2015) Data Scientist, Twitter
+  education4: (2010-2012) M.S in Computer Science (Language Technologies), Carnegie Mellon University (with <a href="http://www.cs.cmu.edu/~roni/" target="_blank">Roni Roseneld</a>
+  education5: (2006-2010) B. Tech in Computer Science, IIIT-H, Hyderabad
+  education1short: (2018-Present) Meta FAIR
+  education2short: (2015-2018) Baidu SVAIL
+  education3short: (2013-2015) Twitter
+  education4short: (2010-2012) M.S. CS, LTI, CMU
+  education5short: (2006-2010) B. Tech CS, IIIT-H

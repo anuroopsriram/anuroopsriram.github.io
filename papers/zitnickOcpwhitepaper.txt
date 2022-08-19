@@ -1,0 +1,12 @@
+@article{2010.09435v1,
+Author        = {C. Lawrence Zitnick and Lowik Chanussot and Abhishek Das and Siddharth Goyal and Javier Heras-Domingo and Caleb Ho and Weihua Hu and Thibaut Lavril and Aini Palizhati and Morgane Riviere and Muhammed Shuaibi and Anuroop Sriram and Kevin Tran and Brandon Wood and Junwoong Yoon and Devi Parikh and Zachary Ulissi},
+Title         = {An Introduction to Electrocatalyst Design using Machine Learning for
+  Renewable Energy Storage},
+Eprint        = {2010.09435v1},
+ArchivePrefix = {arXiv},
+PrimaryClass  = {cond-mat.mtrl-sci},
+Year          = {2020},
+Month         = {Oct},
+Url           = {http://arxiv.org/abs/2010.09435v1},
+File          = {2010.09435v1.pdf}
+}

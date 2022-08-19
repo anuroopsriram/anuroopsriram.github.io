@@ -1,0 +1,12 @@
+@article{2104.01027v2,
+Author        = {Wei-Ning Hsu and Anuroop Sriram and Alexei Baevski and Tatiana Likhomanenko and Qiantong Xu and Vineel Pratap and Jacob Kahn and Ann Lee and Ronan Collobert and Gabriel Synnaeve and Michael Auli},
+Title         = {Robust wav2vec 2.0: Analyzing Domain Shift in Self-Supervised
+  Pre-Training},
+Eprint        = {2104.01027v2},
+ArchivePrefix = {arXiv},
+PrimaryClass  = {cs.SD},
+Year          = {2021},
+Month         = {Apr},
+Url           = {http://arxiv.org/abs/2104.01027v2},
+File          = {2104.01027v2.pdf}
+}

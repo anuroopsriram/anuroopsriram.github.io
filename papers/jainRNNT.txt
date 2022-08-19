@@ -1,0 +1,11 @@
+@article{1911.01629v2,
+Author        = {Mahaveer Jain and Kjell Schubert and Jay Mahadeokar and Ching-Feng Yeh and Kaustubh Kalgaonkar and Anuroop Sriram and Christian Fuegen and Michael L. Seltzer},
+Title         = {RNN-T For Latency Controlled ASR With Improved Beam Search},
+Eprint        = {1911.01629v2},
+ArchivePrefix = {arXiv},
+PrimaryClass  = {cs.CL},
+Year          = {2019},
+Month         = {Nov},
+Url           = {http://arxiv.org/abs/1911.01629v2},
+File          = {1911.01629v2.pdf}
+}

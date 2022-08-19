@@ -1,0 +1,12 @@
+@article{1911.08460v3,
+Author        = {Gabriel Synnaeve and Qiantong Xu and Jacob Kahn and Tatiana Likhomanenko and Edouard Grave and Vineel Pratap and Anuroop Sriram and Vitaliy Liptchinsky and Ronan Collobert},
+Title         = {End-to-end ASR: from Supervised to Semi-Supervised Learning with Modern
+  Architectures},
+Eprint        = {1911.08460v3},
+ArchivePrefix = {arXiv},
+PrimaryClass  = {cs.CL},
+Year          = {2019},
+Month         = {Nov},
+Url           = {http://arxiv.org/abs/1911.08460v3},
+File          = {1911.08460v3.pdf}
+}
