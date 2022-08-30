@@ -1,0 +1,14 @@
+- title: Open Catalyst Project
+  description: "Discovering novel electrocatalysts using AI"
+  image: ocp.jpg
+  link: https://github.com/Open-Catalyst-Project/ocp
+
+- title: fastMRI
+  description: "Accelerating MRI imaging by 4-8x using AI"
+  image: fastmri.jpg
+  link: https://github.com/facebookresearch/fastMRI
+
+- title: COVID-19 Prognosis
+  description: "Predicting covid-19 deterioration"
+  image: covid.jpg
+  link: https://github.com/facebookresearch/CovidPrognosis

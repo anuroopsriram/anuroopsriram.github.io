@@ -23,5 +23,5 @@ Previously, I worked on accelerating MRI scans using deep learning as part of th
 Prior to joining Meta, I worked as a Senior Research Scientist at <a href="http://research.baidu.com/" target="_blank">Baidu Silicon Valley AI Lab</a> with Andrew Ng on speech recognition, and as an AI Engineer at Twitter on computational advertising. 
 {: .text-justify}
 
-I have a Master of Language Technologies from the <a href="https://www.lti.cs.cmu.edu/" target="_blank">Language Technologies Institute</a> at <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, where I worked with <a href="http://www.cs.cmu.edu/~roni/" target="_blank">Prof. Roni Rosenfeld</a> on modeling the spread of infectious diseases.
+I have a Masters in Language Technologies from the <a href="https://www.lti.cs.cmu.edu/" target="_blank">Language Technologies Institute</a> at <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, where I worked with <a href="http://www.cs.cmu.edu/~roni/" target="_blank">Prof. Roni Rosenfeld</a> on modeling the spread of infectious diseases using machine learning and agent based modeling.
 {: .text-justify}

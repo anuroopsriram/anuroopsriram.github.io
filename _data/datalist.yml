@@ -1,0 +1,15 @@
+- title: Open Catalyst Project
+  description: "Discovering novel electrocatalysts using AI"
+  # video: ocp.mp4
+  image: ocp.jpg
+  link: https://opencatalystproject.org/
+
+- title: fastMRI
+  description: "Accelerating MRI imaging by 4-8x using AI"
+  image: fastmri.jpg
+  link: https://fastmri.org/
+
+- title: MLS
+  description: "Multi-lingual speech recognition with 8 languages"
+  image: mls.jpg
+  link: https://www.openslr.org/94/
