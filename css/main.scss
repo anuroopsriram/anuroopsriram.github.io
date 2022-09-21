@@ -15,12 +15,24 @@
 
 .flex-item1 {
   padding: 5px;
-  width: 10%;
+  width: 15%;
 }
 
 .flex-item2 {
   padding: 5px;
-  width: 90%;
+  width: 85%;
+}
+
+@media (max-width: $grid-float-breakpoint-max) {
+  .flex-item1 {
+    padding: 5px;
+    width: 45%;
+  }
+
+  .flex-item2 {
+    padding: 5px;
+    width: 75%;
+  }
 }
 
 img { margin-bottom: 24px;

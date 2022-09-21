@@ -126,7 +126,7 @@
   border: 0px solid transparent;
   white-space: nowrap;
   color: $gray-lighter;
-  background-color: $btn-success-bg;
+  background-color: $btn-warning-bg;
   @include button-size($padding-base-vertical*0.3, $padding-base-horizontal, $font-size-small, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
 
@@ -152,7 +152,7 @@
   border: 0px solid transparent;
   white-space: nowrap;
   color: $gray-lighter;
-  background-color: $btn-warning-bg;
+  background-color: $btn-success-bg;
   @include button-size($padding-base-vertical*0.3, $padding-base-horizontal, $font-size-small, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
 
@@ -178,8 +178,8 @@
   border: 0px solid transparent;
   white-space: nowrap;
   color: $gray-lighter;
-  // background-color: $btn-primary-bg;
-  background-color: $btn-danger-bg;
+  background-color: $btn-primary-bg;
+  // background-color: $btn-danger-bg;
   @include button-size($padding-base-vertical*0.3, $padding-base-horizontal, $font-size-small, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
 

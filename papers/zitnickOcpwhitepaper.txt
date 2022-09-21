@@ -1,12 +1,11 @@
-@article{2010.09435v1,
-Author        = {C. Lawrence Zitnick and Lowik Chanussot and Abhishek Das and Siddharth Goyal and Javier Heras-Domingo and Caleb Ho and Weihua Hu and Thibaut Lavril and Aini Palizhati and Morgane Riviere and Muhammed Shuaibi and Anuroop Sriram and Kevin Tran and Brandon Wood and Junwoong Yoon and Devi Parikh and Zachary Ulissi},
-Title         = {An Introduction to Electrocatalyst Design using Machine Learning for
-  Renewable Energy Storage},
-Eprint        = {2010.09435v1},
+@article{2004.06688v2,
+Author        = {Anuroop Sriram and Jure Zbontar and Tullie Murrell and Aaron Defazio and C. Lawrence Zitnick and Nafissa Yakubova and Florian Knoll and Patricia Johnson},
+Title         = {End-to-End Variational Networks for Accelerated MRI Reconstruction},
+Eprint        = {2004.06688v2},
 ArchivePrefix = {arXiv},
-PrimaryClass  = {cond-mat.mtrl-sci},
+PrimaryClass  = {eess.IV},
 Year          = {2020},
-Month         = {Oct},
-Url           = {http://arxiv.org/abs/2010.09435v1},
-File          = {2010.09435v1.pdf}
+Month         = {Apr},
+Url           = {http://arxiv.org/abs/2004.06688v2},
+File          = {2004.06688v2.pdf}
 }

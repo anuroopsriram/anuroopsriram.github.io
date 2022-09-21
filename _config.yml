@@ -15,7 +15,7 @@ contact: >
 # Pages shown in navbar
 nav_pages:
   - name: publications
-  # - name: data
+  - name: datasets
   # - name: code
 
 # Do you want to group your publications by year? {true/false}

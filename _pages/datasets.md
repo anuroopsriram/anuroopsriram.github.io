@@ -2,7 +2,7 @@
 title: "Datasets"
 layout: gridlay
 sitemap: false
-permalink: /data/
+permalink: /datasets/
 ---
 
 # Datasets
@@ -20,8 +20,11 @@ permalink: /data/
     {% endif %}
   </li>
   <li class="flex-item2">
-    <strong> <a href="{{ dataset.link }}" target="_blank"> {{ dataset.title }} </a> </strong><br/>
+    <strong> {{ dataset.title }} </strong><br/>
     {{ dataset.description }}<br/>
+    {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank"><button class="btn-arxiv">PROJECT</button></a> {% endif %}
+    {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank"><button class="btn-data">DATA</button></a> {% endif %}
+    {% if dataset.code_url %}<a href="{{ dataset.code_url }}" target="_blank"><button class="btn-code">CODE</button></a> {% endif %}
   </li>
   </ul>
   </div>

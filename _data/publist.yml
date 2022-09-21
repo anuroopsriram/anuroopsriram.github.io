@@ -26,7 +26,7 @@
   year: 2022
   url: sriramWav2vecaug
   arxiv: 2206.13654
-  display: Interspeech
+  display: Interspeech 2022
   abstract: Self-supervised learning (SSL) of speech representations has received much attention over the last few years but most work has focused on languages and domains with an abundance of unlabeled data. However, for many languages there is a shortage even in the unlabeled data which limits the effectiveness of SSL. In this work, we focus on the problem of applying SSL to domains with limited available data by leveraging data augmentation for Wav2Vec 2.0 pretraining. Further, we propose improvements to each component of the model which result in a combined relative word error rate (WER) improvement of up to 13% compared to Wav2Vec 2.0 on Librispeech test-clean / other.
   image: w2vaug.jpg
 
@@ -51,7 +51,7 @@
 
 - title: Towards Training Billion Parameter Graph Neural Networks for Atomic Simulations
   authors: Sriram, Anuroop and Das, Abhishek and Wood, Brandon M and Goyal, Siddharth and Zitnick, C Lawrence
-  display: International Conference on Learning Representations (ICLR)
+  display: International Conference on Learning Representations (ICLR) 2022
   organization: ICLR
   year: 2022
   url: sriramGraphParallel
@@ -110,7 +110,7 @@
 - title: "Robust Wav2vec 2.0: Analyzing Domain Shift in Self-Supervised Pre-Training"
   authors: Wei-Ning Hsu and Anuroop Sriram and Alexei Baevski and Tatiana Likhomanenko and Qiantong Xu and Vineel Pratap and Jacob Kahn and Ann Lee and Ronan Collobert and Gabriel Synnaeve and Michael Auli
   year: 2021
-  display: Interspeech
+  display: Interspeech 2021
   pages: 721--725
   url: hsuRobustWav2Vec
   arxiv: 2104.01027
@@ -158,7 +158,7 @@
 - title: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
   authors: Vineel Pratap and Qiantong Xu and Anuroop Sriram and Gabriel Synnaeve and Ronan Collobert
   year: 2020
-  display: Interspeech
+  display: Interspeech 2020
   pages: 2757--2761
   url: pratapMLS
   arxiv: 2012.03411
@@ -202,7 +202,7 @@
 
 - title: End-to-end variational networks for accelerated MRI reconstruction
   authors: Sriram, Anuroop and Zbontar, Jure and Murrell, Tullie and Defazio, Aaron and Zitnick, C Lawrence and Yakubova, Nafissa and Knoll, Florian and Johnson, Patricia
-  display: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)
+  display: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2020
   pages: 64--73
   year: 2020
   organization: Springer, Cham
@@ -215,7 +215,7 @@
 - title: "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters"
   authors: Vineel Pratap and Anuroop Sriram and Paden Tomasello and Awni Hannun and Vitaliy Liptchinsky and Gabriel Synnaeve and Ronan Collobert
   year: 2020
-  display: Interspeech
+  display: Interspeech 2020
   pages: 4751--4755
   url: pratapMassively
   arxiv: 2007.03001
@@ -247,7 +247,7 @@
 
 - title: "GrappaNet: Combining parallel imaging with deep learning for multi-coil MRI reconstruction"
   authors: Sriram, Anuroop and Zbontar, Jure and Murrell, Tullie and Zitnick, C Lawrence and Defazio, Aaron and Sodickson, Daniel K
-  display: Conference on Computer Vision and Pattern Recognition (CVPR)
+  display: Conference on Computer Vision and Pattern Recognition (CVPR) 2019
   pages: 14315--14322
   year: 2020
   url: sriramGrappaNet
@@ -278,7 +278,7 @@
 
 - title: Robust speech recognition using generative adversarial networks
   authors: Sriram, Anuroop and Jun, Heewoo and Gaur, Yashesh and Satheesh, Sanjeev
-  display: IEEE international conference on acoustics, speech and signal processing (ICASSP)
+  display: IEEE international conference on acoustics, speech and signal processing (ICASSP) 2018
   pages: 5639--5643
   year: 2018
   organization: IEEE
@@ -290,7 +290,7 @@
 - title: "Cold Fusion: Training Seq2Seq Models Together with Language Models"
   authors: Anuroop Sriram and Heewoo Jun and Sanjeev Satheesh and Adam Coates
   year: 2018
-  display: Interspeech
+  display: Interspeech 2018
   pages: 387--391
   url: sriramFusion
   arxiv: 1708.06426
@@ -301,7 +301,7 @@
 
 - title: Exploring neural transducers for end-to-end speech recognition
   authors: Battenberg, Eric and Chen, Jitong and Child, Rewon and Coates, Adam and Li, Yashesh Gaur Yi and Liu, Hairong and Satheesh, Sanjeev and Sriram, Anuroop and Zhu, Zhenyao
-  display: Automatic Speech Recognition and Understanding (ASRU)
+  display: Automatic Speech Recognition and Understanding (ASRU) 2017
   pages: 206--213
   year: 2017
   url: battenbergTransducers
@@ -321,7 +321,7 @@
 
 - title: "Deep speech 2: End-to-end speech recognition in english and mandarin"
   authors: Amodei, Dario and Ananthanarayanan, Sundaram and Anubhai, Rishita and Bai, Jingliang and Battenberg, Eric and Case, Carl and Casper, Jared and Catanzaro, Bryan and Cheng, Qiang and Chen, Guoliang and others
-  display: International conference on machine learning (ICML)
+  display: International conference on machine learning (ICML) 2016
   pages: 173--182
   year: 2016
   organization: ICML

@@ -1,11 +1,11 @@
-@article{2004.06688v2,
-Author        = {Anuroop Sriram and Jure Zbontar and Tullie Murrell and Aaron Defazio and C. Lawrence Zitnick and Nafissa Yakubova and Florian Knoll and Patricia Johnson},
-Title         = {End-to-End Variational Networks for Accelerated MRI Reconstruction},
-Eprint        = {2004.06688v2},
+@article{1811.08839v2,
+Author        = {Jure Zbontar and Florian Knoll and Anuroop Sriram and Tullie Murrell and Zhengnan Huang and Matthew J. Muckley and Aaron Defazio and Ruben Stern and Patricia Johnson and Mary Bruno and Marc Parente and Krzysztof J. Geras and Joe Katsnelson and Hersh Chandarana and Zizhao Zhang and Michal Drozdzal and Adriana Romero and Michael Rabbat and Pascal Vincent and Nafissa Yakubova and James Pinkerton and Duo Wang and Erich Owens and C. Lawrence Zitnick and Michael P. Recht and Daniel K. Sodickson and Yvonne W. Lui},
+Title         = {fastMRI: An Open Dataset and Benchmarks for Accelerated MRI},
+Eprint        = {1811.08839v2},
 ArchivePrefix = {arXiv},
-PrimaryClass  = {eess.IV},
-Year          = {2020},
-Month         = {Apr},
-Url           = {http://arxiv.org/abs/2004.06688v2},
-File          = {2004.06688v2.pdf}
+PrimaryClass  = {cs.CV},
+Year          = {2018},
+Month         = {Nov},
+Url           = {http://arxiv.org/abs/1811.08839v2},
+File          = {1811.08839v2.pdf}
 }
