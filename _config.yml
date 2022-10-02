@@ -8,9 +8,9 @@ url: ""
 # Google analytics ID
 google_analytics: G-H1K2L7JV60
 
-# Contact info. (shown in footer)
-contact: >
-    <a href="mailto:anuroop.sriram@gmail.com" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Anuroop via email</a> <br/>
+## Contact info. (shown in footer)
+# contact: >
+#     <a href="mailto:anuroop.sriram@gmail.com" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Anuroop via email</a> <br/>
 
 # Pages shown in navbar
 nav_pages:
