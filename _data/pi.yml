@@ -1,11 +1,14 @@
 - name: Anuroop Sriram
   photo: anuroop.png
   info: Research Engineer & Scientist
+  website: https://anuroopsriram.com/
   email: anuroop.sriram@gmail.com
   github: https://github.com/anuroopsriram
   # researchgate: 
   scholar: https://scholar.google.com/citations?user=D4uRc_UAAAAJ&hl=en
   # cv: 
+  twitter: https://twitter.com/anuroopsriram
+  linkedin: https://www.linkedin.com/in/anuroopsriram
   number_educ: 5
   education1: (2018-Present) Research Engineer & Scientist, Meta FAIR
   education2: (2015-2018) Senior Research Scientist, Baidu SVAIL
