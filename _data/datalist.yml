@@ -1,19 +1,19 @@
 - title: Open Catalyst 2020 (OC20) & Open Catalyst 2022 (OC22)
   description: "Datasets for discovering new catalysts created by running over 260 million Density Functional Theory (DFT) calculations."
-  image: ocp.jpg
+  image: ocp.webp
   data_url: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
   project_url: https://opencatalystproject.org/
   code_url: https://github.com/Open-Catalyst-Project/ocp/
 
 - title: "fastMRI"
   description: "Datasets for accelerating MRI reconstruction containing roughly 1,500 fully sampled knee MRIs, and 7,000 fully sampled brain MRIs, in addition to DICOM images from 10,000 clinical knee MRIs."
-  image: fastmri.jpg
+  image: fastmri.webp
   data_url: https://fastmri.org/dataset/
   project_url: https://fastmri.org/
   code_url: https://github.com/facebookresearch/fastMRI/
 
 - title: MLS
   description: "Multi-lingual speech recognition data derived from read audiobooks from LibriVox consisting of 8 languages - English, German, Dutch, Spanish, French, Italian, Portuguese, Polish."
-  image: mls.jpg
+  image: mls.webp
   data_url: https://www.openslr.org/94/
   code_url: https://github.com/flashlight/wav2letter/tree/main/recipes/mls

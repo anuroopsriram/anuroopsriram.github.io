@@ -1,7 +1,7 @@
 ############# 2022 #############
 
 - title: "The Open Catalyst Challenge 2021: Competition Report"
-  authors: Das, Abhishek and Shuaibi, Muhammed and Palizhati, Aini and Goyal, Siddharth and Grover, Aditya and Kolluru, Adeesh and Lan, Janice and Rizvi, Ammar and Sriram, Anuroop and Wood, Brandon and others
+  authors: Abhishek Das, Muhammed Shuaibi, Aini Palizhati, Siddharth Goyal, Aditya Grover, Adeesh Kolluru, Janice Lan, Ammar Rizvi, Anuroop Sriram, Brandon Wood et al.
   display: NeurIPS 2021 Competitions and Demonstrations Track
   pages: 29--40
   year: 2022
@@ -9,31 +9,31 @@
   url: dasOC21
   link: https://proceedings.mlr.press/v176/das22a.html
   abstract: In this report, we describe the Open Catalyst Challenge held at NeurIPS 2021, focusing on using machine learning (ML) to accelerate the search for low-cost catalysts that can drive reactions converting renewable energy to storable forms. Specifically, the challenge required participants to develop ML approaches for relaxed energy prediction, i.e. given atomic positions for an adsorbate-catalyst system, the goal was to predict the energy of the system’s relaxed or lowest energy state. To perform well on this task, ML approaches need to approximate the quantum mechanical computations in Density Functional Theory (DFT). By modeling these accurately, the catalyst’s impact on the overall rate of a chemical reaction may be estimated; a key factor in filtering potential electrocatalyst materials. The challenge encouraged community-wide progress on this task and the winning approach improved direct relaxed energy prediction by  15% relative over the previous state-of-the-art.
-  image: ocp_chall.jpg
+  image: ocp_chall.webp
   
 - title: Spherical Channels for Modeling Atomic Interactions
-  authors: Zitnick, C Lawrence and Das, Abhishek and Kolluru, Adeesh and Lan, Janice and Shuaibi, Muhammed and Sriram, Anuroop and Ulissi, Zachary and Wood, Brandon
+  authors: C Lawrence Zitnick, Abhishek Das, Adeesh Kolluru, Janice Lan, Muhammed Shuaibi, Anuroop Sriram, Zachary Ulissi, Brandon Wood
   display: NeurIPS 2022
   url: zitnickSphericalChannels
-  image: scn.jpg
+  image: scn.webp
   arxiv: 2206.14331
   year: 2022
   abstract: Modeling the energy and forces of atomic systems is a fundamental problem in computational chemistry with the potential to help address many of the world's most pressing problems, including those related to energy scarcity and climate change. These calculations are traditionally performed using Density Functional Theory, which is computationally very expensive. Machine learning has the potential to dramatically improve the efficiency of these calculations from days or hours to seconds. We propose the Spherical Channel Network (SCN) to model atomic energies and forces. The SCN is a graph neural network where nodes represent atoms and edges their neighboring atoms. The atom embeddings are a set of spherical functions, called spherical channels, represented using spherical harmonics. We demonstrate, that by rotating the embeddings based on the 3D edge orientation, more information may be utilized while maintaining the rotational equivariance of the messages. While equivariance is a desirable property, we find that by relaxing this constraint in both message passing and aggregation, improved accuracy may be achieved. We demonstrate state-of-the-art results on the large-scale Open Catalyst 2020 dataset in both energy and force prediction for numerous tasks and metrics.
   code: https://github.com/Open-Catalyst-Project/ocp/tree/main/ocpmodels/models/scn
 
 - title: "Wav2Vec-Aug: Improved self-supervised training with limited data"
-  authors: Sriram, Anuroop and Auli, Michael and Baevski, Alexei
+  authors: Anuroop Sriram, Michael Auli, Alexei Baevski
   year: 2022
   url: sriramWav2vecaug
   arxiv: 2206.13654
   display: Interspeech 2022
   abstract: Self-supervised learning (SSL) of speech representations has received much attention over the last few years but most work has focused on languages and domains with an abundance of unlabeled data. However, for many languages there is a shortage even in the unlabeled data which limits the effectiveness of SSL. In this work, we focus on the problem of applying SSL to domains with limited available data by leveraging data augmentation for Wav2Vec 2.0 pretraining. Further, we propose improvements to each component of the model which result in a combined relative word error rate (WER) improvement of up to 13% compared to Wav2Vec 2.0 on Librispeech test-clean / other.
-  image: w2vaug.jpg
+  image: w2vaug.webp
 
 - title: The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysis
-  authors: Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Goyal, Siddharth and Wood, Brandon M and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and others
+  authors: Richard Tran, Janice Lan, Muhammed Shuaibi, Siddharth Goyal, Brandon M Wood, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi et al.
   url: tranOc22
-  image: tranOC22.jpg
+  image: tranOC22.webp
   arxiv: 2206.08917
   year: 2022
   abstract: Computational catalysis and machine learning communities have made considerable progress in developing machine learning models for catalyst discovery and design. Yet, a general machine learning potential that spans the chemical space of catalysis is still out of reach. A significant hurdle is obtaining access to training data across a wide range of materials. One important class of materials where data is lacking are oxides, which inhibits models from studying the Oxygen Evolution Reaction and oxide electrocatalysis more generally. To address this we developed the Open Catalyst 2022(OC22) dataset, consisting of 62,521 Density Functional Theory (DFT) relaxations (~9,884,504 single point calculations) across a range of oxide materials, coverages, and adsorbates (*H, *O, *N, *C, *OOH, *OH, *OH2, *O2, *CO). We define generalized tasks to predict the total system energy that are applicable across catalysis, develop baseline performance of several graph neural networks (SchNet, DimeNet++, ForceNet, SpinConv, PaiNN, GemNet-dT, GemNet-OC), and provide pre-defined dataset splits to establish clear benchmarks for future efforts. For all tasks, we study whether combining datasets leads to better results, even if they contain different materials or adsorbates. Specifically, we jointly train models on Open Catalyst 2020 (OC20) Dataset and OC22, or fine-tune pretrained OC20 models on OC22. In the most general task, GemNet-OC sees a ~32% improvement in energy predictions through fine-tuning and a ~9% improvement in force predictions via joint training. Surprisingly, joint training on both the OC20 and much smaller OC22 datasets also improves total energy predictions on OC20 by ~19%. The dataset and baseline models are open sourced, and a public leaderboard will follow to encourage continued community developments on the total energy tasks and data.
@@ -41,22 +41,22 @@
   data: "https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md#open-catalyst-2022-oc22"
 
 - title: How Do Graph Networks Generalize to Large and Diverse Molecular Systems?
-  authors: Gasteiger, Johannes and Shuaibi, Muhammed and Sriram, Anuroop and Gunnemann, Stephan and Ulissi, Zachary and Zitnick, C Lawrence and Das, Abhishek
+  authors: Johannes Gasteiger, Muhammed Shuaibi, Anuroop Sriram, Stephan Gunnemann, Zachary Ulissi, C Lawrence Zitnick, Abhishek Das
   url: gasteigerGemnetOC
   arxiv: 2204.02782
   year: 2022
   abstract: "The predominant method of demonstrating progress of atomic graph neural networks are benchmarks on small and limited datasets. The implicit hypothesis behind this approach is that progress on these narrow datasets generalize to the large diversity of chemistry. This generalizability would be very helpful for research, but currently remains untested. In this work we test this assumption by identifying four aspects of complexity in which many datasets are lacking: 1. Chemical diversity (number of different elements), 2. system size (number of atoms per sample), 3. dataset size (number of data samples), and 4. domain shift (similarity of the training and test set). We introduce multiple subsets of the large Open Catalyst 2020 (OC20) dataset to independently investigate each of these aspects. We then perform 21 ablation studies and sensitivity analyses on 9 datasets testing both previously proposed and new model enhancements. We find that some improvements are consistent between datasets, but many are not and some even have opposite effects. Based on this analysis, we identify a smaller dataset that correlates well with the full OC20 dataset, and propose the GemNet-OC model, which outperforms the previous state-of-the-art on OC20 by 16%, while reducing training time by a factor of 10. Overall, our findings challenge the common belief that graph neural networks work equally well independent of dataset size and diversity, and suggest that caution must be exercised when making generalizations based on narrow datasets."
-  image: gemnetoc.jpg
+  image: gemnetoc.webp
   code: https://github.com/Open-Catalyst-Project/ocp/tree/main/ocpmodels/models/gemnet_oc
   display: Transactions on Machine Learning Research (TMLR) 2022
 
 - title: Towards Training Billion Parameter Graph Neural Networks for Atomic Simulations
-  authors: Sriram, Anuroop and Das, Abhishek and Wood, Brandon M and Goyal, Siddharth and Zitnick, C Lawrence
+  authors: Anuroop Sriram, Abhishek Das, Brandon M Wood, Siddharth Goyal, C Lawrence Zitnick
   display: International Conference on Learning Representations (ICLR) 2022
   organization: ICLR
   year: 2022
   url: sriramGraphParallel
-  image: graph_parallel.jpg
+  image: graph_parallel.webp
   arxiv: 2203.09697
   abstract: Recent progress in Graph Neural Networks (GNNs) for modeling atomic simulations has the potential to revolutionize catalyst discovery, which is a key step in making progress towards the energy breakthroughs needed to combat climate change. However, the GNNs that have proven most effective for this task are memory intensive as they model higher-order interactions in the graphs such as those between triplets or quadruplets of atoms, making it challenging to scale these models. In this paper, we introduce Graph Parallelism, a method to distribute input graphs across multiple GPUs, enabling us to train very large GNNs with hundreds of millions or billions of parameters. We empirically evaluate our method by scaling up the number of parameters of the recently proposed DimeNet++ and GemNet models by over an order of magnitude. On the large-scale Open Catalyst 2020 (OC20) dataset, these graph-parallelized models lead to relative improvements of 1) 15% on the force MAE metric for the S2EF task and 2) 21% on the AFbT metric for the IS2RS task, establishing new state-of-the-art results.
   code: https://github.com/Open-Catalyst-Project/ocp/tree/main/ocpmodels/models/gemnet_gp
@@ -64,16 +64,16 @@
 ############# 2021 #############
 
 - title: Rotation invariant graph neural networks using spin convolutions
-  authors: Shuaibi, Muhammed and Kolluru, Adeesh and Das, Abhishek and Grover, Aditya and Sriram, Anuroop and Ulissi, Zachary and Zitnick, C Lawrence
+  authors: Muhammed Shuaibi, Adeesh Kolluru, Abhishek Das, Aditya Grover, Anuroop Sriram, Zachary Ulissi, C Lawrence Zitnick
   url: shuaibiSpinconv
   arxiv: 2106.09575
   year: 2021
   abstract: "Progress towards the energy breakthroughs needed to combat climate change can be significantly accelerated through the efficient simulation of atomic systems. Simulation techniques based on first principles, such as Density Functional Theory (DFT), are limited in their practical use due to their high computational expense. Machine learning approaches have the potential to approximate DFT in a computationally efficient manner, which could dramatically increase the impact of computational simulations on real-world problems. Approximating DFT poses several challenges. These include accurately modeling the subtle changes in the relative positions and angles between atoms, and enforcing constraints such as rotation invariance or energy conservation. We introduce a novel approach to modeling angular information between sets of neighboring atoms in a graph neural network. Rotation invariance is achieved for the network's edge messages through the use of a per-edge local coordinate frame and a novel spin convolution over the remaining degree of freedom. Two model variants are proposed for the applications of structure relaxation and molecular dynamics. State-of-the-art results are demonstrated on the large-scale Open Catalyst 2020 dataset. Comparisons are also performed on the MD17 and QM9 datasets."
-  image: spinconv.jpg
+  image: spinconv.webp
   code: https://github.com/Open-Catalyst-Project/ocp
 
 - title: Open catalyst 2020 (OC20) dataset and community challenges
-  authors: Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and others
+  authors: Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu et al.
   display: ACS Catalysis
   volume: 11
   number: 10
@@ -83,12 +83,12 @@
   url: chanussotOC20
   arxiv: "2010.09990"
   abstract: "Catalyst discovery and optimization is key to solving many societal and energy challenges including solar fuels synthesis, long-term energy storage, and renewable fertilizer production. Despite considerable effort by the catalysis community to apply machine learning models to the computational catalyst discovery process, it remains an open challenge to build models that can generalize across both elemental compositions of surfaces and adsorbate identity/configurations, perhaps because datasets have been smaller in catalysis than related fields. To address this we developed the OC20 dataset, consisting of 1,281,040 Density Functional Theory (DFT) relaxations (~264,890,000 single point evaluations) across a wide swath of materials, surfaces, and adsorbates (nitrogen, carbon, and oxygen chemistries). We supplemented this dataset with randomly perturbed structures, short timescale molecular dynamics, and electronic structure analyses. The dataset comprises three central tasks indicative of day-to-day catalyst modeling and comes with pre-defined train/validation/test splits to facilitate direct comparisons with future model development efforts. We applied three state-of-the-art graph neural network models (CGCNN, SchNet, Dimenet++) to each of these tasks as baseline demonstrations for the community to build on. In almost every task, no upper limit on model size was identified, suggesting that even larger models are likely to improve on initial results. The dataset and baseline models are both provided as open resources, as well as a public leader board to encourage community contributions to solve these important tasks."
-  image: oc20.jpg
+  image: oc20.webp
   code: https://github.com/open-catalyst-project/ocp
   data: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
 
 - title: Results of the 2020 fastmri challenge for machine learning mr image reconstruction
-  authors: Muckley, Matthew J and Riemenschneider, Bruno and Radmanesh, Alireza and Kim, Sunwoo and Jeong, Geunu and Ko, Jingyu and Jun, Yohan and Shin, Hyungseob and Hwang, Dosik and Mostapha, Mahmoud and others
+  authors: Matthew J Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.
   display: IEEE Transactions on Medical Imaging (TMI)
   volume: 40
   number: 9
@@ -98,78 +98,78 @@
   url: muckleyFastmri2020
   arxiv: 2012.06318
   abstract: "Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI competition targeted towards reconstructing MR images with subsampled k-space data. We provided participants with data from 7,299 clinical brain scans (de-identified via a HIPAA-compliant procedure by NYU Langone Health), holding back the fully-sampled data from 894 of these scans for challenge evaluation purposes. In contrast to the 2019 challenge, we focused our radiologist evaluations on pathological assessment in brain images. We also debuted a new Transfer track that required participants to submit models evaluated on MRI scanners from outside the training set. We received 19 submissions from eight different groups. Results showed one team scoring best in both SSIM scores and qualitative radiologist evaluations. We also performed analysis on alternative metrics to mitigate the effects of background noise and collected feedback from the participants to inform future challenges. Lastly, we identify common failure modes across the submissions, highlighting areas of need for future research in the MRI reconstruction community."
-  image: fmri_chall2020.jpg
+  image: fmri_chall2020.webp
 
 - title: Systems and methods for robust speech recognition using generative adversarial networks (Patent)
-  authors: Sriram, Anuroop and Jun, Hee Woo and Yashesh, GAUR and Satheesh, Sanjeev
+  authors: Anuroop Sriram, Hee Woo Jun, Yashesh Gaur, Sanjeev Satheesh
   year: 2021
   display: US Patent 10,971,142
   abstract: "Described herein are systems and methods for a general, scalable, end-to-end framework that uses a generative adversarial network (GAN) objective to enable robust speech recognition. Encoders trained with the proposed approach enjoy improved invariance by learning to map noisy audio to the same embedding space as that of clean audio. Embodiments of a Wasserstein GAN framework increase the robustness of seq-to-seq models in a scalable, end-to-end fashion. In one or more embodiments, an encoder component is treated as the generator of GAN and is trained to produce indistinguishable embeddings between labeled and unlabeled audio samples. This new robust training approach can learn to induce robustness without alignment or complicated inference pipeline and even where augmentation of audio data is not possible."
   link: https://patentimages.storage.googleapis.com/44/e8/47/bdbcfadc027d9c/US10971142.pdf
-  image: rsgan.jpg
+  image: rsgan.webp
 
 - title: "Robust Wav2vec 2.0: Analyzing Domain Shift in Self-Supervised Pre-Training"
-  authors: Wei-Ning Hsu and Anuroop Sriram and Alexei Baevski and Tatiana Likhomanenko and Qiantong Xu and Vineel Pratap and Jacob Kahn and Ann Lee and Ronan Collobert and Gabriel Synnaeve and Michael Auli
+  authors: Wei-Ning Hsu, Anuroop Sriram, Alexei Baevski, Tatiana Likhomanenko, Qiantong Xu, Vineel Pratap, Jacob Kahn, Ann Lee, Ronan Collobert, Gabriel Synnaeve, Michael Auli
   year: 2021
   display: Interspeech 2021
   pages: 721--725
   url: hsuRobustWav2Vec
   arxiv: 2104.01027
   abstract: "Self-supervised learning of speech representations has been a very active research area but most work is focused on a single domain such as read audio books for which there exist large quantities of labeled and unlabeled data. In this paper, we explore more general setups where the domain of the unlabeled data for pre-training data differs from the domain of the labeled data for fine-tuning, which in turn may differ from the test data domain. Our experiments show that using target domain data during pre-training leads to large performance improvements across a variety of setups. On a large-scale competitive setup, we show that pre-training on unlabeled in-domain data reduces the gap between models trained on in-domain and out-of-domain labeled data by 66%-73%. This has obvious practical implications since it is much easier to obtain unlabeled target domain data than labeled data. Moreover, we find that pre-training on multiple domains improves generalization performance on domains not seen during training. Code and models will be made available at this https URL."
-  image: w2vaug.jpg
+  image: w2vaug.webp
 
 - title: "Forcenet: A graph neural network for large-scale quantum calculations"
-  authors: Hu, Weihua and Shuaibi, Muhammed and Das, Abhishek and Goyal, Siddharth and Sriram, Anuroop and Leskovec, Jure and Parikh, Devi and Zitnick, C Lawrence
+  authors: Weihua Hu, Muhammed Shuaibi, Abhishek Das, Siddharth Goyal, Anuroop Sriram, Jure Leskovec, Devi Parikh, C Lawrence Zitnick
   arxiv: 2103.01436
   year: 2021
   url: huForcenet
   arxiv: 2103.01436
   abstract: "With massive amounts of atomic simulation data available, there is a huge opportunity to develop fast and accurate machine learning models to approximate expensive physics-based calculations. The key quantity to estimate is atomic forces, where the state-of-the-art Graph Neural Networks (GNNs) explicitly enforce basic physical constraints such as rotation-covariance. However, to strictly satisfy the physical constraints, existing models have to make tradeoffs between computational efficiency and model expressiveness. Here we explore an alternative approach. By not imposing explicit physical constraints, we can flexibly design expressive models while maintaining their computational efficiency. Physical constraints are implicitly imposed by training the models using physics-based data augmentation. To evaluate the approach, we carefully design a scalable and expressive GNN model, ForceNet, and apply it to OC20 (Chanussot et al., 2020), an unprecedentedly-large dataset of quantum physics calculations. Our proposed ForceNet is able to predict atomic forces more accurately than state-of-the-art physics-based GNNs while being faster both in training and inference. Overall, our promising and counter-intuitive results open up an exciting avenue for future research."
-  image: forcenet.jpg
+  image: forcenet.webp
   code: https://github.com/Open-Catalyst-Project/ocp/blob/main/ocpmodels/models/forcenet.py
 
 - title: Covid-19 prognosis via self-supervised representation learning and multi-image prediction
-  authors: Sriram, Anuroop and Muckley, Matthew and Sinha, Koustuv and Shamout, Farah and Pineau, Joelle and Geras, Krzysztof J and Azour, Lea and Aphinyanaphongs, Yindalon and Yakubova, Nafissa and Moore, William
+  authors: Anuroop Sriram, Matthew Muckley, Koustuv Sinha, Farah Shamout, Joelle Pineau, Krzysztof J Geras, Lea Azour, Yindalon Aphinyanaphongs, Nafissa Yakubova, William Moore
   arxiv: 2101.04909
   year: 2021
   url: sriramCovid
   arxiv: 2101.04909
   abstract: "The rapid spread of COVID-19 cases in recent months has strained hospital resources, making rapid and accurate triage of patients presenting to emergency departments a necessity. Machine learning techniques using clinical data such as chest X-rays have been used to predict which patients are most at risk of deterioration. We consider the task of predicting two types of patient deterioration based on chest X-rays: adverse event deterioration (i.e., transfer to the intensive care unit, intubation, or mortality) and increased oxygen requirements beyond 6 L per day. Due to the relative scarcity of COVID-19 patient data, existing solutions leverage supervised pretraining on related non-COVID images, but this is limited by the differences between the pretraining data and the target COVID-19 patient data. In this paper, we use self-supervised learning based on the momentum contrast (MoCo) method in the pretraining phase to learn more general image representations to use for downstream tasks. We present three results. The first is deterioration prediction from a single image, where our model achieves an area under receiver operating characteristic curve (AUC) of 0.742 for predicting an adverse event within 96 hours (compared to 0.703 with supervised pretraining) and an AUC of 0.765 for predicting oxygen requirements greater than 6 L a day at 24 hours (compared to 0.749 with supervised pretraining). We then propose a new transformer-based architecture that can process sequences of multiple images for prediction and show that this model can achieve an improved AUC of 0.786 for predicting an adverse event at 96 hours and an AUC of 0.848 for predicting mortalities at 96 hours. A small pilot clinical study suggested that the prediction accuracy of our model is comparable to that of experienced radiologists analyzing the same information."
-  image: covid.jpg
+  image: covid.webp
   code: https://github.com/facebookresearch/CovidPrognosis
 
 ############# 2020 #############
 
 - title: "State-of-the-art machine learning MRI reconstruction in 2020: Results of the second fastMRI challenge"
-  authors: Muckley, Matthew and Riemenschneider, Bruno and Radmanesh, Alireza and Kim, Sunwoo and Jeong, Geunu and Ko, Jingyu and Jun, Yohan and Shin, Hyungseob and Hwang, Dosik and Mostapha, Mahmoud and others
+  authors: Matthew Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.
   year: 2020
   url: muckeyFastMRI2020
   link: https://hal.archives-ouvertes.fr/hal-03066150v1/document
   abstract: "Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI competition targeted towards reconstructing MR images with subsampled k-space data. We provided participants with data from 7,299 clinical brain scans (de-identified via a HIPAA-compliant procedure by NYU Langone Health), holding back the fully-sampled data from 894 of these scans for challenge evaluation purposes. In contrast to the 2019 challenge, we focused our radiologist evaluations on pathological assessment in brain images. We also debuted a new Transfer track that required participants to submit models evaluated on MRI scanners from outside the training set. We received 19 submissions from eight different groups. Results showed one team scoring best in both SSIM scores and qualitative radiologist evaluations. We also performed analysis on alternative metrics to mitigate the effects of background noise and collected feedback from the participants to inform future challenges. Lastly, we identify common failure modes across the submissions, highlighting areas of need for future research in the MRI reconstruction community."
-  image: fmri_chall2020.jpg
+  image: fmri_chall2020.webp
 
 - title: Cold fusing sequence-to-sequence models with language models (Patent)
-  authors: Sriram, Anuroop and Heewoo, JUN and Satheesh, Sanjeev and Coates, Adam
+  authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
   year: 2020
   display: US Patent 10,867,595
   abstract: "Described herein are systems and methods for generating natural language sentences with Sequence-to-sequence (Seq2Seq) models with attention. The Seq2Seq models may be implemented in applications, such as machine translation, image captioning, and speech recognition. Performance has further been improved by leveraging unlabeled data, often in the form of a language models. Disclosed herein are “Cold Fusion” architecture embodiments that leverage a pre-trained language model during training. The Seq2Seq models with Cold Fusion embodiments are able to better utilize language information enjoying faster convergence, better generalization, and almost complete transfer to a new domain while using less labeled training data."
   link: https://patentimages.storage.googleapis.com/c4/81/5b/58ceaa1a6771c8/US10867595.pdf
-  image: cf.jpg
+  image: cf.webp
 
 - title: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
-  authors: Vineel Pratap and Qiantong Xu and Anuroop Sriram and Gabriel Synnaeve and Ronan Collobert
+  authors: Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, Ronan Collobert
   year: 2020
   display: Interspeech 2020
   pages: 2757--2761
   url: pratapMLS
   arxiv: 2012.03411
   abstract: "This paper introduces Multilingual LibriSpeech (MLS) dataset, a large multilingual corpus suitable for speech research. The dataset is derived from read audiobooks from LibriVox and consists of 8 languages, including about 44.5K hours of English and a total of about 6K hours for other languages. Additionally, we provide Language Models (LM) and baseline Automatic Speech Recognition (ASR) models and for all the languages in our dataset. We believe such a large transcribed dataset will open new avenues in ASR and Text-To-Speech (TTS) research. The dataset will be made freely available for anyone at this http URL."
-  image: mls.jpg
+  image: mls.webp
   code: https://github.com/flashlight/wav2letter/tree/main/recipes/mls
   data: http://openslr.org/94
 
 - title: "Using deep learning to accelerate knee MRI at 3 T: results of an interchangeability study"
-  authors: Recht, Michael P and Zbontar, Jure and Sodickson, Daniel K and Knoll, Florian and Yakubova, Nafissa and Sriram, Anuroop and Murrell, Tullie and Defazio, Aaron and Rabbat, Michael and Rybak, Leon and others
+  authors: Michael P Recht, Jure Zbontar, Daniel K Sodickson, Florian Knoll, Nafissa Yakubova, Anuroop Sriram, Tullie Murrell, Aaron Defazio, Michael Rabbat, Leon Rybak et al.
   display: American Journal of Roentgenology (AJR)
   volume: 215
   number: 6
@@ -179,10 +179,10 @@
   url: rechtInterch
   link: https://pubmed.ncbi.nlm.nih.gov/32755163/
   abstract: "OBJECTIVE. Deep learning (DL) image reconstruction has the potential to disrupt the current state of MRI by significantly decreasing the time required for MRI examinations. Our goal was to use DL to accelerate MRI to allow a 5-minute comprehensive examination of the knee without compromising image quality or diagnostic accuracy. MATERIALS AND METHODS. A DL model for image reconstruction using a variational network was optimized. The model was trained using dedicated multisequence training, in which a single reconstruction model was trained with data from multiple sequences with different contrast and orientations. After training, data from 108 patients were retrospectively undersampled in a manner that would correspond with a net 3.49-fold acceleration of fully sampled data acquisition and a 1.88-fold acceleration compared with our standard twofold accelerated parallel acquisition. An interchangeability study was performed, in which the ability of six readers to detect internal derangement of the knee was compared for clinical and DL-accelerated images. RESULTS. We found a high degree of interchangeability between standard and DL-accelerated images. In particular, results showed that interchanging the sequences would produce discordant clinical opinions no more than 4% of the time for any feature evaluated. Moreover, the accelerated sequence was judged by all six readers to have better quality than the clinical sequence. CONCLUSION. An optimized DL model allowed acceleration of knee images that performed interchangeably with standard images for detection of internal derangement of the knee. Importantly, readers preferred the quality of accelerated images to that of standard clinical images."
-  image: 3t.jpg
+  image: 3t.webp
 
 - title: "Advancing machine learning for MR image reconstruction with an open competition: Overview of the 2019 fastMRI challenge"
-  authors: Knoll, Florian and Murrell, Tullie and Sriram, Anuroop and Yakubova, Nafissa and Zbontar, Jure and Rabbat, Michael and Defazio, Aaron and Muckley, Matthew J and Sodickson, Daniel K and Zitnick, C Lawrence and others
+  authors: Florian Knoll, Tullie Murrell, Anuroop Sriram, Nafissa Yakubova, Jure Zbontar, Michael Rabbat, Aaron Defazio, Matthew J Muckley, Daniel K Sodickson, C Lawrence Zitnick et al.
   display: Magnetic Resonance in Medicine (MRM)
   volume: 84
   number: 6
@@ -191,18 +191,18 @@
   url: knollFastmri2019
   arxiv: 2001.02518
   abstract: "Purpose: To advance research in the field of machine learning for MR image reconstruction with an open challenge. Methods: We provided participants with a dataset of raw k-space data from 1,594 consecutive clinical exams of the knee. The goal of the challenge was to reconstruct images from these data. In order to strike a balance between realistic data and a shallow learning curve for those not already familiar with MR image reconstruction, we ran multiple tracks for multi-coil and single-coil data. We performed a two-stage evaluation based on quantitative image metrics followed by evaluation by a panel of radiologists. The challenge ran from June to December of 2019. Results: We received a total of 33 challenge submissions. All participants chose to submit results from supervised machine learning approaches. Conclusion: The challenge led to new developments in machine learning for image reconstruction, provided insight into the current state of the art in the field, and highlighted remaining hurdles for clinical adoption."
-  image: fmri_chall.jpg
+  image: fmri_chall.webp
 
 - title: An introduction to electrocatalyst design using machine learning for renewable energy storage
-  authors: Zitnick, C Lawrence and Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Lavril, Thibaut and Palizhati, Aini and Riviere, Morgane and others
+  authors: C Lawrence Zitnick, Lowik Chanussot, Abhishek Das, Siddharth Goyal, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Thibaut Lavril, Aini Palizhati, Morgane Riviere et al.
   url: zitnickOcpwhitepaper
   arxiv: 2010.09435
   year: 2020
   abstract: "Scalable and cost-effective solutions to renewable energy storage are essential to addressing the world's rising energy needs while reducing climate change. As we increase our reliance on renewable energy sources such as wind and solar, which produce intermittent power, storage is needed to transfer power from times of peak generation to peak demand. This may require the storage of power for hours, days, or months. One solution that offers the potential of scaling to nation-sized grids is the conversion of renewable energy to other fuels, such as hydrogen or methane. To be widely adopted, this process requires cost-effective solutions to running electrochemical reactions. An open challenge is finding low-cost electrocatalysts to drive these reactions at high rates. Through the use of quantum mechanical simulations (density functional theory), new catalyst structures can be tested and evaluated. Unfortunately, the high computational cost of these simulations limits the number of structures that may be tested. The use of machine learning may provide a method to efficiently approximate these calculations, leading to new approaches in finding effective electrocatalysts. In this paper, we provide an introduction to the challenges in finding suitable electrocatalysts, how machine learning may be applied to the problem, and the use of the Open Catalyst Project OC20 dataset for model training."
-  image: ec_white.jpg
+  image: ec_white.webp
 
 - title: End-to-end variational networks for accelerated MRI reconstruction
-  authors: Sriram, Anuroop and Zbontar, Jure and Murrell, Tullie and Defazio, Aaron and Zitnick, C Lawrence and Yakubova, Nafissa and Knoll, Florian and Johnson, Patricia
+  authors: Anuroop Sriram, Jure Zbontar, Tullie Murrell, Aaron Defazio, C Lawrence Zitnick, Nafissa Yakubova, Florian Knoll, Patricia Johnson
   display: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2020
   pages: 64--73
   year: 2020
@@ -210,29 +210,29 @@
   arxiv: 2004.06688
   url: sriramVarNet
   abstract: "The slow acquisition speed of magnetic resonance imaging (MRI) has led to the development of two complementary methods: acquiring multiple views of the anatomy simultaneously (parallel imaging) and acquiring fewer samples than necessary for traditional signal processing methods (compressed sensing). While the combination of these methods has the potential to allow much faster scan times, reconstruction from such undersampled multi-coil data has remained an open problem. In this paper, we present a new approach to this problem that extends previously proposed variational methods by learning fully end-to-end. Our method obtains new state-of-the-art results on the fastMRI dataset for both brain and knee MRIs."
-  image: varnet.jpg
+  image: varnet.webp
   code: https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/varnet
 
 - title: "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters"
-  authors: Vineel Pratap and Anuroop Sriram and Paden Tomasello and Awni Hannun and Vitaliy Liptchinsky and Gabriel Synnaeve and Ronan Collobert
+  authors: Vineel Pratap, Anuroop Sriram, Paden Tomasello, Awni Hannun, Vitaliy Liptchinsky, Gabriel Synnaeve, Ronan Collobert
   year: 2020
   display: Interspeech 2020
   pages: 4751--4755
   url: pratapMassively
   arxiv: 2007.03001
   abstract: "We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource languages, and over-all simplifying deployment of ASR systems that support diverse languages. We perform an extensive benchmark on 51 languages, with varying amount of training data by language(from 100 hours to 1100 hours). We compare three variants of multilingual training from a single joint model without knowing the input language, to using this information, to multiple heads (one per language cluster). We show that multilingual training of ASR models on several languages can improve recognition performance, in particular, on low resource languages. We see 20.9%, 23% and 28.8% average WER relative reduction compared to monolingual baselines on joint model, joint model with language input and multi head model respectively. To our knowledge, this is the first work studying multilingual ASR at massive scale, with more than 50 languages and more than 16,000 hours of audio across them."
-  image: mmasr.jpg
+  image: mmasr.webp
 
 - title: Systems and methods for principled bias reduction in production speech models (Patent)
-  authors: Battenberg, Eric and Child, Rewon and Coates, Adam and Fougner, Christopher and Yashesh, GAUR and Huang, Jiaji and Heewoo, JUN and Kannan, Ajay and Kliegl, Markus and Kumar, Atul and others
+  authors: Eric Battenberg, Rewon Child, Adam Coates, Christopher Fougner, Yashesh Gaur, Jiaji Huang, Heewoo Jun, Ajay Kannan, Markus Kliegl, Atul Kumar et al.
   display: US Patent 10,657,955
   year: 2020
   abstract: "Described herein are systems and methods to identify and address sources of bias in an end-to-end speech model. In one or more embodiments, the end-to-end model may be a recurrent neural network with two 2D-convolutional input layers, followed by multiple bidirectional recurrent layers and one fully connected layer before a softmax layer. In one or more embodiments, the network is trained end-to-end using the CTC loss function to directly predict sequences of characters from log spectrograms of audio. With optimized recurrent layers and training together with alignment information, some unwanted bias induced by using purely forward only recurrences may be removed in a deployed model."
   link: https://patentimages.storage.googleapis.com/c3/2c/2b/b9a0d1cdbe25d0/US10657955.pdf
-  image: bias.jpg
+  image: bias.webp
 
 - title: "fastMRI: A publicly available raw k-space and DICOM dataset of knee images for accelerated MR image reconstruction using machine learning"
-  authors: Knoll, Florian and Zbontar, Jure and Sriram, Anuroop and Muckley, Matthew J and Bruno, Mary and Defazio, Aaron and Parente, Marc and Geras, Krzysztof J and Katsnelson, Joe and Chandarana, Hersh and others
+  authors: Florian Knoll, Jure Zbontar, Anuroop Sriram, Matthew J Muckley, Mary Bruno, Aaron Defazio, Marc Parente, Krzysztof J Geras, Joe Katsnelson, Hersh Chandarana et al.
   display: "Radiology: Artificial Intelligence"
   volume: 2
   number: 1
@@ -242,43 +242,43 @@
   url: knollFastmri
   arxiv: 1811.08839
   abstract: "Accelerating Magnetic Resonance Imaging (MRI) by taking fewer measurements has the potential to reduce medical costs, minimize stress to patients and make MRI possible in applications where it is currently prohibitively slow or expensive. We introduce the fastMRI dataset, a large-scale collection of both raw MR measurements and clinical MR images, that can be used for training and evaluation of machine-learning approaches to MR image reconstruction. By introducing standardized evaluation criteria and a freely-accessible dataset, our goal is to help the community make rapid advances in the state of the art for MR image reconstruction. We also provide a self-contained introduction to MRI for machine learning researchers with no medical imaging background."
-  image: fastmri.jpg
+  image: fastmri.webp
   code: https://github.com/facebookresearch/fastMRI/
   data: https://fastmri.med.nyu.edu/
 
 - title: "GrappaNet: Combining parallel imaging with deep learning for multi-coil MRI reconstruction"
-  authors: Sriram, Anuroop and Zbontar, Jure and Murrell, Tullie and Zitnick, C Lawrence and Defazio, Aaron and Sodickson, Daniel K
+  authors: Anuroop Sriram, Jure Zbontar, Tullie Murrell, C Lawrence Zitnick, Aaron Defazio, Daniel K Sodickson
   display: Conference on Computer Vision and Pattern Recognition (CVPR) 2019
   pages: 14315--14322
   year: 2020
   url: sriramGrappaNet
   arxiv: 1910.12325
   abstract: "Magnetic Resonance Image (MRI) acquisition is an inherently slow process which has spurred the development of two different acceleration methods: acquiring multiple correlated samples simultaneously (parallel imaging) and acquiring fewer samples than necessary for traditional signal processing methods (compressed sensing). Both methods provide complementary approaches to accelerating the speed of MRI acquisition. In this paper, we present a novel method to integrate traditional parallel imaging methods into deep neural networks that is able to generate high quality reconstructions even for high acceleration factors. The proposed method, called GrappaNet, performs progressive reconstruction by first mapping the reconstruction problem to a simpler one that can be solved by a traditional parallel imaging methods using a neural network, followed by an application of a parallel imaging method, and finally fine-tuning the output with another neural network. The entire network can be trained end-to-end. We present experimental results on the recently released fastMRI dataset and show that GrappaNet can generate higher quality reconstructions than competing methods for both 4× and 8× acceleration."
-  image: grappanet.jpg
+  image: grappanet.webp
 
 ############# 2019 #############
 
 - title: "End-to-end asr: from supervised to semi-supervised learning with modern architectures"
-  authors: Synnaeve, Gabriel and Xu, Qiantong and Kahn, Jacob and Likhomanenko, Tatiana and Grave, Edouard and Pratap, Vineel and Sriram, Anuroop and Liptchinsky, Vitaliy and Collobert, Ronan
+  authors: Gabriel Synnaeve, Qiantong Xu, Jacob Kahn, Tatiana Likhomanenko, Edouard Grave, Vineel Pratap, Anuroop Sriram, Vitaliy Liptchinsky, Ronan Collobert
   url: synnaeveE2EASR
   arxiv: "1911.08460"
   year: 2019
   abstract: "We study pseudo-labeling for the semi-supervised training of ResNet, Time-Depth Separable ConvNets, and Transformers for speech recognition, with either CTC or Seq2Seq loss functions. We perform experiments on the standard LibriSpeech dataset, and leverage additional unlabeled data from LibriVox through pseudo-labeling. We show that while Transformer-based acoustic models have superior performance with the supervised dataset alone, semi-supervision improves all models across architectures and loss functions and bridges much of the performance gaps between them. In doing so, we reach a new state-of-the-art for end-to-end acoustic models decoded with an external language model in the standard supervised learning setting, and a new absolute state-of-the-art with semi-supervised training. Finally, we study the effect of leveraging different amounts of unlabeled audio, propose several ways of evaluating the characteristics of unlabeled audio which improve acoustic modeling, and show that acoustic models trained with more audio rely less on external language models."
-  image: asr_ssup.jpg
+  image: asr_ssup.webp
   code: https://github.com/flashlight/wav2letter/tree/main/recipes/sota/2019
 
 - title: RNN-T for latency controlled ASR with improved beam search
-  authors: Jain, Mahaveer and Schubert, Kjell and Mahadeokar, Jay and Yeh, Ching-Feng and Kalgaonkar, Kaustubh and Sriram, Anuroop and Fuegen, Christian and Seltzer, Michael L
+  authors: Mahaveer Jain, Kjell Schubert, Jay Mahadeokar, Ching-Feng Yeh, Kaustubh Kalgaonkar, Anuroop Sriram, Christian Fuegen, Michael L Seltzer
   url: jainRNNT
   arxiv: 1911.01629
   year: 2019
   abstract: "Neural transducer-based systems such as RNN Transducers (RNN-T) for automatic speech recognition (ASR) blend the individual components of a traditional hybrid ASR systems (acoustic model, language model, punctuation model, inverse text normalization) into one single model. This greatly simplifies training and inference and hence makes RNN-T a desirable choice for ASR systems. In this work, we investigate use of RNN-T in applications that require a tune-able latency budget during inference time. We also improved the decoding speed of the originally proposed RNN-T beam search algorithm. We evaluated our proposed system on English videos ASR dataset and show that neural RNN-T models can achieve comparable WER and better computational efficiency compared to a well tuned hybrid ASR baseline."
-  image: rnnt.jpg
+  image: rnnt.webp
 
 ############# 2018 #############
 
 - title: Robust speech recognition using generative adversarial networks
-  authors: Sriram, Anuroop and Jun, Heewoo and Gaur, Yashesh and Satheesh, Sanjeev
+  authors: Anuroop Sriram, Heewoo Jun, Yashesh Gaur, Sanjeev Satheesh
   display: IEEE international conference on acoustics, speech and signal processing (ICASSP) 2018
   pages: 5639--5643
   year: 2018
@@ -286,42 +286,42 @@
   url: sriramRobustGAN
   arxiv: 1711.01567
   abstract: "This paper describes a general, scalable, end-to-end framework that uses the generative adversarial network (GAN) objective to enable robust speech recognition. Encoders trained with the proposed approach enjoy improved invariance by learning to map noisy audio to the same embedding space as that of clean audio. Unlike previous methods, the new framework does not rely on domain expertise or simplifying assumptions as are often needed in signal processing, and directly encourages robustness in a data-driven way. We show the new approach improves simulated far-field speech recognition of vanilla sequence-to-sequence models without specialized front-ends or preprocessing."
-  image: rsgan.jpg
+  image: rsgan.webp
 
 - title: "Cold Fusion: Training Seq2Seq Models Together with Language Models"
-  authors: Anuroop Sriram and Heewoo Jun and Sanjeev Satheesh and Adam Coates
+  authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
   year: 2018
   display: Interspeech 2018
   pages: 387--391
   url: sriramFusion
   arxiv: 1708.06426
   abstract: "Sequence-to-sequence (Seq2Seq) models with attention have excelled at tasks which involve generating natural language sentences such as machine translation, image captioning and speech recognition. Performance has further been improved by leveraging unlabeled data, often in the form of a language model. In this work, we present the Cold Fusion method, which leverages a pre-trained language model during training, and show its effectiveness on the speech recognition task. We show that Seq2Seq models with Cold Fusion are able to better utilize language information enjoying i) faster convergence and better generalization, and ii) almost complete transfer to a new domain while using less than 10% of the labeled training data."
-  image: cf.jpg
+  image: cf.webp
 
 ############# 2017 #############
 
 - title: Exploring neural transducers for end-to-end speech recognition
-  authors: Battenberg, Eric and Chen, Jitong and Child, Rewon and Coates, Adam and Li, Yashesh Gaur Yi and Liu, Hairong and Satheesh, Sanjeev and Sriram, Anuroop and Zhu, Zhenyao
+  authors: Eric Battenberg, Jitong Chen, Rewon Child, Adam Coates, Yashesh Gaur Yi Li, Hairong Liu, Sanjeev Satheesh, Anuroop Sriram, Zhenyao Zhu
   display: Automatic Speech Recognition and Understanding (ASRU) 2017
   pages: 206--213
   year: 2017
   url: battenbergTransducers
   arxiv: 1707.07413
   abstract: "In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We show that, without any language model, Seq2Seq and RNN-Transducer models both outperform the best reported CTC models with a language model, on the popular Hub5'00 benchmark. On our internal diverse dataset, these trends continue - RNNTransducer models rescored with a language model after beam search outperform our best CTC models. These results simplify the speech recognition pipeline so that decoding can now be expressed purely as neural network operations. We also study how the choice of encoder architecture affects the performance of the three models - when all encoder layers are forward only, and when encoders downsample the input representation aggressively."
-  image: transducers.jpg
+  image: transducers.webp
 
 - title: Reducing bias in production speech models
-  authors: Battenberg, Eric and Child, Rewon and Coates, Adam and Fougner, Christopher and Gaur, Yashesh and Huang, Jiaji and Jun, Heewoo and Kannan, Ajay and Kliegl, Markus and Kumar, Atul and others
+  authors: Eric Battenberg, Rewon Child, Adam Coates, Christopher Fougner, Yashesh Gaur, Jiaji Huang, Heewoo Jun, Ajay Kannan, Markus Kliegl, Atul Kumar et al.
   url: battenbergBias
   arxiv: "1705.04400"
   year: 2017
   abstract: "Replacing hand-engineered pipelines with end-to-end deep learning systems has enabled strong results in applications like speech and object recognition. However, the causality and latency constraints of production systems put end-to-end speech models back into the underfitting regime and expose biases in the model that we show cannot be overcome by scaling up, i.e., training bigger models on more data. In this work we systematically identify and address sources of bias, reducing error rates by up to 20% while remaining practical for deployment. We achieve this by utilizing improved neural architectures for streaming inference, solving optimization issues, and employing strategies that increase audio and label modelling versatility."
-  image: bias.jpg
+  image: bias.webp
 
 ############# 2016 #############
 
 - title: "Deep speech 2: End-to-end speech recognition in english and mandarin"
-  authors: Amodei, Dario and Ananthanarayanan, Sundaram and Anubhai, Rishita and Bai, Jingliang and Battenberg, Eric and Case, Carl and Casper, Jared and Catanzaro, Bryan and Cheng, Qiang and Chen, Guoliang and others
+  authors: Dario Amodei, Sundaram Ananthanarayanan, Rishita Anubhai, Jingliang Bai, Eric Battenberg, Carl Case, Jared Casper, Bryan Catanzaro, Qiang Cheng, Guoliang Chen et al.
   display: International conference on machine learning (ICML) 2016
   pages: 173--182
   year: 2016
@@ -329,12 +329,12 @@
   url: amodeiDS2
   link: "https://proceedings.mlr.press/v48/amodei16.pdf"
   abstract: "We show that an end-to-end deep learning approach can be used to recognize either English or Mandarin Chinese speech--two vastly different languages. Because it replaces entire pipelines of hand-engineered components with neural networks, end-to-end learning allows us to handle a diverse variety of speech including noisy environments, accents and different languages. Key to our approach is our application of HPC techniques, resulting in a 7x speedup over our previous system. Because of this efficiency, experiments that previously took weeks now run in days. This enables us to iterate more quickly to identify superior architectures and algorithms. As a result, in several cases, our system is competitive with the transcription of human workers when benchmarked on standard datasets. Finally, using a technique called Batch Dispatch with GPUs in the data center, we show that our system can be inexpensively deployed in an online setting, delivering low latency when serving users at scale."
-  image: ds2.jpg
+  image: ds2.webp
 
 ############# 2013 #############
 
 - title: "FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations"
-  authors: Grefenstette, John J and Brown, Shawn T and Rosenfeld, Roni and DePasse, Jay and Stone, Nathan TB and Cooley, Phillip C and Wheaton, William D and Fyshe, Alona and Galloway, David D and Sriram, Anuroop and others
+  authors: John J Grefenstette, Shawn T Brown, Roni Rosenfeld, Jay DePasse, Nathan TB Stone, Phillip C Cooley, William D Wheaton, Alona Fyshe, David D Galloway, Anuroop Sriram et al.
   display: BMC public health
   volume: 13
   number: 1
@@ -349,16 +349,16 @@
   FRED (a Framework for Reconstructing Epidemic Dynamics) is a freely available open-source agent-based modeling system based closely on models used in previously published studies of pandemic influenza. This version of FRED uses open-access census-based synthetic populations that capture the demographic and geographic heterogeneities of the population, including realistic household, school, and workplace social networks. FRED epidemic models are currently available for every state and county in the United States, and for selected international locations.\n
   Conclusions\n
   State and county public health planners can use FRED to explore the effects of possible influenza epidemics in specific geographic regions of interest and to help evaluate the effect of interventions such as vaccination programs and school closure policies. FRED is available under a free open source license in order to contribute to the development of better modeling tools and to encourage open discussion of modeling tools being used to evaluate public health policies. We also welcome participation by other researchers in the further development of FRED."
-  image: fred.jpg
+  image: fred.webp
 
 ############# 2008 #############
 
 - title: Evaluating centrality metrics in real-world networks on GPU
-  authors: Sriram, Anuroop and Gautham, Kollu and Kothapalli, Kishore and Narayan, PJ and Govindarajulu, R
+  authors: Anuroop Sriram, Kollu Gautham, Kishore Kothapalli, P J Narayan, R Govindarajulu
   display: IEEE International Conference on High Performance Computing (HiPC 2009)
   year: 2009
   publisher: IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC)
   url: sriramCentrality
   link: https://hipc.org/hipc2009/documents/HIPCSS09Papers/1569256361.pdf
   abstract: "GPGPU has received a lot of attention recently as a cost effective solution for high performance computing. In this paper we present a parallel algorithm for computing Betweenness centrality (BC) using CUDA. BC is an important metric in small world network analysis which is expensive to compute. While there are existing parallel implementations, ours is the first implementation on commodity hardware. Our algorithm exploits parallelism at multiple levels of granularity to achieve good performance. We conduct several experiments to show that the algorithm gives considerable speedup over sequential algorithms. We also provide a detailed analysis of the performance of the algorithm."
-  image: bc.jpg
+  image: bc.webp
