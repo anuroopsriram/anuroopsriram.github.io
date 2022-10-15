@@ -40,7 +40,7 @@
   code: "https://github.com/open-catalyst-project/ocp"
   data: "https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md#open-catalyst-2022-oc22"
 
-- title: How Do Graph Networks Generalize to Large and Diverse Molecular Systems?
+- title: GemNet-OC: Developing Graph Neural Networks for Large and Diverse Molecular Simulation Datasets
   authors: Johannes Gasteiger, Muhammed Shuaibi, Anuroop Sriram, Stephan Gunnemann, Zachary Ulissi, C Lawrence Zitnick, Abhishek Das
   url: gasteigerGemnetOC
   arxiv: 2204.02782
