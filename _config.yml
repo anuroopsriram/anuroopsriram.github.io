@@ -15,7 +15,7 @@ google_analytics: G-H1K2L7JV60
 # Pages shown in navbar
 nav_pages:
   - name: publications
-  - name: datasets
+#   - name: datasets
   # - name: code
 
 # Do you want to group your publications by year? {true/false}
