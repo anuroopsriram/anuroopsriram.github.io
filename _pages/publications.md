@@ -59,7 +59,7 @@ permalink: /publications/
 <small>{% if publi.abstract %}</small>
 <br/>
 <div class="collapse" id="{{publi.url}}"><div class="well-abstract">
- {{publi.abstract}}
+ {{publi.abstract | newline_to_br}}
 </div></div>
 {% endif %}
 

@@ -1,4 +1,20 @@
 ############# 2022 #############
+- title: "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI"
+  authors: Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, Anuroop Sriram, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui
+  display: "Radiology: Artificial Intelligence"
+  year: 2022
+  publisher: Radiological Society of North America
+  volume: 0
+  number: ja
+  pages: e210313
+  url: radmaneshMRIAccel
+  link: https://pubs.rsna.org/doi/10.1148/ryai.210313
+  code: https://github.com/facebookresearch/fastMRI/
+  abstract: "Purpose:\nTo explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and potential screening.\n\n
+  Materials and Methods:\nIn this retrospective study conducted from 2019 through 2021, a model was trained for reconstruction on 5,847 brain MRIs. Performance was evaluated across a wide range of accelerations (up to 100-fold along a single phase-encoded direction for two-dimensional [2D] slices) on the fastMRI test set collected by New York University, consisting of 558 image volumes. In a sample of 69 volumes, reconstructions were classified by radiologists for identifying two clinical thresholds: 1) general-purpose diagnostic imaging and 2) potential use in a screening protocol. A Monte Carlo procedure was developed for estimating reconstruction error with only undersampled data. The model was evaluated on both in-domain and out-of-domain data. Confidence intervals were calculated using the percentile bootstrap method.\n\n
+  Results:\nRadiologists rated 100% of 69 volumes as having sufficient image quality for general-purpose imaging at up to 4× acceleration and 65 of 69 (94%) of volumes as having sufficient image quality for screening at up to 14× acceleration. The Monte Carlo procedure estimated ground truth peak signal-to-noise ratio and mean squared error with coefficients of determination greater than 0.5 at all accelerations. Out-of-distribution experiments demonstrated the model’s ability to produce images substantially distinct from the training set, even at 100× acceleration.\n\n
+  Conclusion:\nFor 2D brain images using deep learning-based reconstruction, maximum acceleration for potential screening was 3–4 times higher than that for diagnostic general-purpose imaging."
+  image: mri_limits.webp
 
 - title: "The Open Catalyst Challenge 2021: Competition Report"
   authors: Abhishek Das, Muhammed Shuaibi, Aini Palizhati, Siddharth Goyal, Aditya Grover, Adeesh Kolluru, Janice Lan, Ammar Rizvi, Anuroop Sriram, Brandon Wood et al.
@@ -40,7 +56,7 @@
   code: "https://github.com/open-catalyst-project/ocp"
   data: "https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md#open-catalyst-2022-oc22"
 
-- title: GemNet-OC: Developing Graph Neural Networks for Large and Diverse Molecular Simulation Datasets
+- title: "GemNet-OC: Developing Graph Neural Networks for Large and Diverse Molecular Simulation Datasets"
   authors: Johannes Gasteiger, Muhammed Shuaibi, Anuroop Sriram, Stephan Gunnemann, Zachary Ulissi, C Lawrence Zitnick, Abhishek Das
   url: gasteigerGemnetOC
   arxiv: 2204.02782
@@ -190,7 +206,10 @@
   year: 2020
   url: knollFastmri2019
   arxiv: 2001.02518
-  abstract: "Purpose: To advance research in the field of machine learning for MR image reconstruction with an open challenge. Methods: We provided participants with a dataset of raw k-space data from 1,594 consecutive clinical exams of the knee. The goal of the challenge was to reconstruct images from these data. In order to strike a balance between realistic data and a shallow learning curve for those not already familiar with MR image reconstruction, we ran multiple tracks for multi-coil and single-coil data. We performed a two-stage evaluation based on quantitative image metrics followed by evaluation by a panel of radiologists. The challenge ran from June to December of 2019. Results: We received a total of 33 challenge submissions. All participants chose to submit results from supervised machine learning approaches. Conclusion: The challenge led to new developments in machine learning for image reconstruction, provided insight into the current state of the art in the field, and highlighted remaining hurdles for clinical adoption."
+  abstract: "Purpose:\nTo advance research in the field of machine learning for MR image reconstruction with an open challenge.\n\n
+  Methods:\nWe provided participants with a dataset of raw k-space data from 1,594 consecutive clinical exams of the knee. The goal of the challenge was to reconstruct images from these data. In order to strike a balance between realistic data and a shallow learning curve for those not already familiar with MR image reconstruction, we ran multiple tracks for multi-coil and single-coil data. We performed a two-stage evaluation based on quantitative image metrics followed by evaluation by a panel of radiologists. The challenge ran from June to December of 2019.\n\n
+  Results:\nWe received a total of 33 challenge submissions. All participants chose to submit results from supervised machine learning approaches.\n\n
+  Conclusion:\nThe challenge led to new developments in machine learning for image reconstruction, provided insight into the current state of the art in the field, and highlighted remaining hurdles for clinical adoption."
   image: fmri_chall.webp
 
 - title: An introduction to electrocatalyst design using machine learning for renewable energy storage
@@ -344,9 +363,9 @@
   url: grefFRED
   link: "https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-940"
   abstract: "Background\n\n
-  Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions, especially for novel circumstances that cannot be examined through observational or controlled studies, such as pandemic influenza. The spread of diseases like influenza depends on the mixing patterns within the population, and these mixing patterns depend in part on local factors including the spatial distribution and age structure of the population, the distribution of size and composition of households, employment status and commuting patterns of adults, and the size and age structure of schools. Finally, public health planners must take into account the health behavior patterns of the population, patterns that often vary according to socioeconomic factors such as race, household income, and education levels.\n
+  Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions, especially for novel circumstances that cannot be examined through observational or controlled studies, such as pandemic influenza. The spread of diseases like influenza depends on the mixing patterns within the population, and these mixing patterns depend in part on local factors including the spatial distribution and age structure of the population, the distribution of size and composition of households, employment status and commuting patterns of adults, and the size and age structure of schools. Finally, public health planners must take into account the health behavior patterns of the population, patterns that often vary according to socioeconomic factors such as race, household income, and education levels.\n\n
   Results\n
-  FRED (a Framework for Reconstructing Epidemic Dynamics) is a freely available open-source agent-based modeling system based closely on models used in previously published studies of pandemic influenza. This version of FRED uses open-access census-based synthetic populations that capture the demographic and geographic heterogeneities of the population, including realistic household, school, and workplace social networks. FRED epidemic models are currently available for every state and county in the United States, and for selected international locations.\n
+  FRED (a Framework for Reconstructing Epidemic Dynamics) is a freely available open-source agent-based modeling system based closely on models used in previously published studies of pandemic influenza. This version of FRED uses open-access census-based synthetic populations that capture the demographic and geographic heterogeneities of the population, including realistic household, school, and workplace social networks. FRED epidemic models are currently available for every state and county in the United States, and for selected international locations.\n\n
   Conclusions\n
   State and county public health planners can use FRED to explore the effects of possible influenza epidemics in specific geographic regions of interest and to help evaluate the effect of interventions such as vaccination programs and school closure policies. FRED is available under a free open source license in order to contribute to the development of better modeling tools and to encourage open discussion of modeling tools being used to evaluate public health policies. We also welcome participation by other researchers in the further development of FRED."
   image: fred.webp
