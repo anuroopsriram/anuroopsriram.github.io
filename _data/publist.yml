@@ -1,3 +1,18 @@
+############# 2023 #############
+- title: "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI"
+  authors: Patricia M. Johnson, Dana J. Lin, Jure Zbontar, C. Lawrence Zitnick, Anuroop Sriram, Matthew Muckley, James S. Babb, Mitchell Kline, Gina Ciavarra, Erin Alaia, Mohammad Samim, William R. Walter, Liz Calderon, Thomas Pock, Daniel K. Sodickson, Michael P. Recht, and Florian Knoll
+  year: 2023
+  display: "Radiology"
+  url: johnsonMRIProsp
+  link: https://pubs.rsna.org/doi/10.1148/radiol.220425
+  abstract: "Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time reduction, improved image quality, and had equivalent diagnostic utility.\n\n
+  <b>Background</b>\nMRI is a powerful diagnostic tool with a long acquisition time. Recently, deep learning (DL) methods have provided accelerated high-quality image reconstructions from undersampled data, but it is unclear if DL image reconstruction can be reliably translated to everyday clinical practice.\n\n
+  <b>Purpose</b>\nTo determine the diagnostic equivalence of prospectively accelerated DL-reconstructed knee MRI compared with conventional accelerated MRI for evaluating internal derangement of the knee in a clinical setting.\n\n
+  <b>Materials and Methods</b>\nA DL reconstruction model was trained with images from 298 clinical 3-T knee examinations. In a prospective analysis, patients clinically referred for knee MRI underwent a conventional accelerated knee MRI protocol at 3 T followed by an accelerated DL protocol between January 2020 and February 2021. The equivalence of the DL reconstruction of the images relative to the conventional images for the detection of an abnormality was assessed in terms of interchangeability. Each examination was reviewed by six musculoskeletal radiologists. Analyses pertaining to the detection of meniscal or ligament tears and bone marrow or cartilage abnormalities were based on four-point ordinal scores for the likelihood of an abnormality. Additionally, the protocols were compared with use of four-point ordinal scores for each aspect of image quality: overall image quality, presence of artifacts, sharpness, and signal-to-noise ratio.\n\n
+  <b>Results</b>\nA total of 170 participants (mean age ± SD, 45 years ± 16; 76 men) were evaluated. The DL-reconstructed images were determined to be of diagnostic equivalence with the conventional images for detection of abnormalities. The overall image quality score, averaged over six readers, was significantly better (P < .001) for the DL than for the conventional images.\n\n
+  <b>Conclusion</b>\nIn a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol."
+  image: mri_prosp.webp
+
 ############# 2022 #############
 - title: "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI"
   authors: Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, Anuroop Sriram, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui
@@ -10,10 +25,10 @@
   url: radmaneshMRIAccel
   link: https://pubs.rsna.org/doi/10.1148/ryai.210313
   code: https://github.com/facebookresearch/fastMRI/
-  abstract: "Purpose:\nTo explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and potential screening.\n\n
-  Materials and Methods:\nIn this retrospective study conducted from 2019 through 2021, a model was trained for reconstruction on 5,847 brain MRIs. Performance was evaluated across a wide range of accelerations (up to 100-fold along a single phase-encoded direction for two-dimensional [2D] slices) on the fastMRI test set collected by New York University, consisting of 558 image volumes. In a sample of 69 volumes, reconstructions were classified by radiologists for identifying two clinical thresholds: 1) general-purpose diagnostic imaging and 2) potential use in a screening protocol. A Monte Carlo procedure was developed for estimating reconstruction error with only undersampled data. The model was evaluated on both in-domain and out-of-domain data. Confidence intervals were calculated using the percentile bootstrap method.\n\n
-  Results:\nRadiologists rated 100% of 69 volumes as having sufficient image quality for general-purpose imaging at up to 4× acceleration and 65 of 69 (94%) of volumes as having sufficient image quality for screening at up to 14× acceleration. The Monte Carlo procedure estimated ground truth peak signal-to-noise ratio and mean squared error with coefficients of determination greater than 0.5 at all accelerations. Out-of-distribution experiments demonstrated the model’s ability to produce images substantially distinct from the training set, even at 100× acceleration.\n\n
-  Conclusion:\nFor 2D brain images using deep learning-based reconstruction, maximum acceleration for potential screening was 3–4 times higher than that for diagnostic general-purpose imaging."
+  abstract: "<b>Purpose:</b>\nTo explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and potential screening.\n\n
+  <b>Materials and Methods:</b>\nIn this retrospective study conducted from 2019 through 2021, a model was trained for reconstruction on 5,847 brain MRIs. Performance was evaluated across a wide range of accelerations (up to 100-fold along a single phase-encoded direction for two-dimensional [2D] slices) on the fastMRI test set collected by New York University, consisting of 558 image volumes. In a sample of 69 volumes, reconstructions were classified by radiologists for identifying two clinical thresholds: 1) general-purpose diagnostic imaging and 2) potential use in a screening protocol. A Monte Carlo procedure was developed for estimating reconstruction error with only undersampled data. The model was evaluated on both in-domain and out-of-domain data. Confidence intervals were calculated using the percentile bootstrap method.\n\n
+  <b>Results:</b>\nRadiologists rated 100% of 69 volumes as having sufficient image quality for general-purpose imaging at up to 4× acceleration and 65 of 69 (94%) of volumes as having sufficient image quality for screening at up to 14× acceleration. The Monte Carlo procedure estimated ground truth peak signal-to-noise ratio and mean squared error with coefficients of determination greater than 0.5 at all accelerations. Out-of-distribution experiments demonstrated the model’s ability to produce images substantially distinct from the training set, even at 100× acceleration.\n\n
+  <b>Conclusion:</b>\nFor 2D brain images using deep learning-based reconstruction, maximum acceleration for potential screening was 3–4 times higher than that for diagnostic general-purpose imaging."
   image: mri_limits.webp
 
 - title: "The Open Catalyst Challenge 2021: Competition Report"
@@ -121,7 +136,7 @@
   year: 2021
   display: US Patent 10,971,142
   abstract: "Described herein are systems and methods for a general, scalable, end-to-end framework that uses a generative adversarial network (GAN) objective to enable robust speech recognition. Encoders trained with the proposed approach enjoy improved invariance by learning to map noisy audio to the same embedding space as that of clean audio. Embodiments of a Wasserstein GAN framework increase the robustness of seq-to-seq models in a scalable, end-to-end fashion. In one or more embodiments, an encoder component is treated as the generator of GAN and is trained to produce indistinguishable embeddings between labeled and unlabeled audio samples. This new robust training approach can learn to induce robustness without alignment or complicated inference pipeline and even where augmentation of audio data is not possible."
-  link: https://patentimages.storage.googleapis.com/44/e8/47/bdbcfadc027d9c/US10971142.pdf
+  patent: https://patentimages.storage.googleapis.com/44/e8/47/bdbcfadc027d9c/US10971142.pdf
   image: rsgan.webp
 
 - title: "Robust Wav2vec 2.0: Analyzing Domain Shift in Self-Supervised Pre-Training"
@@ -169,7 +184,7 @@
   year: 2020
   display: US Patent 10,867,595
   abstract: "Described herein are systems and methods for generating natural language sentences with Sequence-to-sequence (Seq2Seq) models with attention. The Seq2Seq models may be implemented in applications, such as machine translation, image captioning, and speech recognition. Performance has further been improved by leveraging unlabeled data, often in the form of a language models. Disclosed herein are “Cold Fusion” architecture embodiments that leverage a pre-trained language model during training. The Seq2Seq models with Cold Fusion embodiments are able to better utilize language information enjoying faster convergence, better generalization, and almost complete transfer to a new domain while using less labeled training data."
-  link: https://patentimages.storage.googleapis.com/c4/81/5b/58ceaa1a6771c8/US10867595.pdf
+  patent: https://patentimages.storage.googleapis.com/c4/81/5b/58ceaa1a6771c8/US10867595.pdf
   image: cf.webp
 
 - title: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
@@ -193,8 +208,11 @@
   year: 2020
   publisher: NIH Public Access
   url: rechtInterch
-  link: https://pubmed.ncbi.nlm.nih.gov/32755163/
-  abstract: "OBJECTIVE. Deep learning (DL) image reconstruction has the potential to disrupt the current state of MRI by significantly decreasing the time required for MRI examinations. Our goal was to use DL to accelerate MRI to allow a 5-minute comprehensive examination of the knee without compromising image quality or diagnostic accuracy. MATERIALS AND METHODS. A DL model for image reconstruction using a variational network was optimized. The model was trained using dedicated multisequence training, in which a single reconstruction model was trained with data from multiple sequences with different contrast and orientations. After training, data from 108 patients were retrospectively undersampled in a manner that would correspond with a net 3.49-fold acceleration of fully sampled data acquisition and a 1.88-fold acceleration compared with our standard twofold accelerated parallel acquisition. An interchangeability study was performed, in which the ability of six readers to detect internal derangement of the knee was compared for clinical and DL-accelerated images. RESULTS. We found a high degree of interchangeability between standard and DL-accelerated images. In particular, results showed that interchanging the sequences would produce discordant clinical opinions no more than 4% of the time for any feature evaluated. Moreover, the accelerated sequence was judged by all six readers to have better quality than the clinical sequence. CONCLUSION. An optimized DL model allowed acceleration of knee images that performed interchangeably with standard images for detection of internal derangement of the knee. Importantly, readers preferred the quality of accelerated images to that of standard clinical images."
+  link: https://www.ajronline.org/doi/10.2214/AJR.20.23313
+  abstract: "<b>OBJECTIVE</b> \nDeep learning (DL) image reconstruction has the potential to disrupt the current state of MRI by significantly decreasing the time required for MRI examinations. Our goal was to use DL to accelerate MRI to allow a 5-minute comprehensive examination of the knee without compromising image quality or diagnostic accuracy.\n\n
+  <b>MATERIALS AND METHODS</b> \nA DL model for image reconstruction using a variational network was optimized. The model was trained using dedicated multisequence training, in which a single reconstruction model was trained with data from multiple sequences with different contrast and orientations. After training, data from 108 patients were retrospectively undersampled in a manner that would correspond with a net 3.49-fold acceleration of fully sampled data acquisition and a 1.88-fold acceleration compared with our standard twofold accelerated parallel acquisition. An interchangeability study was performed, in which the ability of six readers to detect internal derangement of the knee was compared for clinical and DL-accelerated images.\n\n
+  <b>RESULTS</b> \nWe found a high degree of interchangeability between standard and DL-accelerated images. In particular, results showed that interchanging the sequences would produce discordant clinical opinions no more than 4% of the time for any feature evaluated. Moreover, the accelerated sequence was judged by all six readers to have better quality than the clinical sequence.\n\n
+  <b>CONCLUSION</b> \nAn optimized DL model allowed acceleration of knee images that performed interchangeably with standard images for detection of internal derangement of the knee. Importantly, readers preferred the quality of accelerated images to that of standard clinical images."
   image: 3t.webp
 
 - title: "Advancing machine learning for MR image reconstruction with an open competition: Overview of the 2019 fastMRI challenge"
@@ -206,10 +224,10 @@
   year: 2020
   url: knollFastmri2019
   arxiv: 2001.02518
-  abstract: "Purpose:\nTo advance research in the field of machine learning for MR image reconstruction with an open challenge.\n\n
-  Methods:\nWe provided participants with a dataset of raw k-space data from 1,594 consecutive clinical exams of the knee. The goal of the challenge was to reconstruct images from these data. In order to strike a balance between realistic data and a shallow learning curve for those not already familiar with MR image reconstruction, we ran multiple tracks for multi-coil and single-coil data. We performed a two-stage evaluation based on quantitative image metrics followed by evaluation by a panel of radiologists. The challenge ran from June to December of 2019.\n\n
-  Results:\nWe received a total of 33 challenge submissions. All participants chose to submit results from supervised machine learning approaches.\n\n
-  Conclusion:\nThe challenge led to new developments in machine learning for image reconstruction, provided insight into the current state of the art in the field, and highlighted remaining hurdles for clinical adoption."
+  abstract: "<b>Purpose:</b>\nTo advance research in the field of machine learning for MR image reconstruction with an open challenge.\n\n
+  <b>Methods:</b>\nWe provided participants with a dataset of raw k-space data from 1,594 consecutive clinical exams of the knee. The goal of the challenge was to reconstruct images from these data. In order to strike a balance between realistic data and a shallow learning curve for those not already familiar with MR image reconstruction, we ran multiple tracks for multi-coil and single-coil data. We performed a two-stage evaluation based on quantitative image metrics followed by evaluation by a panel of radiologists. The challenge ran from June to December of 2019.\n\n
+  <b>Results:</b>\nWe received a total of 33 challenge submissions. All participants chose to submit results from supervised machine learning approaches.\n\n
+  <b>Conclusion:</b>\nThe challenge led to new developments in machine learning for image reconstruction, provided insight into the current state of the art in the field, and highlighted remaining hurdles for clinical adoption."
   image: fmri_chall.webp
 
 - title: An introduction to electrocatalyst design using machine learning for renewable energy storage
@@ -247,7 +265,7 @@
   display: US Patent 10,657,955
   year: 2020
   abstract: "Described herein are systems and methods to identify and address sources of bias in an end-to-end speech model. In one or more embodiments, the end-to-end model may be a recurrent neural network with two 2D-convolutional input layers, followed by multiple bidirectional recurrent layers and one fully connected layer before a softmax layer. In one or more embodiments, the network is trained end-to-end using the CTC loss function to directly predict sequences of characters from log spectrograms of audio. With optimized recurrent layers and training together with alignment information, some unwanted bias induced by using purely forward only recurrences may be removed in a deployed model."
-  link: https://patentimages.storage.googleapis.com/c3/2c/2b/b9a0d1cdbe25d0/US10657955.pdf
+  patent: https://patentimages.storage.googleapis.com/c3/2c/2b/b9a0d1cdbe25d0/US10657955.pdf
   image: bias.webp
 
 - title: "fastMRI: A publicly available raw k-space and DICOM dataset of knee images for accelerated MR image reconstruction using machine learning"
