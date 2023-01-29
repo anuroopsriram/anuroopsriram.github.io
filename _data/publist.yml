@@ -13,6 +13,7 @@
   <b>Conclusion</b>\nIn a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol."
   image: mri_prosp.webp
 
+
 ############# 2022 #############
 - title: "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI"
   authors: Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, Anuroop Sriram, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui
