@@ -23,6 +23,33 @@
   width: 85%;
 }
 
+.flex-item3 {
+  padding: 5px;
+  width: 5%;
+}
+
+.flex-item4 {
+  padding: 5px;
+  width: 95%;
+}
+
+.pressdiv div {
+  line-height: 1.2em;
+  margin: 0 0 2px 0;
+}
+
+.presslink {
+  font-size: 13px;
+  color: #707070;
+  border-bottom: 1px solid #eee;
+}
+
+.pressimg img { 
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-radius:2%;
+}
+
 @media (max-width: $grid-float-breakpoint-max) {
   .flex-item1 {
     padding: 5px;

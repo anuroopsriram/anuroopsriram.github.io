@@ -13,6 +13,13 @@
   <b>Results</b>\nA total of 170 participants (mean age ± SD, 45 years ± 16; 76 men) were evaluated. The DL-reconstructed images were determined to be of diagnostic equivalence with the conventional images for detection of abnormalities. The overall image quality score, averaged over six readers, was significantly better (P < .001) for the DL than for the conventional images.\n\n
   <b>Conclusion</b>\nIn a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol."
   image: mri_prosp.webp
+  press:
+    - source: nyu
+      text: "Artificial Intelligence Reconstructs Missing Data from Rapid MRI Scans"
+      link: https://nyulangone.org/news/artificial-intelligence-reconstructs-missing-data-rapid-mri-scans
+    - source: reuters
+      text: "Health Rounds: AI speeds MRI exams"
+      link: https://www.reuters.com/article/health-rounds/health-rounds-ai-speeds-mri-exams-idINL1N3421K1
 
 
 ############# 2022 #############
