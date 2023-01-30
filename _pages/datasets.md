@@ -21,10 +21,10 @@ permalink: /datasets/
   </li>
   <li class="flex-item2">
     <strong> {{ dataset.title }} </strong><br/>
-    {{ dataset.description }}<br/>
-    {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank"><button class="btn-arxiv">PROJECT</button></a> {% endif %}
-    {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank"><button class="btn-data">DATA</button></a> {% endif %}
-    {% if dataset.code_url %}<a href="{{ dataset.code_url }}" target="_blank"><button class="btn-code">CODE</button></a> {% endif %}
+    <small> <p align="justify"> {{ dataset.description }} </p> </small><br/>
+    {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank"><button class="btn-common">PROJECT</button></a> {% endif %}
+    {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank"><button class="btn-common">DATA</button></a> {% endif %}
+    {% if dataset.code_url %}<a href="{{ dataset.code_url }}" target="_blank"><button class="btn-common">CODE</button></a> {% endif %}
   </li>
   </ul>
   </div>
