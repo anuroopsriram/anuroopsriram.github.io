@@ -2,7 +2,7 @@
 - title: "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI"
   authors: Patricia M. Johnson, Dana J. Lin, Jure Zbontar, C. Lawrence Zitnick, Anuroop Sriram, Matthew Muckley, James S. Babb, Mitchell Kline, Gina Ciavarra, Erin Alaia, Mohammad Samim, William R. Walter, Liz Calderon, Thomas Pock, Daniel K. Sodickson, Michael P. Recht, and Florian Knoll
   year: 2023
-  display: "Radiology"
+  venue: "Radiology"
   url: johnsonMRIProsp
   link: https://pubs.rsna.org/doi/10.1148/radiol.220425
   code: https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/RadiologyJohnson2022
@@ -14,17 +14,29 @@
   <b>Conclusion</b>\nIn a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol."
   image: mri_prosp.webp
   press:
-    - source: nyu
+    - source: Radiology Editorial
+      logo: radiology.webp
+      text: "Editorial: The Role of Speed and Possible Implications"
+      author: Frank Roemer
+      link: https://pubs.rsna.org/doi/full/10.1148/radiol.222872
+    - source: NYU Langone Health
+      logo: nyu_langone.webp
       text: "Artificial Intelligence Reconstructs Missing Data from Rapid MRI Scans"
       link: https://nyulangone.org/news/artificial-intelligence-reconstructs-missing-data-rapid-mri-scans
-    - source: reuters
+    - source: Reuters
+      logo: reuters.webp
       text: "Health Rounds: AI speeds MRI exams"
       link: https://www.reuters.com/article/health-rounds/health-rounds-ai-speeds-mri-exams-idINL1N3421K1
+    - source: Medical Xpress
+      logo: medxpress.webp
+      text: Deep learning reconstruction enables accelerated knee MRI
+      author: Elana Gotkine
+      link: https://medicalxpress.com/news/2023-01-deep-reconstruction-enables-knee-mri.html
 
 ############# 2022 #############
 - title: "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI"
   authors: Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, Anuroop Sriram, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui
-  display: "Radiology: Artificial Intelligence"
+  venue: "Radiology: Artificial Intelligence"
   year: 2022
   publisher: Radiological Society of North America
   volume: 0
@@ -41,7 +53,7 @@
 
 - title: "The Open Catalyst Challenge 2021: Competition Report"
   authors: Abhishek Das, Muhammed Shuaibi, Aini Palizhati, Siddharth Goyal, Aditya Grover, Adeesh Kolluru, Janice Lan, Ammar Rizvi, Anuroop Sriram, Brandon Wood et al.
-  display: NeurIPS 2021 Competitions and Demonstrations Track
+  venue: NeurIPS 2021 Competitions and Demonstrations Track
   pages: 29--40
   year: 2022
   organization: NeurIPS
@@ -52,7 +64,7 @@
   
 - title: Spherical Channels for Modeling Atomic Interactions
   authors: C Lawrence Zitnick, Abhishek Das, Adeesh Kolluru, Janice Lan, Muhammed Shuaibi, Anuroop Sriram, Zachary Ulissi, Brandon Wood
-  display: NeurIPS 2022
+  venue: NeurIPS 2022
   url: zitnickSphericalChannels
   image: scn.webp
   arxiv: 2206.14331
@@ -65,7 +77,7 @@
   year: 2022
   url: sriramWav2vecaug
   arxiv: 2206.13654
-  display: Interspeech 2022
+  venue: Interspeech 2022
   abstract: Self-supervised learning (SSL) of speech representations has received much attention over the last few years but most work has focused on languages and domains with an abundance of unlabeled data. However, for many languages there is a shortage even in the unlabeled data which limits the effectiveness of SSL. In this work, we focus on the problem of applying SSL to domains with limited available data by leveraging data augmentation for Wav2Vec 2.0 pretraining. Further, we propose improvements to each component of the model which result in a combined relative word error rate (WER) improvement of up to 13% compared to Wav2Vec 2.0 on Librispeech test-clean / other.
   image: w2vaug.webp
 
@@ -78,6 +90,12 @@
   abstract: Computational catalysis and machine learning communities have made considerable progress in developing machine learning models for catalyst discovery and design. Yet, a general machine learning potential that spans the chemical space of catalysis is still out of reach. A significant hurdle is obtaining access to training data across a wide range of materials. One important class of materials where data is lacking are oxides, which inhibits models from studying the Oxygen Evolution Reaction and oxide electrocatalysis more generally. To address this we developed the Open Catalyst 2022(OC22) dataset, consisting of 62,521 Density Functional Theory (DFT) relaxations (~9,884,504 single point calculations) across a range of oxide materials, coverages, and adsorbates (*H, *O, *N, *C, *OOH, *OH, *OH2, *O2, *CO). We define generalized tasks to predict the total system energy that are applicable across catalysis, develop baseline performance of several graph neural networks (SchNet, DimeNet++, ForceNet, SpinConv, PaiNN, GemNet-dT, GemNet-OC), and provide pre-defined dataset splits to establish clear benchmarks for future efforts. For all tasks, we study whether combining datasets leads to better results, even if they contain different materials or adsorbates. Specifically, we jointly train models on Open Catalyst 2020 (OC20) Dataset and OC22, or fine-tune pretrained OC20 models on OC22. In the most general task, GemNet-OC sees a ~32% improvement in energy predictions through fine-tuning and a ~9% improvement in force predictions via joint training. Surprisingly, joint training on both the OC20 and much smaller OC22 datasets also improves total energy predictions on OC20 by ~19%. The dataset and baseline models are open sourced, and a public leaderboard will follow to encourage continued community developments on the total energy tasks and data.
   code: "https://github.com/open-catalyst-project/ocp"
   data: "https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md#open-catalyst-2022-oc22"
+  press:
+    - source: Meta AI Blog
+      logo: fair.webp
+      text: "Accelerating renewable energy with new dataset for green hydrogen fuel"
+      author: Janice Lan, Siddharth Goyal, Ammar Rizvi, Larry Zitnick
+      link: https://ai.facebook.com/blog/accelerating-renewable-energy-with-a-new-data-set-for-green-hydrogen-fuel/
 
 - title: "GemNet-OC: Developing Graph Neural Networks for Large and Diverse Molecular Simulation Datasets"
   authors: Johannes Gasteiger, Muhammed Shuaibi, Anuroop Sriram, Stephan Gunnemann, Zachary Ulissi, C Lawrence Zitnick, Abhishek Das
@@ -87,11 +105,11 @@
   abstract: "Recent years have seen the advent of molecular simulation datasets that are orders of magnitude larger and more diverse. These new datasets differ substantially in four aspects of complexity: 1. Chemical diversity (number of different elements), 2. system size (number of atoms per sample), 3. dataset size (number of data samples), and 4. domain shift (similarity of the training and test set). Despite these large differences, benchmarks on small and narrow datasets remain the predominant method of demonstrating progress in graph neural networks (GNNs) for molecular simulation, likely due to cheaper training compute requirements. This raises the question -- <em>does GNN progress on small and narrow datasets translate to these more complex datasets?</em> This work investigates this question by first developing the GemNet-OC model based on the large Open Catalyst 2020 (OC20) dataset. GemNet-OC outperforms the previous state-of-the-art on OC20 by 16% while reducing training time by a factor of 10. We then compare the impact of 18 model components and hyperparameter choices on performance in multiple datasets. We find that the resulting model would be drastically different depending on the dataset used for making model choices. To isolate the source of this discrepancy we study six subsets of the OC20 dataset that individually test each of the above-mentioned four dataset aspects. We find that results on the OC-2M subset correlate well with the full OC20 dataset while being substantially cheaper to train on. Our findings challenge the common practice of developing GNNs solely on small datasets, but highlight ways of achieving fast development cycles and generalizable results via moderately-sized, representative datasets such as OC-2M and efficient models such as GemNet-OC. Our code and pretrained model weights are open-sourced."
   image: gemnetoc.webp
   code: https://github.com/Open-Catalyst-Project/ocp/tree/main/ocpmodels/models/gemnet_oc
-  display: Transactions on Machine Learning Research (TMLR) 2022
+  venue: Transactions on Machine Learning Research (TMLR) 2022
 
 - title: Towards Training Billion Parameter Graph Neural Networks for Atomic Simulations
   authors: Anuroop Sriram, Abhishek Das, Brandon M Wood, Siddharth Goyal, C Lawrence Zitnick
-  display: International Conference on Learning Representations (ICLR) 2022
+  venue: International Conference on Learning Representations (ICLR) 2022
   organization: ICLR
   year: 2022
   url: sriramGraphParallel
@@ -113,7 +131,7 @@
 
 - title: Open catalyst 2020 (OC20) dataset and community challenges
   authors: Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu et al.
-  display: ACS Catalysis
+  venue: ACS Catalysis
   volume: 11
   number: 10
   pages: 6059--6072
@@ -125,10 +143,41 @@
   image: oc20.webp
   code: https://github.com/open-catalyst-project/ocp
   data: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
+  press:
+    - source: Meta AI Blog
+      logo: fair.webp
+      text: "Facebook and Carnegie Mellon launch the Open Catalyst Project to find new ways to store renewable energy"
+      author: Larry Zitnick
+      link: https://ai.facebook.com/blog/facebook-and-carnegie-mellon-launch-the-open-catalyst-project-to-find-new-ways-to-store-renewable-energy/
+    - source: Fortune
+      logo: fortune.webp
+      text: "Facebook A.I. researchers push for a breakthrough in renewable energy storage"
+      author: Jeremy Kahn
+      link: https://fortune.com/2020/10/14/facebook-ai-open-catalyst-dataset-chemistry-renewable-energy/
+    - source: Engadget
+      logo: engadget.webp
+      text: "Facebook deploys its AI to find green energy storage solutions"
+      author: Andrew Tarantola
+      link: https://www.engadget.com/facebook-deploys-its-ai-to-find-green-energy-storage-solutions-130041147.html
+    - source: CNBC
+      logo: cnbc.webp
+      text: "Facebook to use artificial intelligence in bid to improve renewable energy storage"
+      author: Sam Shead
+      link: https://www.cnbc.com/2020/10/14/facebook-to-use-ai-in-bid-to-improve-renewable-energy-storage.html
+    - source: VentureBeat
+      logo: venturebeat.webp
+      text: "Facebook and Carnegie Mellon launch project to discover better ways to store renewable energy"
+      author: Kyle Wiggers
+      link: https://venturebeat.com/ai/facebook-and-carnegie-mellon-launch-project-to-discover-better-ways-to-store-renewable-energy/
+    - source: CNET
+      logo: cnet.webp
+      text: "Facebook plans to use AI to help fight climate change"
+      author: Queenie Wong
+      link: https://www.cnet.com/science/facebook-plans-to-use-ai-to-help-fight-climate-change/
 
 - title: Results of the 2020 fastmri challenge for machine learning mr image reconstruction
   authors: Matthew J Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.
-  display: IEEE Transactions on Medical Imaging (TMI)
+  venue: IEEE Transactions on Medical Imaging (TMI)
   volume: 40
   number: 9
   pages: 2306--2317
@@ -142,7 +191,7 @@
 - title: Systems and methods for robust speech recognition using generative adversarial networks (Patent)
   authors: Anuroop Sriram, Hee Woo Jun, Yashesh Gaur, Sanjeev Satheesh
   year: 2021
-  display: US Patent 10,971,142
+  venue: US Patent 10,971,142
   abstract: "Described herein are systems and methods for a general, scalable, end-to-end framework that uses a generative adversarial network (GAN) objective to enable robust speech recognition. Encoders trained with the proposed approach enjoy improved invariance by learning to map noisy audio to the same embedding space as that of clean audio. Embodiments of a Wasserstein GAN framework increase the robustness of seq-to-seq models in a scalable, end-to-end fashion. In one or more embodiments, an encoder component is treated as the generator of GAN and is trained to produce indistinguishable embeddings between labeled and unlabeled audio samples. This new robust training approach can learn to induce robustness without alignment or complicated inference pipeline and even where augmentation of audio data is not possible."
   patent: https://patentimages.storage.googleapis.com/44/e8/47/bdbcfadc027d9c/US10971142.pdf
   image: rsgan.webp
@@ -150,7 +199,7 @@
 - title: "Robust Wav2vec 2.0: Analyzing Domain Shift in Self-Supervised Pre-Training"
   authors: Wei-Ning Hsu, Anuroop Sriram, Alexei Baevski, Tatiana Likhomanenko, Qiantong Xu, Vineel Pratap, Jacob Kahn, Ann Lee, Ronan Collobert, Gabriel Synnaeve, Michael Auli
   year: 2021
-  display: Interspeech 2021
+  venue: Interspeech 2021
   pages: 721--725
   url: hsuRobustWav2Vec
   arxiv: 2104.01027
@@ -190,7 +239,7 @@
 - title: Cold fusing sequence-to-sequence models with language models (Patent)
   authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
   year: 2020
-  display: US Patent 10,867,595
+  venue: US Patent 10,867,595
   abstract: "Described herein are systems and methods for generating natural language sentences with Sequence-to-sequence (Seq2Seq) models with attention. The Seq2Seq models may be implemented in applications, such as machine translation, image captioning, and speech recognition. Performance has further been improved by leveraging unlabeled data, often in the form of a language models. Disclosed herein are “Cold Fusion” architecture embodiments that leverage a pre-trained language model during training. The Seq2Seq models with Cold Fusion embodiments are able to better utilize language information enjoying faster convergence, better generalization, and almost complete transfer to a new domain while using less labeled training data."
   patent: https://patentimages.storage.googleapis.com/c4/81/5b/58ceaa1a6771c8/US10867595.pdf
   image: cf.webp
@@ -198,7 +247,7 @@
 - title: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
   authors: Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, Ronan Collobert
   year: 2020
-  display: Interspeech 2020
+  venue: Interspeech 2020
   pages: 2757--2761
   url: pratapMLS
   arxiv: 2012.03411
@@ -209,7 +258,7 @@
 
 - title: "Using deep learning to accelerate knee MRI at 3 T: results of an interchangeability study"
   authors: Michael P Recht, Jure Zbontar, Daniel K Sodickson, Florian Knoll, Nafissa Yakubova, Anuroop Sriram, Tullie Murrell, Aaron Defazio, Michael Rabbat, Leon Rybak et al.
-  display: American Journal of Roentgenology (AJR)
+  venue: American Journal of Roentgenology (AJR)
   volume: 215
   number: 6
   pages: 1421
@@ -222,10 +271,34 @@
   <b>RESULTS</b> \nWe found a high degree of interchangeability between standard and DL-accelerated images. In particular, results showed that interchanging the sequences would produce discordant clinical opinions no more than 4% of the time for any feature evaluated. Moreover, the accelerated sequence was judged by all six readers to have better quality than the clinical sequence.\n\n
   <b>CONCLUSION</b> \nAn optimized DL model allowed acceleration of knee images that performed interchangeably with standard images for detection of internal derangement of the knee. Importantly, readers preferred the quality of accelerated images to that of standard clinical images."
   image: 3t.webp
-
+  press:
+    - source: Meta AI Blog
+      logo: fair.webp
+      text: "FastMRI breakthrough shows AI-accelerated MRIs interchangeable with traditional MRIs"
+      author: Nafissa Yakubova, Anuroop Sriram, Jure Zbontar, Mike Rabbat, Aaron Defazio, Mark Tygert, Larry Zitnick
+      link: https://ai.facebook.com/blog/fastmri-breakthrough-shows-ai-accelerated-mris-interchangeable-with-slow-traditional-mris/
+    - source: NYU Langone
+      logo: nyu_langone.webp
+      text: "New Research Finds FastMRI Scans Generated with Artificial Intelligence Are as Accurate as Traditional MRI"
+      link: https://nyulangone.org/news/new-research-finds-fastmri-scans-generated-artificial-intelligence-are-accurate-traditional-mri
+    - source: Wall Street Journal
+      logo: wsj.webp
+      text: "Researchers at Facebook AI, NYU Langone Push Speed Limits of MRI"
+      link: https://www.wsj.com/articles/researchers-at-facebook-ai-nyu-langone-push-speed-limits-of-mri-11597755600
+    - source: TechCrunch
+      logo: techcrunch.webp
+      text: "Blind test shows AI-enhanced MRI scans are just as good but 4 times faster"
+      author: Devin Coldewey
+      link: https://techcrunch.com/2020/08/18/blind-test-shows-ai-enhanced-mri-scans-are-just-as-good-but-4-times-faster/
+    - source: DailyMail
+      logo: dailymail.webp
+      text: "Facebook AI takes MRI images four times faster than normal by 'recreating missing parts' - and experts can't tell the difference"
+      author: Ryan Morrison
+      link: https://www.dailymail.co.uk/sciencetech/article-8639049/Facebook-AI-creates-MRI-images-four-times-faster-normal.html
+                  
 - title: "Advancing machine learning for MR image reconstruction with an open competition: Overview of the 2019 fastMRI challenge"
   authors: Florian Knoll, Tullie Murrell, Anuroop Sriram, Nafissa Yakubova, Jure Zbontar, Michael Rabbat, Aaron Defazio, Matthew J Muckley, Daniel K Sodickson, C Lawrence Zitnick et al.
-  display: Magnetic Resonance in Medicine (MRM)
+  venue: Magnetic Resonance in Medicine (MRM)
   volume: 84
   number: 6
   pages: 3054--3070
@@ -248,7 +321,7 @@
 
 - title: End-to-end variational networks for accelerated MRI reconstruction
   authors: Anuroop Sriram, Jure Zbontar, Tullie Murrell, Aaron Defazio, C Lawrence Zitnick, Nafissa Yakubova, Florian Knoll, Patricia Johnson
-  display: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2020
+  venue: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2020
   pages: 64--73
   year: 2020
   organization: Springer, Cham
@@ -261,16 +334,27 @@
 - title: "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters"
   authors: Vineel Pratap, Anuroop Sriram, Paden Tomasello, Awni Hannun, Vitaliy Liptchinsky, Gabriel Synnaeve, Ronan Collobert
   year: 2020
-  display: Interspeech 2020
+  venue: Interspeech 2020
   pages: 4751--4755
   url: pratapMassively
   arxiv: 2007.03001
   abstract: "We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource languages, and over-all simplifying deployment of ASR systems that support diverse languages. We perform an extensive benchmark on 51 languages, with varying amount of training data by language(from 100 hours to 1100 hours). We compare three variants of multilingual training from a single joint model without knowing the input language, to using this information, to multiple heads (one per language cluster). We show that multilingual training of ASR models on several languages can improve recognition performance, in particular, on low resource languages. We see 20.9%, 23% and 28.8% average WER relative reduction compared to monolingual baselines on joint model, joint model with language input and multi head model respectively. To our knowledge, this is the first work studying multilingual ASR at massive scale, with more than 50 languages and more than 16,000 hours of audio across them."
   image: mmasr.webp
+  press:
+    - source: VentureBeat
+      logo: venturebeat.webp
+      text: "Facebook's speech recognition model supports 51 different languages"
+      author: Kyle Wiggers
+      link: https://venturebeat.com/ai/facebooks-speech-recognition-model-supports-51-different-languages/
+    - source: Voicebot AI
+      logo: voicebot.webp
+      text: "Facebook Builds Speech Recognition Engine Combining 51 Languages in One Model"
+      author: Eric Hal Schwartz
+      link: https://voicebot.ai/2020/07/09/facebook-builds-speech-recognition-engine-combining-51-languages-in-one-model/
 
 - title: Systems and methods for principled bias reduction in production speech models (Patent)
   authors: Eric Battenberg, Rewon Child, Adam Coates, Christopher Fougner, Yashesh Gaur, Jiaji Huang, Heewoo Jun, Ajay Kannan, Markus Kliegl, Atul Kumar et al.
-  display: US Patent 10,657,955
+  venue: US Patent 10,657,955
   year: 2020
   abstract: "Described herein are systems and methods to identify and address sources of bias in an end-to-end speech model. In one or more embodiments, the end-to-end model may be a recurrent neural network with two 2D-convolutional input layers, followed by multiple bidirectional recurrent layers and one fully connected layer before a softmax layer. In one or more embodiments, the network is trained end-to-end using the CTC loss function to directly predict sequences of characters from log spectrograms of audio. With optimized recurrent layers and training together with alignment information, some unwanted bias induced by using purely forward only recurrences may be removed in a deployed model."
   patent: https://patentimages.storage.googleapis.com/c3/2c/2b/b9a0d1cdbe25d0/US10657955.pdf
@@ -278,7 +362,7 @@
 
 - title: "fastMRI: A publicly available raw k-space and DICOM dataset of knee images for accelerated MR image reconstruction using machine learning"
   authors: Florian Knoll, Jure Zbontar, Anuroop Sriram, Matthew J Muckley, Mary Bruno, Aaron Defazio, Marc Parente, Krzysztof J Geras, Joe Katsnelson, Hersh Chandarana et al.
-  display: "Radiology: Artificial Intelligence"
+  venue: "Radiology: Artificial Intelligence"
   volume: 2
   number: 1
   pages: e190007
@@ -290,10 +374,41 @@
   image: fastmri.webp
   code: https://github.com/facebookresearch/fastMRI/
   data: https://fastmri.med.nyu.edu/
+  press:
+    - source: TechCrunch
+      logo: techcrunch.webp
+      text: "NYU and Facebook team up to supercharge MRI scans with AI"
+      author: Devin Coldewey
+      link: https://techcrunch.com/2018/08/20/nyu-and-facebook-team-up-to-supercharge-mri-scans-with-ai/
+    - source: The Verge
+      logo: verge.webp
+      text: "Facebook and NYU use artificial intelligence to make MRI scans four times faster"
+      author: James Vincent
+      link: https://www.theverge.com/2020/8/18/21373335/faster-mri-scans-ai-machine-learning-facebook-nyu-research-clinical-study
+    - source: ZDNet
+      logo: zdnet.webp
+      text: "Facebook, NYU aim to use AI to speed up MRI scans"
+      author: Larry Dignan
+      link: https://www.zdnet.com/article/facebook-nyu-aim-to-use-ai-to-speed-up-mri-scans/
+    - source: Popular Science
+      logo: popularscience.webp
+      text: "An exclusive look at Facebook’s efforts to speed up MRI scans using artificial intelligence"
+      author: Rob Verger
+      link: https://www.popsci.com/artificial-intelligence-fast-mri-scans-facebook-nyu/
+    - source: CNet
+      logo: cnet.webp
+      text: "Facebook and NYU want to use AI to make MRI exams faster"
+      author: Marrian Zhou
+      link: https://www.cnet.com/tech/tech-industry/facebook-and-nyu-want-to-use-ai-to-make-mri-exams-faster/
+    - source: USA Today
+      logo: usatoday.webp
+      text: "Facebook, NYU team up to make MRI scans faster through AI"
+      author: Mike Snider
+      link: https://www.usatoday.com/story/tech/news/2018/08/21/facebook-nyu-artificial-intelligence-mri-scans/1049904002/
 
 - title: "GrappaNet: Combining parallel imaging with deep learning for multi-coil MRI reconstruction"
   authors: Anuroop Sriram, Jure Zbontar, Tullie Murrell, C Lawrence Zitnick, Aaron Defazio, Daniel K Sodickson
-  display: Conference on Computer Vision and Pattern Recognition (CVPR) 2019
+  venue: Conference on Computer Vision and Pattern Recognition (CVPR) 2019
   pages: 14315--14322
   year: 2020
   url: sriramGrappaNet
@@ -324,7 +439,7 @@
 
 - title: Robust speech recognition using generative adversarial networks
   authors: Anuroop Sriram, Heewoo Jun, Yashesh Gaur, Sanjeev Satheesh
-  display: IEEE international conference on acoustics, speech and signal processing (ICASSP) 2018
+  venue: IEEE international conference on acoustics, speech and signal processing (ICASSP) 2018
   pages: 5639--5643
   year: 2018
   organization: IEEE
@@ -336,7 +451,7 @@
 - title: "Cold Fusion: Training Seq2Seq Models Together with Language Models"
   authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
   year: 2018
-  display: Interspeech 2018
+  venue: Interspeech 2018
   pages: 387--391
   url: sriramFusion
   arxiv: 1708.06426
@@ -347,7 +462,7 @@
 
 - title: Exploring neural transducers for end-to-end speech recognition
   authors: Eric Battenberg, Jitong Chen, Rewon Child, Adam Coates, Yashesh Gaur Yi Li, Hairong Liu, Sanjeev Satheesh, Anuroop Sriram, Zhenyao Zhu
-  display: Automatic Speech Recognition and Understanding (ASRU) 2017
+  venue: Automatic Speech Recognition and Understanding (ASRU) 2017
   pages: 206--213
   year: 2017
   url: battenbergTransducers
@@ -367,7 +482,7 @@
 
 - title: "Deep speech 2: End-to-end speech recognition in english and mandarin"
   authors: Dario Amodei, Sundaram Ananthanarayanan, Rishita Anubhai, Jingliang Bai, Eric Battenberg, Carl Case, Jared Casper, Bryan Catanzaro, Qiang Cheng, Guoliang Chen et al.
-  display: International conference on machine learning (ICML) 2016
+  venue: International conference on machine learning (ICML) 2016
   pages: 173--182
   year: 2016
   organization: ICML
@@ -375,12 +490,28 @@
   link: "https://proceedings.mlr.press/v48/amodei16.pdf"
   abstract: "We show that an end-to-end deep learning approach can be used to recognize either English or Mandarin Chinese speech--two vastly different languages. Because it replaces entire pipelines of hand-engineered components with neural networks, end-to-end learning allows us to handle a diverse variety of speech including noisy environments, accents and different languages. Key to our approach is our application of HPC techniques, resulting in a 7x speedup over our previous system. Because of this efficiency, experiments that previously took weeks now run in days. This enables us to iterate more quickly to identify superior architectures and algorithms. As a result, in several cases, our system is competitive with the transcription of human workers when benchmarked on standard datasets. Finally, using a technique called Batch Dispatch with GPUs in the data center, we show that our system can be inexpensively deployed in an online setting, delivering low latency when serving users at scale."
   image: ds2.webp
+  press:
+    - source: MIT Tech Review
+      logo: mittechreview.webp
+      text: "Baidu’s Deep-Learning System Rivals People at Speech Recognition"
+      author: Will Knight
+      link: https://www.technologyreview.com/2015/12/16/9846/baidus-deep-learning-system-rivals-people-at-speech-recognition/
+    - source: TechCrunch
+      logo: techcrunch.webp
+      text: "Google, Baidu and the race for an edge in the global speech recognition market"
+      author: Daniel Faggella
+      link: https://techcrunch.com/2016/06/11/google-baidu-and-the-race-for-an-edge-in-the-global-speech-recognition-market/
+    - source: Mashable
+      logo: mashable.webp
+      text: "This speech recognition software is much faster than human typists"
+      author: Carmen Triola
+      link: https://mashable.com/article/baidu-deep-speech-2-fast-speech-recognition
 
 ############# 2013 #############
 
 - title: "FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations"
   authors: John J Grefenstette, Shawn T Brown, Roni Rosenfeld, Jay DePasse, Nathan TB Stone, Phillip C Cooley, William D Wheaton, Alona Fyshe, David D Galloway, Anuroop Sriram et al.
-  display: BMC public health
+  venue: BMC public health
   volume: 13
   number: 1
   pages: 1--14
@@ -400,7 +531,7 @@
 
 - title: Evaluating centrality metrics in real-world networks on GPU
   authors: Anuroop Sriram, Kollu Gautham, Kishore Kothapalli, P J Narayan, R Govindarajulu
-  display: IEEE International Conference on High Performance Computing (HiPC 2009)
+  venue: IEEE International Conference on High Performance Computing (HiPC 2009)
   year: 2009
   publisher: IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC)
   url: sriramCentrality
