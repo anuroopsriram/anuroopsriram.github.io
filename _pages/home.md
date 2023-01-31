@@ -14,7 +14,7 @@ code {padding: 6px 8px; font-size: 90%;}
 I am an AI researcher at Meta FAIR, working on applying deep learning to scientific problems.
 {: .text-justify}
 
-My focus over the last few years has been on using AI to discover new catalysts for use in renewable energy storage as part of the <a href="https://opencatalystproject.org/" target="_blank">Open Catalyst Projec (OCP)</a>. 
+My focus over the last few years has been on using AI to discover new catalysts for use in renewable energy storage as part of the <a href="https://opencatalystproject.org/" target="_blank">Open Catalyst Project (OCP)</a>. 
 As we increase our reliance on renewable energy sources such as wind and solar, which produce intermittent power, storage is needed to transfer power from times of peak generation to peak demand.
 A possible solution that can scale to nation-sized grids is to use excess energy to create other fuels. To be widely adopted, we need to discover new electrocatalysts to synthesize these fuels in a cost effective manner. While quantum mechanical simulations can be used to test new catalyst structures, the high computational cost of these simulations limits the number of materials that can be tested. As part of this project, we are developing new methods for finding effective catalysts by using Machine Learning to efficiently approximate these calculations.
 {: .text-justify}
