@@ -1,3 +1,19 @@
+- title: Open DAC 2023 (ODAC23)
+  description: "
+    Direct Air Capture (DAC) involves directly capturing carbon dioxide from the atmosphere and has been widely recognized as a crucial tool in combating 
+    climate change. Despite its potential, the broad implementation of DAC has been impeded by high capture costs. Key to overcoming this hurdle is 
+    the discovery of novel sorbents — materials that pull carbon dioxide from the air. Discovering new sorbents holds the key to reducing capture costs 
+    and scaling DAC to meaningfully impact global carbon emissions.
+
+    The DAC space is growing rapidly with many companies entering the space. To engage the broader research community as well as the budding DAC industry, 
+    we have released the OpenDAC 2023 (ODAC23) dataset to train ML models. ODAC23 contains nearly 40M DFT calculations from 170K DFT relaxations involving 
+    Metal Organic Frameworks (MOFs) with carbon dioxide and water adsorbates. We have also released SOTA GNN models trained on this dataset.
+  "
+  image: odac23.webp
+  data_url: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
+  project_url: https://open-dac.github.io/
+  code_url: https://github.com/Open-Catalyst-Project/ocp/
+
 - title: Open Catalyst 2020 (OC20) & Open Catalyst 2022 (OC22)
   # description: "Datasets for discovering new catalysts created by running over 260 million Density Functional Theory (DFT) calculations."
   description: "
