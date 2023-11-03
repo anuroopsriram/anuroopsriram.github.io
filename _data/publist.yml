@@ -26,6 +26,14 @@
       author: Janice Lan, Siddharth Goyal, Ammar Rizvi, Larry Zitnick
       link: https://ai.facebook.com/blog/accelerating-renewable-energy-with-a-new-data-set-for-green-hydrogen-fuel/
 
+- title: Cold fusing sequence-to-sequence models with language models (Patent)
+  authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
+  year: 2023
+  venue: US Patent 11,620,986
+  abstract: "Described herein are systems and methods for generating natural language sentences with Sequence-to-sequence (Seq2Seq) models with attention. The Seq2Seq models may be implemented in applications, such as machine translation, image captioning, and speech recognition. Performance has further been improved by leveraging unlabeled data, often in the form of a language models. Disclosed herein are “Cold Fusion” architecture embodiments that leverage a pre-trained language model during training. The Seq2Seq models with Cold Fusion embodiments are able to better utilize language information enjoying faster convergence, better generalization, and almost complete transfer to a new domain while using less labeled training data."
+  patent: https://patentimages.storage.googleapis.com/7f/5e/0e/dd03b5f5b8b226/US11620986.pdf
+  image: cf.webp
+
 - title: "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI"
   authors: Patricia M. Johnson, Dana J. Lin, Jure Zbontar, C. Lawrence Zitnick, Anuroop Sriram, Matthew Muckley, James S. Babb, Mitchell Kline, Gina Ciavarra, Erin Alaia, Mohammad Samim, William R. Walter, Liz Calderon, Thomas Pock, Daniel K. Sodickson, Michael P. Recht, and Florian Knoll
   year: 2023
