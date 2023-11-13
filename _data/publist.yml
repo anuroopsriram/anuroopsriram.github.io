@@ -1,4 +1,11 @@
 ############# 2023 #############
+- title: Fine-Tuned Language Models Generate Stable Inorganic Materials as Text
+  authors: Nate Gruver, Anuroop Sriram, Andrea Madotto, Andrew Wilson, C Lawrence Zitnick, Zachary Ulissi
+  link: https://openreview.net/forum?id=0r5DE2ZSwJ
+  year: 2023
+  url: llm_materials23.webp
+  venue: NeurIPS 2023 (AI for Accelerated Materials Design Workshop)
+
 - title: The Open DAC 2023 Dataset and Challenges for Sorbent Discovery in Direct Air Capture
   authors: Anuroop Sriram, Sihoon Choi, Xiaohan Yu, Logan M. Brabson, Abhishek Das, Zachary Ulissi, Matt Uyttendaele, Andrew J. Medford, David S. Sholl
   arxiv: 2311.00341
@@ -8,6 +15,17 @@
   image: odac23.webp
   code: "https://github.com/Open-Catalyst-Project/ocp/"
   data: "https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md#odac23"
+  press:
+    - source: Carbon Herald
+      logo: carbonherald.webp
+      text: "Meta And Georgia Tech Release Open Direct Air Capture Dataset To Accelerate Research"
+      author: Petya Trendafilova
+      link: https://carbonherald.com/meta-and-georgia-tech-released-open-direct-air-capture-dataset/
+    - source: Market Tech Post
+      logo: mtp.webp
+      text: "Meta & Georgia Tech Researchers Release a New Dataset and Associated AI Models to Help Accelerate Research on Direct Air Capture to Combat Climate Change"
+      author: Rachit Ranjan
+      link: https://www.marktechpost.com/2023/11/09/meta-georgiatech-researchers-release-a-new-dataset-and-associated-ai-models-to-help-accelerate-research-on-direct-air-capture-to-combat-climate-change/
 
 - title: The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysis
   authors: Richard Tran, Janice Lan, Muhammed Shuaibi, Siddharth Goyal, Brandon M Wood, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi et al.
