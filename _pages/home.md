@@ -14,16 +14,16 @@ code {padding: 6px 8px; font-size: 90%;}
 I am an Artificial Intelligence researcher at Meta FAIR focused on using AI to address climate change.
 {: .text-justify}
 
-I lead the <a href="https://open-dac.github.io/" target="_blank">OpenDAC project</a> where we're discovering new materials to capture carbon dioxide directly from the air. Our goal is to make Direct Air Capture (DAC) more affordable and scalable, a crucial step toward achieving <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank">net-zero emissions</a>.
-I am also deeply involved in the <a href="https://opencatalystproject.org/" target="_blank">Open Catalyst Project (OCP)</a>, focused on discovering new electrocatalysts for renewable energy storage. These catalysts will help us overcome the intermittent nature of solar and wind power by converting excess energy into storable fuels.
+I lead the <a href="https://open-dac.github.io/" target="_blank">OpenDAC project</a> aimed at discovering new materials to capture carbon dioxide directly from the air. Our goal is to make Direct Air Capture (DAC) more affordable and scalable, a crucial step toward achieving <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank">net-zero emissions</a>.
+I am also deeply involved in the <a href="https://opencatalystproject.org/" target="_blank">Open Catalyst Project (OCP)</a>, focused on discovering new electrocatalysts for renewable energy storage. These catalysts will help us overcome the limitations of solar and wind power by converting excess energy into storable fuels.
 {: .text-justify}
 
 I have also led the FAIR Speech Recognition team on developing large scale self-supervised and multilingual speech recognition, scaling speech recognition systems to unprecedented scales in terms of model size, dataset size and number of languages. Additionally, my work on the <a href="https://fastmri.org/" target="_blank">fastMRI project</a> accelerated MRI scans over fourfold, which has the potential to lowering costs and improving patient experience.
 
-From 2016 to 2018, I worked at <a href="http://research.baidu.com/" target="_blank">Baidu Silicon Valley AI Lab</a> on speech recognition. There, I helped develop the <a href="https://proceedings.mlr.press/v48/amodei16.pdf" target="_blank">Deep Speech 2 model</a>. Before that, I built online machine learning pipelines for ad targeting at Twitter.
+From 2016 to 2018, I worked at <a href="http://research.baidu.com/" target="_blank">Baidu Silicon Valley AI Lab</a> on speech recognition, where I helped develop the <a href="https://proceedings.mlr.press/v48/amodei16.pdf" target="_blank">Deep Speech 2 model</a>. Before that, I built online machine learning pipelines for ad targeting at Twitter.
 <!-- https://www.technologyreview.com/10-breakthrough-technologies/2016/#/set/id/546296/ -->
 {: .text-justify}
 
-I hold a Master's in Language Technologies from Carnegie Mellon University's <a href="https://www.lti.cs.cmu.edu/" target="_blank">Language Technologies Institute</a>, where I worked with Prof Roni Rosenfeld, applying machine learning and agent-based modeling to study the spread of infectious diseases as part of the <a href="https://fred.publichealth.pitt.edu/" target="_blank">FRED project</a>.
+I hold a Master's in Language Technologies from Carnegie Mellon University's <a href="https://www.lti.cs.cmu.edu/" target="_blank">Language Technologies Institute</a>, where I worked with Prof Roni Rosenfeld on applying machine learning and agent-based modeling to study the spread of infectious diseases as part of the <a href="https://fred.publichealth.pitt.edu/" target="_blank">FRED project</a>.
 
 My research has received widespread recognition, including features in leading publications like the Wall Street Journal, CNBC, USA Today, Reuters, Fortune, TechCrunch, and MIT Tech Review.
