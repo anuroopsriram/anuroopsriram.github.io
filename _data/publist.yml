@@ -272,7 +272,7 @@
   image: covid19.webp
   code: https://github.com/facebookresearch/CovidPrognosis
   press:
-    - source: CNet
+    - source: CNET
       logo: cnet.webp
       text: "Facebook uses AI to predict if COVID-19 patients will need more care"
       author: Queenie Wong
@@ -457,7 +457,7 @@
       text: "An exclusive look at Facebook’s efforts to speed up MRI scans using artificial intelligence"
       author: Rob Verger
       link: https://www.popsci.com/artificial-intelligence-fast-mri-scans-facebook-nyu/
-    - source: CNet
+    - source: CNET
       logo: cnet.webp
       text: "Facebook and NYU want to use AI to make MRI exams faster"
       author: Marrian Zhou
