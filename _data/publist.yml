@@ -1,9 +1,10 @@
-############# 2023 #############
+############# 2024 #############
+
 - title: Fine-Tuned Language Models Generate Stable Inorganic Materials as Text
   authors: Nate Gruver, Anuroop Sriram, Andrea Madotto, Andrew Wilson, C Lawrence Zitnick, Zachary Ulissi
   # link: https://openreview.net/forum?id=0r5DE2ZSwJ
   arxiv: 2402.04379
-  year: 2023
+  year: 2024
   url: llm_materials23
   image: llm_materials23.webp
   # venue: NeurIPS 2023 (AI for Accelerated Materials Design Workshop)
@@ -11,6 +12,8 @@
   organization: ICLR
   code: https://github.com/facebookresearch/crystal-llm
   abstract: "Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory (DFT). Large open computational materials databases such as the Materials Project or OQMD contain O(10<sup>6</sup>) known structures, and it is now straightforward to search those databases for materials with exciting properties. However, these databases are limited to experimentally known materials or candidates discovered in high-throughput computational campaigns. Many state-of-the-art engineering advances in solar photovaltaics, battery electrodes, and catalysts are made by discovering materials with outstanding properties that have not yet been discovered. Generative models are a natural solution to expand families of interest through sampling. While popular methods are typically constructed from variational autoencoders or diffusion models, we propose fine-tuning large language models for generation of stable materials. While unorthodox, fine-tuning large language models on text-encoded atomistic data is simple to implement yet reliable, with around 90% of sampled structures obeying physical constraints on atom positions and charges. Using energy of hull calculations from both learned ML potentials and gold-standard DFT calculations, we show that our strongest model (fine-tuned LLaMA-2 70B) can generate materials predicted to be metastable at about twice the rate (49% vs 28%) of CDVAE, a competing diffusion model. Because of text prompting's inherent flexibility, our models can simultaneously be used for unconditional generation of stable material, infilling of partial structures and text-conditional generation. Finally, we show that language models' ability to capture key symmetries of crystal structures improves with model scale, suggesting that the biases of pretrained LLMs are surprisingly well-suited for atomistic data."
+
+############# 2023 #############
 
 - title: The Open DAC 2023 Dataset and Challenges for Sorbent Discovery in Direct Air Capture
   authors: Anuroop Sriram, Sihoon Choi, Xiaohan Yu, Logan M. Brabson, Abhishek Das, Zachary Ulissi, Matt Uyttendaele, Andrew J. Medford, David S. Sholl
@@ -282,6 +285,8 @@
     - source: Daily Mail
       logo: dailymail.webp
       text: "Facebook claims its AI can predict four days in advance if a coronavirus patient's condition will deteriorate - just by looking at a single chest X-ray"
+      author: Stacy Liberatore
+      link: https://www.dailymail.co.uk/sciencetech/article-9153415/Facebook-claims-AI-predict-four-coronavirus-patients-condition-deteriorate.html
 
 ############# 2020 #############
 
