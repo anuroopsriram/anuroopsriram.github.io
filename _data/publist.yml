@@ -1,16 +1,16 @@
 ############# 2024 #############
 
-#- title: "FlowMM: Generating Materials with Riemannian Flow Matching"
-#  authors: Benjamin Kurt Miller, Ricky T. Q. Chen, Anuroop Sriram, Brandon M Wood
-#  #link: https://openreview.net/forum?id=W4pB7VbzZI
-#  # arxiv: 2402.04379
-#  year: 2024
-#  url: flowmm24
-#  image: flowmm24.webp
-#  venue: International Conference on Machine Learning (ICML) 2024
-#  organization: ICML
-#  # code: https://github.com/facebookresearch/crystal-llm
-#  abstract: "Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods."
+- title: "FlowMM: Generating Materials with Riemannian Flow Matching"
+  authors: Benjamin Kurt Miller, Ricky T. Q. Chen, Anuroop Sriram, Brandon M Wood
+  #link: https://openreview.net/forum?id=W4pB7VbzZI
+  # arxiv: 2402.04379
+  year: 2024
+  url: flowmm24
+  image: flowmm24.webp
+  venue: International Conference on Machine Learning (ICML) 2024
+  organization: ICML
+  # code: https://github.com/facebookresearch/crystal-llm
+  abstract: "Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods."
 
 - title: Fine-Tuned Language Models Generate Stable Inorganic Materials as Text
   authors: Nate Gruver, Anuroop Sriram, Andrea Madotto, Andrew Wilson, C Lawrence Zitnick, Zachary Ulissi
@@ -22,15 +22,13 @@
   # venue: NeurIPS 2023 (AI for Accelerated Materials Design Workshop)
   venue: International Conference on Learning Representations (ICLR) 2024
   organization: ICLR
-  code: https://github.com/facebookresearch/crystal-llm
+  code: "https://github.com/facebookresearch/crystal-llm"
   abstract: "Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory (DFT). Large open computational materials databases such as the Materials Project or OQMD contain O(10<sup>6</sup>) known structures, and it is now straightforward to search those databases for materials with exciting properties. However, these databases are limited to experimentally known materials or candidates discovered in high-throughput computational campaigns. Many state-of-the-art engineering advances in solar photovaltaics, battery electrodes, and catalysts are made by discovering materials with outstanding properties that have not yet been discovered. Generative models are a natural solution to expand families of interest through sampling. While popular methods are typically constructed from variational autoencoders or diffusion models, we propose fine-tuning large language models for generation of stable materials. While unorthodox, fine-tuning large language models on text-encoded atomistic data is simple to implement yet reliable, with around 90% of sampled structures obeying physical constraints on atom positions and charges. Using energy of hull calculations from both learned ML potentials and gold-standard DFT calculations, we show that our strongest model (fine-tuned LLaMA-2 70B) can generate materials predicted to be metastable at about twice the rate (49% vs 28%) of CDVAE, a competing diffusion model. Because of text prompting's inherent flexibility, our models can simultaneously be used for unconditional generation of stable material, infilling of partial structures and text-conditional generation. Finally, we show that language models' ability to capture key symmetries of crystal structures improves with model scale, suggesting that the biases of pretrained LLMs are surprisingly well-suited for atomistic data."
-
-############# 2023 #############
 
 - title: The Open DAC 2023 Dataset and Challenges for Sorbent Discovery in Direct Air Capture
   authors: Anuroop Sriram, Sihoon Choi, Xiaohan Yu, Logan M. Brabson, Abhishek Das, Zachary Ulissi, Matt Uyttendaele, Andrew J. Medford, David S. Sholl
   arxiv: 2311.00341
-  year: 2023
+  year: 2024
   url: odac23
   abstract: "New methods for carbon dioxide removal are urgently needed to combat global climate change. Direct air capture (DAC) is an emerging technology to capture carbon dioxide directly from ambient air. Metal-organic frameworks (MOFs) have been widely studied as potentially customizable adsorbents for DAC. However, discovering promising MOF sorbents for DAC is challenging because of the vast chemical space to explore and the need to understand materials as functions of humidity and temperature. We explore a computational approach benefiting from recent innovations in machine learning (ML) and present a dataset named Open DAC 2023 (ODAC23) consisting of more than 38M density functional theory (DFT) calculations on more than 8,800 MOF materials containing adsorbed CO<sub>2</sub> and/or H<sub>2</sub>O. ODAC23 is by far the largest dataset of MOF adsorption calculations at the DFT level of accuracy currently available. In addition to probing properties of adsorbed molecules, the dataset is a rich source of information on structural relaxation of MOFs, which will be useful in many contexts beyond specific applications for DAC. A large number of MOFs with promising properties for DAC are identified directly in ODAC23. We also trained state-of-the-art ML models on this dataset to approximate calculations at the DFT level. This open-source dataset and our initial ML models will provide an important baseline for future efforts to identify MOFs for a wide range of applications, including DAC."
   image: odac23.webp
@@ -39,6 +37,16 @@
   venue: "ACS: Central Science"
   link: "https://pubs.acs.org/doi/10.1021/acscentsci.3c01629"
   press:
+    - source: Techcrunch
+      logo: techcrunch.webp
+      text: "This Week in AI: Generative AI and the problem of compensating creators"
+      author: Kyle Wiggers  Devin Coldewey
+      link: https://techcrunch.com/2024/05/04/this-week-in-ai-generative-ai-and-the-problem-of-compensating-creators/
+    - source: TechXplore
+      logo: techxplore.webp
+      text: "Researchers create massive open dataset to advance AI solutions for carbon capture"
+      author: Catherine Barzler
+      link: https://techxplore.com/news/2024-05-massive-dataset-advance-ai-solutions.html
     - source: Carbon Herald
       logo: carbonherald.webp
       text: "Meta And Georgia Tech Release Open Direct Air Capture Dataset To Accelerate Research"
@@ -49,6 +57,8 @@
       text: "Meta & Georgia Tech Researchers Release a New Dataset and Associated AI Models to Help Accelerate Research on Direct Air Capture to Combat Climate Change"
       author: Rachit Ranjan
       link: https://www.marktechpost.com/2023/11/09/meta-georgiatech-researchers-release-a-new-dataset-and-associated-ai-models-to-help-accelerate-research-on-direct-air-capture-to-combat-climate-change/
+
+############# 2023 #############
 
 - title: The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysis
   authors: Richard Tran, Janice Lan, Muhammed Shuaibi, Siddharth Goyal, Brandon M Wood, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi et al.
@@ -90,6 +100,10 @@
   <b>Conclusion</b>\nIn a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol."
   image: mri_prosp.webp
   press:
+    - source: CBS News
+      logo: cbs.webp
+      text: "Breakthrough MRI technology uses AI for faster scans"
+      link: https://www.youtube.com/watch?v=9ncABdfkzuU
     - source: Radiology Editorial
       logo: radiology.webp
       text: "Editorial: The Role of Speed and Possible Implications"
