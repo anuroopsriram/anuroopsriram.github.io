@@ -58,6 +58,15 @@
       author: Rachit Ranjan
       link: https://www.marktechpost.com/2023/11/09/meta-georgiatech-researchers-release-a-new-dataset-and-associated-ai-models-to-help-accelerate-research-on-direct-air-capture-to-combat-climate-change/
 
+- title: "Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change"
+  authors: Eric Cockayne, Austin McDannald, Winnie Wong-Ng, Yu-Sheng Chen, Felipe Gándara, Jason Benedict, Christopher H Hendon, David A Keen, Ute Kolb, Lan Li, Shengqian Ma, William Morris, Aditya Nandy, Tomče Runčevski, Mustapha Soukri, Anuroop Sriram, Janice A Steckel, John Findley, Christopher Eli Wilmer, Taner Yildirim, Wei Zhou, Igor Levin, Craig M Brown
+  link: https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta04136d
+  year: 2024
+  url: dac_nist24
+  image: dac_nist24.webp
+  venue: Journal of Materials Chemistry A
+  abstract: "This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at the recent NIST workshop \"Integrating Crystallographic and Computational Approaches to Carbon-Capture Materials for the Mitigation of Climate Change\". The continual rise in anthropogenic CO2 concentration and its effect on climate change call for the implementation of carbon capture technologies to reduce the CO2 concentration in the atmosphere. Porous solids, including metal–organic frameworks (MOFs), are feasible candidates for gas capture and storage applications. However, determining the structure of these materials represents a significant obstacle in their development into advanced sorbents. The existing difficulties can be overcome by integrating crystallographic methods and theoretical modeling. The workshop gathered experimentalists and theorists from academia, government, and industry to review this field and identify approaches, including collaborative opportunities, required to develop tools for rapid determination of the structures of porous solid sorbents and the effect of structure on the carbon capture performance. We highlight the findings of that workshop, especially in the need for reference materials, standardized procedures and reporting of sorbent activation and adsorption measurements, standardized reporting of theoretical calculations, and round-robin structure determination."
+
 - title: "Distribution Learning for Molecular Regression"
   authors: Nima Shoghi, Pooya Shoghi, Anuroop Sriram, Abhishek Das
   arxiv: 2407.20475
