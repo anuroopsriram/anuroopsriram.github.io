@@ -1,16 +1,28 @@
-############# 2024 #############
+############# 2025 #############
+
+- title: "All-atom Diffusion Transformers: Unified generative modelling of molecules and materials"
+  authors: Chaitanya K. Joshi, Xiang Fu, Yi-Lun Liao, Vahe Gharakhanyan, Benjamin Kurt Miller, Anuroop Sriram, Zachary W. Ulissi
+  # venue: International Conference on Learning Representations (ICLR) 2025
+  # organization: ICLR
+  url: adit25
+  # image: dfm.webp
+  arxiv: 2503.03965
+  year: 2025
+  abstract: "Diffusion models are the standard toolkit for generative modelling of 3D atomic systems. However, for different types of atomic systems - such as molecules and materials - the generative processes are usually highly specific to the target system despite the underlying physics being the same. We introduce the All-atom Diffusion Transformer (ADiT), a unified latent diffusion framework for jointly generating both periodic materials and non-periodic molecular systems using the same model: (1) An autoencoder maps a unified, all-atom representations of molecules and materials to a shared latent embedding space; and (2) A diffusion model is trained to generate new latent embeddings that the autoencoder can decode to sample new molecules or materials. Experiments on QM9 and MP20 datasets demonstrate that jointly trained ADiT generates realistic and valid molecules as well as materials, exceeding state-of-the-art results from molecule and crystal-specific models. ADiT uses standard Transformers for both the autoencoder and diffusion model, resulting in significant speedups during training and inference compared to equivariant diffusion models. Scaling ADiT up to half a billion parameters predictably improves performance, representing a step towards broadly generalizable foundation models for generative chemistry."
+  code: https://github.com/facebookresearch/all-atom-diffusion-transformer
 
 - title: "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective"
   authors: Neta Shaul, Itai Gat, Marton Havasi, Daniel Severo, Anuroop Sriram, Peter Holderrieth, Brian Karrer, Yaron Lipman, Ricky T. Q. Chen
-  # venue: International Conference on Learning Representations (ICLR) 2025
-  # organization: ICLR
+  venue: International Conference on Learning Representations (ICLR) 2025
+  organization: ICLR
   url: shaulDFM24
   # image: dfm.webp
   arxiv: 2412.03487
-  year: 2024
+  year: 2025
   abstract: "The design space of discrete-space diffusion or flow generative models are significantly less well-understood than their continuous-space counterparts, with many works focusing only on a simple masked construction. In this work, we aim to take a holistic approach to the construction of discrete generative models based on continuous-time Markov chains, and for the first time, allow the use of arbitrary discrete probability paths, or colloquially, corruption processes. Through the lens of optimizing the symmetric kinetic energy, we propose velocity formulas that can be applied to any given probability path, completely decoupling the probability and velocity, and giving the user the freedom to specify any desirable probability path based on expert knowledge specific to the data domain. Furthermore, we find that a special construction of mixture probability paths optimizes the symmetric kinetic energy for the discrete case. We empirically validate the usefulness of this new design space across multiple modalities: text generation, inorganic material generation, and image generation. We find that we can outperform the mask construction even in text with kinetic-optimal mixture paths, while we can make use of domain-specific constructions of the probability path over the visual domain."
-  # code: https://github.com/facebookresearch/flowmm
+  code: https://github.com/fairinternal/flow_matching/tree/main/examples/text
 
+############# 2024 #############
 
 - title: "FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions"
   authors: Anuroop Sriram, Benjamin Kurt Miller, Ricky T. Q. Chen, Brandon M Wood
