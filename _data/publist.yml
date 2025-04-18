@@ -1,9 +1,20 @@
 ############# 2025 #############
 
+- title: "Adjoint Sampling: Highly Scalable Diffusion Samplers via Adjoint Matching"
+  authors: Aaron Havens, Benjamin Kurt Miller, Bing Yan, Carles Domingo-Enrich, Anuroop Sriram, Brandon Wood, Daniel Levine, Bin Hu, Brandon Amos, Brian Karrer, Xiang Fu, Guan-Horng Liu, Ricky T. Q. Chen
+  # venue: International Conference on Machine Learning (ICML) 2025
+  # organization: ICML
+  url: havens25AdjointSampling
+  image: havens25AdjointSampling.webp
+  arxiv: 2504.11713
+  year: 2025
+  abstract: "We introduce Adjoint Sampling, a highly scalable and efficient algorithm for learning diffusion processes that sample from unnormalized densities, or energy functions. It is the first on-policy approach that allows significantly more gradient updates than the number of energy evaluations and model samples, allowing us to scale to much larger problem settings than previously explored by similar methods. Our framework is theoretically grounded in stochastic optimal control and shares the same theoretical guarantees as Adjoint Matching, being able to train without the need for corrective measures that push samples towards the target distribution. We show how to incorporate key symmetries, as well as periodic boundary conditions, for modeling molecules in both cartesian and torsional coordinates. We demonstrate the effectiveness of our approach through extensive experiments on classical energy functions, and further scale up to neural network-based energy models where we perform amortized conformer generation across many molecular systems. To encourage further research in developing highly scalable sampling methods, we plan to open source these challenging benchmarks, where successful methods can directly impact progress in computational chemistry."
+  # code:
+
 - title: "All-atom Diffusion Transformers: Unified generative modelling of molecules and materials"
   authors: Chaitanya K. Joshi, Xiang Fu, Yi-Lun Liao, Vahe Gharakhanyan, Benjamin Kurt Miller, Anuroop Sriram, Zachary W. Ulissi
   # venue: International Conference on Machine Learning (ICML) 2025
-  # organization: ICLR
+  # organization: ICML
   url: adit25
   image: adit25.webp
   arxiv: 2503.03965
