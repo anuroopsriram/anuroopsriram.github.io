@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url_for('home') }}">{{ site.title | escape }}</a>
+      <a class="navbar-brand" href="{{ url_for('main.home') }}">{{ site.title | escape }}</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('publications') }}">Publications</a></li>
-        <li><a href="{{ url_for('datasets') }}">Datasets</a></li>
+        <li><a href="{{ url_for('main.home') }}">Home</a></li>
+        <li><a href="{{ url_for('main.publications') }}">Publications</a></li>
+        <li><a href="{{ url_for('main.datasets') }}">Datasets</a></li>
         <li>
           <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
             <span id="theme-icon">🌙</span>

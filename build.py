@@ -4,10 +4,18 @@ Build script for generating static site from Flask app.
 """
 
 import os
+import sys
 import shutil
 import sass
 from flask_frozen import Freezer
-from app import app
+
+# Add src directory to Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
+from website.app import create_app
+
+# Create Flask app
+app = create_app('production')
 
 # Configure freezer
 app.config['FREEZER_DESTINATION'] = '_site'
@@ -89,6 +97,8 @@ def build_site():
                     shutil.rmtree(dst)
                 shutil.copytree(src, dst)
             else:
+                # Ensure destination directory exists
+                os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copy2(src, dst)
     
     print("Site built successfully in _site/")

@@ -5,7 +5,14 @@ Development server script.
 
 import os
 import sys
-from app import app
+
+# Add src directory to Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
+from website.app import create_app
+
+# Create Flask app
+app = create_app('development')
 
 if __name__ == '__main__':
     # Set development environment
