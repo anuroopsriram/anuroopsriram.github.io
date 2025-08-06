@@ -1,0 +1,282 @@
+/* Bootstrap 3.4.1 styles are loaded via CDN in head.html */
+/* CSS Variables for Light/Dark Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --navbar-bg: #f8f8f8;
+  --navbar-border: #e7e7e7;
+  --link-color: #337ab7;
+  --link-hover-color: #23527c;
+  --well-bg: #f5f5f5;
+  --well-border: #e3e3e3;
+  --abstract-bg: #f9f9f9;
+  --btn-primary-bg: #337ab7;
+  --btn-primary-border: #2e6da4;
+  --btn-success-bg: #5cb85c;
+  --btn-success-border: #4cae4c;
+  --footer-bg: #f8f8f8;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1); }
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --navbar-bg: #2d2d2d;
+  --navbar-border: #444444;
+  --link-color: #66b3ff;
+  --link-hover-color: #4da6ff;
+  --well-bg: #2a2a2a;
+  --well-border: #444444;
+  --abstract-bg: #252525;
+  --btn-primary-bg: #0056b3;
+  --btn-primary-border: #004085;
+  --btn-success-bg: #28a745;
+  --btn-success-border: #1e7e34;
+  --footer-bg: #2d2d2d;
+  --border-color: #444444;
+  --shadow-color: rgba(255, 255, 255, 0.1); }
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; }
+
+.navbar-default {
+  background-color: var(--navbar-bg);
+  border-color: var(--navbar-border); }
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: var(--text-color); }
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: var(--link-hover-color); }
+
+a {
+  color: var(--link-color); }
+
+a:hover {
+  color: var(--link-hover-color); }
+
+.panel-footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--border-color); }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: all 0.3s ease; }
+
+.theme-toggle:hover {
+  background-color: var(--well-bg); }
+
+/* Fluxbox: Added for publication page columns. */
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.flex-item1 {
+  padding: 5px;
+  width: 15%; }
+
+.flex-item2 {
+  padding: 5px;
+  width: 85%; }
+
+.flex-item3 {
+  padding: 5px;
+  width: 5%; }
+
+.flex-item4 {
+  padding: 5px;
+  width: 95%; }
+
+.pressdiv div {
+  line-height: 1.2em;
+  margin: 0 0 2px 0; }
+
+.presslink {
+  font-size: 13px;
+  color: #707070;
+  border-bottom: 1px solid #eee; }
+
+.pressimg img {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-radius: 2%; }
+
+@media (max-width: 768px) {
+  .flex-item1 {
+    padding: 5px;
+    width: 45%; }
+  .flex-item2 {
+    padding: 5px;
+    width: 75%; } }
+
+img {
+  margin-bottom: 24px;
+  margin-top: 17px;
+  border-radius: 2%; }
+
+body {
+  padding-top: 70px; }
+
+figcaption {
+  text-align: right;
+  margin-top: -20px;
+  margin-bottom: 20px; }
+
+/* Top navigation bar */
+p.byline {
+  text-align: center;
+  font-size: 18px;
+  line-height: 36px;
+  margin-top: -24px;
+  margin-bottom: 48px; }
+
+pubtit {
+  font-weight: bold; }
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+  /* or 950px */ }
+
+/* Home, News */
+#newsid p {
+  text-align: left; }
+
+#homeidtmp h1 {
+  text-align: center; }
+
+#newsid img {
+  margin-top: 6px;
+  margin-bottom: 6px; }
+
+/* Team & Publications */
+#gridid .img2 {
+  margin: 16px 22px 6px 0;
+  border-radius: 10%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0); }
+
+#gridid img {
+  margin: 16px 22px 6px 0;
+  border-radius: 10%;
+  box-shadow: 2px 2px 5px #555555; }
+
+#homeid img {
+  margin: 0 0 0 0;
+  border-radius: 5%;
+  box-shadow: 0px 0px 0px #555555; }
+
+#picid img {
+  margin: 6px 3px 60px 6px;
+  border-radius: 1%;
+  box-shadow: 2px 2px 5px #555555; }
+
+#gridid .row {
+  margin-bottom: 24px; }
+
+#gridid .rowl1 {
+  margin-bottom: 24px;
+  background-color: var(--well-bg);
+  border: 1px solid var(--well-border);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+#gridid .rowl2 {
+  margin-bottom: 24px;
+  background-color: var(--abstract-bg);
+  border: 1px solid var(--well-border);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+/* Grid overrides */
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  padding-left: 16px;
+  padding-right: 16px; }
+
+/* Grid overrides */
+.col-sm-4 {
+  padding-left: 26px;
+  padding-right: 26px; }
+
+/* Carousel */
+.carousel {
+  border-radius: 3px 3px 3px 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px; }
+
+/* Button styles */
+.btn-common {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px;
+  border: 1px solid transparent; }
+
+.btn-common:hover {
+  background-color: var(--btn-primary-border);
+  border-color: var(--btn-primary-border);
+  color: #fff;
+  text-decoration: none; }
+
+.btn-bib {
+  background-color: var(--btn-success-bg);
+  border-color: var(--btn-success-border);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px;
+  border: 1px solid transparent; }
+
+.btn-bib:hover {
+  background-color: var(--btn-success-border);
+  border-color: var(--btn-success-border);
+  color: #fff;
+  text-decoration: none; }
+
+/* Well styles */
+.well, .well-sm {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: var(--well-bg);
+  border: 1px solid var(--well-border);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px var(--shadow-color); }
+
+.well-abstract {
+  min-height: 20px;
+  padding: 9px;
+  margin-bottom: 20px;
+  background-color: var(--abstract-bg);
+  border: 1px solid var(--well-border);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px var(--shadow-color); }
