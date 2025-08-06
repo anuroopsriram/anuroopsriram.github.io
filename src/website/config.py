@@ -41,6 +41,8 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     """Production configuration."""
     DEBUG = False
+    SERVER_NAME = 'localhost'
+    PREFERRED_URL_SCHEME = 'http'
 
 
 config = {

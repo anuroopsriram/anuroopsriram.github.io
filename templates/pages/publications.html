@@ -3,23 +3,14 @@
 {% block page_content %}
 <h1>Publications</h1>
 
-{% for myyear in site.data.years %}
-
-{% set yeartest = false %}
-{% for publi in site.data.publist %}
-  {% if publi.year == myyear.year %}
-   {% set yeartest = true %}
-  {% endif %}
-{% endfor %}
-
-{% if site.group_pub_by_year == true %}
-{% if yeartest == true %}
-<h2>{{ myyear.year }}</h2>
-{% endif %}
-{% endif %}
-
-{% for publi in site.data.publist %}
-{% if publi.year == myyear.year %}
+{% if site.group_pub_by_year %}
+  {# Group publications by year #}
+  {% for myyear in site.data.years %}
+    {# Check if there are any publications for this year #}
+    {% set year_pubs = site.data.publist | selectattr('year', 'equalto', myyear.year) | list %}
+    {% if year_pubs %}
+      <h2>{{ myyear.year }}</h2>
+      {% for publi in year_pubs %}
 
 <div class="well-sm">
 <ul class="flex-container">
@@ -76,8 +67,67 @@
 </ul>
 
 </div>
-{% endif %}
-{% endfor %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {# No year grouping - show all publications #}
+  {% for publi in site.data.publist %}
+<div class="well-sm">
+<ul class="flex-container">
+<li class="flex-item1">
+  {% if publi.image %}
+   <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" class="img-responsive" width="200%" style="float: left" />
+  {% endif %}
+</li>
+<li class="flex-item2">
+  <strong> {{ publi.title }}</strong> <br />
+  <em><small>{{ publi.authors }} </small></em><br />
+  <small><b>{{ publi.venue }}</b></small> 
+  <br/>
 
-{% endfor %}
+  {% if publi.doi %}<a href="http://dx.doi.org/{{ publi.doi }}" target="_blank"><button class="btn-common">DOI</button></a> {% endif %}
+  {% if publi.arxiv %}<a href="https://arxiv.org/abs/{{ publi.arxiv }}" target="_blank"><button class="btn-common">ARXIV</button></a> {% endif %}
+  {% if publi.link %}<a href="{{ publi.link }}" target="_blank"><button class="btn-common"> PAPER</button></a> {% endif %}
+  {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank"><button class="btn-bib">PDF</button></a> {% endif %}
+  {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank"><button class="btn-common">PATENT</button></a> {% endif %}
+  {% if publi.abstract %} <a data-toggle="collapse" href="#{{publi.url}}_abs" class="btn-common" style="text-decoration:none; hover:#ebebeb;" role="button" aria-expanded="false" aria-controls="{{publi.url}}_abs">ABSTRACT</a>{% endif %}
+  {% if publi.code %}<a href="{{ publi.code }}" target="_blank"><button class="btn-common">CODE</button></a> {% endif %}
+  {% if publi.data %}<a href="{{ publi.data }}" target="_blank"><button class="btn-common">DATA</button></a> {% endif %}
+  {% if publi.models %}<a href="{{ publi.models }}" target="_blank"><button class="btn-common">MODELS</button></a> {% endif %}
+  {% if publi.press %} <a data-toggle="collapse" href="#{{publi.url}}_press" class="btn-common" style="text-decoration:none; hover:#ebebeb;" role="button" aria-expanded="false" aria-controls="{{publi.url}}_press">MEDIA</a>{% endif %}
+
+{% if publi.abstract %}
+<br/>
+<div class="collapse" id="{{publi.url}}_abs"><div class="well-abstract">
+<small> <p align="justify"> {{publi.abstract | newline_to_br}} </p> </small>
+</div></div>
+{% endif %}
+
+{% if publi.press %}
+<small>
+<br/>
+<div class="collapse" id="{{publi.url}}_press">
+<div class="well-abstract">
+  <ul style="padding:-20px;list-style-position:outside;">
+  {% for article in publi.press %}
+    <a href="{{article.link}}" target="_blank"> 
+    <li style="list-style-image:url('{{ url_for('static', filename='images/logos/' + article.logo) }}');"> 
+      "{{article.text}}"
+      {% if article.author %} by {{article.author}}{% endif %}
+    </li>
+    </a>
+  {% endfor %}
+  </ul>
+</div>
+</div>
+</small>
+{% endif %}
+
+</li>
+</ul>
+
+</div>
+  {% endfor %}
+{% endif %}
 {% endblock %}

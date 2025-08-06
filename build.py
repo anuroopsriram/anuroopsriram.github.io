@@ -17,8 +17,11 @@ from website.app import create_app
 # Create Flask app
 app = create_app('production')
 
-# Configure freezer
-app.config['FREEZER_DESTINATION'] = '_site'
+# Configure freezer with absolute path
+import os
+project_root = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(project_root, '_site')
+app.config['FREEZER_DESTINATION'] = output_dir
 app.config['FREEZER_RELATIVE_URLS'] = True
 freezer = Freezer(app)
 
@@ -72,8 +75,8 @@ def build_site():
     print("Building static site...")
     
     # Clean previous build
-    if os.path.exists('_site'):
-        shutil.rmtree('_site')
+    if os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
     
     # Compile SASS
     compile_sass()
@@ -87,11 +90,11 @@ def build_site():
     # Generate static site
     freezer.freeze()
     
-    # Copy static files to _site
+    # Copy static files to output directory
     if os.path.exists('static'):
         for item in os.listdir('static'):
             src = os.path.join('static', item)
-            dst = os.path.join('_site', item)
+            dst = os.path.join(output_dir, item)
             if os.path.isdir(src):
                 if os.path.exists(dst):
                     shutil.rmtree(dst)
@@ -101,7 +104,7 @@ def build_site():
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copy2(src, dst)
     
-    print("Site built successfully in _site/")
+    print(f"Site built successfully in {output_dir}/")
 
 if __name__ == '__main__':
     build_site()
