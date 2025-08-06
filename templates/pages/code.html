@@ -1,0 +1,24 @@
+{% extends "layouts/gridlay.html" %}
+
+{% block page_content %}
+<h1>Code</h1>
+
+{% for code in site.data.codelist %}
+
+  <div class="well-sm">
+  <ul class="flex-container">
+  <li class="flex-item1">
+    {% if code.image %}
+    <img src="{{ url_for('static', filename='images/codepic/' + code.image) }}" class="img-responsive" width="100%" style="float: left" />
+    {% endif %}
+  </li>
+  <li class="flex-item2">
+    <strong> {{ code.title }} </strong><br/>
+    <small> <p align="justify"> {{ code.description }} </p> </small><br/>
+    {% if code.project_url %}<a href="{{ code.project_url }}" target="_blank"><button class="btn-common">PROJECT</button></a> {% endif %}
+    {% if code.code_url %}<a href="{{ code.code_url }}" target="_blank"><button class="btn-common">CODE</button></a> {% endif %}
+  </li>
+  </ul>
+  </div>
+{% endfor %}
+{% endblock %}

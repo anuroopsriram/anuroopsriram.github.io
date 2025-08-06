@@ -1,0 +1,12 @@
+{% extends "layouts/gridlay.html" %}
+
+{% block page_content %}
+<h1>News</h1>
+
+{% for article in site.data.news %}
+<div class="well-sm">
+  <b>{{ article.date }}</b><br/>
+  <p>{{ article.headline }}</p>
+</div>
+{% endfor %}
+{% endblock %}

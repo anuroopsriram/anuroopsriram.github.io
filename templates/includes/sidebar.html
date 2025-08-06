@@ -1,0 +1,62 @@
+<div class="well">
+<h4>{{ site.name }}</h4>
+
+{% for member in site.data.pi %}
+<div class="row">
+  <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="img-responsive" width="90%" style="block:inline; margin-left:auto; margin-right:auto;" />
+  <center><h2>{{ member.name }}</h2>
+  <table>
+  <tr>
+   <td> {% if member.email %}<a href="mailto:{{ member.email }}" target="_blank"><i class="fa fa-envelope-square fa-2x"></i></a> {% endif %} </td>
+   <td> {% if member.scholar %} <a href="{{ member.scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai-2x"></i></a> {% endif %} </td>
+   <td> {% if member.cv %} <a href="{{ member.cv }}" target="_blank"><i class="ai ai-cv-square ai-2x"></i></a> {% endif %} </td>
+   <td> {% if member.github %} <a href="{{ member.github }}" target="_blank"><i class="fa fa-github-square fa-2x"></i></a> {% endif %} </td>
+   <td> {% if member.twitter %} <a href="{{ member.twitter }}" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a> {% endif %} </td>
+   <td> {% if member.linkedin %} <a href="{{ member.linkedin }}" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a> {% endif %} </td>
+   <td> {% if member.researchgate %} <a href="{{ member.researchgate }}" target="_blank"><i class="ai ai-researchgate-square ai-2x"></i></a> {% endif %} </td>
+  </tr>
+  </table>
+  </center>
+  <ul style="overflow: hidden">
+  {% if member.number_educ == 1 %}
+  <li> {{ member.education1short }} </li>
+  {% endif %}
+
+  {% if member.number_educ == 2 %}
+  <li> {{ member.education1short }} </li>
+  <li> {{ member.education2short }} </li>
+  {% endif %}
+
+  {% if member.number_educ == 3 %}
+  <li> {{ member.education1short }} </li>
+  <li> {{ member.education2short }} </li>
+  <li> {{ member.education3short }} </li>
+  {% endif %}
+
+  {% if member.number_educ == 4 %}
+  <li> {{ member.education1short }} </li>
+  <li> {{ member.education2short }} </li>
+  <li> {{ member.education3short }} </li>
+  <li> {{ member.education4short }} </li>
+  {% endif %}
+
+  {% if member.number_educ == 5 %}
+  <li> {{ member.education1short }} </li>
+  <li> {{ member.education2short }} </li>
+  <li> {{ member.education3short }} </li>
+  <li> {{ member.education4short }} </li>
+  <li> {{ member.education5short }} </li>
+  {% endif %}
+
+  {% if member.number_educ == 6 %}
+  <li> {{ member.education1short }} </li>
+  <li> {{ member.education2short }} </li>
+  <li> {{ member.education3short }} </li>
+  <li> {{ member.education4short }} </li>
+  <li> {{ member.education6short }} </li>
+  {% endif %}
+  </ul>
+</div>
+
+{% endfor %}
+</div>
