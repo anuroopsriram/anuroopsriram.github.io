@@ -1,5 +1,33 @@
 ############# 2025 #############
 
+- title: "FastCSP: Accelerated Molecular Crystal Structure Prediction with Universal Model for Atoms"
+  authors: Vahe Gharakhanyan, Yi Yang, Luis Barroso-Luque, Muhammed Shuaibi, Daniel S. Levine, Kyle Michel, Viachaslau Bernat, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Keian Noori, Lafe J. Purvis, Tingling Rao, Brandon M. Wood, Ammar Rizvi, Matt Uyttendaele, Andrew J. Ouderkirk, Chiara Daraio, C. Lawrence Zitnick, Arman Boromand, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
+  url: fastcsp25
+  image: fastcsp25.webp
+  arxiv: 2508.02641
+  year: 2025
+  abstract: "Crystal Structure Prediction (CSP) of molecular crystals plays a central role in applications, such as pharmaceuticals and organic electronics. CSP is challenging and computationally expensive due to the need to explore a large search space with sufficient accuracy to capture energy differences of a few kJ/mol between polymorphs. Dispersion-inclusive density functional theory (DFT) provides the required accuracy but its computational cost is impractical for a large number of putative structures. We introduce FastCSP, an open-source, high-throughput CSP workflow based on machine learning interatomic potentials (MLIPs). FastCSP combines random structure generation using Genarris 3.0 with geometry relaxation and free energy calculations powered entirely by the Universal Model for Atoms (UMA) MLIP. We benchmark FastCSP on a curated set of 28 mostly rigid molecules, demonstrating that our workflow consistently generates known experimental structures and ranks them within 5 kJ/mol per molecule of the global minimum. Our results demonstrate that universal MLIPs can be used across diverse compounds without requiring system-specific tuning. Moreover, the speed and accuracy afforded by UMA eliminate the need for classical force fields in the early stages of CSP and for final re-ranking with DFT. The open-source release of the entire FastCSP workflow significantly lowers the barrier to accessing CSP. CSP results for a single system can be obtained within hours on tens of modern GPUs, making high-throughput crystal structure prediction feasible for a broad range of scientific applications."
+
+- title: "The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture"
+  authors: Anuroop Sriram, Logan M. Brabson, Xiaohan Yu, Sihoon Choi, Kareem Abdelmaqsoud, Elias Moubarak, Pim de Haan, Sindy Löwe, Johann Brehmer, John R. Kitchin, Max Welling, C. Lawrence Zitnick, Zachary Ulissi, Andrew J. Medford, David S. Sholl
+  url: odac25
+  image: odac25.webp
+  arxiv: 2508.03162
+  year: 2025
+  abstract: Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a significant expansion and improvement upon ODAC23 (Sriram et al., ACS Central Science, 10 (2024) 923), comprising nearly 70 million DFT single-point calculations for CO2, H2O, N2, and O2 adsorption in 15,000 MOFs. ODAC25 introduces chemical and configurational diversity through functionalized MOFs, high-energy GCMC-derived placements, and synthetically generated frameworks. ODAC25 also significantly improves upon the accuracy of DFT calculations and the treatment of flexible MOFs in ODAC23. Along with the dataset, we release new state-of-the-art machine-learned interatomic potentials trained on ODAC25 and evaluate them on adsorption energy and Henry's law coefficient predictions.
+  data: https://huggingface.co/facebook/ODAC25
+  models: https://huggingface.co/facebook/ODAC25
+
+- title: "Open Molecular Crystals 2025 (OMC25) Dataset and Models"
+  authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
+  url: omc25
+  image: omc25.webp
+  arxiv: 2508.02651
+  year: 2025
+  abstract: "The development of accurate and efficient machine learning models for predicting the structure and properties of molecular crystals has been hindered by the scarcity of publicly available datasets of structures with property labels. To address this challenge, we introduce the Open Molecular Crystals 2025 (OMC25) dataset, a collection of over 27 million molecular crystal structures containing 12 elements and up to 300 atoms in the unit cell. The dataset was generated from dispersion-inclusive density functional theory (DFT) relaxation trajectories of over 230,000 randomly generated molecular crystal structures of around 50,000 organic molecules. OMC25 comprises diverse chemical compounds capable of forming different intermolecular interactions and a wide range of crystal packing motifs. We provide detailed information on the dataset's construction, composition, structure, and properties. To demonstrate the quality and use cases of OMC25, we further trained and evaluated state-of-the-art open-source machine learning interatomic potentials. By making this dataset publicly available, we aim to accelerate the development of more accurate and efficient machine learning models for molecular crystals."
+  data: https://huggingface.co/facebook/OMC25
+  models: https://huggingface.co/facebook/OMC25
+
 - title: "UMA: A Family of Universal Models for Atoms"
   authors: Brandon M. Wood, Misko Dzamba, Xiang Fu, Meng Gao, Muhammed Shuaibi, Luis Barroso-Luque, Kareem Abdelmaqsoud, Vahe Gharakhanyan, John R. Kitchin, Daniel S. Levine, Kyle Michel, Anuroop Sriram, Taco Cohen, Abhishek Das, Ammar Rizvi, Sushree Jagriti Sahoo, Zachary W. Ulissi, C. Lawrence Zitnick
   url: wood2025Uma
