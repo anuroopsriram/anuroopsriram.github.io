@@ -20,7 +20,7 @@ app = create_app('production')
 # Configure freezer with absolute path
 import os
 project_root = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(project_root, '_site')
+output_dir = os.path.join(project_root, 'docs')
 app.config['FREEZER_DESTINATION'] = output_dir
 app.config['FREEZER_RELATIVE_URLS'] = True
 freezer = Freezer(app)

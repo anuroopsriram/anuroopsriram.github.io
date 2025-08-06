@@ -41,7 +41,6 @@ venv.bak/
 Thumbs.db
 
 # Site build output
-_site/
 static/css/main.css
 
 # SASS
