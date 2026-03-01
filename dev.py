@@ -15,12 +15,8 @@ from website.app import create_app
 app = create_app('development')
 
 if __name__ == '__main__':
-    # Set development environment
-    os.environ['FLASK_ENV'] = 'development'
-    app.config['ENV'] = 'development'
-    
     print("Starting development server...")
-    print("Open http://localhost:5000 in your browser")
+    print("Open http://localhost:5001 in your browser")
     print("Press Ctrl+C to stop the server")
     
     try:

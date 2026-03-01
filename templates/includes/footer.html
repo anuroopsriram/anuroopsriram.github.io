@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4">
-          <p>&copy; 2022 {{ site.title | escape }}</p>
+          <p>&copy; {{ now().strftime('%Y') }} {{ site.title | escape }}</p>
           <p>{{ site.affiliation }}</p>
         </div>
 
@@ -20,6 +20,6 @@
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/theme.js') }}"></script>

@@ -9,7 +9,6 @@ class Config:
     
     # Site configuration
     SITE_TITLE = 'Anuroop Sriram'
-    SITE_EMAIL = 'anuroop.sriram@gmail.com'
     SITE_DESCRIPTION = 'Personal webpage of Anuroop Sriram'
     SITE_BASEURL = ''
     SITE_URL = ''
@@ -24,7 +23,7 @@ class Config:
         """Get site configuration as dictionary."""
         return {
             'title': cls.SITE_TITLE,
-            'email': cls.SITE_EMAIL,
+            'name': cls.SITE_TITLE,
             'description': cls.SITE_DESCRIPTION,
             'baseurl': cls.SITE_BASEURL,
             'url': cls.SITE_URL,

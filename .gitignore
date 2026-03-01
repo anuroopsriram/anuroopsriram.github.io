@@ -43,9 +43,6 @@ Thumbs.db
 # Site build output
 static/css/main.css
 
-# SASS
-.sass-cache/
-
 # Node modules (if any)
 node_modules/
 

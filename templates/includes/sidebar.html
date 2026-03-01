@@ -3,7 +3,7 @@
 
 {% for member in site.data.pi %}
 <div class="row">
-  <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="img-responsive" width="90%" style="block:inline; margin-left:auto; margin-right:auto;" />
+  <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="img-responsive" width="90%" alt="{{ member.name }}" />
   <center><h2>{{ member.name }}</h2>
   <table>
   <tr>
@@ -17,44 +17,10 @@
   </tr>
   </table>
   </center>
-  <ul style="overflow: hidden">
-  {% if member.number_educ == 1 %}
-  <li> {{ member.education1short }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 2 %}
-  <li> {{ member.education1short }} </li>
-  <li> {{ member.education2short }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 3 %}
-  <li> {{ member.education1short }} </li>
-  <li> {{ member.education2short }} </li>
-  <li> {{ member.education3short }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 4 %}
-  <li> {{ member.education1short }} </li>
-  <li> {{ member.education2short }} </li>
-  <li> {{ member.education3short }} </li>
-  <li> {{ member.education4short }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 5 %}
-  <li> {{ member.education1short }} </li>
-  <li> {{ member.education2short }} </li>
-  <li> {{ member.education3short }} </li>
-  <li> {{ member.education4short }} </li>
-  <li> {{ member.education5short }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 6 %}
-  <li> {{ member.education1short }} </li>
-  <li> {{ member.education2short }} </li>
-  <li> {{ member.education3short }} </li>
-  <li> {{ member.education4short }} </li>
-  <li> {{ member.education6short }} </li>
-  {% endif %}
+  <ul class="sidebar-education">
+  {% for i in range(1, member.number_educ + 1) %}
+  <li> {{ member['education' ~ i ~ 'short'] }} </li>
+  {% endfor %}
   </ul>
 </div>
 

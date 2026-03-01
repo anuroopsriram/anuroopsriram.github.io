@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "anuroop-academic-website"
 version = "1.0.0"
 description = "Academic website for Anuroop Sriram built with Flask"
-readme = "README_PYTHON.md"
+readme = "README.md"
 license = "MIT"
 authors = [
     { name = "Anuroop Sriram", email = "anuroop.sriram@gmail.com" }
