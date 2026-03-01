@@ -43,6 +43,7 @@ python build.py
 ├── src/website/           # Main application package
 │   ├── __init__.py       # Package initialization
 │   ├── app.py            # Flask application factory
+│   ├── builder.py        # Shared build logic
 │   ├── config.py         # Configuration settings
 │   ├── data_loader.py    # YAML data loading utilities
 │   ├── filters.py        # Jinja2 template filters
@@ -62,7 +63,7 @@ python build.py
 │   ├── datalist.yml      # Datasets
 │   ├── news.yml          # News items
 │   └── ...               # Other data files
-├── _site/                # Generated static site (build output)
+├── docs/                 # Generated static site (build output, served by GitHub Pages)
 ├── pyproject.toml        # Project configuration and dependencies
 └── requirements.txt      # pip-compatible dependencies
 ```
@@ -132,12 +133,12 @@ The website supports light and dark themes with:
 # Build the site
 uv run website-build
 
-# The _site/ directory contains the static site
-# Push to gh-pages branch or configure Pages to use _site/
+# The docs/ directory contains the static site
+# GitHub Pages is configured to serve from docs/ on the master branch
 ```
 
 ### Other Platforms
-The generated `_site/` directory is a complete static website that works with:
+The generated `docs/` directory is a complete static website that works with:
 - Netlify
 - Vercel
 - AWS S3

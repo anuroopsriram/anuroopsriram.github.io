@@ -1,5 +1,7 @@
 """Flask application factory for the academic website."""
 
+from datetime import datetime
+
 from flask import Flask
 from .config import config
 from .data_loader import DataLoader
@@ -25,7 +27,7 @@ def create_app(config_name: str = 'default') -> Flask:
         """Inject site configuration and data into all templates."""
         site_config = config[config_name].get_site_config()
         site_config['data'] = data_loader.get_all_data()
-        return {'site': site_config}
+        return {'site': site_config, 'now': datetime.utcnow}
     
     # Register template filters
     register_filters(app)

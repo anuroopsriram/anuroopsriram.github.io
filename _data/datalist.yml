@@ -1,59 +1,44 @@
-- title: Open DAC 2023 (ODAC23)
-  description: "
-    Direct Air Capture (DAC) involves directly capturing carbon dioxide from the atmosphere and has been widely recognized as a crucial tool in combating 
-    climate change. Despite its potential, the broad implementation of DAC has been impeded by high capture costs. Key to overcoming this hurdle is 
-    the discovery of novel sorbents — materials that pull carbon dioxide from the air. Discovering new sorbents holds the key to reducing capture costs 
-    and scaling DAC to meaningfully impact global carbon emissions.
+############# Materials #############
 
-    The DAC space is growing rapidly with many companies entering the space. To engage the broader research community as well as the budding DAC industry, 
-    we have released the OpenDAC 2023 (ODAC23) dataset to train ML models. ODAC23 contains nearly 40M DFT calculations from 170K DFT relaxations involving 
-    Metal Organic Frameworks (MOFs) with carbon dioxide and water adsorbates. We have also released SOTA GNN models trained on this dataset.
-  "
-  image: odac23.webp
-  data_url: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
+- title: Open Molecular Crystals 2025 (OMC25)
+  category: Materials
+  description: "Over 27 million molecular crystal structures from DFT relaxations of 230,000+ randomly generated structures across 50,000 organic molecules. Released with machine-learned interatomic potentials."
+  image: omc25.webp
+  data_url: https://huggingface.co/facebook/OMC25
+  project_url: https://arxiv.org/abs/2508.02651
+  code_url: https://github.com/facebookresearch/fairchem
+
+- title: Open DAC 2023 & 2025
+  category: Materials
+  description: "Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides 40M DFT calculations across 170K MOF relaxations; ODAC25 expands to 60M calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials."
+  image: odac25.webp
+  data_url: https://huggingface.co/facebook/ODAC25
   project_url: https://open-dac.github.io/
-  code_url: https://github.com/Open-Catalyst-Project/ocp/
+  code_url: https://github.com/facebookresearch/fairchem
 
-- title: Open Catalyst 2020 (OC20) & Open Catalyst 2022 (OC22)
-  # description: "Datasets for discovering new catalysts created by running over 260 million Density Functional Theory (DFT) calculations."
-  description: "
-    Scalable and cost-effective solutions to renewable energy storage are essential to addressing the world's rising energy needs while reducing climate change. 
-    As we increase our reliance on renewable energy sources such as wind and solar, which produce intermittent power, storage is needed to transfer power from 
-    times of peak generation to peak demand. This may require the storage of power for hours, days, or months. One solution that offers the potential of scaling 
-    to nation-sized grids is the conversion of renewable energy to other fuels, such as hydrogen. To be widely adopted, this process requires cost-effective 
-    solutions to running chemical reactions.<br><br>
-    An open challenge is finding low-cost catalysts to drive these reactions at high rates. Through the use of quantum mechanical simulations (density functional 
-    theory), new catalyst structures can be tested and evaluated. Unfortunately, the high computational cost of these simulations limits the number of structures 
-    that may be tested. The use of AI or machine learning may provide a method to efficiently approximate these calculations, leading to new approaches in finding 
-    effective catalysts.<br><br>
-    To enable the broader research community to participate in this important project, we have released the Open Catalyst 2020 (OC20) and 2022 (OC22) datasets for 
-    training ML models, along with baseline models and code. These datasets altogether contain 1.3 million molecular relaxations with results from over 260 million 
-    DFT calculations.
-  "
+- title: Open Catalyst 2020 & 2022 (OC20, OC22)
+  category: Materials
+  description: "Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain 1.3 million molecular relaxations from over 260 million DFT calculations. Released with baseline models and code."
   image: ocp.webp
   data_url: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
   project_url: https://opencatalystproject.org/
-  code_url: https://github.com/Open-Catalyst-Project/ocp/
+  code_url: https://github.com/facebookresearch/fairchem
 
-- title: "fastMRI Dataset (Knee & Brain MRIs)"
-  description: "
-    Accelerating Magnetic Resonance Imaging (MRI) by taking fewer measurements has the potential to reduce medical costs, minimize stress to patients and make MRI 
-    possible in applications where it is currently prohibitively slow or expensive. By producing accurate images from under-sampled data, AI can be used to speed 
-    up MR image acquisition by upto 10x or more.<br/><br/>
-    To enable the broader research community to participate in this important project, we released datasets containing roughly 1,500 fully sampled knee MRIs, and 
-    7,000 fully sampled brain MRIs, in addition to DICOM images from 10,000 clinical knee MRIs.
-  "
+############# MRI Acceleration #############
+
+- title: fastMRI Datasets
+  category: MRI Acceleration
+  description: "Large-scale dataset of raw MRI measurements for AI-accelerated reconstruction. Contains 1,500 fully sampled knee MRIs, 7,000 fully sampled brain MRIs, and DICOM images from 10,000 clinical knee exams."
   image: fastmri.webp
   data_url: https://fastmri.med.nyu.edu/
   project_url: https://fastmri.org/
   code_url: https://github.com/facebookresearch/fastMRI/
 
+############# Speech Recognition #############
+
 - title: Multilingual LibriSpeech (MLS)
-  description: "
-    Multilingual LibriSpeech (MLS) dataset is a large corpus for multilingual speech research consisting of 50K hours of labeled speech from 8 languages - English, German, 
-    Dutch, Spanish, French, Italian, Portuguese, Polish. MLS was derived from read audiobooks from LibriVox. Language Models (LM) and baseline Automatic Speech Recognition (ASR) 
-    models and for all the languages in our dataset
-  "
+  category: Speech Recognition
+  description: "50K hours of labeled speech across 8 languages, derived from LibriVox audiobooks. Includes language models and baseline ASR models for all languages."
   image: mls.webp
   data_url: https://www.openslr.org/94/
   code_url: https://github.com/flashlight/wav2letter/tree/main/recipes/mls
