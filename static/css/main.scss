@@ -247,16 +247,19 @@ code {
 }
 
 .flex-item1 {
-  flex: 0 0 120px;
-  max-width: 120px;
+  flex: 0 0 200px;
+  max-width: 200px;
 }
 
 .flex-item1 img,
 .flex-item1 video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 200px;
+  height: 130px;
+  object-fit: contain;
+  background-color: var(--abstract-bg);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
+  padding: 6px;
   margin: 0;
 }
 
@@ -272,7 +275,7 @@ code {
 
   .flex-item1 {
     flex: 0 0 auto;
-    max-width: 160px;
+    max-width: 150px;
   }
 }
 
