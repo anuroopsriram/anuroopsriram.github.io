@@ -317,6 +317,41 @@ code {
 .btn-collapse-toggle:hover {
   text-decoration: none; }
 
+/* ----- Publication filters ----- */
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color); }
+
+.pub-filter-btn {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; }
+
+.pub-filter-btn:hover {
+  color: var(--link-color);
+  border-color: var(--link-color);
+  background-color: var(--abstract-bg); }
+
+.pub-filter-btn.active {
+  background-color: var(--btn-primary-bg);
+  color: #fff;
+  border-color: var(--btn-primary-bg); }
+
+.pub-filter-btn.active:hover {
+  background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover); }
+
 /* ----- Abstract / Press collapse ----- */
 .abstract-box {
   background-color: var(--abstract-bg);

@@ -4,11 +4,44 @@
 {% block page_content %}
 <h1>Publications</h1>
 
+{% set keyword_order = [
+  'AI for Science',
+  'AI for Healthcare',
+  'Speech',
+  'Generative Modeling',
+  'Diffusion/Flow Matching',
+  'LLMs',
+  'Model Scaling',
+  'Computer Vision',
+  'Datasets',
+] %}
+
+{% set all_keywords = [] %}
+{% for publi in site.data.publist %}
+  {% for kw in publi.keywords | default([]) %}
+    {% if kw not in all_keywords %}
+      {% if all_keywords.append(kw) %}{% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<div class="pub-filters" role="toolbar" aria-label="Filter publications by topic">
+  <button class="pub-filter-btn active" data-filter="all">All</button>
+  {% for kw in keyword_order %}
+    {% if kw in all_keywords %}
+  <button class="pub-filter-btn" data-filter="{{ kw }}">{{ kw }}</button>
+    {% endif %}
+  {% endfor %}
+  {% for kw in all_keywords if kw not in keyword_order %}
+  <button class="pub-filter-btn" data-filter="{{ kw }}">{{ kw }}</button>
+  {% endfor %}
+</div>
+
 {% if site.group_pub_by_year %}
   {% for myyear in site.data.years %}
     {% set year_pubs = site.data.publist | selectattr('year', 'equalto', myyear.year) | list %}
     {% if year_pubs %}
-      <h2>{{ myyear.year }}</h2>
+      <h2 class="pub-year-heading" data-year="{{ myyear.year }}">{{ myyear.year }}</h2>
       {% for publi in year_pubs %}
         {{ pub_card(publi) }}
       {% endfor %}
@@ -19,4 +52,43 @@
     {{ pub_card(publi) }}
   {% endfor %}
 {% endif %}
+
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.pub-filter-btn');
+  var cards = document.querySelectorAll('.pub-card');
+  var headings = document.querySelectorAll('.pub-year-heading');
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.getAttribute('data-filter');
+
+      cards.forEach(function(card) {
+        if (filter === 'all') {
+          card.style.display = '';
+        } else {
+          var kws = card.getAttribute('data-keywords');
+          card.style.display = kws && kws.split(',').indexOf(filter) !== -1 ? '' : 'none';
+        }
+      });
+
+      headings.forEach(function(h) {
+        var sibling = h.nextElementSibling;
+        var hasVisible = false;
+        while (sibling && !sibling.classList.contains('pub-year-heading')) {
+          if (sibling.classList.contains('pub-card') && sibling.style.display !== 'none') {
+            hasVisible = true;
+            break;
+          }
+          sibling = sibling.nextElementSibling;
+        }
+        h.style.display = hasVisible ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 {% endblock %}
