@@ -8,12 +8,13 @@
 </li>
 <li class="flex-item2">
   <div class="pub-title">{{ publi.title }}</div>
-  <div class="pub-authors">{{ publi.authors }}</div>
+  <div class="pub-authors">{{ publi.authors | bold_name }}</div>
   {% if publi.venue %}<div class="pub-venue">{{ publi.venue }}</div>{% endif %}
 
   <div class="pub-links">
   {% if publi.doi %}<a href="http://dx.doi.org/{{ publi.doi }}" target="_blank" class="btn-common">DOI</a> {% endif %}
   {% if publi.arxiv %}<a href="https://arxiv.org/abs/{{ publi.arxiv }}" target="_blank" class="btn-common">ARXIV</a> {% endif %}
+  {% if publi.journal %}<a href="{{ publi.journal }}" target="_blank" class="btn-common">JOURNAL</a> {% endif %}
   {% if publi.link %}<a href="{{ publi.link }}" target="_blank" class="btn-common">PAPER</a> {% endif %}
   {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank" class="btn-bib">PDF</a> {% endif %}
   {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank" class="btn-common">PATENT</a> {% endif %}
