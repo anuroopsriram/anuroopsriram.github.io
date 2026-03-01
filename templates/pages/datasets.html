@@ -3,7 +3,11 @@
 {% block page_content %}
 <h1>Datasets</h1>
 
-{% for dataset in site.data.datalist %}
+{% set categories = site.data.datalist | map(attribute='category') | unique | list %}
+{% for category in categories %}
+<h2>{{ category }}</h2>
+
+{% for dataset in site.data.datalist | selectattr('category', 'equalto', category) %}
   <div class="pub-card">
   <ul class="flex-container">
   <li class="flex-item1">
@@ -25,5 +29,6 @@
   </li>
   </ul>
   </div>
+{% endfor %}
 {% endfor %}
 {% endblock %}

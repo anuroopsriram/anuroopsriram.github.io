@@ -26,13 +26,6 @@ def datasets():
                          active_page='datasets')
 
 
-@main.route('/code/')
-def code():
-    return render_template('pages/code.html',
-                         page={'title': 'Code', 'permalink': '/code/'},
-                         active_page='code')
-
-
 @main.route('/allnews/')
 def allnews():
     return render_template('pages/allnews.html',

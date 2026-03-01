@@ -16,9 +16,6 @@
           <a class="nav-link{% if active_page == 'datasets' %} active{% endif %}" href="{{ url_for('main.datasets') }}">Datasets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link{% if active_page == 'code' %} active{% endif %}" href="{{ url_for('main.code') }}">Code</a>
-        </li>
-        <li class="nav-item">
           <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
             <span id="theme-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
