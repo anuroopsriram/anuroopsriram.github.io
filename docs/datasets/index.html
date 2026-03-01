@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
     <title>Datasets - Anuroop Sriram</title>
@@ -11,158 +10,185 @@
   
     <meta name="description" content="Personal webpage of Anuroop Sriram">
   
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/css/main.css">
   <link rel="canonical" href="/datasets/">
   <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
 
   
 </head>
   <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="../index.html">Anuroop Sriram</a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../publications/index.html">Publications</a></li>
-        <li><a href="index.html">Datasets</a></li>
-        <li>
+    <nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Anuroop Sriram</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../publications/index.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Datasets</a>
+        </li>
+        <li class="nav-item">
           <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <span id="theme-icon">🌙</span>
+            <span id="theme-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            </span>
           </button>
         </li>
       </ul>
     </div>
   </div>
-</div>
+</nav>
     
-    <div class="container-fluid">
-      <div class="row">
-        
-<div id="gridid" class="col-sm-12">
+    <div class="main-content">
+      <div class="container">
+        <div class="row">
+          
+<div id="gridid" class="col-lg-10 offset-lg-1 col-12">
   
 <h1>Datasets</h1>
 
 
 
-  <div class="well-sm">
+<h2>Materials</h2>
+
+
+  <div class="pub-card">
   <ul class="flex-container">
   <li class="flex-item1">
     
-    <img src="../static/images/datapic/odac23.webp" class="img-responsive" width="100%" style="float: left" />
+    <img src="../static/images/datapic/omc25.webp" class="img-fluid" alt="Open Molecular Crystals 2025 (OMC25)" />
     
     
   </li>
   <li class="flex-item2">
-    <strong> Open DAC 2023 (ODAC23) </strong><br/>
-    <small> <p align="justify">  Direct Air Capture (DAC) involves directly capturing carbon dioxide from the atmosphere and has been widely recognized as a crucial tool in combating climate change. Despite its potential, the broad implementation of DAC has been impeded by high capture costs. Key to overcoming this hurdle is the discovery of novel sorbents — materials that pull carbon dioxide from the air. Discovering new sorbents holds the key to reducing capture costs and scaling DAC to meaningfully impact global carbon emissions.
-The DAC space is growing rapidly with many companies entering the space. To engage the broader research community as well as the budding DAC industry, we have released the OpenDAC 2023 (ODAC23) dataset to train ML models. ODAC23 contains nearly 40M DFT calculations from 170K DFT relaxations involving Metal Organic Frameworks (MOFs) with carbon dioxide and water adsorbates. We have also released SOTA GNN models trained on this dataset.  </p> </small><br/>
-    <a href="https://open-dac.github.io/" target="_blank"><button class="btn-common">PROJECT</button></a> 
-    <a href="https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md" target="_blank"><button class="btn-common">DATA</button></a> 
-    <a href="https://github.com/Open-Catalyst-Project/ocp/" target="_blank"><button class="btn-common">CODE</button></a> 
+    <div class="pub-title">Open Molecular Crystals 2025 (OMC25)</div>
+    <p class="mt-1" style="font-size: 0.9rem;">Over 27 million molecular crystal structures from DFT relaxations of 230,000+ randomly generated structures across 50,000 organic molecules. Released with machine-learned interatomic potentials.</p>
+    <div class="pub-links">
+    <a href="https://arxiv.org/abs/2508.02651" target="_blank" class="btn-common">PROJECT</a> 
+    <a href="https://huggingface.co/facebook/OMC25" target="_blank" class="btn-common">DATA</a> 
+    <a href="https://github.com/facebookresearch/fairchem" target="_blank" class="btn-common">CODE</a> 
+    </div>
+  </li>
+  </ul>
+  </div>
+
+  <div class="pub-card">
+  <ul class="flex-container">
+  <li class="flex-item1">
+    
+    <img src="../static/images/datapic/odac25.webp" class="img-fluid" alt="Open DAC 2023 &amp; 2025" />
+    
+    
+  </li>
+  <li class="flex-item2">
+    <div class="pub-title">Open DAC 2023 &amp; 2025</div>
+    <p class="mt-1" style="font-size: 0.9rem;">Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides 40M DFT calculations across 170K MOF relaxations; ODAC25 expands to 60M calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials.</p>
+    <div class="pub-links">
+    <a href="https://open-dac.github.io/" target="_blank" class="btn-common">PROJECT</a> 
+    <a href="https://huggingface.co/facebook/ODAC25" target="_blank" class="btn-common">DATA</a> 
+    <a href="https://github.com/facebookresearch/fairchem" target="_blank" class="btn-common">CODE</a> 
+    </div>
+  </li>
+  </ul>
+  </div>
+
+  <div class="pub-card">
+  <ul class="flex-container">
+  <li class="flex-item1">
+    
+    <img src="../static/images/datapic/ocp.webp" class="img-fluid" alt="Open Catalyst 2020 &amp; 2022 (OC20, OC22)" />
+    
+    
+  </li>
+  <li class="flex-item2">
+    <div class="pub-title">Open Catalyst 2020 &amp; 2022 (OC20, OC22)</div>
+    <p class="mt-1" style="font-size: 0.9rem;">Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain 1.3 million molecular relaxations from over 260 million DFT calculations. Released with baseline models and code.</p>
+    <div class="pub-links">
+    <a href="https://opencatalystproject.org/" target="_blank" class="btn-common">PROJECT</a> 
+    <a href="https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md" target="_blank" class="btn-common">DATA</a> 
+    <a href="https://github.com/facebookresearch/fairchem" target="_blank" class="btn-common">CODE</a> 
+    </div>
   </li>
   </ul>
   </div>
 
 
-  <div class="well-sm">
+<h2>MRI Acceleration</h2>
+
+
+  <div class="pub-card">
   <ul class="flex-container">
   <li class="flex-item1">
     
-    <img src="../static/images/datapic/ocp.webp" class="img-responsive" width="100%" style="float: left" />
+    <img src="../static/images/datapic/fastmri.webp" class="img-fluid" alt="fastMRI Datasets" />
     
     
   </li>
   <li class="flex-item2">
-    <strong> Open Catalyst 2020 (OC20) &amp; Open Catalyst 2022 (OC22) </strong><br/>
-    <small> <p align="justify">  Scalable and cost-effective solutions to renewable energy storage are essential to addressing the world&#39;s rising energy needs while reducing climate change. As we increase our reliance on renewable energy sources such as wind and solar, which produce intermittent power, storage is needed to transfer power from times of peak generation to peak demand. This may require the storage of power for hours, days, or months. One solution that offers the potential of scaling to nation-sized grids is the conversion of renewable energy to other fuels, such as hydrogen. To be widely adopted, this process requires cost-effective solutions to running chemical reactions.&lt;br&gt;&lt;br&gt; An open challenge is finding low-cost catalysts to drive these reactions at high rates. Through the use of quantum mechanical simulations (density functional theory), new catalyst structures can be tested and evaluated. Unfortunately, the high computational cost of these simulations limits the number of structures that may be tested. The use of AI or machine learning may provide a method to efficiently approximate these calculations, leading to new approaches in finding effective catalysts.&lt;br&gt;&lt;br&gt; To enable the broader research community to participate in this important project, we have released the Open Catalyst 2020 (OC20) and 2022 (OC22) datasets for training ML models, along with baseline models and code. These datasets altogether contain 1.3 million molecular relaxations with results from over 260 million DFT calculations.  </p> </small><br/>
-    <a href="https://opencatalystproject.org/" target="_blank"><button class="btn-common">PROJECT</button></a> 
-    <a href="https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md" target="_blank"><button class="btn-common">DATA</button></a> 
-    <a href="https://github.com/Open-Catalyst-Project/ocp/" target="_blank"><button class="btn-common">CODE</button></a> 
+    <div class="pub-title">fastMRI Datasets</div>
+    <p class="mt-1" style="font-size: 0.9rem;">Large-scale dataset of raw MRI measurements for AI-accelerated reconstruction. Contains 1,500 fully sampled knee MRIs, 7,000 fully sampled brain MRIs, and DICOM images from 10,000 clinical knee exams.</p>
+    <div class="pub-links">
+    <a href="https://fastmri.org/" target="_blank" class="btn-common">PROJECT</a> 
+    <a href="https://fastmri.med.nyu.edu/" target="_blank" class="btn-common">DATA</a> 
+    <a href="https://github.com/facebookresearch/fastMRI/" target="_blank" class="btn-common">CODE</a> 
+    </div>
   </li>
   </ul>
   </div>
 
 
-  <div class="well-sm">
+<h2>Speech Recognition</h2>
+
+
+  <div class="pub-card">
   <ul class="flex-container">
   <li class="flex-item1">
     
-    <img src="../static/images/datapic/fastmri.webp" class="img-responsive" width="100%" style="float: left" />
+    <img src="../static/images/datapic/mls.webp" class="img-fluid" alt="Multilingual LibriSpeech (MLS)" />
     
     
   </li>
   <li class="flex-item2">
-    <strong> fastMRI Dataset (Knee &amp; Brain MRIs) </strong><br/>
-    <small> <p align="justify">  Accelerating Magnetic Resonance Imaging (MRI) by taking fewer measurements has the potential to reduce medical costs, minimize stress to patients and make MRI possible in applications where it is currently prohibitively slow or expensive. By producing accurate images from under-sampled data, AI can be used to speed up MR image acquisition by upto 10x or more.&lt;br/&gt;&lt;br/&gt; To enable the broader research community to participate in this important project, we released datasets containing roughly 1,500 fully sampled knee MRIs, and 7,000 fully sampled brain MRIs, in addition to DICOM images from 10,000 clinical knee MRIs.  </p> </small><br/>
-    <a href="https://fastmri.org/" target="_blank"><button class="btn-common">PROJECT</button></a> 
-    <a href="https://fastmri.med.nyu.edu/" target="_blank"><button class="btn-common">DATA</button></a> 
-    <a href="https://github.com/facebookresearch/fastMRI/" target="_blank"><button class="btn-common">CODE</button></a> 
+    <div class="pub-title">Multilingual LibriSpeech (MLS)</div>
+    <p class="mt-1" style="font-size: 0.9rem;">50K hours of labeled speech across 8 languages, derived from LibriVox audiobooks. Includes language models and baseline ASR models for all languages.</p>
+    <div class="pub-links">
+    
+    <a href="https://www.openslr.org/94/" target="_blank" class="btn-common">DATA</a> 
+    <a href="https://github.com/flashlight/wav2letter/tree/main/recipes/mls" target="_blank" class="btn-common">CODE</a> 
+    </div>
   </li>
   </ul>
   </div>
 
-
-  <div class="well-sm">
-  <ul class="flex-container">
-  <li class="flex-item1">
-    
-    <img src="../static/images/datapic/mls.webp" class="img-responsive" width="100%" style="float: left" />
-    
-    
-  </li>
-  <li class="flex-item2">
-    <strong> Multilingual LibriSpeech (MLS) </strong><br/>
-    <small> <p align="justify">  Multilingual LibriSpeech (MLS) dataset is a large corpus for multilingual speech research consisting of 50K hours of labeled speech from 8 languages - English, German, Dutch, Spanish, French, Italian, Portuguese, Polish. MLS was derived from read audiobooks from LibriVox. Language Models (LM) and baseline Automatic Speech Recognition (ASR) models and for all the languages in our dataset  </p> </small><br/>
-    
-    <a href="https://www.openslr.org/94/" target="_blank"><button class="btn-common">DATA</button></a> 
-    <a href="https://github.com/flashlight/wav2letter/tree/main/recipes/mls" target="_blank"><button class="btn-common">CODE</button></a> 
-  </li>
-  </ul>
-  </div>
 
 
 </div>
 
-      </div>
-    </div>
-
-    <br/>
-<div id="footer" class="panel">
-  <div class="panel-footer">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-4">
-          <p>&copy; 2022 Anuroop Sriram</p>
-          <p></p>
-        </div>
-
-        <div class="col-sm-4">
-          <p></p>
-        </div>
-
-        <div class="col-sm-4">
-          <p></p>
         </div>
       </div>
     </div>
+
+    <footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Anuroop Sriram</p>
   </div>
-</div>
+</footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="../static/js/theme.js"></script>
   </body>
 </html>
