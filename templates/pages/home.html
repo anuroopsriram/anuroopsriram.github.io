@@ -89,6 +89,6 @@ I hold a Master's in Language Technologies from <a href="https://www.lti.cs.cmu.
 {% from "includes/pub_card.html" import render as pub_card %}
 <h2>Selected Publications</h2>
 {% for publi in site.data.publist if publi.highlight %}
-  {{ pub_card(publi) }}
+  {{ pub_card(publi, compact=true) }}
 {% endfor %}
 {% endblock %}

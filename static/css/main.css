@@ -317,6 +317,20 @@ code {
 .btn-collapse-toggle:hover {
   text-decoration: none; }
 
+/* ----- Compact publication cards (home page) ----- */
+.pub-card-compact {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.6rem; }
+
+.pub-card-compact .pub-title {
+  font-size: 0.9rem; }
+
+.pub-card-compact .pub-venue {
+  font-size: 0.8rem; }
+
+.pub-card-compact .pub-links {
+  margin-top: 0.35rem; }
+
 /* ----- Publication filters ----- */
 .pub-filters {
   display: flex;
