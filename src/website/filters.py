@@ -45,6 +45,24 @@ def truncate_filter(text: Optional[str], length: int = 160) -> str:
     return text[:length] + '...' if len(text) > length else text
 
 
+def truncate_authors_filter(text: Optional[str], max_authors: int = 3) -> str:
+    """Show first N authors and append 'et al.' if there are more."""
+    if text is None:
+        return ''
+    authors = [a.strip() for a in str(text).split(',')]
+    if len(authors) <= max_authors:
+        return text
+    return ', '.join(authors[:max_authors]) + ', et al.'
+
+
+def bold_name_filter(text: Optional[str], name: str = 'Anuroop Sriram') -> str:
+    """Bold a specific name in an author list."""
+    if text is None:
+        return ''
+    from markupsafe import Markup
+    return Markup(str(text).replace(name, f'<strong>{name}</strong>'))
+
+
 def register_filters(app):
     """Register all template filters with the Flask app."""
     app.template_filter('escape')(escape_filter)
@@ -52,3 +70,5 @@ def register_filters(app):
     app.template_filter('strip_html')(strip_html_filter)
     app.template_filter('strip_newlines')(strip_newlines_filter)
     app.template_filter('truncate')(truncate_filter)
+    app.template_filter('truncate_authors')(truncate_authors_filter)
+    app.template_filter('bold_name')(bold_name_filter)

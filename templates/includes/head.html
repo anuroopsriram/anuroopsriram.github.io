@@ -6,19 +6,33 @@
   {% else %}
     <title>{{ site.title | escape }}</title>
   {% endif %}
-  
-  {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate(160) }}">
-  {% else %}
-    <meta name="description" content="{{ site.description }}">
-  {% endif %}
+
+  {% set meta_title = page.title ~ ' - ' ~ site.title if page.title else site.title %}
+  {% set meta_description = page.excerpt | strip_html | strip_newlines | truncate(160) if page.excerpt else site.description %}
+  {% set meta_url = site.url ~ site.baseurl ~ page.permalink %}
+  {% set meta_image = site.url ~ '/static/images/teampic/anuroop.webp' %}
+
+  <meta name="description" content="{{ meta_description }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ meta_title }}">
+  <meta property="og:description" content="{{ meta_description }}">
+  <meta property="og:url" content="{{ meta_url }}">
+  <meta property="og:image" content="{{ meta_image }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ meta_title }}">
+  <meta name="twitter:description" content="{{ meta_description }}">
+  <meta name="twitter:image" content="{{ meta_image }}">
+  <meta name="twitter:site" content="@anuroopsriram">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.permalink }}">
+  <link rel="canonical" href="{{ meta_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">

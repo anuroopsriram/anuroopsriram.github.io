@@ -1,5 +1,5 @@
-{% macro render(publi) %}
-<div class="pub-card">
+{% macro render(publi, compact=false) %}
+<div class="pub-card{% if compact %} pub-card-compact{% endif %}" data-keywords="{{ publi.keywords | join(',') if publi.keywords else '' }}">
 <ul class="flex-container">
 <li class="flex-item1">
   {% if publi.image %}
@@ -8,23 +8,28 @@
 </li>
 <li class="flex-item2">
   <div class="pub-title">{{ publi.title }}</div>
-  <div class="pub-authors">{{ publi.authors }}</div>
+  {% if compact %}
+  <div class="pub-authors">{{ publi.authors | truncate_authors | bold_name }}</div>
+  {% else %}
+  <div class="pub-authors">{{ publi.authors | bold_name }}</div>
+  {% endif %}
   {% if publi.venue %}<div class="pub-venue">{{ publi.venue }}</div>{% endif %}
 
   <div class="pub-links">
   {% if publi.doi %}<a href="http://dx.doi.org/{{ publi.doi }}" target="_blank" class="btn-common">DOI</a> {% endif %}
   {% if publi.arxiv %}<a href="https://arxiv.org/abs/{{ publi.arxiv }}" target="_blank" class="btn-common">ARXIV</a> {% endif %}
+  {% if publi.journal %}<a href="{{ publi.journal }}" target="_blank" class="btn-common">JOURNAL</a> {% endif %}
   {% if publi.link %}<a href="{{ publi.link }}" target="_blank" class="btn-common">PAPER</a> {% endif %}
   {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank" class="btn-bib">PDF</a> {% endif %}
   {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank" class="btn-common">PATENT</a> {% endif %}
-  {% if publi.abstract %}<a data-bs-toggle="collapse" href="#{{publi.key}}_abs" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_abs">ABSTRACT</a>{% endif %}
+  {% if not compact and publi.abstract %}<a data-bs-toggle="collapse" href="#{{publi.key}}_abs" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_abs">ABSTRACT</a>{% endif %}
   {% if publi.code %}<a href="{{ publi.code }}" target="_blank" class="btn-common">CODE</a> {% endif %}
   {% if publi.data %}<a href="{{ publi.data }}" target="_blank" class="btn-common">DATA</a> {% endif %}
   {% if publi.models %}<a href="{{ publi.models }}" target="_blank" class="btn-common">MODELS</a> {% endif %}
-  {% if publi.press %}<a data-bs-toggle="collapse" href="#{{publi.key}}_press" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_press">MEDIA</a>{% endif %}
+  {% if not compact and publi.press %}<a data-bs-toggle="collapse" href="#{{publi.key}}_press" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_press">MEDIA</a>{% endif %}
   </div>
 
-{% if publi.abstract %}
+{% if not compact and publi.abstract %}
 <div class="collapse" id="{{publi.key}}_abs">
   <div class="abstract-box">
     <p>{{publi.abstract | newline_to_br}}</p>
@@ -32,7 +37,7 @@
 </div>
 {% endif %}
 
-{% if publi.press %}
+{% if not compact and publi.press %}
 <div class="collapse" id="{{publi.key}}_press">
   <div class="abstract-box">
     <ul class="press-list">

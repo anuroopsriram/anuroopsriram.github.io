@@ -22,3 +22,12 @@ repos:
       - id: mypy
         additional_dependencies: [types-PyYAML]
         args: [--ignore-missing-imports]
+
+  - repo: local
+    hooks:
+      - id: build-static-site
+        name: Build static site to docs/
+        entry: uv run build.py
+        language: system
+        pass_filenames: false
+        always_run: true

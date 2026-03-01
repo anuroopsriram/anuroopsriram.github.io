@@ -9,9 +9,9 @@ class Config:
     
     # Site configuration
     SITE_TITLE = 'Anuroop Sriram'
-    SITE_DESCRIPTION = 'Personal webpage of Anuroop Sriram'
+    SITE_DESCRIPTION = 'Anuroop Sriram — leading AI for Science researcher (65 publications, h-index 40). Founding AI Research Scientist at Project Prometheus. Expert in model scaling (invented Graph Parallel training for GNNs), diffusion/flow matching for science, and post-training LLMs. Previously led AI for Science, fastMRI, and speech research at Meta FAIR. Created Open Catalyst, Open DAC, and OMC25 datasets. Built Deep Speech 2 at Baidu. First to scale speech models to billions of parameters.'
     SITE_BASEURL = ''
-    SITE_URL = ''
+    SITE_URL = 'https://anuroopsriram.com'
     GOOGLE_ANALYTICS = 'G-H1K2L7JV60'
     GROUP_PUB_BY_YEAR = True
     
