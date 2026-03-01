@@ -86,4 +86,7 @@ def build_site(output_dir: Optional[str] = None, use_click: bool = False) -> Non
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copy2(src, dst)
 
+    nojekyll_path = os.path.join(output_dir, '.nojekyll')
+    open(nojekyll_path, 'w').close()
+
     log(f"Site built successfully in {output_dir}/", use_click)
