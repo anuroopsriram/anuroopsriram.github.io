@@ -1,0 +1,14 @@
+- date: "February 2026"
+  headline: "Our paper <a href='https://www.nature.com/articles/s41597-026-06628-2'>Open Molecular Crystals 2025 (OMC25)</a> is published in Nature Scientific Data."
+
+- date: "January 2026"
+  headline: "Joined <b>Project Prometheus</b> as a founding AI Research Scientist."
+
+- date: "December 2025"
+  headline: "<a href='https://arxiv.org/abs/2506.23971'>UMA</a> accepted at NeurIPS 2025."
+
+- date: "July 2025"
+  headline: "Two papers accepted at ICML 2025: <a href='https://arxiv.org/abs/2504.11713'>Adjoint Sampling</a> and <a href='https://arxiv.org/abs/2503.16751'>All-atom Diffusion Transformers</a>."
+
+- date: "May 2025"
+  headline: "Released the <a href='https://huggingface.co/facebook/ODAC25'>Open DAC 2025</a> dataset for direct air capture sorbent discovery."

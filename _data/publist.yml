@@ -36,6 +36,7 @@
   key: wood2025Uma
   image: wood2025Uma.webp
   venue: NeurIPS 2025
+  highlight: true
   arxiv: 2506.23971
   year: 2025
   abstract: "The ability to quickly and accurately compute properties from atomic simulations is critical for advancing a large number of applications in chemistry and materials science including drug discovery, energy storage, and semiconductor manufacturing. To address this need, Meta FAIR presents a family of Universal Models for Atoms (UMA), designed to push the frontier of speed, accuracy, and generalization. UMA models are trained on half a billion unique 3D atomic structures (the largest training runs to date) by compiling data across multiple chemical domains, e.g. molecules, materials, and catalysts. We develop empirical scaling laws to help understand how to increase model capacity alongside dataset size to achieve the best accuracy. The UMA small and medium models utilize a novel architectural design we refer to as mixture of linear experts that enables increasing model capacity without sacrificing speed. For example, UMA-medium has 1.4B parameters but only ~50M active parameters per atomic structure. We evaluate UMA models on a diverse set of applications across multiple domains and find that, remarkably, a single model without any fine-tuning can perform similarly or better than specialized models. We are releasing the UMA code, weights, and associated data to accelerate computational workflows and enable the community to continue to build increasingly capable AI models."
@@ -94,6 +95,7 @@
   year: 2024
   key: flowmm24
   image: flowmm24.webp
+  highlight: true
   venue: International Conference on Machine Learning (ICML) 2024
   organization: ICML
   code: https://github.com/facebookresearch/flowmm
@@ -194,6 +196,7 @@
   year: 2023
   venue: "Radiology"
   key: johnsonMRIProsp
+  highlight: true
   link: https://pubs.rsna.org/doi/10.1148/radiol.220425
   code: https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/RadiologyJohnson2022
   abstract: "Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time reduction, improved image quality, and had equivalent diagnostic utility.\n\n
@@ -317,6 +320,7 @@
   year: 2021
   publisher: American Chemical Society
   key: chanussotOC20
+  highlight: true
   arxiv: "2010.09990"
   abstract: "Catalyst discovery and optimization is key to solving many societal and energy challenges including solar fuels synthesis, long-term energy storage, and renewable fertilizer production. Despite considerable effort by the catalysis community to apply machine learning models to the computational catalyst discovery process, it remains an open challenge to build models that can generalize across both elemental compositions of surfaces and adsorbate identity/configurations, perhaps because datasets have been smaller in catalysis than related fields. To address this we developed the OC20 dataset, consisting of 1,281,040 Density Functional Theory (DFT) relaxations (~264,890,000 single point evaluations) across a wide swath of materials, surfaces, and adsorbates (nitrogen, carbon, and oxygen chemistries). We supplemented this dataset with randomly perturbed structures, short timescale molecular dynamics, and electronic structure analyses. The dataset comprises three central tasks indicative of day-to-day catalyst modeling and comes with pre-defined train/validation/test splits to facilitate direct comparisons with future model development efforts. We applied three state-of-the-art graph neural network models (CGCNN, SchNet, Dimenet++) to each of these tasks as baseline demonstrations for the community to build on. In almost every task, no upper limit on model size was identified, suggesting that even larger models are likely to improve on initial results. The dataset and baseline models are both provided as open resources, as well as a public leader board to encourage community contributions to solve these important tasks."
   image: oc20.webp
@@ -682,6 +686,7 @@
   year: 2016
   organization: ICML
   key: amodeiDS2
+  highlight: true
   link: "https://proceedings.mlr.press/v48/amodei16.pdf"
   abstract: "We show that an end-to-end deep learning approach can be used to recognize either English or Mandarin Chinese speech--two vastly different languages. Because it replaces entire pipelines of hand-engineered components with neural networks, end-to-end learning allows us to handle a diverse variety of speech including noisy environments, accents and different languages. Key to our approach is our application of HPC techniques, resulting in a 7x speedup over our previous system. Because of this efficiency, experiments that previously took weeks now run in days. This enables us to iterate more quickly to identify superior architectures and algorithms. As a result, in several cases, our system is competitive with the transcription of human workers when benchmarked on standard datasets. Finally, using a technique called Batch Dispatch with GPUs in the data center, we show that our system can be inexpensively deployed in an online setting, delivering low latency when serving users at scale."
   image: ds2.webp

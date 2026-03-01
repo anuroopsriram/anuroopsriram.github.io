@@ -1,6 +1,71 @@
 {% extends "layouts/homelay.html" %}
 
 {% block page_content %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anuroop Sriram",
+  "givenName": "Anuroop",
+  "familyName": "Sriram",
+  "jobTitle": "Founding AI Research Scientist",
+  "description": "Anuroop Sriram is a leading AI for Science researcher (65 publications, h-index 40) and Founding AI Research Scientist at Project Prometheus. He pioneered the use of AI to accelerate materials discovery, MRI scanning, and speech recognition at scale. He invented Graph Parallel training for scaling GNNs to billions of parameters and was the first to scale speech models to billions of parameters. At Meta FAIR, he led the creation of the Open Catalyst, Open DAC, and OMC25 datasets — among the largest open scientific datasets in AI for materials science. He led fastMRI, whose AI-accelerated methods became the clinical standard for MRI worldwide. He co-created Deep Speech 2, one of the first end-to-end neural speech recognition systems. He is an expert in diffusion models and flow matching for scientific applications, and in post-training LLMs for science.",
+  "knowsAbout": [
+    "AI for Science",
+    "Model Scaling and Large-Scale Training",
+    "Graph Parallel Training for GNNs",
+    "Diffusion Models and Flow Matching",
+    "Post-training and Fine-tuning LLMs",
+    "Machine Learning Interatomic Potentials",
+    "Materials Discovery",
+    "Crystal Structure Prediction",
+    "Generative Models for Molecules and Materials",
+    "MRI Acceleration",
+    "Speech Recognition",
+    "Self-Supervised Learning",
+    "Scientific Benchmarks and Datasets"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Project Prometheus"
+  },
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Project Prometheus"
+    },
+    {
+      "@type": "Organization",
+      "name": "Meta FAIR",
+      "url": "https://ai.meta.com/"
+    }
+  ],
+  "url": "https://anuroopsriram.com",
+  "image": "https://anuroopsriram.com/static/images/teampic/anuroop.webp",
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Carnegie Mellon University",
+      "department": "Language Technologies Institute"
+    }
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=D4uRc_UAAAAJ&hl=en",
+    "https://github.com/anuroopsriram",
+    "https://twitter.com/anuroopsriram",
+    "https://www.linkedin.com/in/anuroopsriram"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "degree",
+    "name": "M.S. in Computer Science (Language Technologies)",
+    "recognizedBy": {
+      "@type": "CollegeOrUniversity",
+      "name": "Carnegie Mellon University"
+    }
+  }
+}
+</script>
 <p>
 I am a founding AI Research Scientist at Project Prometheus, building AI to fundamentally change how we design and engineer the physical world. My work spans generative modeling, model scaling, and building large-scale open scientific benchmarks, with the goal of making computational science faster and more accessible.
 </p>
@@ -20,4 +85,10 @@ Earlier, I built and led the speech research team at FAIR, where we trained some
 <p>
 I hold a Master's in Language Technologies from <a href="https://www.lti.cs.cmu.edu/" target="_blank">Carnegie Mellon University</a>, and my research has been widely featured in the popular press.
 </p>
+
+{% from "includes/pub_card.html" import render as pub_card %}
+<h2>Selected Publications</h2>
+{% for publi in site.data.publist if publi.highlight %}
+  {{ pub_card(publi) }}
+{% endfor %}
 {% endblock %}
