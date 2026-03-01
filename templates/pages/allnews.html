@@ -4,9 +4,9 @@
 <h1>News</h1>
 
 {% for article in site.data.news %}
-<div class="well-sm">
-  <b>{{ article.date }}</b><br/>
-  <p>{{ article.headline }}</p>
+<div class="pub-card">
+  <b>{{ article.date }}</b>
+  <p class="mb-0">{{ article.headline }}</p>
 </div>
 {% endfor %}
 {% endblock %}

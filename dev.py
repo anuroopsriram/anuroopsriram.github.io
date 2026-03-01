@@ -10,6 +10,10 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from website.app import create_app
+from website.builder import compile_sass
+
+# Compile SCSS before starting
+compile_sass()
 
 # Create Flask app
 app = create_app('development')
