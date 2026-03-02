@@ -1,6 +1,6 @@
 /* ============================================
    Academic Website — main.scss
-   Bootstrap 5.3 loaded via CDN; this file
+   Bootstrap 5.x loaded via CDN; this file
    provides theming, layout, and component styles.
    ============================================ */
 
@@ -220,7 +220,7 @@ code {
   fill: currentColor;
 }
 
-/* ----- Cards (replaces .well) ----- */
+/* ----- Cards ----- */
 .pub-card {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -309,8 +309,7 @@ code {
 }
 
 /* ----- Action buttons (pill badges) ----- */
-.btn-common {
-  background-color: var(--btn-primary-bg);
+.btn-pill {
   color: #fff;
   padding: 3px 10px;
   font-size: 0.7rem;
@@ -323,36 +322,30 @@ code {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-pill:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-common {
+  @extend .btn-pill;
+  background-color: var(--btn-primary-bg);
 }
 
 .btn-common:hover {
   background-color: var(--btn-primary-hover);
-  color: #fff;
-  text-decoration: none;
-  transform: translateY(-1px);
 }
 
 .btn-bib {
+  @extend .btn-pill;
   background-color: var(--btn-success-bg);
-  color: #fff;
-  padding: 3px 10px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .btn-bib:hover {
   background-color: var(--btn-success-hover);
-  color: #fff;
-  text-decoration: none;
-  transform: translateY(-1px);
 }
 
 .btn-collapse-toggle {
@@ -362,6 +355,11 @@ code {
 
 .btn-collapse-toggle:hover {
   text-decoration: none;
+}
+
+/* ----- Card description text ----- */
+.card-description {
+  font-size: 0.9rem;
 }
 
 /* ----- Compact publication cards (home page) ----- */

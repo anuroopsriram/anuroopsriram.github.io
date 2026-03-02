@@ -10,7 +10,7 @@ repos:
       - id: debug-statements
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.0
+    rev: v0.15.1
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
@@ -27,7 +27,7 @@ repos:
     hooks:
       - id: build-static-site
         name: Build static site to docs/
-        entry: uv run build.py
+        entry: uv run python build.py
         language: system
         pass_filenames: false
         always_run: true

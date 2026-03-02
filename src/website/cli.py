@@ -8,7 +8,7 @@ from .builder import build_site
 
 @click.command()
 @click.option('--host', default='0.0.0.0', help='Host to bind to')
-@click.option('--port', default=5000, help='Port to bind to')
+@click.option('--port', default=5001, help='Port to bind to')
 @click.option('--debug/--no-debug', default=True, help='Enable debug mode')
 def dev(host: str, port: int, debug: bool) -> None:
     """Start development server."""

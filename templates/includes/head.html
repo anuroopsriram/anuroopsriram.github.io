@@ -8,7 +8,7 @@
   {% endif %}
 
   {% set meta_title = page.title ~ ' - ' ~ site.title if page.title else site.title %}
-  {% set meta_description = page.excerpt | strip_html | strip_newlines | truncate(160) if page.excerpt else site.description %}
+  {% set meta_description = site.description %}
   {% set meta_url = site.url ~ site.baseurl ~ page.permalink %}
   {% set meta_image = site.url ~ '/static/images/teampic/anuroop.webp' %}
 
