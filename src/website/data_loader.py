@@ -31,6 +31,5 @@ class DataLoader:
             'datalist': self.load_yaml_file('datalist.yml'),
             'news': self.load_yaml_file('news.yml'),
             'years': self.load_yaml_file('years.yml'),
-            'codelist': self.load_yaml_file('codelist.yml'),
             'pi': self.load_yaml_file('pi.yml')
         }

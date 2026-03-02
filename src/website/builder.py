@@ -2,6 +2,7 @@
 
 import os
 import shutil
+from pathlib import Path
 from typing import Optional
 
 import sass
@@ -87,6 +88,6 @@ def build_site(output_dir: Optional[str] = None, use_click: bool = False) -> Non
                 shutil.copy2(src, dst)
 
     nojekyll_path = os.path.join(output_dir, '.nojekyll')
-    open(nojekyll_path, 'w').close()
+    Path(nojekyll_path).touch()
 
     log(f"Site built successfully in {output_dir}/", use_click)

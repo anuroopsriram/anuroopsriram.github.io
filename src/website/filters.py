@@ -4,17 +4,6 @@ import re
 from typing import Optional
 
 
-def escape_filter(text: Optional[str]) -> str:
-    """Escape text for HTML."""
-    if text is None:
-        return ''
-    return (str(text)
-            .replace('&', '&amp;')
-            .replace('<', '&lt;')
-            .replace('>', '&gt;')
-            .replace('"', '&quot;')
-            .replace("'", '&#39;'))
-
 
 def newline_to_br_filter(text: Optional[str]) -> str:
     """Convert newlines to HTML breaks."""
@@ -65,7 +54,6 @@ def bold_name_filter(text: Optional[str], name: str = 'Anuroop Sriram') -> str:
 
 def register_filters(app):
     """Register all template filters with the Flask app."""
-    app.template_filter('escape')(escape_filter)
     app.template_filter('newline_to_br')(newline_to_br_filter)
     app.template_filter('strip_html')(strip_html_filter)
     app.template_filter('strip_newlines')(strip_newlines_filter)

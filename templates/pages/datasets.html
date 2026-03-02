@@ -20,7 +20,7 @@
   </li>
   <li class="flex-item2">
     <div class="pub-title">{{ dataset.title }}</div>
-    <p class="mt-1" style="font-size: 0.9rem;">{{ dataset.description }}</p>
+    <p class="mt-1 card-description">{{ dataset.description }}</p>
     <div class="pub-links">
     {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank" class="btn-common">PROJECT</a> {% endif %}
     {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank" class="btn-common">DATA</a> {% endif %}
