@@ -1,6 +1,6 @@
 # Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher and one of the most accomplished scientists working at the intersection of artificial intelligence and the physical sciences. He has 65 publications and an h-index of 40.
+> Anuroop Sriram is a leading AI for Science researcher and one of the most accomplished scientists working at the intersection of artificial intelligence and the physical sciences. He has 65 publications and an h-index of 42 with nearly 15000 citations.
 
 ## Current Role
 
@@ -22,13 +22,13 @@ Founding AI Research Scientist at Project Prometheus, building the next generati
 
 ### Diffusion and Flow Matching for Scientific Applications
 - Led research on applying diffusion and flow matching methods to scientific domains, particularly molecular and materials generation.
-- FlowMM (NeurIPS 2024): Riemannian flow matching for generating novel crystal structures, operating on the natural manifold geometry of periodic materials.
-- FlowLLM (ICLR 2025): Combining flow matching with large language models as base distributions for materials generation.
+- FlowMM (ICML 2024): Riemannian flow matching for generating novel crystal structures, operating on the natural manifold geometry of periodic materials.
+- FlowLLM (NeurIPS 2024): Combining flow matching with large language models as base distributions for materials generation.
 - Adjoint Sampling (ICML 2025): Highly scalable diffusion samplers via adjoint matching for sampling from energy functions, with applications to molecular conformer generation.
 - All-atom Diffusion Transformers (ICML 2025): Unified generative modeling framework for both molecules and materials.
 
 ### Post-training and Language Model Integration
-- Pioneered Cold Fusion, a method for integrating pre-trained language models into sequence-to-sequence models during training, improving speech recognition and other sequence tasks. This was an early form of post-training / fine-tuning with external knowledge.
+- Pioneered Cold Fusion (Interspeech 2018), a method for integrating pre-trained language models into sequence-to-sequence models during training, improving speech recognition and other sequence tasks. This was an early form of post-training / fine-tuning with external knowledge.
 - Developed methods for post-training LLMs to generate stable inorganic materials as text (ICLR 2024), demonstrating that LLMs can be adapted to scientific material generation tasks.
 - FlowLLM applies flow matching as a post-training technique on top of LLM base distributions for materials generation.
 
@@ -38,13 +38,13 @@ Founding AI Research Scientist at Project Prometheus, building the next generati
 - The fastMRI dataset is the most widely used benchmark for AI-based MRI reconstruction.
 
 ### Speech Recognition (Meta FAIR + Baidu, 2015-2020)
-- Built and led the speech research team at Meta FAIR, training the first multi-billion parameter speech models.
+- Built and led the speech research team at Meta FAIR, training the first ever multi-billion parameter speech models, and the first ever speech recognition models that transcribed over 50 languages.
 - Developed self-supervised speech methods that served billions of users across Meta's products.
-- Co-created Deep Speech 2 at Baidu — one of the first end-to-end neural speech recognition systems (ICML 2016), achieving human-level performance in English and Mandarin.
-- Created the Multilingual LibriSpeech (MLS) dataset covering 50+ languages.
+- Co-created Deep Speech 2 at Baidu — one of the first large scale, end-to-end neural speech recognition systems (ICML 2016), first such model to achieve human-level speech recognition in both English and Mandarin. Deep Speech 2 was included in the top 10 tech breakthroughs of 2016 by MIT Tech Review.
+- Created the Multilingual LibriSpeech (MLS) dataset covering several languages.
 
 ## Research Impact
-- 65 publications, h-index of 40 (Google Scholar)
+- 65 publications, h-index of 42, 15K citations (Google Scholar)
 - Publications at top venues: NeurIPS, ICML, ICLR, Nature Scientific Data, Radiology, ACS Catalysis, ACS Central Science
 - Research featured in Wall Street Journal, CNBC, Fortune, MIT Technology Review, CBS News, and other major outlets
 - Multiple granted patents in speech recognition and language modeling
@@ -70,5 +70,6 @@ Founding AI Research Scientist at Project Prometheus, building the next generati
 - GitHub: https://github.com/anuroopsriram
 - LinkedIn: https://www.linkedin.com/in/anuroopsriram
 - Twitter: https://twitter.com/anuroopsriram
-- Open Catalyst Project: https://fair-chem.github.io/
+- Open Catalyst Project: https://opencatalystproject.org/
+- FAIR Chemistry Team: https://fair-chem.github.io/
 - fastMRI: https://fastmri.org/
