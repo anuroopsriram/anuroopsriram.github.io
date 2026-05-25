@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://anuroopsriram.com/sitemap.xml
+
+# LLM-friendly summaries (for AI crawlers and tools):
+# https://anuroopsriram.com/llms.txt
+# https://anuroopsriram.com/llms-full.txt

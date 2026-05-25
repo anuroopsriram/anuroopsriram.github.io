@@ -8,7 +8,7 @@
   {% endif %}
 
   {% set meta_title = page.title ~ ' - ' ~ site.title if page.title else site.title %}
-  {% set meta_description = site.description %}
+  {% set meta_description = page.description if page.description else site.description %}
   {% set meta_url = site.url ~ site.baseurl ~ page.permalink %}
   {% set meta_image = site.url ~ '/static/images/teampic/anuroop.webp' %}
 
@@ -19,12 +19,16 @@
   <meta property="og:description" content="{{ meta_description }}">
   <meta property="og:url" content="{{ meta_url }}">
   <meta property="og:image" content="{{ meta_image }}">
+  <meta property="og:image:width" content="973">
+  <meta property="og:image:height" content="736">
+  <meta property="og:image:alt" content="Photograph of Anuroop Sriram">
   <meta property="og:site_name" content="{{ site.title }}">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ meta_title }}">
   <meta name="twitter:description" content="{{ meta_description }}">
   <meta name="twitter:image" content="{{ meta_image }}">
+  <meta name="twitter:image:alt" content="Photograph of Anuroop Sriram">
   <meta name="twitter:site" content="@anuroopsriram">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

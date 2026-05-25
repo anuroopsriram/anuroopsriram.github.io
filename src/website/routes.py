@@ -16,29 +16,47 @@ def home():
 
 @main.route('/publications/')
 def publications():
+    description = (
+        '65 publications by Anuroop Sriram covering AI for Science, model scaling, '
+        'diffusion and flow matching, MRI acceleration, and speech recognition. '
+        'Includes work on UMA, Open Catalyst, FlowMM, FlowLLM, FastCSP, GrappaNet, '
+        'End-to-End Variational Networks, Deep Speech 2, and Multilingual LibriSpeech.'
+    )
     return render_template('pages/publications.html',
-                         page={'title': 'Publications', 'permalink': '/publications/'},
+                         page={'title': 'Publications', 'permalink': '/publications/', 'description': description},
                          active_page='publications')
 
 
 @main.route('/datasets/')
 def datasets():
+    description = (
+        'Open scientific datasets created or co-created by Anuroop Sriram, including '
+        'Open Catalyst (OC20, OC22), Open DAC (ODAC23, ODAC25), Open Molecular Crystals '
+        '(OMC25), fastMRI, and Multilingual LibriSpeech (MLS).'
+    )
     return render_template('pages/datasets.html',
-                         page={'title': 'Datasets', 'permalink': '/datasets/'},
+                         page={'title': 'Datasets', 'permalink': '/datasets/', 'description': description},
                          active_page='datasets')
 
 
 @main.route('/allnews/')
 def allnews():
+    description = (
+        'Recent news and updates from Anuroop Sriram, including new papers, dataset releases, '
+        'conference acceptances, and career milestones.'
+    )
     return render_template('pages/allnews.html',
-                         page={'title': 'News', 'permalink': '/allnews/'},
+                         page={'title': 'News', 'permalink': '/allnews/', 'description': description},
                          active_page='news')
 
 
 @main.route('/aboutwebsite/')
 def aboutwebsite():
+    description = (
+        'About anuroopsriram.com — built with Flask and Frozen-Flask, deployed on GitHub Pages.'
+    )
     return render_template('pages/aboutwebsite.html',
-                         page={'title': 'About this website', 'permalink': '/aboutwebsite/'},
+                         page={'title': 'About this website', 'permalink': '/aboutwebsite/', 'description': description},
                          active_page='about')
 
 
@@ -71,7 +89,16 @@ def sitemap():
 @main.route('/robots.txt')
 def robots():
     site_url = current_app.config.get('SITE_URL', 'https://anuroopsriram.com')
-    txt = f'User-agent: *\nAllow: /\n\nSitemap: {site_url}/sitemap.xml\n'
+    txt = (
+        'User-agent: *\n'
+        'Allow: /\n'
+        '\n'
+        f'Sitemap: {site_url}/sitemap.xml\n'
+        '\n'
+        '# LLM-friendly summaries (for AI crawlers and tools):\n'
+        f'# {site_url}/llms.txt\n'
+        f'# {site_url}/llms-full.txt\n'
+    )
     resp = make_response(txt)
     resp.headers['Content-Type'] = 'text/plain'
     return resp
