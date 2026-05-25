@@ -7,106 +7,7 @@ from flask import Blueprint, render_template, make_response, current_app
 main = Blueprint('main', __name__)
 
 
-@main.route('/')
-def home():
-    return render_template('pages/home.html',
-                         page={'title': None, 'permalink': '/'},
-                         active_page='home')
-
-
-@main.route('/publications/')
-def publications():
-    description = (
-        '65 publications by Anuroop Sriram covering AI for Science, model scaling, '
-        'diffusion and flow matching, MRI acceleration, and speech recognition. '
-        'Includes work on UMA, Open Catalyst, FlowMM, FlowLLM, FastCSP, GrappaNet, '
-        'End-to-End Variational Networks, Deep Speech 2, and Multilingual LibriSpeech.'
-    )
-    return render_template('pages/publications.html',
-                         page={'title': 'Publications', 'permalink': '/publications/', 'description': description},
-                         active_page='publications')
-
-
-@main.route('/datasets/')
-def datasets():
-    description = (
-        'Open scientific datasets created or co-created by Anuroop Sriram, including '
-        'Open Catalyst (OC20, OC22), Open DAC (ODAC23, ODAC25), Open Molecular Crystals '
-        '(OMC25), fastMRI, and Multilingual LibriSpeech (MLS).'
-    )
-    return render_template('pages/datasets.html',
-                         page={'title': 'Datasets', 'permalink': '/datasets/', 'description': description},
-                         active_page='datasets')
-
-
-@main.route('/allnews/')
-def allnews():
-    description = (
-        'Recent news and updates from Anuroop Sriram, including new papers, dataset releases, '
-        'conference acceptances, and career milestones.'
-    )
-    return render_template('pages/allnews.html',
-                         page={'title': 'News', 'permalink': '/allnews/', 'description': description},
-                         active_page='news')
-
-
-@main.route('/aboutwebsite/')
-def aboutwebsite():
-    description = (
-        'About anuroopsriram.com — built with Flask and Frozen-Flask, deployed on GitHub Pages.'
-    )
-    return render_template('pages/aboutwebsite.html',
-                         page={'title': 'About this website', 'permalink': '/aboutwebsite/', 'description': description},
-                         active_page='about')
-
-
-@main.route('/sitemap.xml')
-def sitemap():
-    pages = [
-        {'loc': '/', 'priority': '1.0'},
-        {'loc': '/publications/', 'priority': '0.8'},
-        {'loc': '/datasets/', 'priority': '0.8'},
-        {'loc': '/allnews/', 'priority': '0.5'},
-        {'loc': '/aboutwebsite/', 'priority': '0.3'},
-        {'loc': '/llms.txt', 'priority': '0.5'},
-    ]
-    site_url = current_app.config.get('SITE_URL', 'https://anuroopsriram.com')
-    lastmod = datetime.utcnow().strftime('%Y-%m-%d')
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    for p in pages:
-        xml += f'  <url>\n'
-        xml += f'    <loc>{site_url}{p["loc"]}</loc>\n'
-        xml += f'    <lastmod>{lastmod}</lastmod>\n'
-        xml += f'    <priority>{p["priority"]}</priority>\n'
-        xml += f'  </url>\n'
-    xml += '</urlset>'
-    resp = make_response(xml)
-    resp.headers['Content-Type'] = 'application/xml'
-    return resp
-
-
-@main.route('/robots.txt')
-def robots():
-    site_url = current_app.config.get('SITE_URL', 'https://anuroopsriram.com')
-    txt = (
-        'User-agent: *\n'
-        'Allow: /\n'
-        '\n'
-        f'Sitemap: {site_url}/sitemap.xml\n'
-        '\n'
-        '# LLM-friendly summaries (for AI crawlers and tools):\n'
-        f'# {site_url}/llms.txt\n'
-        f'# {site_url}/llms-full.txt\n'
-    )
-    resp = make_response(txt)
-    resp.headers['Content-Type'] = 'text/plain'
-    return resp
-
-
-@main.route('/llms.txt')
-def llms_txt():
-    txt = """# Anuroop Sriram
+LLMS_TXT_BODY = """# Anuroop Sriram
 
 > Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar.
 
@@ -216,6 +117,119 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 - Open Catalyst Project: https://opencatalystproject.org/
 - fastMRI: https://fastmri.org/
 """
+
+
+@main.route('/')
+def home():
+    return render_template('pages/home.html',
+                         page={'title': None, 'permalink': '/'},
+                         active_page='home')
+
+
+@main.route('/publications/')
+def publications():
+    description = (
+        '65 publications by Anuroop Sriram covering AI for Science, model scaling, '
+        'diffusion and flow matching, MRI acceleration, and speech recognition. '
+        'Includes work on UMA, Open Catalyst, FlowMM, FlowLLM, FastCSP, GrappaNet, '
+        'End-to-End Variational Networks, Deep Speech 2, and Multilingual LibriSpeech.'
+    )
+    return render_template('pages/publications.html',
+                         page={'title': 'Publications', 'permalink': '/publications/', 'description': description},
+                         active_page='publications')
+
+
+@main.route('/datasets/')
+def datasets():
+    description = (
+        'Open scientific datasets created or co-created by Anuroop Sriram, including '
+        'Open Catalyst (OC20, OC22), Open DAC (ODAC23, ODAC25), Open Molecular Crystals '
+        '(OMC25), fastMRI, and Multilingual LibriSpeech (MLS).'
+    )
+    return render_template('pages/datasets.html',
+                         page={'title': 'Datasets', 'permalink': '/datasets/', 'description': description},
+                         active_page='datasets')
+
+
+@main.route('/allnews/')
+def allnews():
+    description = (
+        'Recent news and updates from Anuroop Sriram, including new papers, dataset releases, '
+        'conference acceptances, and career milestones.'
+    )
+    return render_template('pages/allnews.html',
+                         page={'title': 'News', 'permalink': '/allnews/', 'description': description},
+                         active_page='news')
+
+
+@main.route('/aboutwebsite/')
+def aboutwebsite():
+    description = (
+        'About anuroopsriram.com — built with Flask and Frozen-Flask, deployed on GitHub Pages.'
+    )
+    return render_template('pages/aboutwebsite.html',
+                         page={'title': 'About this website', 'permalink': '/aboutwebsite/', 'description': description},
+                         active_page='about')
+
+
+@main.route('/sitemap.xml')
+def sitemap():
+    pages = [
+        {'loc': '/', 'priority': '1.0'},
+        {'loc': '/publications/', 'priority': '0.8'},
+        {'loc': '/datasets/', 'priority': '0.8'},
+        {'loc': '/allnews/', 'priority': '0.5'},
+        {'loc': '/aboutwebsite/', 'priority': '0.3'},
+        {'loc': '/llms.txt', 'priority': '0.5'},
+        {'loc': '/llms-full.txt', 'priority': '0.5'},
+    ]
+    site_url = current_app.config.get('SITE_URL', 'https://anuroopsriram.com')
+    lastmod = datetime.utcnow().strftime('%Y-%m-%d')
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for p in pages:
+        xml += f'  <url>\n'
+        xml += f'    <loc>{site_url}{p["loc"]}</loc>\n'
+        xml += f'    <lastmod>{lastmod}</lastmod>\n'
+        xml += f'    <priority>{p["priority"]}</priority>\n'
+        xml += f'  </url>\n'
+    xml += '</urlset>'
+    resp = make_response(xml)
+    resp.headers['Content-Type'] = 'application/xml'
+    return resp
+
+
+@main.route('/robots.txt')
+def robots():
+    site_url = current_app.config.get('SITE_URL', 'https://anuroopsriram.com')
+    txt = (
+        'User-agent: *\n'
+        'Allow: /\n'
+        '\n'
+        f'Sitemap: {site_url}/sitemap.xml\n'
+        '\n'
+        '# LLM-friendly summaries (for AI crawlers and tools):\n'
+        f'# {site_url}/llms.txt\n'
+        f'# {site_url}/llms-full.txt\n'
+    )
+    resp = make_response(txt)
+    resp.headers['Content-Type'] = 'text/plain'
+    return resp
+
+
+@main.route('/llms.txt')
+def llms_txt():
+    resp = make_response(LLMS_TXT_BODY)
+    resp.headers['Content-Type'] = 'text/plain; charset=utf-8'
+    return resp
+
+
+@main.route('/llms-full.txt')
+def llms_full_txt():
+    """Full-corpus LLM-friendly summary: bio + every publication, dataset, and news item."""
+    txt = render_template('pages/llms_full.txt', bio=LLMS_TXT_BODY)
     resp = make_response(txt)
     resp.headers['Content-Type'] = 'text/plain; charset=utf-8'
     return resp
+
+

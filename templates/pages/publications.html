@@ -1,7 +1,8 @@
 {% extends "layouts/gridlay.html" %}
-{% from "includes/pub_card.html" import render as pub_card %}
+{% from "includes/pub_card.html" import render as pub_card with context %}
 
 {% block page_content %}
+<script type="application/ld+json">{{ site.data.publist | itemlist_jsonld(site.url + '/publications/', 'Publications - Anuroop Sriram') }}</script>
 <h1>Publications</h1>
 
 {% set keyword_order = [

@@ -1,6 +1,7 @@
 {% extends "layouts/gridlay.html" %}
 
 {% block page_content %}
+<script type="application/ld+json">{{ site.data.datalist | itemlist_jsonld(site.url + '/datasets/', 'Datasets - Anuroop Sriram') }}</script>
 <h1>Datasets</h1>
 
 {% set categories = site.data.datalist | map(attribute='category') | unique | list %}
@@ -8,6 +9,7 @@
 <h2>{{ category }}</h2>
 
 {% for dataset in site.data.datalist | selectattr('category', 'equalto', category) %}
+  <script type="application/ld+json">{{ dataset | dataset_jsonld(site.url) }}</script>
   <div class="pub-card">
   <ul class="flex-container">
   <li class="flex-item1">

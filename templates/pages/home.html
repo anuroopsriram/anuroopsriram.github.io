@@ -123,7 +123,7 @@ Earlier, I built and led the speech research team at FAIR, where we trained some
 I hold a Master's in Language Technologies from <a href="https://www.lti.cs.cmu.edu/" target="_blank">Carnegie Mellon University</a>, and my research has been widely featured in the popular press.
 </p>
 
-{% from "includes/pub_card.html" import render as pub_card %}
+{% from "includes/pub_card.html" import render as pub_card with context %}
 <h2>Selected Publications</h2>
 {% for publi in site.data.publist if publi.highlight %}
   {{ pub_card(publi, compact=true) }}
