@@ -1,0 +1,50 @@
+{{ bio }}
+
+---
+
+# Publications
+
+Total publications: {{ site.data.publist | length }}.
+{% for publi in site.data.publist %}
+
+## {{ publi.title }}
+
+- Authors: {{ publi.authors }}
+- Year: {{ publi.year }}
+{% if publi.venue %}- Venue: {{ publi.venue }}
+{% endif %}{% if publi.keywords %}- Keywords: {{ publi.keywords | join(', ') }}
+{% endif %}{% if publi.arxiv %}- arXiv: https://arxiv.org/abs/{{ publi.arxiv }}
+{% endif %}{% if publi.doi %}- DOI: https://doi.org/{{ publi.doi }}
+{% endif %}{% if publi.journal %}- Journal: {{ publi.journal }}
+{% endif %}{% if publi.link and not publi.journal %}- Link: {{ publi.link }}
+{% endif %}{% if publi.code %}- Code: {{ publi.code }}
+{% endif %}{% if publi.data %}- Data: {{ publi.data }}
+{% endif %}{% if publi.models %}- Models: {{ publi.models }}
+{% endif %}{% if publi.patent %}- Patent: {{ publi.patent }}
+{% endif %}{% if publi.abstract %}
+{{ publi.abstract | strip_html | strip_newlines }}
+{% endif %}
+{% endfor %}
+
+---
+
+# Datasets
+
+{% for dataset in site.data.datalist %}
+## {{ dataset.title }}
+
+- Category: {{ dataset.category }}
+- {{ dataset.description | strip_html | strip_newlines }}
+{% if dataset.project_url %}- Project: {{ dataset.project_url }}
+{% endif %}{% if dataset.data_url %}- Data: {{ dataset.data_url }}
+{% endif %}{% if dataset.code_url %}- Code: {{ dataset.code_url }}
+{% endif %}
+{% endfor %}
+
+---
+
+# News
+
+{% for article in site.data.news %}
+- {{ article.date }}: {{ article.headline | strip_html | strip_newlines }}
+{% endfor %}
