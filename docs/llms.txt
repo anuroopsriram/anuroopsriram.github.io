@@ -9,7 +9,7 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 ## Career Timeline
 
 - 2026–present: Founding AI Research Scientist, Project Prometheus
-- 2018–2026: Research Engineer & Scientist, Meta FAIR (Research Manager for FAIR Speech; Founding member and technical lead of FAIR Chemistry)
+- 2018–2026: Research Engineer & Scientist, Meta FAIR (Research Manager for FAIR Speech; founding member of FAIR Chemistry and one of its technical leads)
 - 2015–2018: Senior Research Scientist, Baidu Silicon Valley AI Lab (SVAIL)
 - 2013–2015: Data Scientist, Twitter
 - 2010–2012: M.S. in Computer Science (Language Technologies), Carnegie Mellon University (advised by Roni Rosenfeld)
@@ -17,7 +17,7 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 
 ## Leadership and Team Building
 
-- Founding member and technical lead of the FAIR Chemistry team at Meta — the team that produced the Open Catalyst Project, ODAC, OMC25, the UMA family of foundation models, and the fairchem library.
+- Founding member of the FAIR Chemistry team at Meta and one of its technical leads — the team that produced the Open Catalyst Project, ODAC, OMC25, the UMA family of foundation models, and the fairchem library.
 - Research Manager of the FAIR Speech team — led the team that built the first billion-parameter speech models, pioneered self-supervised and massively multilingual architectures, and deployed models to Facebook and Instagram serving billions of users.
 - Led the fastMRI project at Meta AI — the collaboration with NYU Langone Health that produced the clinical standard for AI-accelerated MRI worldwide.
 
@@ -30,7 +30,7 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 ## Key Accomplishments
 
 ### AI for Materials Science and Chemistry (Meta FAIR, 2020–2026)
-- Founding member and technical lead of FAIR Chemistry, the Meta team behind the largest open datasets and foundation models in computational chemistry.
+- Founding member of FAIR Chemistry and one of its technical leads, on the Meta team behind the largest open datasets and foundation models in computational chemistry.
 - Co-led the creation of Open Catalyst 2020 (OC20), one of the largest datasets in computational chemistry, with ~260 million DFT calculations across 1.3 million molecular relaxations (ACS Catalysis, 2021). Contributed to the follow-on Open Catalyst 2022 (OC22) for oxide electrocatalysis.
 - Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~70M DFT calculations respectively.
 - Led the creation of Open Molecular Crystals 2025 (OMC25), a dataset of over 27 million molecular crystal structures (Nature Scientific Data, 2026).
