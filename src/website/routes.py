@@ -116,7 +116,7 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 - Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~70M DFT calculations respectively.
 - Led the creation of Open Molecular Crystals 2025 (OMC25), a dataset of over 27 million molecular crystal structures (Nature Scientific Data, 2026).
 - Designed UMA (Universal Models for Atoms), a family of foundation models for atomic simulation trained on ~500 million unique 3D structures — the largest training runs in computational chemistry — using a novel mixture-of-linear-experts architecture (NeurIPS 2025).
-- Led FastCSP (lead author, 2025), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP comprehensively solved organic CSP with machine learning interatomic potentials, eliminating the need for classical force fields in the early stages and for gold-standard DFT re-ranking — reducing CSP for a single system from weeks to hours on tens of GPUs.
+- Led FastCSP (lead author, 2025), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
 - Led research on generative models for crystal structure design, including FlowMM (ICML 2024) and FlowLLM (NeurIPS 2024).
 
 ### Model Scaling and Distributed Training
@@ -134,7 +134,7 @@ Founding AI Research Scientist at Project Prometheus (2026–present), building 
 - Diffusion/Flow Matching with General Discrete Paths (ICLR 2025): kinetic-optimal perspective on discrete-space generative models.
 
 ### LLM Integration and Post-training
-- Pioneered Cold Fusion (Interspeech 2018; US Patents 10,867,595 and 11,620,986), a method for integrating pre-trained language models into sequence-to-sequence models during training. A precursor to modern multimodal LLMs and an early form of post-training with external knowledge.
+- Pioneered Cold Fusion (Interspeech 2018; US Patents 10,867,595 and 11,620,986), a method for integrating pre-trained language models into sequence-to-sequence models during training. Conceptually related to modern multimodal LLMs and an early form of post-training with external knowledge.
 - Developed methods for post-training LLMs to generate stable inorganic materials as text (Crystal-LLM, ICLR 2024) — fine-tuned LLaMA-2 70B generated metastable materials at roughly twice the rate of leading diffusion baselines.
 - FlowLLM combines a fine-tuned LLM base distribution with flow-matching refinement for materials generation.
 
