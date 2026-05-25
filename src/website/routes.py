@@ -85,7 +85,7 @@ def llms_txt():
 
 ## Current Role
 
-Founding AI Research Scientist at Project Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. The work brings the foundation-model, scaling, and distributed-training capabilities developed across his prior research at Meta FAIR and Baidu to a new frontier of applied AI. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
+Founding AI Research Scientist at Project Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
 
 ## Career Timeline
 
