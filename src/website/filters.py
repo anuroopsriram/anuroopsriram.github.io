@@ -11,6 +11,13 @@ CREATOR_PERSON = {
     "@type": "Person",
     "@id": "https://www.wikidata.org/entity/Q138516652",
     "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com",
+    "sameAs": [
+        "https://scholar.google.com/citations?user=D4uRc_UAAAAJ",
+        "https://github.com/anuroopsriram",
+        "https://www.linkedin.com/in/anuroopsriram",
+        "https://orcid.org/0000-0001-6295-7535",
+    ],
 }
 
 
@@ -69,16 +76,34 @@ def _clean_text(text: Optional[str]) -> str:
     return text.strip()
 
 
-def _parse_authors(raw: Optional[str]) -> List[Dict[str, str]]:
+def _author_person(name: str) -> Dict[str, Any]:
+    """Build a Schema.org Person for an author name.
+
+    When the author is Anuroop Sriram, attach his profile URLs and
+    Wikidata ID so search engines and LLMs link the author to the same
+    entity as the site's home-page Person schema. Other authors are
+    intentionally left with just @type and name, since fabricating
+    URLs for co-authors would be inaccurate.
+    """
+    name = name.strip()
+    if name.lower() == 'anuroop sriram':
+        return dict(CREATOR_PERSON)
+    return {"@type": "Person", "name": name}
+
+
+def _parse_authors(raw: Optional[str]) -> List[Dict[str, Any]]:
     """Split a comma-separated author string into Schema.org Person objects."""
     if not raw:
         return []
-    authors: List[Dict[str, str]] = []
+    authors: List[Dict[str, Any]] = []
     for name in str(raw).split(','):
         name = name.strip()
         if not name:
             continue
-        authors.append({"@type": "Person", "name": name})
+        # Drop "et al." style trailing entries: they aren't a real Person.
+        if name.lower() in {'et al', 'et al.'}:
+            continue
+        authors.append(_author_person(name))
     return authors
 
 
@@ -165,6 +190,9 @@ def dataset_jsonld_filter(dataset: Dict[str, Any], site_url: str = 'https://anur
 
     if dataset.get('code_url'):
         obj["codeRepository"] = dataset['code_url']
+
+    if dataset.get('license'):
+        obj["license"] = dataset['license']
 
     if dataset.get('image'):
         obj["image"] = f"{site_url}/static/images/datapic/{dataset['image']}"
