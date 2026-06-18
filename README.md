@@ -27,14 +27,14 @@ uv run website-build
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install the package (provides the website-dev / website-build commands)
+pip install -e .
 
 # Start development server
-python dev.py
+website-dev
 
 # Build for production
-python build.py
+website-build
 ```
 
 ## 🏗️ Project Structure
@@ -101,8 +101,6 @@ mypy src/
 |---------|-------------|
 | `uv run website-dev` | Start development server |
 | `uv run website-build` | Build static site |
-| `python dev.py` | Alternative dev server |
-| `python build.py` | Alternative build script |
 
 ## 📝 Content Management
 
