@@ -22,11 +22,16 @@ CREATOR_PERSON = {
 }
 
 
-def newline_to_br_filter(text: str | None) -> str:
-    """Convert newlines to HTML breaks."""
+def newline_to_br_filter(text: str | None) -> Markup:
+    """Convert newlines to HTML breaks.
+
+    Returns Markup so the generated <br/> tags (and any inline HTML already
+    present in the source text, e.g. <b> in abstracts) render instead of
+    being auto-escaped by Jinja. Abstract/source text is trusted repo data.
+    """
     if text is None:
-        return ""
-    return str(text).replace("\n", "<br/>")
+        return Markup("")
+    return Markup(str(text).replace("\n", "<br/>"))
 
 
 def strip_html_filter(text: str | None) -> str:
