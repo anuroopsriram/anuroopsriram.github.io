@@ -4,11 +4,11 @@
 
 ## Current Role
 
-Founding AI Research Scientist at Project Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
+Founding AI Research Scientist at Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
 
 ## Career Timeline
 
-- 2026–present: Founding AI Research Scientist, Project Prometheus
+- 2026–present: Founding AI Research Scientist, Prometheus
 - 2018–2026: Research Engineer & Scientist, Meta FAIR (Research Manager for FAIR Speech; founding member of FAIR Chemistry and one of its technical leads)
 - 2015–2018: Senior Research Scientist, Baidu Silicon Valley AI Lab (SVAIL)
 - 2013–2015: Data Scientist, Twitter
