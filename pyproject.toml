@@ -51,8 +51,8 @@ Homepage = "https://anuroopsriram.github.io"
 Repository = "https://github.com/anuroopsriram/anuroopsriram.github.io"
 
 [project.scripts]
-website-dev = "src.website.cli:dev"
-website-build = "src.website.cli:build"
+website-dev = "website.cli:dev"
+website-build = "website.cli:build"
 
 [tool.hatch.version]
 path = "src/website/__init__.py"
