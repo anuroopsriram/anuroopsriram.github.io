@@ -1,11 +1,12 @@
 """Jinja2 template filters for the website."""
 
+from __future__ import annotations
+
 import json
 import re
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from markupsafe import Markup
-
 
 CREATOR_PERSON = {
     "@type": "Person",
@@ -21,62 +22,62 @@ CREATOR_PERSON = {
 }
 
 
-def newline_to_br_filter(text: Optional[str]) -> str:
+def newline_to_br_filter(text: str | None) -> str:
     """Convert newlines to HTML breaks."""
     if text is None:
-        return ''
-    return str(text).replace('\n', '<br/>')
+        return ""
+    return str(text).replace("\n", "<br/>")
 
 
-def strip_html_filter(text: Optional[str]) -> str:
+def strip_html_filter(text: str | None) -> str:
     """Basic HTML tag removal."""
     if text is None:
-        return ''
-    return re.sub(r'<[^>]+>', '', str(text))
+        return ""
+    return re.sub(r"<[^>]+>", "", str(text))
 
 
-def strip_newlines_filter(text: Optional[str]) -> str:
+def strip_newlines_filter(text: str | None) -> str:
     """Remove newlines."""
     if text is None:
-        return ''
-    return str(text).replace('\n', ' ').replace('\r', ' ')
+        return ""
+    return str(text).replace("\n", " ").replace("\r", " ")
 
 
-def truncate_filter(text: Optional[str], length: int = 160) -> str:
+def truncate_filter(text: str | None, length: int = 160) -> str:
     """Truncate text to specified length."""
     if text is None:
-        return ''
+        return ""
     text = str(text)
-    return text[:length] + '...' if len(text) > length else text
+    return text[:length] + "..." if len(text) > length else text
 
 
-def truncate_authors_filter(text: Optional[str], max_authors: int = 3) -> str:
+def truncate_authors_filter(text: str | None, max_authors: int = 3) -> str:
     """Show first N authors and append 'et al.' if there are more."""
     if text is None:
-        return ''
-    authors = [a.strip() for a in str(text).split(',')]
+        return ""
+    authors = [a.strip() for a in str(text).split(",")]
     if len(authors) <= max_authors:
         return text
-    return ', '.join(authors[:max_authors]) + ', et al.'
+    return ", ".join(authors[:max_authors]) + ", et al."
 
 
-def bold_name_filter(text: Optional[str], name: str = 'Anuroop Sriram') -> str:
+def bold_name_filter(text: str | None, name: str = "Anuroop Sriram") -> str:
     """Bold a specific name in an author list."""
     if text is None:
-        return ''
-    return Markup(str(text).replace(name, f'<strong>{name}</strong>'))
+        return ""
+    return Markup(str(text).replace(name, f"<strong>{name}</strong>"))
 
 
-def _clean_text(text: Optional[str]) -> str:
+def _clean_text(text: str | None) -> str:
     """Strip HTML tags and collapse whitespace for JSON-LD text fields."""
     if not text:
-        return ''
-    text = re.sub(r'<[^>]+>', '', str(text))
-    text = re.sub(r'\s+', ' ', text)
+        return ""
+    text = re.sub(r"<[^>]+>", "", str(text))
+    text = re.sub(r"\s+", " ", text)
     return text.strip()
 
 
-def _author_person(name: str) -> Dict[str, Any]:
+def _author_person(name: str) -> dict[str, Any]:
     """Build a Schema.org Person for an author name.
 
     When the author is Anuroop Sriram, attach his profile URLs and
@@ -86,125 +87,131 @@ def _author_person(name: str) -> Dict[str, Any]:
     URLs for co-authors would be inaccurate.
     """
     name = name.strip()
-    if name.lower() == 'anuroop sriram':
+    if name.lower() == "anuroop sriram":
         return dict(CREATOR_PERSON)
     return {"@type": "Person", "name": name}
 
 
-def _parse_authors(raw: Optional[str]) -> List[Dict[str, Any]]:
+def _parse_authors(raw: str | None) -> list[dict[str, Any]]:
     """Split a comma-separated author string into Schema.org Person objects."""
     if not raw:
         return []
-    authors: List[Dict[str, Any]] = []
-    for name in str(raw).split(','):
+    authors: list[dict[str, Any]] = []
+    for name in str(raw).split(","):
         name = name.strip()
         if not name:
             continue
         # Drop "et al." style trailing entries: they aren't a real Person.
-        if name.lower() in {'et al', 'et al.'}:
+        if name.lower() in {"et al", "et al."}:
             continue
         authors.append(_author_person(name))
     return authors
 
 
-def publication_jsonld_filter(publi: Dict[str, Any], site_url: str = 'https://anuroopsriram.com') -> Markup:
+def publication_jsonld_filter(
+    publi: dict[str, Any], site_url: str = "https://anuroopsriram.com"
+) -> Markup:
     """Build a Schema.org ScholarlyArticle JSON-LD blob for a publication."""
     if not publi:
-        return Markup('')
+        return Markup("")
 
-    article: Dict[str, Any] = {
+    article: dict[str, Any] = {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
-        "headline": _clean_text(publi.get('title')),
-        "name": _clean_text(publi.get('title')),
-        "author": _parse_authors(publi.get('authors')),
+        "headline": _clean_text(publi.get("title")),
+        "name": _clean_text(publi.get("title")),
+        "author": _parse_authors(publi.get("authors")),
         "creator": CREATOR_PERSON,
     }
 
-    if publi.get('year') is not None:
-        article["datePublished"] = str(publi['year'])
+    if publi.get("year") is not None:
+        article["datePublished"] = str(publi["year"])
 
-    venue = publi.get('venue')
+    venue = publi.get("venue")
     if venue:
         article["isPartOf"] = {"@type": "Periodical", "name": _clean_text(venue)}
 
-    publisher = publi.get('publisher') or publi.get('organization')
+    publisher = publi.get("publisher") or publi.get("organization")
     if publisher:
         article["publisher"] = {"@type": "Organization", "name": _clean_text(publisher)}
 
-    abstract = _clean_text(publi.get('abstract'))
+    abstract = _clean_text(publi.get("abstract"))
     if abstract:
         article["abstract"] = abstract
 
-    keywords = publi.get('keywords') or []
+    keywords = publi.get("keywords") or []
     if keywords:
-        article["keywords"] = ', '.join(str(k) for k in keywords)
+        article["keywords"] = ", ".join(str(k) for k in keywords)
 
-    same_as: List[str] = []
-    if publi.get('arxiv'):
+    same_as: list[str] = []
+    if publi.get("arxiv"):
         same_as.append(f"https://arxiv.org/abs/{publi['arxiv']}")
-    if publi.get('doi'):
+    if publi.get("doi"):
         same_as.append(f"https://doi.org/{publi['doi']}")
-    if publi.get('journal'):
-        same_as.append(publi['journal'])
-    elif publi.get('link'):
-        same_as.append(publi['link'])
-    if publi.get('patent'):
-        same_as.append(publi['patent'])
+    if publi.get("journal"):
+        same_as.append(publi["journal"])
+    elif publi.get("link"):
+        same_as.append(publi["link"])
+    if publi.get("patent"):
+        same_as.append(publi["patent"])
     if same_as:
         article["sameAs"] = same_as
 
-    if publi.get('image'):
+    if publi.get("image"):
         article["image"] = f"{site_url}/static/images/pubpic/{publi['image']}"
 
-    if publi.get('code'):
-        article["codeRepository"] = publi['code']
+    if publi.get("code"):
+        article["codeRepository"] = publi["code"]
 
     return Markup(json.dumps(article, ensure_ascii=False))
 
 
-def dataset_jsonld_filter(dataset: Dict[str, Any], site_url: str = 'https://anuroopsriram.com') -> Markup:
+def dataset_jsonld_filter(
+    dataset: dict[str, Any], site_url: str = "https://anuroopsriram.com"
+) -> Markup:
     """Build a Schema.org Dataset JSON-LD blob for a dataset entry."""
     if not dataset:
-        return Markup('')
+        return Markup("")
 
-    obj: Dict[str, Any] = {
+    obj: dict[str, Any] = {
         "@context": "https://schema.org",
         "@type": "Dataset",
-        "name": _clean_text(dataset.get('title')),
-        "description": _clean_text(dataset.get('description')),
+        "name": _clean_text(dataset.get("title")),
+        "description": _clean_text(dataset.get("description")),
         "creator": CREATOR_PERSON,
     }
 
-    if dataset.get('category'):
-        obj["keywords"] = dataset['category']
+    if dataset.get("category"):
+        obj["keywords"] = dataset["category"]
 
-    if dataset.get('project_url'):
-        obj["url"] = dataset['project_url']
+    if dataset.get("project_url"):
+        obj["url"] = dataset["project_url"]
 
-    if dataset.get('data_url'):
-        obj["distribution"] = [{
-            "@type": "DataDownload",
-            "contentUrl": dataset['data_url'],
-        }]
+    if dataset.get("data_url"):
+        obj["distribution"] = [
+            {
+                "@type": "DataDownload",
+                "contentUrl": dataset["data_url"],
+            }
+        ]
 
-    if dataset.get('code_url'):
-        obj["codeRepository"] = dataset['code_url']
+    if dataset.get("code_url"):
+        obj["codeRepository"] = dataset["code_url"]
 
-    if dataset.get('license'):
-        obj["license"] = dataset['license']
+    if dataset.get("license"):
+        obj["license"] = dataset["license"]
 
-    if dataset.get('image'):
+    if dataset.get("image"):
         obj["image"] = f"{site_url}/static/images/datapic/{dataset['image']}"
 
     return Markup(json.dumps(obj, ensure_ascii=False))
 
 
 def itemlist_jsonld_filter(
-    items: List[Dict[str, Any]],
+    items: list[dict[str, Any]],
     page_url: str,
     page_name: str,
-    name_key: str = 'title',
+    name_key: str = "title",
 ) -> Markup:
     """Build a Schema.org CollectionPage wrapping an ItemList of named items."""
     if items is None:
@@ -212,10 +219,10 @@ def itemlist_jsonld_filter(
 
     item_list_elements = []
     for idx, item in enumerate(items, start=1):
-        element: Dict[str, Any] = {
+        element: dict[str, Any] = {
             "@type": "ListItem",
             "position": idx,
-            "name": _clean_text(item.get(name_key) or ''),
+            "name": _clean_text(item.get(name_key) or ""),
         }
         item_list_elements.append(element)
 
@@ -235,12 +242,12 @@ def itemlist_jsonld_filter(
 
 def register_filters(app):
     """Register all template filters with the Flask app."""
-    app.template_filter('newline_to_br')(newline_to_br_filter)
-    app.template_filter('strip_html')(strip_html_filter)
-    app.template_filter('strip_newlines')(strip_newlines_filter)
-    app.template_filter('truncate')(truncate_filter)
-    app.template_filter('truncate_authors')(truncate_authors_filter)
-    app.template_filter('bold_name')(bold_name_filter)
-    app.template_filter('publication_jsonld')(publication_jsonld_filter)
-    app.template_filter('dataset_jsonld')(dataset_jsonld_filter)
-    app.template_filter('itemlist_jsonld')(itemlist_jsonld_filter)
+    app.template_filter("newline_to_br")(newline_to_br_filter)
+    app.template_filter("strip_html")(strip_html_filter)
+    app.template_filter("strip_newlines")(strip_newlines_filter)
+    app.template_filter("truncate")(truncate_filter)
+    app.template_filter("truncate_authors")(truncate_authors_filter)
+    app.template_filter("bold_name")(bold_name_filter)
+    app.template_filter("publication_jsonld")(publication_jsonld_filter)
+    app.template_filter("dataset_jsonld")(dataset_jsonld_filter)
+    app.template_filter("itemlist_jsonld")(itemlist_jsonld_filter)
