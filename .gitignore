@@ -42,6 +42,7 @@ Thumbs.db
 
 # Site build output
 static/css/main.css
+static/CNAME
 
 # Node modules (if any)
 node_modules/
