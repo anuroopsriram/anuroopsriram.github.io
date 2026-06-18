@@ -58,7 +58,7 @@ website-build
 │   ├── js/               # JavaScript files
 │   ├── images/           # Images and media
 │   └── fonts/            # Web fonts
-├── _data/                # YAML data files
+├── data/                 # YAML data files
 │   ├── publist.yml       # Publications
 │   ├── datalist.yml      # Datasets
 │   ├── news.yml          # News items
@@ -105,16 +105,16 @@ mypy src/
 ## 📝 Content Management
 
 ### Publications
-Edit `_data/publist.yml` to manage publications. Each entry supports:
+Edit `data/publist.yml` to manage publications. Each entry supports:
 - Title, authors, venue, year
 - Links to paper, code, datasets
 - Associated images
 
 ### Datasets
-Manage datasets in `_data/datalist.yml` with similar structure.
+Manage datasets in `data/datalist.yml` with similar structure.
 
 ### News
-Add news items to `_data/news.yml` for the homepage sidebar.
+Add news items to `data/news.yml` for the homepage sidebar.
 
 ## 🎨 Theming
 
