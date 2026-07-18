@@ -2,7 +2,7 @@
 <div class="profile-card">
   <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="profile-photo" alt="{{ member.name }}" />
   <h2 class="profile-name">{{ member.name }}</h2>
-  <p class="profile-role">{{ member.info }}</p>
+  {% if member.info %}<p class="profile-role">{{ member.info }}</p>{% endif %}
 
   <ul class="profile-links">
     {% if member.email %}
