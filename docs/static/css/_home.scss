@@ -1,0 +1,466 @@
+/* ============================================
+   Home page: hero, bio, sidebar, selected pubs.
+   Compiled by libsass — SCSS nesting only.
+   ============================================ */
+
+/* --- WebGL hero palette (read by static/js/hero.js) ---
+   Aligned with the main.scss token ramps:
+   light: deep ink atoms, teal (--accent) bonds, oxidized-copper glow
+   dark:  warm-white atoms, luminous teal bonds/glow */
+:root {
+  --hero-atom-color: light-dark(oklch(28% 0.024 60), oklch(93% 0.012 85));
+  --hero-bond-color: light-dark(oklch(50% 0.085 200), oklch(78% 0.105 190));
+  --hero-glow-color: light-dark(oklch(60% 0.105 55), oklch(86% 0.11 185));
+}
+
+/* Full-bleed hero uses 100vw; clip the scrollbar-width overshoot. */
+body:has(.home-hero) {
+  overflow-x: clip;
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+
+.home-hero {
+  /* Fluid values live in custom properties so libsass passes the
+     mixed-unit clamp()/calc() math through verbatim. */
+  --hero-pull-up: clamp(2rem, 5vw, 3.5rem);      /* mirrors .site-main padding-top */
+  --hero-gap-below: clamp(2.25rem, 5vw, 3.75rem);
+  --hero-pad-block: clamp(3.5rem, 8vw, 6rem);
+  --hero-name-size: clamp(2.75rem, 2rem + 4vw, 4.5rem);
+
+  position: relative;
+  /* Break out of .site-container to full viewport width, flush
+     under the sticky header (cancels .site-main top padding). */
+  margin-inline: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--hero-pull-up));
+  margin-bottom: var(--hero-gap-below);
+  padding-block: var(--hero-pad-block);
+  border-bottom: 1px solid var(--line);
+  overflow: clip;
+
+  canvas#hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0;
+  }
+}
+
+/* Soft scrim so the headline stays readable over the lattice. */
+.home-hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(70% 130% at 24% 48%,
+      color-mix(in oklab, var(--bg) 72%, transparent) 0%,
+      transparent 68%),
+    linear-gradient(to top, var(--bg), transparent 30%);
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.home-hero__eyebrow {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.home-hero__name {
+  font-size: var(--hero-name-size);
+  font-weight: 470;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin-bottom: 0.75rem;
+}
+
+.home-hero__role {
+  font-size: var(--step-1);
+  color: var(--ink-muted);
+  text-wrap: balance;
+  margin-bottom: 0;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+/* Gentle entrance for the hero text (motion-safe only). */
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero__inner {
+    animation: home-hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes home-hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.85rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* --- Static fallback (no WebGL2 or reduced motion): hero.js hides the
+   canvas and adds .hero-fallback to the container. Same box, so no
+   layout shift — just an accent-tinted gradient mesh instead. --- */
+
+@property --hero-mesh-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 210deg;
+}
+
+.home-hero.hero-fallback {
+  background:
+    radial-gradient(38rem 20rem at 82% 12%,
+      var(--accent-tint), transparent 62%),
+    radial-gradient(28rem 18rem at 8% 92%,
+      color-mix(in oklab, var(--hero-glow-color) 9%, transparent), transparent 65%),
+    conic-gradient(from var(--hero-mesh-angle) at 68% 38%,
+      transparent,
+      color-mix(in oklab, var(--hero-bond-color) 7%, transparent) 32%,
+      transparent 58%);
+}
+
+/* Only non-reduced-motion users (no-WebGL2 case) get the slow drift. */
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero.hero-fallback {
+    animation: home-hero-mesh 36s linear infinite;
+  }
+
+  @keyframes home-hero-mesh {
+    to {
+      --hero-mesh-angle: 570deg;
+    }
+  }
+}
+
+/* ============================================
+   Bio: editorial prose
+   ============================================ */
+
+.home-bio {
+  max-width: 62ch;
+
+  p {
+    line-height: 1.85;
+    margin-bottom: 1.35rem;
+  }
+}
+
+/* ============================================
+   Sidebar: profile card + career timeline
+   ============================================ */
+
+.profile-card {
+  background-color: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.6rem 1.35rem 1.35rem;
+  box-shadow: var(--shadow-soft);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-photo {
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  display: block;
+  margin: 0 auto 0.9rem;
+}
+
+.profile-name {
+  font-size: var(--step-1);
+  font-weight: 540;
+  text-align: center;
+  margin: 0 0 0.2rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.profile-role {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Social links as mono-labeled rows with hairline separators. */
+.profile-links {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+
+  li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.45rem 0.15rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    i {
+      width: 1.1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--ink-faint);
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      color: var(--accent);
+      text-decoration: none;
+      background-color: var(--accent-tint);
+
+      i {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+/* Career/education timeline: mono dates, hairline connector. */
+.profile-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-timeline__item {
+  position: relative;
+  padding-left: 1.15rem;
+  padding-bottom: 0.85rem;
+
+  /* Hairline connector between dots. */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 0.55em;
+    bottom: -0.35em;
+    width: 1px;
+    background-color: var(--line-strong);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  /* Node dot. */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--bg-raised);
+    border: 1.5px solid var(--accent);
+  }
+
+  &:first-child::after {
+    background-color: var(--accent);
+  }
+}
+
+.profile-timeline__date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+
+.profile-timeline__what {
+  display: block;
+  font-size: var(--step--1);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* ============================================
+   Sidebar: recent news
+   ============================================ */
+
+.side-news {
+  margin-top: 1.75rem;
+  padding: 0 0.15rem;
+}
+
+.side-news__heading {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.side-news__list {
+  list-style: none;
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.side-news__item {
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.side-news__date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-bottom: 0.15rem;
+}
+
+.side-news__headline {
+  display: block;
+  font-size: var(--step--1);
+  line-height: 1.55;
+}
+
+.side-news__all {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   Selected publications: editorial rows
+   ============================================ */
+
+.home-selected {
+  margin-top: 3rem;
+
+  /* Eyebrow-styled section heading (overrides base h2). */
+  .home-selected__heading {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    margin: 0 0 0.35rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  /* Flatten the boxed card into an editorial list row. */
+  .pub-card {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.05rem 0;
+    margin: 0;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+      box-shadow: none;
+      border-color: var(--line);
+      background-color: color-mix(in oklab, var(--accent-tint) 55%, transparent);
+    }
+  }
+
+  /* Small, quiet thumbnail in the margin column. */
+  .flex-item1 {
+    flex: 0 0 84px;
+    max-width: 84px;
+
+    img {
+      width: 84px;
+      height: 58px;
+      object-fit: cover;
+      background-color: var(--bg-inset);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0;
+    }
+  }
+
+  /* Serif titles, mono venue (venue is already mono via base). */
+  .pub-title {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-size: var(--step-0);
+    font-weight: 530;
+    letter-spacing: -0.006em;
+    line-height: 1.3;
+  }
+
+  .pub-authors {
+    font-size: var(--step--2);
+  }
+
+  .pub-venue {
+    color: var(--ink-faint);
+  }
+
+  .pub-links {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-selected .flex-item1 {
+    display: none;
+  }
+}

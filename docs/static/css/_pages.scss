@@ -1,0 +1,536 @@
+/* ============================================
+   Interior pages: publications, datasets,
+   news, about, footer.
+
+   Compiled by libsass — SCSS nesting only.
+   Overrides the generic card/heading styles
+   from main.scss (imported before this file).
+   ============================================ */
+
+/* ============================================
+   A. Shared page header (eyebrow + display title)
+   ============================================ */
+
+.page-head {
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+
+  .eyebrow {
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+
+  h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  .page-head__meta {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+}
+
+/* ============================================
+   B. Publications — filter bar
+   ============================================ */
+
+.pub-filters {
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.1rem;
+
+  .pub-filters__label {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+    margin-right: 0.5rem;
+  }
+
+  .pub-filter-btn {
+    text-transform: uppercase;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 6px 12px;
+  }
+}
+
+/* ============================================
+   C. Publications — flat editorial rows +
+      ghosted year numerals
+   ============================================ */
+
+/* ----- Year jump rail: sticky mono index under the site header ----- */
+.year-nav {
+  position: sticky;
+  top: 0; /* refined to the exact header height by inline JS */
+  z-index: 50;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+  margin-top: 1.1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  .year-nav__list {
+    list-style: none;
+    display: flex;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0.35rem 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  li {
+    flex: 0 0 auto;
+  }
+
+  a {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      color: var(--accent-strong);
+      background-color: var(--accent-tint);
+      text-decoration: none;
+    }
+
+    &.current {
+      color: var(--accent-strong);
+      background-color: var(--accent-tint);
+    }
+  }
+}
+
+/* Anchor jumps land clear of the sticky header + year rail. */
+.pub-year-heading {
+  scroll-margin-top: 6.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.year-nav) {
+    scroll-behavior: smooth;
+  }
+}
+
+.pub-index {
+  border-bottom: 1px solid var(--line);
+
+  /* Oversized, low-contrast Fraunces numerals; the following
+     row's hairline tucks into the numeral via negative margin. */
+  .pub-year-heading {
+    font-size: clamp(3.75rem, calc(2.9rem + 4.5vw), 6rem);
+    font-weight: 590;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: lining-nums;
+    color: color-mix(in oklab, var(--ink) 15%, transparent);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 2.9rem 0 -0.55rem;
+    position: relative;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .pub-year-heading:first-child {
+    margin-top: 0.25rem;
+  }
+
+  /* Flat rows with hairline separators instead of boxed cards */
+  .pub-card {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.4rem 0 1.5rem;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      box-shadow: none;
+      border-color: var(--line-strong);
+    }
+  }
+
+  .pub-title {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-size: var(--step-1);
+    font-weight: 520;
+    letter-spacing: -0.008em;
+    line-height: 1.3;
+  }
+
+  .pub-authors {
+    margin-top: 0.4rem;
+  }
+
+  .pub-venue {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.45rem;
+  }
+
+  /* Mono keyword metadata, middot-separated */
+  .pub-tags {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+    margin-top: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .pub-tag {
+      white-space: nowrap;
+    }
+
+    .pub-tag + .pub-tag::before {
+      content: '\00B7';
+      margin-inline: 0.55em;
+      color: var(--line-strong);
+    }
+  }
+
+  /* Thumbnail: clipped frame with hover zoom. Natural aspect ratio —
+     the base 130px contain box letterboxes wide figures inside the
+     inset frame, which reads as broken in dark theme. */
+  .flex-item1 {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background-color: var(--bg-inset);
+    align-self: flex-start;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: unset;
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  .pub-links {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pub-index {
+    .flex-item1 img {
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .pub-card:hover .flex-item1 img {
+      transform: scale(1.055);
+    }
+  }
+}
+
+/* ============================================
+   D. Datasets — container-query editorial grid
+   ============================================ */
+
+.dataset-section {
+  container-type: inline-size;
+}
+
+.dataset-category {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 3rem 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--line);
+  }
+}
+
+.dataset-section:first-of-type .dataset-category {
+  margin-top: 0;
+}
+
+.dataset-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+}
+
+.dataset-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-lift);
+    border-color: var(--line-strong);
+  }
+}
+
+.dataset-card__media {
+  flex: none;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--bg-inset);
+  border-bottom: 1px solid var(--line);
+
+  img,
+  video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dataset-card__media img,
+  .dataset-card__media video {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .dataset-card:hover .dataset-card__media img,
+  .dataset-card:hover .dataset-card__media video {
+    transform: scale(1.045);
+  }
+}
+
+.dataset-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.dataset-card__title {
+  font-size: var(--step-1);
+  font-weight: 520;
+  letter-spacing: -0.008em;
+  margin: 0 0 0.45rem;
+}
+
+.dataset-card__desc {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  margin: 0 0 0.9rem;
+}
+
+.dataset-card__links {
+  margin-top: auto;
+}
+
+/* Roomy single-column container: card flips horizontal */
+@container (min-width: 26rem) {
+  .dataset-card {
+    flex-direction: row;
+  }
+
+  .dataset-card__media {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+  }
+}
+
+/* Wide container: two-column, image-forward vertical cards */
+@container (min-width: 40rem) {
+  .dataset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dataset-card {
+    flex-direction: column;
+  }
+
+  .dataset-card__media {
+    flex: none;
+    aspect-ratio: 16 / 9;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* Beat the `#gridid img` radius from main.scss inside clipped frames */
+#gridid {
+  .pub-index .flex-item1 img,
+  .dataset-card__media img,
+  .dataset-card__media video {
+    border-radius: 0;
+  }
+}
+
+/* ============================================
+   E. News — timeline
+   ============================================ */
+
+.news-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 7.75rem minmax(0, 1fr);
+  column-gap: 1.7rem;
+  position: relative;
+  padding-block: 0.95rem 1.15rem;
+
+  /* Hairline vertical connector, centered in the column gap */
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(7.75rem + 0.85rem);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--line);
+  }
+
+  /* Node dot, aligned to the first text line */
+  &::after {
+    content: '';
+    position: absolute;
+    left: calc(7.75rem + 0.85rem - 2.5px);
+    top: 1.55rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+  }
+
+  &:first-child::before {
+    top: 1.55rem;
+  }
+
+  &:last-child::before {
+    bottom: auto;
+    height: 1.55rem;
+  }
+
+  .news-date {
+    text-align: right;
+    padding-top: 0.3em;
+  }
+
+  .news-headline {
+    margin: 0;
+    text-wrap: pretty;
+  }
+}
+
+@media (max-width: 560px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.15rem;
+    padding-block: 0.75rem;
+    border-top: 1px solid var(--line);
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    .news-date {
+      text-align: left;
+      padding-top: 0;
+    }
+  }
+}
+
+/* ============================================
+   F. About page
+   ============================================ */
+
+.about-page {
+  .about-links {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  .legal-text p {
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+}
+
+/* ============================================
+   G. Footer — single mono meta line
+   ============================================ */
+
+.site-footer {
+  text-align: left;
+}
+
+.site-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+
+  a {
+    color: var(--ink-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+}

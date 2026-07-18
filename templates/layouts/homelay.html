@@ -1,10 +1,14 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<div id="homeid" class="col-lg-8 col-md-7">
-  {% block page_content %}{% endblock %}
+{% block hero %}{% endblock %}
+<div class="layout-home">
+  <div id="homeid">
+    {% block page_content %}{% endblock %}
+  </div>
+  <aside id="newsid">
+    {% include 'includes/sidebar.html' %}
+  </aside>
 </div>
-<div id="newsid" class="col-lg-4 col-md-5">
-  {% include 'includes/sidebar.html' %}
-</div>
+<script src="{{ url_for('static', filename='js/hero.js') }}" defer></script>
 {% endblock %}

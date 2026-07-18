@@ -4,13 +4,11 @@
   <body>
     {% include 'includes/header.html' %}
     
-    <div class="main-content">
-      <div class="container">
-        <div class="row">
-          {% block content %}{% endblock %}
-        </div>
+    <main class="site-main">
+      <div class="site-container">
+        {% block content %}{% endblock %}
       </div>
-    </div>
+    </main>
 
     {% include 'includes/footer.html' %}
   </body>

@@ -1,0 +1,102 @@
+/* Motion layer: view transitions, scroll-driven reveals. */
+
+/* ============================================
+   Cross-document view transitions
+   ============================================ */
+
+/* Opt in to cross-document view transitions (same-origin MPA navigation).
+   Kept at the top level; animations below are gated on reduced-motion. */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The sticky header (view-transition-name: site-header, set in main.scss)
+     gets its own snapshot group. Suppress all animation on it so it reads
+     as a stable, persistent element across navigations. */
+  ::view-transition-group(site-header),
+  ::view-transition-old(site-header),
+  ::view-transition-new(site-header) {
+    animation: none;
+  }
+
+  /* Main content: quick fade-out, then a subtle fade + rise on the way in. */
+  ::view-transition-old(root) {
+    animation: vt-fade-out 0.12s ease-in both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-slide-fade-in 0.25s ease-out both;
+  }
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion: make the transition an instant swap, no animation. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   Scroll-driven reveals (pure CSS, no JS)
+   ============================================ */
+
+/* Publication rows and dataset cards fade up as they enter the viewport.
+   The view() timeline re-evaluates whenever an element regains layout, so
+   cards re-shown by the publications keyword filter behave correctly:
+   on-screen cards past the entry range render at their natural state.
+   Keyframes end at the element's natural state (opacity 1, no transform). */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .pub-card,
+    .dataset-card {
+      animation: reveal-fade-up linear both;
+      animation-timeline: view();
+      /* Fully revealed once 18% of the element has crossed into view,
+         so content is never left lingering at low opacity. */
+      animation-range: entry 0% cover 18%;
+    }
+  }
+}
+
+/* Print: the view() timeline never advances for below-fold content, which
+   would leave cards frozen at opacity 0 on paper. Render everything plainly. */
+@media print {
+  .pub-card,
+  .dataset-card {
+    animation: none !important;
+  }
+}
+
+@keyframes reveal-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

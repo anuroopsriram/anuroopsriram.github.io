@@ -1,14 +1,35 @@
 - date: "February 2026"
-  headline: "Our paper <a href='https://www.nature.com/articles/s41597-026-06628-2'>Open Molecular Crystals 2025 (OMC25)</a> is published in Nature Scientific Data."
-
-- date: "January 2026"
   headline: "Joined <b>Prometheus</b> as a founding AI Research Scientist."
+
+- date: "February 2026"
+  headline: "Our paper <a href='https://www.nature.com/articles/s41597-026-06628-2'>Open Molecular Crystals 2025 (OMC25)</a> is published in Nature Scientific Data."
 
 - date: "December 2025"
   headline: "<a href='https://arxiv.org/abs/2506.23971'>UMA</a> accepted at NeurIPS 2025."
 
+- date: "August 2025"
+  headline: "Released <a href='https://arxiv.org/abs/2508.02641'>FastCSP</a>, an open-source crystal structure prediction workflow powered entirely by UMA, along with the <a href='https://arxiv.org/abs/2508.02651'>OMC25</a> paper."
+
+- date: "August 2025"
+  headline: "Released the <a href='https://huggingface.co/facebook/ODAC25'>Open DAC 2025</a> dataset for direct air capture sorbent discovery."
+
 - date: "July 2025"
   headline: "Two papers accepted at ICML 2025: <a href='https://arxiv.org/abs/2504.11713'>Adjoint Sampling</a> and <a href='https://arxiv.org/abs/2503.16751'>All-atom Diffusion Transformers</a>."
 
-- date: "May 2025"
-  headline: "Released the <a href='https://huggingface.co/facebook/ODAC25'>Open DAC 2025</a> dataset for direct air capture sorbent discovery."
+- date: "June 2025"
+  headline: "Released <a href='https://huggingface.co/facebook/UMA'>UMA</a>, a family of universal models for atoms trained on half a billion 3D atomic structures."
+
+- date: "January 2025"
+  headline: "<a href='https://arxiv.org/abs/2412.03487'>Kinetic-optimal discrete flow matching</a> accepted at ICLR 2025."
+
+- date: "September 2024"
+  headline: "<a href='https://arxiv.org/abs/2410.23405'>FlowLLM</a> accepted at NeurIPS 2024."
+
+- date: "May 2024"
+  headline: "<a href='https://pubs.acs.org/doi/10.1021/acscentsci.3c01629'>Open DAC 2023 (ODAC23)</a> published in ACS Central Science, with coverage from <a href='https://techcrunch.com/2024/05/04/this-week-in-ai-generative-ai-and-the-problem-of-compensating-creators/'>TechCrunch</a> and others."
+
+- date: "May 2024"
+  headline: "<a href='https://arxiv.org/abs/2406.04713'>FlowMM</a> accepted at ICML 2024."
+
+- date: "January 2024"
+  headline: "<a href='https://arxiv.org/abs/2402.04379'>Fine-tuned LLMs for stable materials generation</a> accepted at ICLR 2024."

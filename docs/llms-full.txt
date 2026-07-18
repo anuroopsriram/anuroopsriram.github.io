@@ -4,7 +4,7 @@
 
 ## Current Role
 
-Founding AI Research Scientist at Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
+Founding AI Research Scientist at Prometheus (2026–present), building the Artificial General Engineer — AI to fundamentally change how we design and engineer the physical world. (Prometheus has begun sharing its mission publicly, though most technical details and product direction remain undisclosed.)
 
 ## Career Timeline
 
@@ -124,7 +124,7 @@ Total publications: 49.
 - arXiv: https://arxiv.org/abs/2508.02641
 - Code: https://github.com/facebookresearch/fairchem/tree/main/src/fairchem/applications/fastcsp
 
-Crystal Structure Prediction (CSP) of molecular crystals plays a central role in applications, such as pharmaceuticals and organic electronics. CSP is challenging and computationally expensive due to the need to explore a large search space with sufficient accuracy to capture energy differences of a few kJ/mol between polymorphs. Dispersion-inclusive density functional theory (DFT) provides the required accuracy but its computational cost is impractical for a large number of putative structures. We introduce FastCSP, an open-source, high-throughput CSP workflow based on machine learning interatomic potentials (MLIPs). FastCSP combines random structure generation using Genarris 3.0 with geometry relaxation and free energy calculations powered entirely by the Universal Model for Atoms (UMA) MLIP. We benchmark FastCSP on a curated set of 28 mostly rigid molecules, demonstrating that our workflow consistently generates known experimental structures and ranks them within 5 kJ/mol per molecule of the global minimum. Our results demonstrate that universal MLIPs can be used across diverse compounds without requiring system-specific tuning. Moreover, the speed and accuracy afforded by UMA eliminate the need for classical force fields in the early stages of CSP and for final re-ranking with DFT. The open-source release of the entire FastCSP workflow significantly lowers the barrier to accessing CSP. CSP results for a single system can be obtained within hours on tens of modern GPUs, making high-throughput crystal structure prediction feasible for a broad range of scientific applications.
+Molecular crystal structure prediction (CSP) is essential for applications in pharmaceuticals and organic electronics. However, CSP remains challenging and computationally intensive due to the need to explore a large search space with sub-kJ/mol accuracy to distinguish between competing polymorphs. While dispersion-inclusive density functional theory (DFT) offers the necessary precision, its computational cost is impractical for a large number of putative structures. Here, we present FastCSP, an open-source, end-to-end CSP workflow driven entirely by a single pretrained universal machine learning interatomic potential (MLIP), the Universal Model for Atoms (UMA), without any system-specific fine-tuning or DFT calculations. FastCSP integrates conformer generation, random structure generation via Genarris 3, geometry optimization, free energy evaluation, and conformer energy corrections, all powered by UMA. Benchmarked on 28 semi-rigid and 10 flexible molecules spanning 74 experimental polymorphs, FastCSP reliably recovers all known structures, ranking them within 9 kJ/mol of the global minimum. UMA reproduces dispersion-inclusive DFT results with high fidelity across chemically diverse compounds. Conformer corrections are particularly beneficial for flexible compounds with conformational polymorphism, such as ROY. UMA's accuracy, transferability, and computational cost thus eliminate the need for classical force fields in early-stage screening and DFT-based re-ranking in CSP workflows. The open-source release of the entire FastCSP workflow lowers the barrier to accessing CSP, enabling both pharmaceutical-grade and high-throughput polymorph screening within practical computational reach.
 
 
 
@@ -197,7 +197,7 @@ Diffusion models are the standard toolkit for generative modelling of 3D atomic 
 
 
 
-## Diffusion/Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective
+## Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective
 
 - Authors: Neta Shaul, Itai Gat, Marton Havasi, Daniel Severo, Anuroop Sriram, Peter Holderrieth, Brian Karrer, Yaron Lipman, Ricky T. Q. Chen
 - Year: 2025
@@ -210,7 +210,7 @@ The design space of discrete-space diffusion or flow generative models are signi
 
 
 
-## FlowLLM: Diffusion/Flow Matching for Material Generation with Large Language Models as Base Distributions
+## FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions
 
 - Authors: Anuroop Sriram, Benjamin Kurt Miller, Ricky T. Q. Chen, Brandon M Wood
 - Year: 2024
@@ -223,7 +223,7 @@ Material discovery is a critical area of research with the potential to revoluti
 
 
 
-## FlowMM: Generating Materials with Riemannian Diffusion/Flow Matching
+## FlowMM: Generating Materials with Riemannian Flow Matching
 
 - Authors: Benjamin Kurt Miller, Ricky T. Q. Chen, Anuroop Sriram, Brandon M Wood
 - Year: 2024
@@ -232,7 +232,7 @@ Material discovery is a critical area of research with the potential to revoluti
 - arXiv: https://arxiv.org/abs/2406.04713
 - Code: https://github.com/facebookresearch/flowmm
 
-Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Diffusion/Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods.
+Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods.
 
 
 
@@ -783,12 +783,26 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 # News
 
 
-- February 2026: Our paper Open Molecular Crystals 2025 (OMC25) is published in Nature Scientific Data.
+- February 2026: Joined Prometheus as a founding AI Research Scientist.
 
-- January 2026: Joined Prometheus as a founding AI Research Scientist.
+- February 2026: Our paper Open Molecular Crystals 2025 (OMC25) is published in Nature Scientific Data.
 
 - December 2025: UMA accepted at NeurIPS 2025.
 
+- August 2025: Released FastCSP, an open-source crystal structure prediction workflow powered entirely by UMA, along with the OMC25 paper.
+
+- August 2025: Released the Open DAC 2025 dataset for direct air capture sorbent discovery.
+
 - July 2025: Two papers accepted at ICML 2025: Adjoint Sampling and All-atom Diffusion Transformers.
 
-- May 2025: Released the Open DAC 2025 dataset for direct air capture sorbent discovery.
+- June 2025: Released UMA, a family of universal models for atoms trained on half a billion 3D atomic structures.
+
+- January 2025: Kinetic-optimal discrete flow matching accepted at ICLR 2025.
+
+- September 2024: FlowLLM accepted at NeurIPS 2024.
+
+- May 2024: Open DAC 2023 (ODAC23) published in ACS Central Science, with coverage from TechCrunch and others.
+
+- May 2024: FlowMM accepted at ICML 2024.
+
+- January 2024: Fine-tuned LLMs for stable materials generation accepted at ICLR 2024.

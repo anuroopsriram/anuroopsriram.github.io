@@ -13,7 +13,7 @@ LLMS_TXT_BODY = """# Anuroop Sriram
 
 ## Current Role
 
-Founding AI Research Scientist at Prometheus (2026–present), building AI to fundamentally change how we design and engineer the physical world. (Prometheus is in stealth; specific technical details and product direction have not been publicly disclosed.)
+Founding AI Research Scientist at Prometheus (2026–present), building the Artificial General Engineer — AI to fundamentally change how we design and engineer the physical world. (Prometheus has begun sharing its mission publicly, though most technical details and product direction remain undisclosed.)
 
 ## Career Timeline
 

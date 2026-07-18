@@ -1,28 +1,16 @@
-<nav class="navbar navbar-expand-md fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="{{ url_for('main.home') }}">{{ site.title | escape }}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
-          <a class="nav-link{% if active_page == 'home' %} active{% endif %}" href="{{ url_for('main.home') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link{% if active_page == 'publications' %} active{% endif %}" href="{{ url_for('main.publications') }}">Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link{% if active_page == 'datasets' %} active{% endif %}" href="{{ url_for('main.datasets') }}">Datasets</a>
-        </li>
-        <li class="nav-item">
-          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <span id="theme-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-            </span>
-          </button>
-        </li>
-      </ul>
-    </div>
+<header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="{{ url_for('main.home') }}">{{ site.title | escape }}</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-nav__link{% if active_page == 'home' %} is-active{% endif %}" href="{{ url_for('main.home') }}">Home</a>
+      <a class="site-nav__link{% if active_page == 'publications' %} is-active{% endif %}" href="{{ url_for('main.publications') }}">Publications</a>
+      <a class="site-nav__link{% if active_page == 'datasets' %} is-active{% endif %}" href="{{ url_for('main.datasets') }}">Datasets</a>
+      <a class="site-nav__link{% if active_page == 'news' %} is-active{% endif %}" href="{{ url_for('main.allnews') }}">News</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span id="theme-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
   </div>
-</nav>
+</header>
