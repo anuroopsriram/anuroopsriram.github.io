@@ -235,10 +235,10 @@ body:has(.home-hero) {
     color: var(--ink-muted);
     transition: color 0.2s ease, background-color 0.2s ease;
 
-    i {
-      width: 1.1rem;
-      text-align: center;
-      font-size: 0.95rem;
+    svg {
+      width: 1rem;
+      height: 1rem;
+      flex: none;
       color: var(--ink-faint);
       transition: color 0.2s ease;
     }
@@ -248,7 +248,7 @@ body:has(.home-hero) {
       text-decoration: none;
       background-color: var(--accent-tint);
 
-      i {
+      svg {
         color: var(--accent);
       }
     }

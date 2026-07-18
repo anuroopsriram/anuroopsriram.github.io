@@ -20,7 +20,7 @@
       {% if dataset.image or dataset.video %}
       <div class="dataset-card__media">
         {% if dataset.image %}
-        <img src="{{ url_for('static', filename='images/datapic/' + dataset.image) }}" alt="{{ dataset.title }}" loading="lazy" />
+        <img src="{{ url_for('static', filename='images/datapic/' + dataset.image) }}" alt="{{ dataset.title }}" loading="lazy" decoding="async" />
         {% endif %}
         {% if dataset.video %}
         <video src="{{ url_for('static', filename='images/datapic/' + dataset.video) }}" autoplay loop muted playsinline title="{{ dataset.title }}"></video>

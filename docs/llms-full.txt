@@ -1,6 +1,6 @@
 # Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar.
+> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar. This site lists 49 selected publications; the complete record is on Google Scholar.
 
 ## Current Role
 
@@ -96,6 +96,13 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Education
 - M.S. in Computer Science (Language Technologies), Carnegie Mellon University (2010–2012), advised by Roni Rosenfeld
 - B.Tech in Computer Science, IIIT Hyderabad (2006–2010)
+
+## Site Pages
+
+- [Publications](https://anuroopsriram.com/publications/): all 49 listed publications with abstracts, grouped by year
+- [Datasets](https://anuroopsriram.com/datasets/): open datasets he created or co-created
+- [News](https://anuroopsriram.com/allnews/): recent papers, releases, and career updates (Atom feed: https://anuroopsriram.com/feed.xml)
+- [Full corpus for LLMs](https://anuroopsriram.com/llms-full.txt): this bio plus every publication (with abstracts), dataset, and news item in one plain-text file
 
 ## Links
 - Website: https://anuroopsriram.com
@@ -740,6 +747,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 - Project: https://arxiv.org/abs/2508.02651
 - Data: https://huggingface.co/facebook/OMC25
 - Code: https://github.com/facebookresearch/fairchem
+- License: https://creativecommons.org/licenses/by/4.0/
 
 
 ## Open DAC 2023 & 2025
@@ -749,6 +757,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 - Project: https://open-dac.github.io/
 - Data: https://huggingface.co/facebook/ODAC25
 - Code: https://github.com/facebookresearch/fairchem
+- License: https://creativecommons.org/licenses/by/4.0/
 
 
 ## Open Catalyst 2020 & 2022 (OC20, OC22)
@@ -758,6 +767,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 - Project: https://opencatalystproject.org/
 - Data: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
 - Code: https://github.com/facebookresearch/fairchem
+- License: https://creativecommons.org/licenses/by/4.0/
 
 
 ## fastMRI Datasets
@@ -767,6 +777,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 - Project: https://fastmri.org/
 - Data: https://fastmri.med.nyu.edu/
 - Code: https://github.com/facebookresearch/fastMRI/
+- License: https://fastmri.med.nyu.edu/
 
 
 ## Multilingual LibriSpeech (MLS)
@@ -775,6 +786,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 - 50K hours of labeled speech across 8 languages, derived from LibriVox audiobooks. Includes language models and baseline ASR models for all languages.
 - Data: https://www.openslr.org/94/
 - Code: https://github.com/flashlight/wav2letter/tree/main/recipes/mls
+- License: https://creativecommons.org/licenses/by/4.0/
 
 
 

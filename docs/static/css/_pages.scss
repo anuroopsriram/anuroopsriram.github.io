@@ -68,6 +68,16 @@
       ghosted year numerals
    ============================================ */
 
+/* ----- 404 page ----- */
+.notfound__links {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+}
+
 /* ----- Year jump rail: sticky mono index under the site header ----- */
 .year-nav {
   position: sticky;

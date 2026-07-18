@@ -38,6 +38,7 @@ Total publications: {{ site.data.publist | length }}.
 {% if dataset.project_url %}- Project: {{ dataset.project_url }}
 {% endif %}{% if dataset.data_url %}- Data: {{ dataset.data_url }}
 {% endif %}{% if dataset.code_url %}- Code: {{ dataset.code_url }}
+{% endif %}{% if dataset.license %}- License: {{ dataset.license }}
 {% endif %}
 {% endfor %}
 

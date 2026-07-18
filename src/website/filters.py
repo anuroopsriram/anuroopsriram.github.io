@@ -14,10 +14,15 @@ CREATOR_PERSON = {
     "name": "Anuroop Sriram",
     "url": "https://anuroopsriram.com",
     "sameAs": [
+        "https://www.wikidata.org/entity/Q138516652",
         "https://scholar.google.com/citations?user=D4uRc_UAAAAJ",
         "https://github.com/anuroopsriram",
+        "https://twitter.com/anuroopsriram",
         "https://www.linkedin.com/in/anuroopsriram",
         "https://orcid.org/0000-0001-6295-7535",
+        "https://dblp.org/pid/200/7951",
+        "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230",
+        "https://openreview.net/profile?id=~Anuroop_Sriram1",
     ],
 }
 
@@ -212,6 +217,18 @@ def dataset_jsonld_filter(
     return Markup(json.dumps(obj, ensure_ascii=False))
 
 
+def _item_url(item: dict[str, Any]) -> str | None:
+    """Best canonical URL for a list item (publication, dataset, or news)."""
+    if item.get("arxiv"):
+        return f"https://arxiv.org/abs/{item['arxiv']}"
+    if item.get("doi"):
+        return f"https://doi.org/{item['doi']}"
+    for key in ("journal", "link", "project_url", "data_url", "patent"):
+        if item.get(key):
+            return str(item[key])
+    return None
+
+
 def itemlist_jsonld_filter(
     items: list[dict[str, Any]],
     page_url: str,
@@ -229,6 +246,9 @@ def itemlist_jsonld_filter(
             "position": idx,
             "name": _clean_text(item.get(name_key) or ""),
         }
+        url = _item_url(item)
+        if url:
+            element["url"] = url
         item_list_elements.append(element)
 
     obj = {

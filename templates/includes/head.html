@@ -24,35 +24,72 @@
   {% set meta_title = page.title ~ ' - ' ~ site.title if page.title else site.title %}
   {% set meta_description = page.description if page.description else site.description %}
   {% set meta_url = site.url ~ site.baseurl ~ page.permalink %}
-  {% set meta_image = site.url ~ '/static/images/teampic/anuroop.webp' %}
+  {% set og_image = site.url ~ '/static/images/og-banner.png' %}
+  {% set headshot = site.url ~ '/static/images/teampic/anuroop.webp' %}
 
   <meta name="description" content="{{ meta_description }}">
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ 'profile' if page.permalink == '/' else 'website' }}">
   <meta property="og:title" content="{{ meta_title }}">
   <meta property="og:description" content="{{ meta_description }}">
   <meta property="og:url" content="{{ meta_url }}">
-  <meta property="og:image" content="{{ meta_image }}">
-  <meta property="og:image:width" content="973">
-  <meta property="og:image:height" content="736">
-  <meta property="og:image:alt" content="Photograph of Anuroop Sriram">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Anuroop Sriram — AI for Science researcher">
   <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ meta_title }}">
   <meta name="twitter:description" content="{{ meta_description }}">
-  <meta name="twitter:image" content="{{ meta_image }}">
+  <meta name="twitter:image" content="{{ headshot }}">
   <meta name="twitter:image:alt" content="Photograph of Anuroop Sriram">
   <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:opsz,wght@14..32,100..900&family=Spline+Sans+Mono:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <link rel="canonical" href="{{ meta_url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "{{ site.url }}/#website",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}/",
+    "publisher": {"@id": "https://www.wikidata.org/entity/Q138516652"}
+  }
+  </script>
+  {% if page.permalink == '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "{{ site.url }}/#profilepage",
+    "url": "{{ site.url }}/",
+    "isPartOf": {"@id": "{{ site.url }}/#website"},
+    "mainEntity": {"@id": "https://www.wikidata.org/entity/Q138516652"}
+  }
+  </script>
+  {% elif page.title %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/"},
+      {"@type": "ListItem", "position": 2, "name": "{{ page.title | escape }}", "item": "{{ meta_url }}"}
+    ]
+  }
+  </script>
+  {% endif %}
   <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
+  <link rel="alternate" type="application/atom+xml" title="News - {{ site.title }}" href="{{ site.url }}/feed.xml">
 
   <script type="speculationrules">
   {
