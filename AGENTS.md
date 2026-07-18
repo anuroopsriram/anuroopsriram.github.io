@@ -32,8 +32,11 @@ With pip:
 - **`templates/`** - Jinja2 templates
   - `layouts/` - Base layouts (base.html, homelay.html, gridlay.html)
   - `includes/` - Reusable components (head, header, footer, sidebar, pub_card)
-  - `pages/` - Page templates (home, publications, datasets, code, etc.)
-- **`static/`** - Static assets (CSS/SCSS, JS, images, fonts)
+  - `pages/` - Page templates (home, publications, datasets, allnews, aboutwebsite, llms_full.txt)
+- **`static/`** - Static assets
+  - `css/main.scss` - design tokens, layout, and shared components; imports the page-specific partials `_home.scss`, `_pages.scss`, and `_motion.scss`
+  - `js/theme.js` - light/dark theme toggle; `js/hero.js` - self-contained WebGL2 home-page hero
+  - `images/`, `fonts/`
 - **`data/`** - YAML data files driving site content
   - `publist.yml` - Publications list with metadata
   - `datalist.yml` - Datasets information
@@ -43,11 +46,13 @@ With pip:
 - **`docs/`** - Built static site output (served by GitHub Pages)
 
 ### Key Features
-- Publication management via YAML data files, grouped by year
-- Responsive Bootstrap 3 design with light/dark theme toggle
+- Publication management via YAML data files, grouped by year, with keyword filters and a sticky year-jump rail
+- Custom design system (no CSS framework): oklch/`light-dark()` color tokens, Fraunces/Inter/Spline Sans Mono fonts, light/dark theme toggle
+- WebGL2 "crystal lattice" hero on the home page (`static/js/hero.js`) with reduced-motion and no-WebGL fallbacks
+- Cross-document view transitions, speculation-rules prerendering, and CSS scroll-driven reveal animations (all progressive enhancement)
 - Google Analytics integration
 - Academic paper image thumbnails and links
-- SCSS compiled via libsass
+- SCSS compiled via libsass. Gotchas: use SCSS nesting (plain CSS nesting does not compile), `@supports selector(...)` conditions are rejected, and `min(var(--x), ...)` fails because SCSS shadows CSS `min()`; unknown plain-CSS functions like `oklch()` and `light-dark()` pass through fine
 
 ### Content Management
 - Publications are managed in `data/publist.yml` with fields for title, authors, venue, year, arxiv, code, data, etc.
@@ -57,10 +62,9 @@ With pip:
 
 ### Build Process
 `uv run website-build` runs the shared build logic in `src/website/builder.py`:
-1. Compiles SCSS from `static/css/main.scss` to CSS
-2. Copies external assets (images, fonts, JS) into `static/`
-3. Freezes all Flask routes into static HTML in `docs/`
-4. Copies static assets into `docs/` for deployment
+1. Compiles SCSS from `static/css/main.scss` (and its `_*.scss` partials) to `static/css/main.css`
+2. Freezes all Flask routes into static HTML in `docs/`
+3. Copies the entire `static/` tree into `docs/` for deployment
 
 ## Common Agentic Tasks
 
