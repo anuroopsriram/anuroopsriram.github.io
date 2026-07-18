@@ -6,7 +6,7 @@
 <ul class="flex-container">
 {% if publi.image %}
 <li class="flex-item1">
-  <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" alt="{{ publi.title }}" />
+  <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" alt="{{ publi.title }}" loading="lazy" decoding="async" />
 </li>
 {% endif %}
 <li class="flex-item2">

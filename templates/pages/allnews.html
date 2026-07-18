@@ -1,6 +1,7 @@
 {% extends "layouts/gridlay.html" %}
 
 {% block page_content %}
+<script type="application/ld+json">{{ site.data.news | itemlist_jsonld(site.url + '/allnews/', 'News - Anuroop Sriram', name_key='headline') }}</script>
 <header class="page-head">
   <p class="eyebrow">Updates</p>
   <h1>News</h1>

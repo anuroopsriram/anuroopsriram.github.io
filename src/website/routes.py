@@ -1,5 +1,6 @@
 """Route definitions for the website."""
 
+import re
 from datetime import datetime, timezone
 
 from flask import Blueprint, current_app, make_response, render_template
@@ -9,7 +10,7 @@ main = Blueprint("main", __name__)
 
 LLMS_TXT_BODY = """# Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar.
+> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar. This site lists 49 selected publications; the complete record is on Google Scholar.
 
 ## Current Role
 
@@ -106,6 +107,13 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - M.S. in Computer Science (Language Technologies), Carnegie Mellon University (2010–2012), advised by Roni Rosenfeld
 - B.Tech in Computer Science, IIIT Hyderabad (2006–2010)
 
+## Site Pages
+
+- [Publications](https://anuroopsriram.com/publications/): all 49 listed publications with abstracts, grouped by year
+- [Datasets](https://anuroopsriram.com/datasets/): open datasets he created or co-created
+- [News](https://anuroopsriram.com/allnews/): recent papers, releases, and career updates (Atom feed: https://anuroopsriram.com/feed.xml)
+- [Full corpus for LLMs](https://anuroopsriram.com/llms-full.txt): this bio plus every publication (with abstracts), dataset, and news item in one plain-text file
+
 ## Links
 - Website: https://anuroopsriram.com
 - Google Scholar: https://scholar.google.com/citations?user=D4uRc_UAAAAJ
@@ -129,10 +137,8 @@ def home():
 @main.route("/publications/")
 def publications():
     description = (
-        "65 publications by Anuroop Sriram covering AI for Science, model scaling, "
-        "diffusion and flow matching, MRI acceleration, and speech recognition. "
-        "Includes work on UMA, Open Catalyst, FlowMM, FlowLLM, FastCSP, GrappaNet, "
-        "End-to-End Variational Networks, Deep Speech 2, and Multilingual LibriSpeech."
+        "Publications by Anuroop Sriram spanning AI for science, model scaling, "
+        "diffusion and flow matching, MRI acceleration, and speech recognition."
     )
     return render_template(
         "pages/publications.html",
@@ -190,6 +196,21 @@ def aboutwebsite():
     )
 
 
+@main.route("/404.html")
+def not_found():
+    """Custom 404 page served by GitHub Pages for unknown URLs."""
+    return render_template(
+        "pages/404.html",
+        page={
+            "title": "Page not found",
+            "permalink": "/404.html",
+            "description": "The page you're looking for doesn't exist.",
+            "noindex": True,
+        },
+        active_page=None,
+    )
+
+
 @main.route("/sitemap.xml")
 def sitemap():
     pages = [
@@ -214,6 +235,68 @@ def sitemap():
     xml += "</urlset>"
     resp = make_response(xml)
     resp.headers["Content-Type"] = "application/xml"
+    return resp
+
+
+_MONTHS = {
+    m: i
+    for i, m in enumerate(
+        [
+            "january", "february", "march", "april", "may", "june",
+            "july", "august", "september", "october", "november", "december",
+        ],
+        start=1,
+    )
+}
+
+
+def _news_date(date_str: str) -> datetime:
+    """Parse a free-text news date like "February 2026" into a datetime (UTC)."""
+    parts = str(date_str).strip().lower().split()
+    try:
+        month = _MONTHS[parts[0]]
+        year = int(parts[-1])
+        return datetime(year, month, 1, tzinfo=timezone.utc)
+    except (KeyError, ValueError, IndexError):
+        return datetime(1970, 1, 1, tzinfo=timezone.utc)
+
+
+@main.route("/feed.xml")
+def feed():
+    """Atom feed of news items."""
+    from xml.sax.saxutils import escape
+
+    from .data_loader import DataLoader
+
+    site_url = current_app.config.get("SITE_URL", "https://anuroopsriram.com")
+    news = DataLoader().load_yaml_file("news.yml")
+    dated = [(_news_date(item.get("date", "")), item) for item in news]
+    updated = max((d for d, _ in dated), default=datetime.now(timezone.utc))
+
+    xml = '<?xml version="1.0" encoding="utf-8"?>\n'
+    xml += '<feed xmlns="http://www.w3.org/2005/Atom">\n'
+    xml += "  <title>Anuroop Sriram — News</title>\n"
+    xml += f'  <link href="{site_url}/feed.xml" rel="self"/>\n'
+    xml += f'  <link href="{site_url}/allnews/"/>\n'
+    xml += f"  <id>{site_url}/feed.xml</id>\n"
+    xml += f"  <updated>{updated.strftime('%Y-%m-%dT%H:%M:%SZ')}</updated>\n"
+    xml += "  <author><name>Anuroop Sriram</name></author>\n"
+    for idx, (date, item) in enumerate(dated):
+        headline_html = str(item.get("headline", ""))
+        title = re.sub(r"<[^>]+>", "", headline_html)
+        slug = date.strftime("%Y-%m") + f"-{idx}"
+        xml += "  <entry>\n"
+        xml += f"    <title>{escape(title)}</title>\n"
+        xml += f'    <link href="{site_url}/allnews/"/>\n'
+        xml += f"    <id>{site_url}/allnews/#{slug}</id>\n"
+        xml += f"    <updated>{date.strftime('%Y-%m-%dT%H:%M:%SZ')}</updated>\n"
+        xml += f'    <content type="html">{escape(headline_html)}</content>\n'
+        xml += "  </entry>\n"
+    xml += "</feed>"
+    resp = make_response(xml)
+    # application/xml (not atom+xml) to match how GitHub Pages serves the
+    # frozen file; feed readers sniff the Atom namespace regardless.
+    resp.headers["Content-Type"] = "application/xml; charset=utf-8"
     return resp
 
 

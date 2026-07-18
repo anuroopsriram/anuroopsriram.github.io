@@ -1,6 +1,6 @@
 # Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar.
+> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar. This site lists 49 selected publications; the complete record is on Google Scholar.
 
 ## Current Role
 
@@ -96,6 +96,13 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Education
 - M.S. in Computer Science (Language Technologies), Carnegie Mellon University (2010–2012), advised by Roni Rosenfeld
 - B.Tech in Computer Science, IIIT Hyderabad (2006–2010)
+
+## Site Pages
+
+- [Publications](https://anuroopsriram.com/publications/): all 49 listed publications with abstracts, grouped by year
+- [Datasets](https://anuroopsriram.com/datasets/): open datasets he created or co-created
+- [News](https://anuroopsriram.com/allnews/): recent papers, releases, and career updates (Atom feed: https://anuroopsriram.com/feed.xml)
+- [Full corpus for LLMs](https://anuroopsriram.com/llms-full.txt): this bio plus every publication (with abstracts), dataset, and news item in one plain-text file
 
 ## Links
 - Website: https://anuroopsriram.com
