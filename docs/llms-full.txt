@@ -124,7 +124,7 @@ Total publications: 49.
 - arXiv: https://arxiv.org/abs/2508.02641
 - Code: https://github.com/facebookresearch/fairchem/tree/main/src/fairchem/applications/fastcsp
 
-Crystal Structure Prediction (CSP) of molecular crystals plays a central role in applications, such as pharmaceuticals and organic electronics. CSP is challenging and computationally expensive due to the need to explore a large search space with sufficient accuracy to capture energy differences of a few kJ/mol between polymorphs. Dispersion-inclusive density functional theory (DFT) provides the required accuracy but its computational cost is impractical for a large number of putative structures. We introduce FastCSP, an open-source, high-throughput CSP workflow based on machine learning interatomic potentials (MLIPs). FastCSP combines random structure generation using Genarris 3.0 with geometry relaxation and free energy calculations powered entirely by the Universal Model for Atoms (UMA) MLIP. We benchmark FastCSP on a curated set of 28 mostly rigid molecules, demonstrating that our workflow consistently generates known experimental structures and ranks them within 5 kJ/mol per molecule of the global minimum. Our results demonstrate that universal MLIPs can be used across diverse compounds without requiring system-specific tuning. Moreover, the speed and accuracy afforded by UMA eliminate the need for classical force fields in the early stages of CSP and for final re-ranking with DFT. The open-source release of the entire FastCSP workflow significantly lowers the barrier to accessing CSP. CSP results for a single system can be obtained within hours on tens of modern GPUs, making high-throughput crystal structure prediction feasible for a broad range of scientific applications.
+Molecular crystal structure prediction (CSP) is essential for applications in pharmaceuticals and organic electronics. However, CSP remains challenging and computationally intensive due to the need to explore a large search space with sub-kJ/mol accuracy to distinguish between competing polymorphs. While dispersion-inclusive density functional theory (DFT) offers the necessary precision, its computational cost is impractical for a large number of putative structures. Here, we present FastCSP, an open-source, end-to-end CSP workflow driven entirely by a single pretrained universal machine learning interatomic potential (MLIP), the Universal Model for Atoms (UMA), without any system-specific fine-tuning or DFT calculations. FastCSP integrates conformer generation, random structure generation via Genarris 3, geometry optimization, free energy evaluation, and conformer energy corrections, all powered by UMA. Benchmarked on 28 semi-rigid and 10 flexible molecules spanning 74 experimental polymorphs, FastCSP reliably recovers all known structures, ranking them within 9 kJ/mol of the global minimum. UMA reproduces dispersion-inclusive DFT results with high fidelity across chemically diverse compounds. Conformer corrections are particularly beneficial for flexible compounds with conformational polymorphism, such as ROY. UMA's accuracy, transferability, and computational cost thus eliminate the need for classical force fields in early-stage screening and DFT-based re-ranking in CSP workflows. The open-source release of the entire FastCSP workflow lowers the barrier to accessing CSP, enabling both pharmaceutical-grade and high-throughput polymorph screening within practical computational reach.
 
 
 
@@ -785,10 +785,24 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 
 - February 2026: Our paper Open Molecular Crystals 2025 (OMC25) is published in Nature Scientific Data.
 
-- January 2026: Joined Prometheus as a founding AI Research Scientist.
+- February 2026: Joined Prometheus as a founding AI Research Scientist.
 
 - December 2025: UMA accepted at NeurIPS 2025.
 
+- August 2025: Released FastCSP, an open-source crystal structure prediction workflow powered entirely by UMA, along with the OMC25 paper.
+
+- August 2025: Released the Open DAC 2025 dataset for direct air capture sorbent discovery.
+
 - July 2025: Two papers accepted at ICML 2025: Adjoint Sampling and All-atom Diffusion Transformers.
 
-- May 2025: Released the Open DAC 2025 dataset for direct air capture sorbent discovery.
+- June 2025: Released UMA, a family of universal models for atoms trained on half a billion 3D atomic structures.
+
+- January 2025: Kinetic-optimal discrete flow matching accepted at ICLR 2025.
+
+- September 2024: FlowLLM accepted at NeurIPS 2024.
+
+- May 2024: Open DAC 2023 (ODAC23) published in ACS Central Science, with coverage from TechCrunch and others.
+
+- May 2024: FlowMM accepted at ICML 2024.
+
+- January 2024: Fine-tuned LLMs for stable materials generation accepted at ICLR 2024.

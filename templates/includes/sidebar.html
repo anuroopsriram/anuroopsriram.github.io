@@ -1,22 +1,59 @@
 {% for member in site.data.pi %}
-<div class="sidebar-card">
-  <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="sidebar-photo" alt="{{ member.name }}" />
-  <h2 class="sidebar-name">{{ member.name }}</h2>
+<div class="profile-card">
+  <img src="{{ url_for('static', filename='images/teampic/' + member.photo) }}" class="profile-photo" alt="{{ member.name }}" />
+  <h2 class="profile-name">{{ member.name }}</h2>
+  <p class="profile-role">{{ member.info }}</p>
 
-  <div class="sidebar-icons">
-    {% if member.email %}<a href="mailto:{{ member.email }}" aria-label="Email"><i class="fa fa-envelope-square fa-lg"></i></a>{% endif %}
-    {% if member.scholar %}<a href="{{ member.scholar }}" target="_blank" aria-label="Google Scholar"><i class="ai ai-google-scholar-square ai-lg"></i></a>{% endif %}
-    {% if member.cv %}<a href="{{ member.cv }}" target="_blank" aria-label="CV"><i class="ai ai-cv-square ai-lg"></i></a>{% endif %}
-    {% if member.github %}<a href="{{ member.github }}" target="_blank" aria-label="GitHub"><i class="fa fa-github-square fa-lg"></i></a>{% endif %}
-    {% if member.twitter %}<a href="{{ member.twitter }}" target="_blank" aria-label="Twitter"><i class="fa fa-twitter-square fa-lg"></i></a>{% endif %}
-    {% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>{% endif %}
-    {% if member.researchgate %}<a href="{{ member.researchgate }}" target="_blank" aria-label="ResearchGate"><i class="ai ai-researchgate-square ai-lg"></i></a>{% endif %}
-  </div>
+  <ul class="profile-links">
+    {% if member.email %}
+    <li><a href="mailto:{{ member.email }}"><i class="fa fa-envelope" aria-hidden="true"></i><span class="profile-links__label">Email</span></a></li>
+    {% endif %}
+    {% if member.scholar %}
+    <li><a href="{{ member.scholar }}" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="profile-links__label">Scholar</span></a></li>
+    {% endif %}
+    {% if member.cv %}
+    <li><a href="{{ member.cv }}" target="_blank"><i class="ai ai-cv" aria-hidden="true"></i><span class="profile-links__label">CV</span></a></li>
+    {% endif %}
+    {% if member.github %}
+    <li><a href="{{ member.github }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i><span class="profile-links__label">GitHub</span></a></li>
+    {% endif %}
+    {% if member.twitter %}
+    <li><a href="{{ member.twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i><span class="profile-links__label">Twitter</span></a></li>
+    {% endif %}
+    {% if member.linkedin %}
+    <li><a href="{{ member.linkedin }}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="profile-links__label">LinkedIn</span></a></li>
+    {% endif %}
+    {% if member.researchgate %}
+    <li><a href="{{ member.researchgate }}" target="_blank"><i class="ai ai-researchgate" aria-hidden="true"></i><span class="profile-links__label">ResearchGate</span></a></li>
+    {% endif %}
+  </ul>
 
-  <ul class="sidebar-education">
+  <ol class="profile-timeline">
   {% for i in range(1, member.number_educ + 1) %}
-    <li>{{ member['education' ~ i ~ 'short'] }}</li>
+    {% set entry = member['education' ~ i ~ 'short'] %}
+    {% set parts = entry.split(') ', 1) %}
+    <li class="profile-timeline__item">
+      {% if parts | length == 2 %}
+      <span class="profile-timeline__date">{{ parts[0][1:] }}</span>
+      <span class="profile-timeline__what">{{ parts[1] }}</span>
+      {% else %}
+      <span class="profile-timeline__what">{{ entry }}</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+</div>
+
+<div class="side-news">
+  <h2 class="side-news__heading">Recent news</h2>
+  <ul class="side-news__list">
+  {% for item in site.data.news[:3] %}
+    <li class="side-news__item">
+      <span class="side-news__date">{{ item.date }}</span>
+      <span class="side-news__headline">{{ item.headline | safe }}</span>
+    </li>
   {% endfor %}
   </ul>
+  <a class="side-news__all" href="{{ url_for('main.allnews') }}">All news &rarr;</a>
 </div>
 {% endfor %}

@@ -4,11 +4,11 @@
 {% endif %}
 <div class="pub-card{% if compact %} pub-card-compact{% endif %}" data-keywords="{{ publi.keywords | join(',') if publi.keywords else '' }}">
 <ul class="flex-container">
+{% if publi.image %}
 <li class="flex-item1">
-  {% if publi.image %}
-   <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" class="img-fluid" alt="{{ publi.title }}" />
-  {% endif %}
+  <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" alt="{{ publi.title }}" />
 </li>
+{% endif %}
 <li class="flex-item2">
   <div class="pub-title">{{ publi.title }}</div>
   {% if compact %}
@@ -17,6 +17,11 @@
   <div class="pub-authors">{{ publi.authors | bold_name }}</div>
   {% endif %}
   {% if publi.venue %}<div class="pub-venue">{{ publi.venue }}</div>{% endif %}
+  {% if not compact and publi.keywords %}
+  <div class="pub-tags" aria-label="Topics">
+    {% for kw in publi.keywords %}<span class="pub-tag">{{ kw }}</span>{% endfor %}
+  </div>
+  {% endif %}
 
   <div class="pub-links">
   {% if publi.doi %}<a href="http://dx.doi.org/{{ publi.doi }}" target="_blank" class="btn-common">DOI</a> {% endif %}
@@ -25,35 +30,36 @@
   {% if publi.link %}<a href="{{ publi.link }}" target="_blank" class="btn-common">PAPER</a> {% endif %}
   {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank" class="btn-bib">PDF</a> {% endif %}
   {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank" class="btn-common">PATENT</a> {% endif %}
-  {% if not compact and publi.abstract %}<a data-bs-toggle="collapse" href="#{{publi.key}}_abs" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_abs">ABSTRACT</a>{% endif %}
   {% if publi.code %}<a href="{{ publi.code }}" target="_blank" class="btn-common">CODE</a> {% endif %}
   {% if publi.data %}<a href="{{ publi.data }}" target="_blank" class="btn-common">DATA</a> {% endif %}
   {% if publi.models %}<a href="{{ publi.models }}" target="_blank" class="btn-common">MODELS</a> {% endif %}
-  {% if not compact and publi.press %}<a data-bs-toggle="collapse" href="#{{publi.key}}_press" class="btn-common btn-collapse-toggle" role="button" aria-expanded="false" aria-controls="{{publi.key}}_press">MEDIA</a>{% endif %}
-  </div>
 
-{% if not compact and publi.abstract %}
-<div class="collapse" id="{{publi.key}}_abs">
-  <div class="abstract-box">
-    <p>{{publi.abstract | newline_to_br}}</p>
-  </div>
-</div>
-{% endif %}
+  {% if not compact and publi.abstract %}
+  <details class="pub-disclosure" id="{{publi.key}}_abs">
+    <summary>ABSTRACT</summary>
+    <div class="abstract-box">
+      <p>{{publi.abstract | newline_to_br}}</p>
+    </div>
+  </details>
+  {% endif %}
 
-{% if not compact and publi.press %}
-<div class="collapse" id="{{publi.key}}_press">
-  <div class="abstract-box">
-    <ul class="press-list">
-    {% for article in publi.press %}
-      <li style="list-style-image:url('{{ url_for('static', filename='images/logos/' + article.logo) }}');">
-        <a href="{{article.link}}" target="_blank">"{{article.text}}"</a>
-        {% if article.author %} &mdash; {{article.author}}{% endif %}
-      </li>
-    {% endfor %}
-    </ul>
+  {% if not compact and publi.press %}
+  <details class="pub-disclosure" id="{{publi.key}}_press">
+    <summary>MEDIA</summary>
+    <div class="abstract-box">
+      <ul class="press-list">
+      {% for article in publi.press %}
+        <li>
+          <span class="press-source">{{ article.source }}</span>
+          <a href="{{article.link}}" target="_blank">"{{article.text}}"</a>
+          {% if article.author %} &mdash; {{article.author}}{% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </details>
+  {% endif %}
   </div>
-</div>
-{% endif %}
 
 </li>
 </ul>

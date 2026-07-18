@@ -3,7 +3,11 @@
 
 {% block page_content %}
 <script type="application/ld+json">{{ site.data.publist | itemlist_jsonld(site.url + '/publications/', 'Publications - Anuroop Sriram') }}</script>
-<h1>Publications</h1>
+<header class="page-head">
+  <p class="eyebrow">Research output</p>
+  <h1>Publications</h1>
+  <p class="page-head__meta">{{ site.data.publist | length }} papers &middot; {{ site.data.years | length }} years</p>
+</header>
 
 {% set keyword_order = [
   'AI for Science',
@@ -27,6 +31,7 @@
 {% endfor %}
 
 <div class="pub-filters" role="toolbar" aria-label="Filter publications by topic">
+  <span class="pub-filters__label" aria-hidden="true">Filter</span>
   <button class="pub-filter-btn active" data-filter="all">All</button>
   {% for kw in keyword_order %}
     {% if kw in all_keywords %}
@@ -38,6 +43,7 @@
   {% endfor %}
 </div>
 
+<div class="pub-index">
 {% if site.group_pub_by_year %}
   {% for myyear in site.data.years %}
     {% set year_pubs = site.data.publist | selectattr('year', 'equalto', myyear.year) | list %}
@@ -53,6 +59,7 @@
     {{ pub_card(publi) }}
   {% endfor %}
 {% endif %}
+</div>
 
 <script>
 (function() {
