@@ -197,7 +197,7 @@ Diffusion models are the standard toolkit for generative modelling of 3D atomic 
 
 
 
-## Diffusion/Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective
+## Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective
 
 - Authors: Neta Shaul, Itai Gat, Marton Havasi, Daniel Severo, Anuroop Sriram, Peter Holderrieth, Brian Karrer, Yaron Lipman, Ricky T. Q. Chen
 - Year: 2025
@@ -210,7 +210,7 @@ The design space of discrete-space diffusion or flow generative models are signi
 
 
 
-## FlowLLM: Diffusion/Flow Matching for Material Generation with Large Language Models as Base Distributions
+## FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions
 
 - Authors: Anuroop Sriram, Benjamin Kurt Miller, Ricky T. Q. Chen, Brandon M Wood
 - Year: 2024
@@ -223,7 +223,7 @@ Material discovery is a critical area of research with the potential to revoluti
 
 
 
-## FlowMM: Generating Materials with Riemannian Diffusion/Flow Matching
+## FlowMM: Generating Materials with Riemannian Flow Matching
 
 - Authors: Benjamin Kurt Miller, Ricky T. Q. Chen, Anuroop Sriram, Brandon M Wood
 - Year: 2024
@@ -232,7 +232,7 @@ Material discovery is a critical area of research with the potential to revoluti
 - arXiv: https://arxiv.org/abs/2406.04713
 - Code: https://github.com/facebookresearch/flowmm
 
-Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Diffusion/Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods.
+Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We extend Riemannian Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods.
 
 
 
@@ -783,9 +783,9 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 # News
 
 
-- February 2026: Our paper Open Molecular Crystals 2025 (OMC25) is published in Nature Scientific Data.
-
 - February 2026: Joined Prometheus as a founding AI Research Scientist.
+
+- February 2026: Our paper Open Molecular Crystals 2025 (OMC25) is published in Nature Scientific Data.
 
 - December 2025: UMA accepted at NeurIPS 2025.
 
