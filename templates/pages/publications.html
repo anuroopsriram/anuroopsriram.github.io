@@ -6,7 +6,6 @@
 <header class="page-head">
   <p class="eyebrow">Research output</p>
   <h1>Publications</h1>
-  <p class="page-head__meta">{{ site.data.publist | length }} papers &middot; {{ site.data.years | length }} years</p>
 </header>
 
 {% set keyword_order = [
@@ -43,12 +42,24 @@
   {% endfor %}
 </div>
 
+{% if site.group_pub_by_year %}
+<nav class="year-nav" aria-label="Jump to year">
+  <ul class="year-nav__list">
+  {% for myyear in site.data.years %}
+    {% if site.data.publist | selectattr('year', 'equalto', myyear.year) | list %}
+    <li><a href="#y{{ myyear.year }}" data-year="{{ myyear.year }}">{{ myyear.year }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+
 <div class="pub-index">
 {% if site.group_pub_by_year %}
   {% for myyear in site.data.years %}
     {% set year_pubs = site.data.publist | selectattr('year', 'equalto', myyear.year) | list %}
     {% if year_pubs %}
-      <h2 class="pub-year-heading" data-year="{{ myyear.year }}">{{ myyear.year }}</h2>
+      <h2 class="pub-year-heading" id="y{{ myyear.year }}" data-year="{{ myyear.year }}">{{ myyear.year }}</h2>
       {% for publi in year_pubs %}
         {{ pub_card(publi) }}
       {% endfor %}
@@ -66,6 +77,15 @@
   var buttons = document.querySelectorAll('.pub-filter-btn');
   var cards = document.querySelectorAll('.pub-card');
   var headings = document.querySelectorAll('.pub-year-heading');
+
+  /* Pin the year rail directly beneath the sticky site header. */
+  var yearNav = document.querySelector('.year-nav');
+  var siteHeader = document.querySelector('.site-header');
+  if (yearNav && siteHeader) {
+    var pinNav = function() { yearNav.style.top = (siteHeader.offsetHeight - 1) + 'px'; };
+    pinNav();
+    window.addEventListener('resize', pinNav);
+  }
 
   buttons.forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -94,9 +114,47 @@
           sibling = sibling.nextElementSibling;
         }
         h.style.display = hasVisible ? '' : 'none';
+        var link = document.querySelector('.year-nav a[data-year="' + h.getAttribute('data-year') + '"]');
+        if (link) { link.parentElement.style.display = hasVisible ? '' : 'none'; }
       });
     });
   });
+
+  /* Scrollspy: highlight the year currently in view. */
+  var yearLinks = document.querySelectorAll('.year-nav a');
+  if (yearLinks.length && 'IntersectionObserver' in window) {
+    var linkFor = {};
+    yearLinks.forEach(function(a) { linkFor[a.getAttribute('data-year')] = a; });
+
+    var setCurrent = function(year) {
+      yearLinks.forEach(function(a) { a.classList.remove('current'); });
+      if (year && linkFor[year]) {
+        var link = linkFor[year];
+        link.classList.add('current');
+        /* Keep the highlighted year visible in the rail. Scroll the list
+           horizontally by hand: scrollIntoView could hijack the page's
+           smooth anchor scroll mid-flight. */
+        var list = link.closest('.year-nav__list');
+        if (list && list.scrollWidth > list.clientWidth) {
+          var target = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
+          list.scrollLeft = Math.max(0, target);
+        }
+      }
+    };
+
+    var visible = new Set();
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        var y = e.target.getAttribute('data-year');
+        if (e.isIntersecting) { visible.add(y); } else { visible.delete(y); }
+      });
+      if (visible.size) {
+        setCurrent(Array.from(visible).sort().reverse()[0]);
+      }
+    }, { rootMargin: '-96px 0px -55% 0px' });
+
+    headings.forEach(function(h) { observer.observe(h); });
+  }
 })();
 </script>
 {% endblock %}

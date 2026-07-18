@@ -94,7 +94,6 @@
 <header class="page-head">
   <p class="eyebrow">Research output</p>
   <h1>Publications</h1>
-  <p class="page-head__meta">49 papers &middot; 18 years</p>
 </header>
 
 
@@ -427,6 +426,74 @@
   
 </div>
 
+
+<nav class="year-nav" aria-label="Jump to year">
+  <ul class="year-nav__list">
+  
+    
+  
+    
+    <li><a href="#y2025" data-year="2025">2025</a></li>
+    
+  
+    
+    <li><a href="#y2024" data-year="2024">2024</a></li>
+    
+  
+    
+    <li><a href="#y2023" data-year="2023">2023</a></li>
+    
+  
+    
+    <li><a href="#y2022" data-year="2022">2022</a></li>
+    
+  
+    
+    <li><a href="#y2021" data-year="2021">2021</a></li>
+    
+  
+    
+    <li><a href="#y2020" data-year="2020">2020</a></li>
+    
+  
+    
+    <li><a href="#y2019" data-year="2019">2019</a></li>
+    
+  
+    
+    <li><a href="#y2018" data-year="2018">2018</a></li>
+    
+  
+    
+    <li><a href="#y2017" data-year="2017">2017</a></li>
+    
+  
+    
+    <li><a href="#y2016" data-year="2016">2016</a></li>
+    
+  
+    
+  
+    
+  
+    
+    <li><a href="#y2013" data-year="2013">2013</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+    <li><a href="#y2009" data-year="2009">2009</a></li>
+    
+  
+  </ul>
+</nav>
+
+
 <div class="pub-index">
 
   
@@ -435,7 +502,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2025">2025</h2>
+      <h2 class="pub-year-heading" id="y2025" data-year="2025">2025</h2>
       
         
 
@@ -798,7 +865,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2024">2024</h2>
+      <h2 class="pub-year-heading" id="y2024" data-year="2024">2024</h2>
       
         
 
@@ -1143,7 +1210,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2023">2023</h2>
+      <h2 class="pub-year-heading" id="y2023" data-year="2023">2023</h2>
       
         
 
@@ -1356,7 +1423,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2022">2022</h2>
+      <h2 class="pub-year-heading" id="y2022" data-year="2022">2022</h2>
       
         
 
@@ -1668,7 +1735,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2021">2021</h2>
+      <h2 class="pub-year-heading" id="y2021" data-year="2021">2021</h2>
       
         
 
@@ -2103,7 +2170,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2020">2020</h2>
+      <h2 class="pub-year-heading" id="y2020" data-year="2020">2020</h2>
       
         
 
@@ -2775,7 +2842,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2019">2019</h2>
+      <h2 class="pub-year-heading" id="y2019" data-year="2019">2019</h2>
       
         
 
@@ -2883,7 +2950,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2018">2018</h2>
+      <h2 class="pub-year-heading" id="y2018" data-year="2018">2018</h2>
       
         
 
@@ -2991,7 +3058,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2017">2017</h2>
+      <h2 class="pub-year-heading" id="y2017" data-year="2017">2017</h2>
       
         
 
@@ -3099,7 +3166,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2016">2016</h2>
+      <h2 class="pub-year-heading" id="y2016" data-year="2016">2016</h2>
       
         
 
@@ -3189,7 +3256,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2013">2013</h2>
+      <h2 class="pub-year-heading" id="y2013" data-year="2013">2013</h2>
       
         
 
@@ -3255,7 +3322,7 @@
   
     
     
-      <h2 class="pub-year-heading" data-year="2009">2009</h2>
+      <h2 class="pub-year-heading" id="y2009" data-year="2009">2009</h2>
       
         
 
@@ -3315,6 +3382,15 @@
   var cards = document.querySelectorAll('.pub-card');
   var headings = document.querySelectorAll('.pub-year-heading');
 
+  /* Pin the year rail directly beneath the sticky site header. */
+  var yearNav = document.querySelector('.year-nav');
+  var siteHeader = document.querySelector('.site-header');
+  if (yearNav && siteHeader) {
+    var pinNav = function() { yearNav.style.top = (siteHeader.offsetHeight - 1) + 'px'; };
+    pinNav();
+    window.addEventListener('resize', pinNav);
+  }
+
   buttons.forEach(function(btn) {
     btn.addEventListener('click', function() {
       buttons.forEach(function(b) { b.classList.remove('active'); });
@@ -3342,9 +3418,47 @@
           sibling = sibling.nextElementSibling;
         }
         h.style.display = hasVisible ? '' : 'none';
+        var link = document.querySelector('.year-nav a[data-year="' + h.getAttribute('data-year') + '"]');
+        if (link) { link.parentElement.style.display = hasVisible ? '' : 'none'; }
       });
     });
   });
+
+  /* Scrollspy: highlight the year currently in view. */
+  var yearLinks = document.querySelectorAll('.year-nav a');
+  if (yearLinks.length && 'IntersectionObserver' in window) {
+    var linkFor = {};
+    yearLinks.forEach(function(a) { linkFor[a.getAttribute('data-year')] = a; });
+
+    var setCurrent = function(year) {
+      yearLinks.forEach(function(a) { a.classList.remove('current'); });
+      if (year && linkFor[year]) {
+        var link = linkFor[year];
+        link.classList.add('current');
+        /* Keep the highlighted year visible in the rail. Scroll the list
+           horizontally by hand: scrollIntoView could hijack the page's
+           smooth anchor scroll mid-flight. */
+        var list = link.closest('.year-nav__list');
+        if (list && list.scrollWidth > list.clientWidth) {
+          var target = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
+          list.scrollLeft = Math.max(0, target);
+        }
+      }
+    };
+
+    var visible = new Set();
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        var y = e.target.getAttribute('data-year');
+        if (e.isIntersecting) { visible.add(y); } else { visible.delete(y); }
+      });
+      if (visible.size) {
+        setCurrent(Array.from(visible).sort().reverse()[0]);
+      }
+    }, { rootMargin: '-96px 0px -55% 0px' });
+
+    headings.forEach(function(h) { observer.observe(h); });
+  }
 })();
 </script>
 
