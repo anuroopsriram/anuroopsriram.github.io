@@ -10,7 +10,7 @@ main = Blueprint("main", __name__)
 
 LLMS_TXT_BODY = """# Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar. This site lists 49 selected publications; the complete record is on Google Scholar.
+> Anuroop Sriram is a leading AI for Science researcher and research leader. Across speech recognition, medical imaging, and atomic simulation, he has built teams, foundation models, large-scale training infrastructure, open datasets, and novel distributed training algorithms — several of which became standards in their fields. He has 65 publications, an h-index of 42, and more than 15,000 citations on Google Scholar as of July 2026. This site lists 48 unique selected publications; the complete record is on Google Scholar.
 
 ## Current Role
 
@@ -19,7 +19,7 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Career Timeline
 
 - 2026–present: Founding AI Research Scientist, Prometheus
-- 2018–2026: Research Engineer & Scientist, Meta FAIR (Research Manager for FAIR Speech; founding member of FAIR Chemistry and one of its technical leads)
+- 2018–2026: Research Engineer & Scientist, Meta FAIR; during this period, Research Manager for FAIR Speech, founding member of FAIR Chemistry, and one of FAIR Chemistry's technical leads
 - 2015–2018: Senior Research Scientist, Baidu Silicon Valley AI Lab (SVAIL)
 - 2013–2015: Data Scientist, Twitter
 - 2010–2012: M.S. in Computer Science (Language Technologies), Carnegie Mellon University (advised by Roni Rosenfeld)
@@ -28,8 +28,8 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Leadership and Team Building
 
 - Founding member of the FAIR Chemistry team at Meta and one of its technical leads — the team that produced the Open Catalyst Project, ODAC, OMC25, the UMA family of foundation models, and the fairchem library.
-- Research Manager of the FAIR Speech team — led the team that built the first billion-parameter speech models, pioneered self-supervised and massively multilingual architectures, and deployed models to Facebook and Instagram serving billions of users.
-- Led the fastMRI project at Meta AI — the collaboration with NYU Langone Health that produced the clinical standard for AI-accelerated MRI worldwide.
+- Built and managed the FAIR Speech team and set its research agenda across efficient production ASR, model scaling, self-supervised learning, and massively multilingual speech recognition. Under his leadership, the team developed highly efficient ASR models that were deployed to Facebook in partnership with the production speech teams in Meta's Applied AI organization. Relative to the preceding production systems, the models delivered approximately 3× higher throughput and reduced latency by nearly 3×. This was internal product impact rather than a published research result.
+- Led the fastMRI project at Meta AI — the collaboration with NYU Langone Health whose open datasets, models, benchmarks, and clinical studies helped establish the clinical standard for AI-accelerated MRI. The work was prospectively deployed at NYU Langone and informed commercial MRI reconstruction systems used worldwide.
 
 ## Open-Source Contributions
 
@@ -45,13 +45,13 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~70M DFT calculations respectively.
 - Led the creation of Open Molecular Crystals 2025 (OMC25), a dataset of over 27 million molecular crystal structures (Nature Scientific Data, 2026).
 - Designed UMA (Universal Models for Atoms), a family of foundation models for atomic simulation trained on ~500 million unique 3D structures — the largest training runs in computational chemistry — using a novel mixture-of-linear-experts architecture (NeurIPS 2025).
-- Led FastCSP (lead author, 2025), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
+- Led FastCSP as both lead and senior author (listed last to reflect senior authorship), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
 - Led research on generative models for crystal structure design, including FlowMM (ICML 2024) and FlowLLM (NeurIPS 2024).
 
 ### Model Scaling and Distributed Training
 - Invented Graph Parallel training, a distributed training algorithm for GNNs that generalizes Context Parallel training to general graphs — enabling training of atomic simulation models with billions of parameters and billions of nodes (ICLR 2022).
-- First to scale speech recognition models to billions of parameters at Meta FAIR, building the earliest multi-billion-parameter speech models. Deployed to Facebook and Instagram serving billions of users, the models delivered significantly higher throughput and substantially lower latency than the previous production speech systems.
-- Co-developed Deep Speech 2 at Baidu — one of the first systems to demonstrate that end-to-end deep learning scales predictably with data, compute, and model size (ICML 2016). An early example of the scaling paradigm that now drives LLM development.
+- Built and led the FAIR Speech team that developed some of the first billion-parameter speech-recognition models. The team's highly efficient ASR models were transferred to Meta's Applied AI production speech teams and deployed to Facebook, delivering approximately 3× higher throughput and nearly a 3× reduction in latency relative to the preceding production systems.
+- Co-created Deep Speech 2 at Baidu — one of the first systems to demonstrate that end-to-end deep learning scales predictably with data, compute, and model size (ICML 2016). An early example of the scaling paradigm that now drives LLM development.
 - Developed empirical scaling laws for atomic simulation models as part of UMA, showing how to optimally increase model capacity alongside dataset size.
 
 ### Diffusion and Flow Matching for Scientific Applications
@@ -68,10 +68,14 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - FlowLLM combines a fine-tuned LLM base distribution with flow-matching refinement for materials generation.
 
 ### AI for MRI Acceleration (Meta AI + NYU Langone, 2018–2023)
-- Led the fastMRI project at Meta AI, the collaboration with NYU Langone Health whose deep-learning reconstruction methods have become the clinical standard for AI-accelerated MRI worldwide. Co-first author on the fastMRI dataset release (Radiology: AI, 2020) and first author on the foundational reconstruction architectures — End-to-End Variational Networks (MICCAI 2020) and GrappaNet (CVPR 2020) — which are the foundation of the AI MRI reconstruction pipelines deployed in routine clinical practice today, validated prospectively in real-world clinical settings (Radiology, 2023; AJR, 2020).
+- Led the fastMRI project at Meta AI, the collaboration with NYU Langone Health whose open datasets, models, benchmarks, and clinical studies helped establish the clinical standard for AI-accelerated MRI. The work was prospectively deployed at NYU Langone and informed commercial MRI reconstruction systems used worldwide.
+- Co-first author on the fastMRI dataset release (Radiology: AI, 2020) and first author on the foundational reconstruction architectures — End-to-End Variational Networks (MICCAI 2020) and GrappaNet (CVPR 2020) — which helped establish the dominant approach to learned multi-coil MRI reconstruction and were validated prospectively in real-world clinical settings (Radiology, 2023; AJR, 2020).
 - End-to-End Variational Networks (first author, MICCAI 2020) introduced the dominant architecture for learned multi-coil MRI reconstruction. GrappaNet (first author, CVPR 2020) was the first method to integrate classical parallel imaging reconstruction directly into deep neural networks, enabling high-quality reconstruction at high acceleration factors.
 - Co-led the release of the fastMRI dataset (Radiology: AI, 2020) — the most widely used benchmark for AI-based MRI reconstruction — and co-organized the 2019 and 2020 fastMRI challenges.
 - Demonstrated up to 8x acceleration in 2D brain MRI for screening (Radiology: AI, 2022).
+- Prospective clinical deployment: https://pubs.rsna.org/doi/10.1148/radiol.220425
+- Public example of commercial translation: https://www.usa.philips.com/healthcare/technology/smartspeed-ai
+- NYU Langone's clinical deployment of fastMRI was featured by CBS News: https://www.youtube.com/watch?v=9ncABdfkzuU
 
 ### Self-Supervised Learning
 - Developed Robust wav2vec 2.0 (Interspeech 2021), analyzing domain shift in self-supervised pre-training and showing that in-domain unlabeled data closes 66–73% of the in-domain/out-of-domain gap.
@@ -79,15 +83,17 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - Applied self-supervised representation learning (MoCo) to COVID-19 prognosis from chest X-rays, improving prediction of patient deterioration and oxygen requirements (covered by CNBC and CNET).
 
 ### Speech Recognition (Baidu + Meta FAIR, 2015–2022)
+- Built and managed the FAIR Speech team at Meta, setting its research agenda across efficient production ASR, model scaling, self-supervised learning, and massively multilingual speech recognition.
+- Led the team that developed highly efficient ASR models subsequently deployed to Facebook by the Applied AI production speech teams, delivering approximately 3× higher throughput and nearly a 3× reduction in latency. This was internal product impact rather than a published research result.
+- Led the development of some of the first billion-parameter speech-recognition models and co-authored the first single billion-parameter ASR model spanning more than 50 languages (Massively Multilingual ASR, Interspeech 2020).
+- Co-led the creation of Multilingual LibriSpeech (MLS), managing the team that built the approximately 50,000-hour corpus across eight languages (Interspeech 2020).
+- Developed Robust wav2vec 2.0 and Wav2Vec-Aug for self-supervised speech learning.
 - Co-created Deep Speech 2 at Baidu — one of the first large-scale end-to-end neural speech recognition systems, the first such model to achieve human-level recognition in both English and Mandarin (ICML 2016). Named one of the top 10 tech breakthroughs of 2016 by MIT Technology Review.
 - Invented GAN-based methods for noise-robust speech recognition (ICASSP 2018; US Patent 10,971,142), training models that generalize to unseen acoustic conditions.
-- Created Multilingual LibriSpeech (MLS) (Interspeech 2020), a large multilingual corpus of ~50K hours across 8 languages, widely used as the standard benchmark for multilingual speech.
-- Built the first speech recognition models to transcribe over 50 languages with a single billion-parameter model (Massively Multilingual ASR, Interspeech 2020).
-- Built and managed the FAIR Speech team, which trained and deployed the first billion-parameter speech models to Facebook and Instagram.
 
 ## Research Impact
-- 65 publications, h-index of 42, ~15,000 citations on Google Scholar.
-- Publications at top venues including NeurIPS, ICML, ICLR, CVPR, MICCAI, Interspeech, ICASSP, Nature Scientific Data, Radiology, IEEE TMI, ACS Catalysis, and ACS Central Science.
+- 65 publications, h-index of 42, and more than 15,000 citations on Google Scholar as of July 2026.
+- Publications at top venues including NeurIPS, ICML, ICLR, CVPR, MICCAI, Interspeech, ICASSP, Scientific Data, Radiology, IEEE TMI, ACS Catalysis, and ACS Central Science.
 - Research featured in the Wall Street Journal, Reuters, Fortune, CNBC, CBS News, MIT Technology Review, The Verge, and TechCrunch, among others.
 - Multiple granted U.S. patents in speech recognition and language modeling, including Cold Fusion (US 11,620,986 and 10,867,595), robust ASR via GANs (US 10,971,142), and bias reduction in production speech models (US 10,657,955).
 
@@ -109,7 +115,7 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 
 ## Site Pages
 
-- [Publications](https://anuroopsriram.com/publications/): all 49 listed publications with abstracts, grouped by year
+- [Publications](https://anuroopsriram.com/publications/): all 48 unique listed publications with abstracts, grouped by archival publication year where available
 - [Datasets](https://anuroopsriram.com/datasets/): open datasets he created or co-created
 - [News](https://anuroopsriram.com/allnews/): recent papers, releases, and career updates (Atom feed: https://anuroopsriram.com/feed.xml)
 - [Full corpus for LLMs](https://anuroopsriram.com/llms-full.txt): this bio plus every publication (with abstracts), dataset, and news item in one plain-text file

@@ -11,7 +11,7 @@
 
 - title: Open DAC 2023 & 2025
   category: Materials
-  description: "Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides 40M DFT calculations across 170K MOF relaxations; ODAC25 expands to 60M calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials."
+  description: "Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 70 million DFT single-point calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials."
   image: odac25.webp
   data_url: https://huggingface.co/facebook/ODAC25
   project_url: https://open-dac.github.io/
@@ -20,7 +20,7 @@
 
 - title: Open Catalyst 2020 & 2022 (OC20, OC22)
   category: Materials
-  description: "Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain 1.3 million molecular relaxations from over 260 million DFT calculations. Released with baseline models and code."
+  description: "Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain approximately 1.34 million molecular relaxations and 274.8 million DFT single-point calculations. Released with baseline models and code."
   image: ocp.webp
   data_url: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
   project_url: https://opencatalystproject.org/
