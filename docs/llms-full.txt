@@ -1,6 +1,6 @@
 # Anuroop Sriram
 
-> Anuroop Sriram is a leading AI for Science researcher. Across speech recognition, medical imaging, and atomic simulation, he has built foundation models, large-scale training infrastructure, and novel distributed training algorithms — several of which became the standard in their field. He has 65 publications, an h-index of 42, and nearly 15,000 citations on Google Scholar. This site lists 49 selected publications; the complete record is on Google Scholar.
+> Anuroop Sriram is a leading AI for Science researcher and research leader. Across speech recognition, medical imaging, and atomic simulation, he has built teams, foundation models, large-scale training infrastructure, open datasets, and novel distributed training algorithms — several of which became standards in their fields. He has 65 publications, an h-index of 42, and more than 15,000 citations on Google Scholar as of July 2026. This site lists 48 unique selected publications; the complete record is on Google Scholar.
 
 ## Current Role
 
@@ -9,7 +9,7 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Career Timeline
 
 - 2026–present: Founding AI Research Scientist, Prometheus
-- 2018–2026: Research Engineer & Scientist, Meta FAIR (Research Manager for FAIR Speech; founding member of FAIR Chemistry and one of its technical leads)
+- 2018–2026: Research Engineer & Scientist, Meta FAIR; during this period, Research Manager for FAIR Speech, founding member of FAIR Chemistry, and one of FAIR Chemistry's technical leads
 - 2015–2018: Senior Research Scientist, Baidu Silicon Valley AI Lab (SVAIL)
 - 2013–2015: Data Scientist, Twitter
 - 2010–2012: M.S. in Computer Science (Language Technologies), Carnegie Mellon University (advised by Roni Rosenfeld)
@@ -18,8 +18,8 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ## Leadership and Team Building
 
 - Founding member of the FAIR Chemistry team at Meta and one of its technical leads — the team that produced the Open Catalyst Project, ODAC, OMC25, the UMA family of foundation models, and the fairchem library.
-- Research Manager of the FAIR Speech team — led the team that built the first billion-parameter speech models, pioneered self-supervised and massively multilingual architectures, and deployed models to Facebook and Instagram serving billions of users.
-- Led the fastMRI project at Meta AI — the collaboration with NYU Langone Health that produced the clinical standard for AI-accelerated MRI worldwide.
+- Built and managed the FAIR Speech team and set its research agenda across efficient production ASR, model scaling, self-supervised learning, and massively multilingual speech recognition. Under his leadership, the team developed highly efficient ASR models that were deployed to Facebook in partnership with the production speech teams in Meta's Applied AI organization. Relative to the preceding production systems, the models delivered approximately 3× higher throughput and reduced latency by nearly 3×. This was internal product impact rather than a published research result.
+- Led the fastMRI project at Meta AI — the collaboration with NYU Langone Health whose open datasets, models, benchmarks, and clinical studies helped establish the clinical standard for AI-accelerated MRI. The work was prospectively deployed at NYU Langone and informed commercial MRI reconstruction systems used worldwide.
 
 ## Open-Source Contributions
 
@@ -35,13 +35,13 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~70M DFT calculations respectively.
 - Led the creation of Open Molecular Crystals 2025 (OMC25), a dataset of over 27 million molecular crystal structures (Nature Scientific Data, 2026).
 - Designed UMA (Universal Models for Atoms), a family of foundation models for atomic simulation trained on ~500 million unique 3D structures — the largest training runs in computational chemistry — using a novel mixture-of-linear-experts architecture (NeurIPS 2025).
-- Led FastCSP (lead author, 2025), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
+- Led FastCSP as both lead and senior author (listed last to reflect senior authorship), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
 - Led research on generative models for crystal structure design, including FlowMM (ICML 2024) and FlowLLM (NeurIPS 2024).
 
 ### Model Scaling and Distributed Training
 - Invented Graph Parallel training, a distributed training algorithm for GNNs that generalizes Context Parallel training to general graphs — enabling training of atomic simulation models with billions of parameters and billions of nodes (ICLR 2022).
-- First to scale speech recognition models to billions of parameters at Meta FAIR, building the earliest multi-billion-parameter speech models. Deployed to Facebook and Instagram serving billions of users, the models delivered significantly higher throughput and substantially lower latency than the previous production speech systems.
-- Co-developed Deep Speech 2 at Baidu — one of the first systems to demonstrate that end-to-end deep learning scales predictably with data, compute, and model size (ICML 2016). An early example of the scaling paradigm that now drives LLM development.
+- Built and led the FAIR Speech team that developed some of the first billion-parameter speech-recognition models. The team's highly efficient ASR models were transferred to Meta's Applied AI production speech teams and deployed to Facebook, delivering approximately 3× higher throughput and nearly a 3× reduction in latency relative to the preceding production systems.
+- Co-created Deep Speech 2 at Baidu — one of the first systems to demonstrate that end-to-end deep learning scales predictably with data, compute, and model size (ICML 2016). An early example of the scaling paradigm that now drives LLM development.
 - Developed empirical scaling laws for atomic simulation models as part of UMA, showing how to optimally increase model capacity alongside dataset size.
 
 ### Diffusion and Flow Matching for Scientific Applications
@@ -58,10 +58,14 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - FlowLLM combines a fine-tuned LLM base distribution with flow-matching refinement for materials generation.
 
 ### AI for MRI Acceleration (Meta AI + NYU Langone, 2018–2023)
-- Led the fastMRI project at Meta AI, the collaboration with NYU Langone Health whose deep-learning reconstruction methods have become the clinical standard for AI-accelerated MRI worldwide. Co-first author on the fastMRI dataset release (Radiology: AI, 2020) and first author on the foundational reconstruction architectures — End-to-End Variational Networks (MICCAI 2020) and GrappaNet (CVPR 2020) — which are the foundation of the AI MRI reconstruction pipelines deployed in routine clinical practice today, validated prospectively in real-world clinical settings (Radiology, 2023; AJR, 2020).
+- Led the fastMRI project at Meta AI, the collaboration with NYU Langone Health whose open datasets, models, benchmarks, and clinical studies helped establish the clinical standard for AI-accelerated MRI. The work was prospectively deployed at NYU Langone and informed commercial MRI reconstruction systems used worldwide.
+- Co-first author on the fastMRI dataset release (Radiology: AI, 2020) and first author on the foundational reconstruction architectures — End-to-End Variational Networks (MICCAI 2020) and GrappaNet (CVPR 2020) — which helped establish the dominant approach to learned multi-coil MRI reconstruction and were validated prospectively in real-world clinical settings (Radiology, 2023; AJR, 2020).
 - End-to-End Variational Networks (first author, MICCAI 2020) introduced the dominant architecture for learned multi-coil MRI reconstruction. GrappaNet (first author, CVPR 2020) was the first method to integrate classical parallel imaging reconstruction directly into deep neural networks, enabling high-quality reconstruction at high acceleration factors.
 - Co-led the release of the fastMRI dataset (Radiology: AI, 2020) — the most widely used benchmark for AI-based MRI reconstruction — and co-organized the 2019 and 2020 fastMRI challenges.
 - Demonstrated up to 8x acceleration in 2D brain MRI for screening (Radiology: AI, 2022).
+- Prospective clinical deployment: https://pubs.rsna.org/doi/10.1148/radiol.220425
+- Public example of commercial translation: https://www.usa.philips.com/healthcare/technology/smartspeed-ai
+- NYU Langone's clinical deployment of fastMRI was featured by CBS News: https://www.youtube.com/watch?v=9ncABdfkzuU
 
 ### Self-Supervised Learning
 - Developed Robust wav2vec 2.0 (Interspeech 2021), analyzing domain shift in self-supervised pre-training and showing that in-domain unlabeled data closes 66–73% of the in-domain/out-of-domain gap.
@@ -69,15 +73,17 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 - Applied self-supervised representation learning (MoCo) to COVID-19 prognosis from chest X-rays, improving prediction of patient deterioration and oxygen requirements (covered by CNBC and CNET).
 
 ### Speech Recognition (Baidu + Meta FAIR, 2015–2022)
+- Built and managed the FAIR Speech team at Meta, setting its research agenda across efficient production ASR, model scaling, self-supervised learning, and massively multilingual speech recognition.
+- Led the team that developed highly efficient ASR models subsequently deployed to Facebook by the Applied AI production speech teams, delivering approximately 3× higher throughput and nearly a 3× reduction in latency. This was internal product impact rather than a published research result.
+- Led the development of some of the first billion-parameter speech-recognition models and co-authored the first single billion-parameter ASR model spanning more than 50 languages (Massively Multilingual ASR, Interspeech 2020).
+- Co-led the creation of Multilingual LibriSpeech (MLS), managing the team that built the approximately 50,000-hour corpus across eight languages (Interspeech 2020).
+- Developed Robust wav2vec 2.0 and Wav2Vec-Aug for self-supervised speech learning.
 - Co-created Deep Speech 2 at Baidu — one of the first large-scale end-to-end neural speech recognition systems, the first such model to achieve human-level recognition in both English and Mandarin (ICML 2016). Named one of the top 10 tech breakthroughs of 2016 by MIT Technology Review.
 - Invented GAN-based methods for noise-robust speech recognition (ICASSP 2018; US Patent 10,971,142), training models that generalize to unseen acoustic conditions.
-- Created Multilingual LibriSpeech (MLS) (Interspeech 2020), a large multilingual corpus of ~50K hours across 8 languages, widely used as the standard benchmark for multilingual speech.
-- Built the first speech recognition models to transcribe over 50 languages with a single billion-parameter model (Massively Multilingual ASR, Interspeech 2020).
-- Built and managed the FAIR Speech team, which trained and deployed the first billion-parameter speech models to Facebook and Instagram.
 
 ## Research Impact
-- 65 publications, h-index of 42, ~15,000 citations on Google Scholar.
-- Publications at top venues including NeurIPS, ICML, ICLR, CVPR, MICCAI, Interspeech, ICASSP, Nature Scientific Data, Radiology, IEEE TMI, ACS Catalysis, and ACS Central Science.
+- 65 publications, h-index of 42, and more than 15,000 citations on Google Scholar as of July 2026.
+- Publications at top venues including NeurIPS, ICML, ICLR, CVPR, MICCAI, Interspeech, ICASSP, Scientific Data, Radiology, IEEE TMI, ACS Catalysis, and ACS Central Science.
 - Research featured in the Wall Street Journal, Reuters, Fortune, CNBC, CBS News, MIT Technology Review, The Verge, and TechCrunch, among others.
 - Multiple granted U.S. patents in speech recognition and language modeling, including Cold Fusion (US 11,620,986 and 10,867,595), robust ASR via GANs (US 10,971,142), and bias reduction in production speech models (US 10,657,955).
 
@@ -99,7 +105,7 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 
 ## Site Pages
 
-- [Publications](https://anuroopsriram.com/publications/): all 49 listed publications with abstracts, grouped by year
+- [Publications](https://anuroopsriram.com/publications/): all 48 unique listed publications with abstracts, grouped by archival publication year where available
 - [Datasets](https://anuroopsriram.com/datasets/): open datasets he created or co-created
 - [News](https://anuroopsriram.com/allnews/): recent papers, releases, and career updates (Atom feed: https://anuroopsriram.com/feed.xml)
 - [Full corpus for LLMs](https://anuroopsriram.com/llms-full.txt): this bio plus every publication (with abstracts), dataset, and news item in one plain-text file
@@ -120,13 +126,31 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 
 # Publications
 
-Total publications: 49.
+Total unique publications: 48.
+
+
+## Open Molecular Crystals 2025 (OMC25) Dataset and Models
+
+- Authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
+- Year: 2026
+- Preprint year: 2025
+- Venue: Scientific Data
+- Keywords: AI for Science, Datasets
+- arXiv: https://arxiv.org/abs/2508.02651
+- Journal: https://www.nature.com/articles/s41597-026-06628-2
+- Data: https://huggingface.co/facebook/OMC25
+- Models: https://huggingface.co/facebook/OMC25
+
+The development of accurate and efficient machine learning models for predicting the structure and properties of molecular crystals has been hindered by the scarcity of publicly available datasets of structures with property labels. To address this challenge, we introduce the Open Molecular Crystals 2025 (OMC25) dataset, a collection of over 27 million molecular crystal structures containing 12 elements and up to 300 atoms in the unit cell. The dataset was generated from dispersion-inclusive density functional theory (DFT) relaxation trajectories of over 230,000 randomly generated molecular crystal structures of around 50,000 organic molecules. OMC25 comprises diverse chemical compounds capable of forming different intermolecular interactions and a wide range of crystal packing motifs. We provide detailed information on the dataset's construction, composition, structure, and properties. To demonstrate the quality and use cases of OMC25, we further trained and evaluated state-of-the-art open-source machine learning interatomic potentials. By making this dataset publicly available, we aim to accelerate the development of more accurate and efficient machine learning models for molecular crystals.
+
 
 
 ## FastCSP: Accelerated Molecular Crystal Structure Prediction with Universal Model for Atoms
 
 - Authors: Vahe Gharakhanyan, Yi Yang, Luis Barroso-Luque, Muhammed Shuaibi, Daniel S. Levine, Kyle Michel, Viachaslau Bernat, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Keian Noori, Lafe J. Purvis, Tingling Rao, Brandon M. Wood, Ammar Rizvi, Matt Uyttendaele, Andrew J. Ouderkirk, Chiara Daraio, C. Lawrence Zitnick, Arman Boromand, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
 - Year: 2025
+- Publication type: Preprint
+- Role: Lead and senior author; listed last to reflect senior authorship
 - Keywords: AI for Science, Generative Modeling
 - arXiv: https://arxiv.org/abs/2508.02641
 - Code: https://github.com/facebookresearch/fairchem/tree/main/src/fairchem/applications/fastcsp
@@ -139,27 +163,13 @@ Molecular crystal structure prediction (CSP) is essential for applications in ph
 
 - Authors: Anuroop Sriram, Logan M. Brabson, Xiaohan Yu, Sihoon Choi, Kareem Abdelmaqsoud, Elias Moubarak, Pim de Haan, Sindy Löwe, Johann Brehmer, John R. Kitchin, Max Welling, C. Lawrence Zitnick, Zachary Ulissi, Andrew J. Medford, David S. Sholl
 - Year: 2025
+- Publication type: Preprint
 - Keywords: AI for Science, Datasets
 - arXiv: https://arxiv.org/abs/2508.03162
 - Data: https://huggingface.co/facebook/ODAC25
 - Models: https://huggingface.co/facebook/ODAC25
 
 Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a significant expansion and improvement upon ODAC23 (Sriram et al., ACS Central Science, 10 (2024) 923), comprising nearly 70 million DFT single-point calculations for CO2, H2O, N2, and O2 adsorption in 15,000 MOFs. ODAC25 introduces chemical and configurational diversity through functionalized MOFs, high-energy GCMC-derived placements, and synthetically generated frameworks. ODAC25 also significantly improves upon the accuracy of DFT calculations and the treatment of flexible MOFs in ODAC23. Along with the dataset, we release new state-of-the-art machine-learned interatomic potentials trained on ODAC25 and evaluate them on adsorption energy and Henry's law coefficient predictions.
-
-
-
-## Open Molecular Crystals 2025 (OMC25) Dataset and Models
-
-- Authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
-- Year: 2025
-- Venue: Nature Scientific Data, 2026
-- Keywords: AI for Science, Datasets
-- arXiv: https://arxiv.org/abs/2508.02651
-- Journal: https://www.nature.com/articles/s41597-026-06628-2
-- Data: https://huggingface.co/facebook/OMC25
-- Models: https://huggingface.co/facebook/OMC25
-
-The development of accurate and efficient machine learning models for predicting the structure and properties of molecular crystals has been hindered by the scarcity of publicly available datasets of structures with property labels. To address this challenge, we introduce the Open Molecular Crystals 2025 (OMC25) dataset, a collection of over 27 million molecular crystal structures containing 12 elements and up to 300 atoms in the unit cell. The dataset was generated from dispersion-inclusive density functional theory (DFT) relaxation trajectories of over 230,000 randomly generated molecular crystal structures of around 50,000 organic molecules. OMC25 comprises diverse chemical compounds capable of forming different intermolecular interactions and a wide range of crystal packing motifs. We provide detailed information on the dataset's construction, composition, structure, and properties. To demonstrate the quality and use cases of OMC25, we further trained and evaluated state-of-the-art open-source machine learning interatomic potentials. By making this dataset publicly available, we aim to accelerate the development of more accurate and efficient machine learning models for molecular crystals.
 
 
 
@@ -287,6 +297,7 @@ This article presents an overview of the current state of the art in the structu
 
 - Authors: Nima Shoghi, Pooya Shoghi, Anuroop Sriram, Abhishek Das
 - Year: 2024
+- Publication type: Preprint
 - Keywords: AI for Science
 - arXiv: https://arxiv.org/abs/2407.20475
 
@@ -313,6 +324,7 @@ Computational catalysis and machine learning communities have made considerable 
 - Authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
 - Year: 2023
 - Venue: US Patent 11,620,986
+- Issue date: April 4, 2023
 - Keywords: Speech, LLMs
 - Patent: https://patentimages.storage.googleapis.com/7f/5e/0e/dd03b5f5b8b226/US11620986.pdf
 
@@ -350,6 +362,7 @@ Purpose: To explore the limits of deep learning-based brain MRI reconstruction a
 
 - Authors: Abhishek Das, Muhammed Shuaibi, Aini Palizhati, Siddharth Goyal, Aditya Grover, Adeesh Kolluru, Janice Lan, Ammar Rizvi, Anuroop Sriram, Brandon Wood et al.
 - Year: 2022
+- Event year: 2021
 - Venue: NeurIPS 2021 Competitions and Demonstrations Track
 - Keywords: AI for Science
 - Link: https://proceedings.mlr.press/v176/das22a.html
@@ -413,6 +426,7 @@ Recent progress in Graph Neural Networks (GNNs) for modeling atomic simulations 
 
 - Authors: Muhammed Shuaibi, Adeesh Kolluru, Abhishek Das, Aditya Grover, Anuroop Sriram, Zachary Ulissi, C Lawrence Zitnick
 - Year: 2021
+- Publication type: Preprint
 - Keywords: AI for Science
 - arXiv: https://arxiv.org/abs/2106.09575
 - Code: https://github.com/Open-Catalyst-Project/ocp
@@ -439,6 +453,7 @@ Catalyst discovery and optimization is key to solving many societal and energy c
 
 - Authors: Matthew J Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.
 - Year: 2021
+- Preprint year: 2020
 - Venue: IEEE Transactions on Medical Imaging (TMI)
 - Keywords: AI for Healthcare, Datasets
 - arXiv: https://arxiv.org/abs/2012.06318
@@ -452,6 +467,7 @@ Accelerating MRI scans is one of the principal outstanding problems in the MRI r
 - Authors: Anuroop Sriram, Hee Woo Jun, Yashesh Gaur, Sanjeev Satheesh
 - Year: 2021
 - Venue: US Patent 10,971,142
+- Issue date: April 6, 2021
 - Keywords: Speech
 - Patent: https://patentimages.storage.googleapis.com/44/e8/47/bdbcfadc027d9c/US10971142.pdf
 
@@ -475,6 +491,7 @@ Self-supervised learning of speech representations has been a very active resear
 
 - Authors: Weihua Hu, Muhammed Shuaibi, Abhishek Das, Siddharth Goyal, Anuroop Sriram, Jure Leskovec, Devi Parikh, C Lawrence Zitnick
 - Year: 2021
+- Venue: Deep Learning for Simulation Workshop at ICLR 2021
 - Keywords: AI for Science
 - arXiv: https://arxiv.org/abs/2103.01436
 - Code: https://github.com/Open-Catalyst-Project/ocp/blob/main/ocpmodels/models/forcenet.py
@@ -487,6 +504,7 @@ With massive amounts of atomic simulation data available, there is a huge opport
 
 - Authors: Anuroop Sriram, Matthew Muckley, Koustuv Sinha, Farah Shamout, Joelle Pineau, Krzysztof J Geras, Lea Azour, Yindalon Aphinyanaphongs, Nafissa Yakubova, William Moore
 - Year: 2021
+- Publication type: Preprint
 - Keywords: AI for Healthcare, Computer Vision
 - arXiv: https://arxiv.org/abs/2101.04909
 - Code: https://github.com/facebookresearch/CovidPrognosis
@@ -495,22 +513,12 @@ The rapid spread of COVID-19 cases in recent months has strained hospital resour
 
 
 
-## State-of-the-art machine learning MRI reconstruction in 2020: Results of the second fastMRI challenge
-
-- Authors: Matthew Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.
-- Year: 2020
-- Keywords: AI for Healthcare
-- Link: https://hal.archives-ouvertes.fr/hal-03066150v1/document
-
-Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI competition targeted towards reconstructing MR images with subsampled k-space data. We provided participants with data from 7,299 clinical brain scans (de-identified via a HIPAA-compliant procedure by NYU Langone Health), holding back the fully-sampled data from 894 of these scans for challenge evaluation purposes. In contrast to the 2019 challenge, we focused our radiologist evaluations on pathological assessment in brain images. We also debuted a new Transfer track that required participants to submit models evaluated on MRI scanners from outside the training set. We received 19 submissions from eight different groups. Results showed one team scoring best in both SSIM scores and qualitative radiologist evaluations. We also performed analysis on alternative metrics to mitigate the effects of background noise and collected feedback from the participants to inform future challenges. Lastly, we identify common failure modes across the submissions, highlighting areas of need for future research in the MRI reconstruction community.
-
-
-
 ## Cold fusing sequence-to-sequence models with language models (Patent)
 
 - Authors: Anuroop Sriram, Heewoo Jun, Sanjeev Satheesh, Adam Coates
 - Year: 2020
 - Venue: US Patent 10,867,595
+- Issue date: December 15, 2020
 - Keywords: Speech, LLMs
 - Patent: https://patentimages.storage.googleapis.com/c4/81/5b/58ceaa1a6771c8/US10867595.pdf
 
@@ -560,6 +568,7 @@ Purpose: To advance research in the field of machine learning for MR image recon
 
 - Authors: C Lawrence Zitnick, Lowik Chanussot, Abhishek Das, Siddharth Goyal, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Thibaut Lavril, Aini Palizhati, Morgane Riviere et al.
 - Year: 2020
+- Publication type: Preprint
 - Keywords: AI for Science
 - arXiv: https://arxiv.org/abs/2010.09435
 
@@ -597,6 +606,7 @@ We study training a single acoustic model for multiple languages with the aim of
 - Authors: Eric Battenberg, Rewon Child, Adam Coates, Christopher Fougner, Yashesh Gaur, Jiaji Huang, Heewoo Jun, Ajay Kannan, Markus Kliegl, Atul Kumar et al.
 - Year: 2020
 - Venue: US Patent 10,657,955
+- Issue date: May 19, 2020
 - Keywords: Speech
 - Patent: https://patentimages.storage.googleapis.com/c3/2c/2b/b9a0d1cdbe25d0/US10657955.pdf
 
@@ -622,7 +632,8 @@ Accelerating Magnetic Resonance Imaging (MRI) by taking fewer measurements has t
 
 - Authors: Anuroop Sriram, Jure Zbontar, Tullie Murrell, C Lawrence Zitnick, Aaron Defazio, Daniel K Sodickson
 - Year: 2020
-- Venue: Conference on Computer Vision and Pattern Recognition (CVPR) 2019
+- Preprint year: 2019
+- Venue: Conference on Computer Vision and Pattern Recognition (CVPR) 2020
 - Keywords: AI for Healthcare, Computer Vision
 - arXiv: https://arxiv.org/abs/1910.12325
 
@@ -633,7 +644,9 @@ Magnetic Resonance Image (MRI) acquisition is an inherently slow process which h
 ## End-to-end asr: from supervised to semi-supervised learning with modern architectures
 
 - Authors: Gabriel Synnaeve, Qiantong Xu, Jacob Kahn, Tatiana Likhomanenko, Edouard Grave, Vineel Pratap, Anuroop Sriram, Vitaliy Liptchinsky, Ronan Collobert
-- Year: 2019
+- Year: 2020
+- Preprint year: 2019
+- Venue: ICML 2020 Workshop on Self-supervision in Audio and Speech
 - Keywords: Speech
 - arXiv: https://arxiv.org/abs/1911.08460
 - Code: https://github.com/flashlight/wav2letter/tree/main/recipes/sota/2019
@@ -646,6 +659,7 @@ We study pseudo-labeling for the semi-supervised training of ResNet, Time-Depth 
 
 - Authors: Mahaveer Jain, Kjell Schubert, Jay Mahadeokar, Ching-Feng Yeh, Kaustubh Kalgaonkar, Anuroop Sriram, Christian Fuegen, Michael L Seltzer
 - Year: 2019
+- Publication type: Preprint
 - Keywords: Speech
 - arXiv: https://arxiv.org/abs/1911.01629
 
@@ -693,6 +707,7 @@ In this work, we perform an empirical comparison among the CTC, RNN-Transducer, 
 
 - Authors: Eric Battenberg, Rewon Child, Adam Coates, Christopher Fougner, Yashesh Gaur, Jiaji Huang, Heewoo Jun, Ajay Kannan, Markus Kliegl, Atul Kumar et al.
 - Year: 2017
+- Publication type: Preprint
 - Keywords: Speech
 - arXiv: https://arxiv.org/abs/1705.04400
 
@@ -753,7 +768,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 ## Open DAC 2023 & 2025
 
 - Category: Materials
-- Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides 40M DFT calculations across 170K MOF relaxations; ODAC25 expands to 60M calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials.
+- Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 70 million DFT single-point calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials.
 - Project: https://open-dac.github.io/
 - Data: https://huggingface.co/facebook/ODAC25
 - Code: https://github.com/facebookresearch/fairchem
@@ -763,7 +778,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 ## Open Catalyst 2020 & 2022 (OC20, OC22)
 
 - Category: Materials
-- Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain 1.3 million molecular relaxations from over 260 million DFT calculations. Released with baseline models and code.
+- Datasets for catalyst discovery to enable renewable energy storage. OC20 and OC22 together contain approximately 1.34 million molecular relaxations and 274.8 million DFT single-point calculations. Released with baseline models and code.
 - Project: https://opencatalystproject.org/
 - Data: https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md
 - Code: https://github.com/facebookresearch/fairchem

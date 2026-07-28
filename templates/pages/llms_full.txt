@@ -4,14 +4,19 @@
 
 # Publications
 
-Total publications: {{ site.data.publist | length }}.
+Total unique publications: {{ site.data.publist | length }}.
 {% for publi in site.data.publist %}
 
 ## {{ publi.title }}
 
 - Authors: {{ publi.authors }}
 - Year: {{ publi.year }}
-{% if publi.venue %}- Venue: {{ publi.venue }}
+{% if publi.preprint_year %}- Preprint year: {{ publi.preprint_year }}
+{% endif %}{% if not publi.venue %}- Publication type: Preprint
+{% endif %}{% if publi.role %}- Role: {{ publi.role }}
+{% endif %}{% if publi.event_year %}- Event year: {{ publi.event_year }}
+{% endif %}{% if publi.venue %}- Venue: {{ publi.venue }}
+{% endif %}{% if publi.issue_date %}- Issue date: {{ publi.issue_date }}
 {% endif %}{% if publi.keywords %}- Keywords: {{ publi.keywords | join(', ') }}
 {% endif %}{% if publi.arxiv %}- arXiv: https://arxiv.org/abs/{{ publi.arxiv }}
 {% endif %}{% if publi.doi %}- DOI: https://doi.org/{{ publi.doi }}
