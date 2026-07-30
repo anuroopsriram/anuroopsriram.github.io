@@ -35,4 +35,5 @@ class DataLoader:
             "news": self.load_yaml_file("news.yml"),
             "years": self.load_yaml_file("years.yml"),
             "pi": self.load_yaml_file("pi.yml"),
+            "research": self.load_yaml_file("research.yml"),
         }

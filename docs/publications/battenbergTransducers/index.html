@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Exploring neural transducers for end-to-end speech recognition - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Exploring neural transducers for end-to-end speech recognition - Anuroop Sriram">
+  <meta property="og:description" content="In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/battenbergTransducers/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/transducers.webp">
+  
+  <meta property="og:image:alt" content="Exploring neural transducers for end-to-end speech recognition">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2017-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="Speech">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exploring neural transducers for end-to-end speech recognition - Anuroop Sriram">
+  <meta name="twitter:description" content="In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/transducers.webp">
+  <meta name="twitter:image:alt" content="Exploring neural transducers for end-to-end speech recognition">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/battenbergTransducers/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Exploring neural transducers for end-to-end speech recognition", "item": "https://anuroopsriram.com/publications/battenbergTransducers/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/battenbergTransducers/#article", "url": "https://anuroopsriram.com/publications/battenbergTransducers/", "headline": "Exploring neural transducers for end-to-end speech recognition", "name": "Exploring neural transducers for end-to-end speech recognition", "author": [{"@type": "Person", "name": "Eric Battenberg"}, {"@type": "Person", "name": "Jitong Chen"}, {"@type": "Person", "name": "Rewon Child"}, {"@type": "Person", "name": "Adam Coates"}, {"@type": "Person", "name": "Yashesh Gaur Yi Li"}, {"@type": "Person", "name": "Hairong Liu"}, {"@type": "Person", "name": "Sanjeev Satheesh"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Zhenyao Zhu"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2017", "isPartOf": {"@type": "Periodical", "name": "Automatic Speech Recognition and Understanding (ASRU) 2017"}, "abstract": "In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We show that, without any language model, Seq2Seq and RNN-Transducer models both outperform the best reported CTC models with a language model, on the popular Hub5'00 benchmark. On our internal diverse dataset, these trends continue - RNNTransducer models rescored with a language model after beam search outperform our best CTC models. These results simplify the speech recognition pipeline so that decoding can now be expressed purely as neural network operations. We also study how the choice of encoder architecture affects the performance of the three models - when all encoder layers are forward only, and when encoders downsample the input representation aggressively.", "keywords": "Speech", "sameAs": ["https://arxiv.org/abs/1707.07413"], "image": "https://anuroopsriram.com/static/images/pubpic/transducers.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2017</span>
+      <span>Automatic Speech Recognition and Understanding (ASRU) 2017</span>
+    </div>
+    <h1>Exploring neural transducers for end-to-end speech recognition</h1>
+    <p class="publication-detail__authors">Eric Battenberg, Jitong Chen, Rewon Child, Adam Coates, Yashesh Gaur Yi Li, Hairong Liu, Sanjeev Satheesh, <strong>Anuroop Sriram</strong>, Zhenyao Zhu</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>Speech</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/transducers.webp" alt="Figure from Exploring neural transducers for end-to-end speech recognition" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        <a href="https://arxiv.org/abs/1707.07413" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+        
+        
+        
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We show that, without any language model, Seq2Seq and RNN-Transducer models both outperform the best reported CTC models with a language model, on the popular Hub5'00 benchmark. On our internal diverse dataset, these trends continue - RNNTransducer models rescored with a language model after beam search outperform our best CTC models. These results simplify the speech recognition pipeline so that decoding can now be expressed purely as neural network operations. We also study how the choice of encoder architecture affects the performance of the three models - when all encoder layers are forward only, and when encoders downsample the input representation aggressively.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{battenbergTransducers,
+  title = {Exploring neural transducers for end-to-end speech recognition},
+  author = {Eric Battenberg, Jitong Chen, Rewon Child, Adam Coates, Yashesh Gaur Yi Li, Hairong Liu, Sanjeev Satheesh, Anuroop Sriram, Zhenyao Zhu},
+  year = {2017},
+  journal = {Automatic Speech Recognition and Understanding (ASRU) 2017},
+  url = {https://arxiv.org/abs/1707.07413},
+  eprint = {1707.07413},
+  archivePrefix = {arXiv}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

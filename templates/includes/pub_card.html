@@ -1,16 +1,13 @@
 {% macro render(publi, compact=false) %}
-{% if not compact %}
-<script type="application/ld+json">{{ publi | publication_jsonld(site.url) }}</script>
-{% endif %}
-<div class="pub-card{% if compact %} pub-card-compact{% endif %}" data-keywords="{{ publi.keywords | join(',') if publi.keywords else '' }}">
-<ul class="flex-container">
+<article class="pub-card{% if compact %} pub-card-compact{% endif %}" id="pub-{{ publi.key }}" data-keywords="{{ publi.keywords | join(',') if publi.keywords else '' }}" data-search="{{ publi.title }} {{ publi.authors }} {{ publi.venue | default('') }} {{ publi.year }}">
+<div class="flex-container">
 {% if publi.image %}
-<li class="flex-item1">
+<div class="flex-item1">
   <img src="{{ url_for('static', filename='images/pubpic/' + publi.image) }}" alt="{{ publi.title }}" loading="lazy" decoding="async" />
-</li>
+</div>
 {% endif %}
-<li class="flex-item2">
-  <div class="pub-title">{{ publi.title }}</div>
+<div class="flex-item2">
+  <h3 class="pub-title"><a href="{{ url_for('main.publication_detail', key=publi.key) }}">{{ publi.title }}</a></h3>
   {% if compact %}
   <div class="pub-authors">{{ publi.authors | truncate_authors | bold_name }}</div>
   {% else %}
@@ -24,15 +21,31 @@
   {% endif %}
 
   <div class="pub-links">
-  {% if publi.doi %}<a href="http://dx.doi.org/{{ publi.doi }}" target="_blank" class="btn-common">DOI</a> {% endif %}
-  {% if publi.arxiv %}<a href="https://arxiv.org/abs/{{ publi.arxiv }}" target="_blank" class="btn-common">ARXIV</a> {% endif %}
-  {% if publi.journal %}<a href="{{ publi.journal }}" target="_blank" class="btn-common">JOURNAL</a> {% endif %}
-  {% if publi.link %}<a href="{{ publi.link }}" target="_blank" class="btn-common">PAPER</a> {% endif %}
-  {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank" class="btn-bib">PDF</a> {% endif %}
-  {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank" class="btn-common">PATENT</a> {% endif %}
-  {% if publi.code %}<a href="{{ publi.code }}" target="_blank" class="btn-common">CODE</a> {% endif %}
-  {% if publi.data %}<a href="{{ publi.data }}" target="_blank" class="btn-common">DATA</a> {% endif %}
-  {% if publi.models %}<a href="{{ publi.models }}" target="_blank" class="btn-common">MODELS</a> {% endif %}
+  {% if publi.doi %}<a href="https://doi.org/{{ publi.doi }}" target="_blank" rel="noopener" class="btn-common" aria-label="DOI for {{ publi.title }}">DOI</a> {% endif %}
+  {% if publi.arxiv %}<a href="https://arxiv.org/abs/{{ publi.arxiv }}" target="_blank" rel="noopener" class="btn-common" aria-label="arXiv page for {{ publi.title }}">ARXIV</a> {% endif %}
+  {% if publi.journal %}<a href="{{ publi.journal }}" target="_blank" rel="noopener" class="btn-common" aria-label="Journal page for {{ publi.title }}">JOURNAL</a> {% endif %}
+  {% if publi.link %}<a href="{{ publi.link }}" target="_blank" rel="noopener" class="btn-common" aria-label="Paper page for {{ publi.title }}">PAPER</a> {% endif %}
+  {% if publi.pdf %}<a href="{{ url_for('static', filename='publications/pdfs/' + publi.pdf) }}" target="_blank" rel="noopener" class="btn-bib" aria-label="PDF of {{ publi.title }}">PDF</a> {% endif %}
+  {% if publi.patent %}<a href="{{ publi.patent }}" target="_blank" rel="noopener" class="btn-common" aria-label="Patent page for {{ publi.title }}">PATENT</a> {% endif %}
+  {% if publi.code %}<a href="{{ publi.code }}" target="_blank" rel="noopener" class="btn-common" aria-label="Code for {{ publi.title }}">CODE</a> {% endif %}
+  {% if publi.data %}<a href="{{ publi.data }}" target="_blank" rel="noopener" class="btn-common" aria-label="Data for {{ publi.title }}">DATA</a> {% endif %}
+  {% if publi.models %}<a href="{{ publi.models }}" target="_blank" rel="noopener" class="btn-common" aria-label="Models for {{ publi.title }}">MODELS</a> {% endif %}
+  {% if not compact %}
+  <button type="button" class="btn-common" popovertarget="cite-{{ publi.key }}">CITE</button>
+  <div class="citation-popover" id="cite-{{ publi.key }}" popover>
+    <div class="citation-popover__head">
+      <strong>Cite this work</strong>
+      <button type="button" popovertarget="cite-{{ publi.key }}" popovertargetaction="hide" aria-label="Close citation">×</button>
+    </div>
+    <pre data-citation-text>{{ publi | publication_bibtex }}</pre>
+    <div class="citation-popover__actions">
+      <button type="button" data-copy-citation>Copy BibTeX</button>
+      <a href="{{ url_for('main.publication_bibtex', key=publi.key) }}">.bib</a>
+      <a href="{{ url_for('main.publication_ris', key=publi.key) }}">.ris</a>
+    </div>
+    <p data-copy-status aria-live="polite"></p>
+  </div>
+  {% endif %}
 
   {% if not compact and publi.abstract %}
   <details class="pub-disclosure" id="{{publi.key}}_abs">
@@ -61,7 +74,7 @@
   {% endif %}
   </div>
 
-</li>
-</ul>
 </div>
+</div>
+</article>
 {% endmacro %}

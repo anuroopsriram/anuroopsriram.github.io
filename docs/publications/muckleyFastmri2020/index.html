@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Results of the 2020 fastmri challenge for machine learning mr image reconstruction - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Results of the 2020 fastmri challenge for machine learning mr image reconstruction - Anuroop Sriram">
+  <meta property="og:description" content="Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/muckleyFastmri2020/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/fmri_chall2020.webp">
+  
+  <meta property="og:image:alt" content="Results of the 2020 fastmri challenge for machine learning mr image reconstruction">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2021-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Healthcare"><meta property="article:tag" content="Datasets">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Results of the 2020 fastmri challenge for machine learning mr image reconstruction - Anuroop Sriram">
+  <meta name="twitter:description" content="Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/fmri_chall2020.webp">
+  <meta name="twitter:image:alt" content="Results of the 2020 fastmri challenge for machine learning mr image reconstruction">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/muckleyFastmri2020/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Results of the 2020 fastmri challenge for machine learning mr image reconstruction", "item": "https://anuroopsriram.com/publications/muckleyFastmri2020/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/muckleyFastmri2020/#article", "url": "https://anuroopsriram.com/publications/muckleyFastmri2020/", "headline": "Results of the 2020 fastmri challenge for machine learning mr image reconstruction", "name": "Results of the 2020 fastmri challenge for machine learning mr image reconstruction", "author": [{"@type": "Person", "name": "Matthew J Muckley"}, {"@type": "Person", "name": "Bruno Riemenschneider"}, {"@type": "Person", "name": "Alireza Radmanesh"}, {"@type": "Person", "name": "Sunwoo Kim"}, {"@type": "Person", "name": "Geunu Jeong"}, {"@type": "Person", "name": "Jingyu Ko"}, {"@type": "Person", "name": "Yohan Jun"}, {"@type": "Person", "name": "Hyungseob Shin"}, {"@type": "Person", "name": "Dosik Hwang"}, {"@type": "Person", "name": "Mahmoud Mostapha et al."}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2021", "isPartOf": {"@type": "Periodical", "name": "IEEE Transactions on Medical Imaging (TMI)"}, "publisher": {"@type": "Organization", "name": "IEEE"}, "abstract": "Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI competition targeted towards reconstructing MR images with subsampled k-space data. We provided participants with data from 7,299 clinical brain scans (de-identified via a HIPAA-compliant procedure by NYU Langone Health), holding back the fully-sampled data from 894 of these scans for challenge evaluation purposes. In contrast to the 2019 challenge, we focused our radiologist evaluations on pathological assessment in brain images. We also debuted a new Transfer track that required participants to submit models evaluated on MRI scanners from outside the training set. We received 19 submissions from eight different groups. Results showed one team scoring best in both SSIM scores and qualitative radiologist evaluations. We also performed analysis on alternative metrics to mitigate the effects of background noise and collected feedback from the participants to inform future challenges. Lastly, we identify common failure modes across the submissions, highlighting areas of need for future research in the MRI reconstruction community.", "keywords": "AI for Healthcare, Datasets", "sameAs": ["https://arxiv.org/abs/2012.06318"], "image": "https://anuroopsriram.com/static/images/pubpic/fmri_chall2020.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2021</span>
+      <span>IEEE Transactions on Medical Imaging (TMI)</span>
+    </div>
+    <h1>Results of the 2020 fastmri challenge for machine learning mr image reconstruction</h1>
+    <p class="publication-detail__authors">Matthew J Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Healthcare</li><li>Datasets</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/fmri_chall2020.webp" alt="Figure from Results of the 2020 fastmri challenge for machine learning mr image reconstruction" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        <a href="https://arxiv.org/abs/2012.06318" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+        
+        
+        
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">Accelerating MRI scans is one of the principal outstanding problems in the MRI research community. Towards this goal, we hosted the second fastMRI competition targeted towards reconstructing MR images with subsampled k-space data. We provided participants with data from 7,299 clinical brain scans (de-identified via a HIPAA-compliant procedure by NYU Langone Health), holding back the fully-sampled data from 894 of these scans for challenge evaluation purposes. In contrast to the 2019 challenge, we focused our radiologist evaluations on pathological assessment in brain images. We also debuted a new Transfer track that required participants to submit models evaluated on MRI scanners from outside the training set. We received 19 submissions from eight different groups. Results showed one team scoring best in both SSIM scores and qualitative radiologist evaluations. We also performed analysis on alternative metrics to mitigate the effects of background noise and collected feedback from the participants to inform future challenges. Lastly, we identify common failure modes across the submissions, highlighting areas of need for future research in the MRI reconstruction community.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{muckleyFastmri2020,
+  title = {Results of the 2020 fastmri challenge for machine learning mr image reconstruction},
+  author = {Matthew J Muckley, Bruno Riemenschneider, Alireza Radmanesh, Sunwoo Kim, Geunu Jeong, Jingyu Ko, Yohan Jun, Hyungseob Shin, Dosik Hwang, Mahmoud Mostapha et al.},
+  year = {2021},
+  journal = {IEEE Transactions on Medical Imaging (TMI)},
+  url = {https://arxiv.org/abs/2012.06318},
+  eprint = {2012.06318},
+  archivePrefix = {arXiv}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

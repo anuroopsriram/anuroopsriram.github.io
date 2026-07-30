@@ -1,0 +1,19 @@
+TY  - JOUR
+TI  - Adjoint Sampling: Highly Scalable Diffusion Samplers via Adjoint Matching
+AU  - Aaron Havens
+AU  - Benjamin Kurt Miller
+AU  - Bing Yan
+AU  - Carles Domingo-Enrich
+AU  - Anuroop Sriram
+AU  - Brandon Wood
+AU  - Daniel Levine
+AU  - Bin Hu
+AU  - Brandon Amos
+AU  - Brian Karrer
+AU  - Xiang Fu
+AU  - Guan-Horng Liu
+AU  - Ricky T. Q. Chen
+PY  - 2025
+JO  - International Conference on Machine Learning (ICML) 2025
+UR  - https://arxiv.org/abs/2504.11713
+ER  -

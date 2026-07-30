@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Purpose:
+To explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI - Anuroop Sriram">
+  <meta property="og:description" content="Purpose:
+To explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/radmaneshMRIAccel/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/mri_limits.webp">
+  
+  <meta property="og:image:alt" content="Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2022-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Healthcare"><meta property="article:tag" content="Computer Vision">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI - Anuroop Sriram">
+  <meta name="twitter:description" content="Purpose:
+To explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/mri_limits.webp">
+  <meta name="twitter:image:alt" content="Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/radmaneshMRIAccel/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI", "item": "https://anuroopsriram.com/publications/radmaneshMRIAccel/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/radmaneshMRIAccel/#article", "url": "https://anuroopsriram.com/publications/radmaneshMRIAccel/", "headline": "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI", "name": "Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI", "author": [{"@type": "Person", "name": "Alireza Radmanesh"}, {"@type": "Person", "name": "Matthew J. Muckley"}, {"@type": "Person", "name": "Tullie Murrell"}, {"@type": "Person", "name": "Emma Lindsey"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Florian Knoll"}, {"@type": "Person", "name": "Daniel K. Sodickson"}, {"@type": "Person", "name": "Yvonne W. Lui"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2022", "isPartOf": {"@type": "Periodical", "name": "Radiology: Artificial Intelligence"}, "publisher": {"@type": "Organization", "name": "Radiological Society of North America"}, "abstract": "Purpose: To explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and potential screening. Materials and Methods: In this retrospective study conducted from 2019 through 2021, a model was trained for reconstruction on 5,847 brain MRIs. Performance was evaluated across a wide range of accelerations (up to 100-fold along a single phase-encoded direction for two-dimensional [2D] slices) on the fastMRI test set collected by New York University, consisting of 558 image volumes. In a sample of 69 volumes, reconstructions were classified by radiologists for identifying two clinical thresholds: 1) general-purpose diagnostic imaging and 2) potential use in a screening protocol. A Monte Carlo procedure was developed for estimating reconstruction error with only undersampled data. The model was evaluated on both in-domain and out-of-domain data. Confidence intervals were calculated using the percentile bootstrap method. Results: Radiologists rated 100% of 69 volumes as having sufficient image quality for general-purpose imaging at up to 4× acceleration and 65 of 69 (94%) of volumes as having sufficient image quality for screening at up to 14× acceleration. The Monte Carlo procedure estimated ground truth peak signal-to-noise ratio and mean squared error with coefficients of determination greater than 0.5 at all accelerations. Out-of-distribution experiments demonstrated the model’s ability to produce images substantially distinct from the training set, even at 100× acceleration. Conclusion: For 2D brain images using deep learning-based reconstruction, maximum acceleration for potential screening was 3–4 times higher than that for diagnostic general-purpose imaging.", "keywords": "AI for Healthcare, Computer Vision", "sameAs": ["https://pubs.rsna.org/doi/10.1148/ryai.210313"], "image": "https://anuroopsriram.com/static/images/pubpic/mri_limits.webp", "codeRepository": "https://github.com/facebookresearch/fastMRI/"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2022</span>
+      <span>Radiology: Artificial Intelligence</span>
+    </div>
+    <h1>Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI</h1>
+    <p class="publication-detail__authors">Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, <strong>Anuroop Sriram</strong>, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Healthcare</li><li>Computer Vision</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/mri_limits.webp" alt="Figure from Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        
+        
+        <a href="https://pubs.rsna.org/doi/10.1148/ryai.210313" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/facebookresearch/fastMRI/" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract"><b>Purpose:</b><br/>To explore the limits of deep learning-based brain MRI reconstruction and identify useful acceleration ranges for general-purpose imaging and potential screening.<br/><br/> <b>Materials and Methods:</b><br/>In this retrospective study conducted from 2019 through 2021, a model was trained for reconstruction on 5,847 brain MRIs. Performance was evaluated across a wide range of accelerations (up to 100-fold along a single phase-encoded direction for two-dimensional [2D] slices) on the fastMRI test set collected by New York University, consisting of 558 image volumes. In a sample of 69 volumes, reconstructions were classified by radiologists for identifying two clinical thresholds: 1) general-purpose diagnostic imaging and 2) potential use in a screening protocol. A Monte Carlo procedure was developed for estimating reconstruction error with only undersampled data. The model was evaluated on both in-domain and out-of-domain data. Confidence intervals were calculated using the percentile bootstrap method.<br/><br/> <b>Results:</b><br/>Radiologists rated 100% of 69 volumes as having sufficient image quality for general-purpose imaging at up to 4× acceleration and 65 of 69 (94%) of volumes as having sufficient image quality for screening at up to 14× acceleration. The Monte Carlo procedure estimated ground truth peak signal-to-noise ratio and mean squared error with coefficients of determination greater than 0.5 at all accelerations. Out-of-distribution experiments demonstrated the model’s ability to produce images substantially distinct from the training set, even at 100× acceleration.<br/><br/> <b>Conclusion:</b><br/>For 2D brain images using deep learning-based reconstruction, maximum acceleration for potential screening was 3–4 times higher than that for diagnostic general-purpose imaging.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{radmaneshMRIAccel,
+  title = {Exploring the Acceleration Limits of Deep Learning VarNet-based Two-dimensional Brain MRI},
+  author = {Alireza Radmanesh, Matthew J. Muckley , Tullie Murrell, Emma Lindsey, Anuroop Sriram, Florian Knoll, Daniel K. Sodickson, Yvonne W. Lui},
+  year = {2022},
+  journal = {Radiology: Artificial Intelligence},
+  url = {https://pubs.rsna.org/doi/10.1148/ryai.210313}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

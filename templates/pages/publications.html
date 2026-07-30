@@ -6,6 +6,7 @@
 <header class="page-head">
   <p class="eyebrow">Research output</p>
   <h1>Publications</h1>
+  <p class="page-head__meta">{{ site.data.publist | length }} selected works across AI for science, healthcare, speech, and model scaling</p>
 </header>
 
 {% set keyword_order = [
@@ -29,16 +30,25 @@
   {% endfor %}
 {% endfor %}
 
+<search class="pub-search" aria-label="Search publications">
+  <label for="publication-search">Search by title, author, venue, or year</label>
+  <div class="pub-search__field">
+    <input id="publication-search" type="search" autocomplete="off" placeholder="Search the research record">
+    <span aria-hidden="true">⌕</span>
+  </div>
+  <p id="publication-results" aria-live="polite">{{ site.data.publist | length }} publications</p>
+</search>
+
 <div class="pub-filters" role="toolbar" aria-label="Filter publications by topic">
   <span class="pub-filters__label" aria-hidden="true">Filter</span>
-  <button class="pub-filter-btn active" data-filter="all">All</button>
+  <button type="button" class="pub-filter-btn active" data-filter="all" aria-pressed="true">All</button>
   {% for kw in keyword_order %}
     {% if kw in all_keywords %}
-  <button class="pub-filter-btn" data-filter="{{ kw }}">{{ kw }}</button>
+  <button type="button" class="pub-filter-btn" data-filter="{{ kw }}" aria-pressed="false">{{ kw }}</button>
     {% endif %}
   {% endfor %}
   {% for kw in all_keywords if kw not in keyword_order %}
-  <button class="pub-filter-btn" data-filter="{{ kw }}">{{ kw }}</button>
+  <button type="button" class="pub-filter-btn" data-filter="{{ kw }}" aria-pressed="false">{{ kw }}</button>
   {% endfor %}
 </div>
 
@@ -72,89 +82,6 @@
 {% endif %}
 </div>
 
-<script>
-(function() {
-  var buttons = document.querySelectorAll('.pub-filter-btn');
-  var cards = document.querySelectorAll('.pub-card');
-  var headings = document.querySelectorAll('.pub-year-heading');
-
-  /* Pin the year rail directly beneath the sticky site header. */
-  var yearNav = document.querySelector('.year-nav');
-  var siteHeader = document.querySelector('.site-header');
-  if (yearNav && siteHeader) {
-    var pinNav = function() { yearNav.style.top = (siteHeader.offsetHeight - 1) + 'px'; };
-    pinNav();
-    window.addEventListener('resize', pinNav);
-  }
-
-  buttons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      buttons.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-
-      var filter = btn.getAttribute('data-filter');
-
-      cards.forEach(function(card) {
-        if (filter === 'all') {
-          card.style.display = '';
-        } else {
-          var kws = card.getAttribute('data-keywords');
-          card.style.display = kws && kws.split(',').indexOf(filter) !== -1 ? '' : 'none';
-        }
-      });
-
-      headings.forEach(function(h) {
-        var sibling = h.nextElementSibling;
-        var hasVisible = false;
-        while (sibling && !sibling.classList.contains('pub-year-heading')) {
-          if (sibling.classList.contains('pub-card') && sibling.style.display !== 'none') {
-            hasVisible = true;
-            break;
-          }
-          sibling = sibling.nextElementSibling;
-        }
-        h.style.display = hasVisible ? '' : 'none';
-        var link = document.querySelector('.year-nav a[data-year="' + h.getAttribute('data-year') + '"]');
-        if (link) { link.parentElement.style.display = hasVisible ? '' : 'none'; }
-      });
-    });
-  });
-
-  /* Scrollspy: highlight the year currently in view. */
-  var yearLinks = document.querySelectorAll('.year-nav a');
-  if (yearLinks.length && 'IntersectionObserver' in window) {
-    var linkFor = {};
-    yearLinks.forEach(function(a) { linkFor[a.getAttribute('data-year')] = a; });
-
-    var setCurrent = function(year) {
-      yearLinks.forEach(function(a) { a.classList.remove('current'); });
-      if (year && linkFor[year]) {
-        var link = linkFor[year];
-        link.classList.add('current');
-        /* Keep the highlighted year visible in the rail. Scroll the list
-           horizontally by hand: scrollIntoView could hijack the page's
-           smooth anchor scroll mid-flight. */
-        var list = link.closest('.year-nav__list');
-        if (list && list.scrollWidth > list.clientWidth) {
-          var target = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
-          list.scrollLeft = Math.max(0, target);
-        }
-      }
-    };
-
-    var visible = new Set();
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        var y = e.target.getAttribute('data-year');
-        if (e.isIntersecting) { visible.add(y); } else { visible.delete(y); }
-      });
-      if (visible.size) {
-        setCurrent(Array.from(visible).sort().reverse()[0]);
-      }
-    }, { rootMargin: '-96px 0px -55% 0px' });
-
-    headings.forEach(function(h) { observer.observe(h); });
-  }
-})();
-</script>
+<script type="module" src="{{ url_for('static', filename='js/publications.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/citation.js') }}"></script>
 {% endblock %}

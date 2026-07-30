@@ -19,6 +19,7 @@ class Config:
     SITE_BASEURL = ""
     SITE_URL = "https://anuroopsriram.com"
     GOOGLE_ANALYTICS = "G-H1K2L7JV60"
+    ANALYTICS_ENABLED = False
     GROUP_PUB_BY_YEAR = True
 
     # Flask configuration
@@ -34,6 +35,7 @@ class Config:
             "baseurl": cls.SITE_BASEURL,
             "url": cls.SITE_URL,
             "google_analytics": cls.GOOGLE_ANALYTICS,
+            "analytics_enabled": cls.ANALYTICS_ENABLED,
             "group_pub_by_year": cls.GROUP_PUB_BY_YEAR,
         }
 
@@ -48,6 +50,7 @@ class ProductionConfig(Config):
     """Production configuration."""
 
     DEBUG = False
+    ANALYTICS_ENABLED = True
     SERVER_NAME = "localhost"
     PREFERRED_URL_SCHEME = "http"
 

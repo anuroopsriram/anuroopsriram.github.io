@@ -25,9 +25,10 @@
   
   
   
-  
 
   <meta name="description" content="The page you&#39;re looking for doesn&#39;t exist.">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
   <meta name="robots" content="noindex">
 
   <meta property="og:type" content="website">
@@ -35,24 +36,26 @@
   <meta property="og:description" content="The page you&#39;re looking for doesn&#39;t exist.">
   <meta property="og:url" content="https://anuroopsriram.com/404.html">
   <meta property="og:image" content="https://anuroopsriram.com/static/images/og-banner.png">
+  
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Anuroop Sriram — AI for Science researcher">
+  
+  <meta property="og:image:alt" content="Page not found">
   <meta property="og:site_name" content="Anuroop Sriram">
   <meta property="og:locale" content="en_US">
+  
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Page not found - Anuroop Sriram">
   <meta name="twitter:description" content="The page you&#39;re looking for doesn&#39;t exist.">
-  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/teampic/anuroop.webp">
-  <meta name="twitter:image:alt" content="Photograph of Anuroop Sriram">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/og-banner.png">
+  <meta name="twitter:image:alt" content="Page not found">
   <meta name="twitter:site" content="@anuroopsriram">
   <meta name="twitter:creator" content="@anuroopsriram">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:opsz,wght@14..32,100..900&family=Spline+Sans+Mono:wght@300..700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="static/css/main.css">
+  
   <link rel="canonical" href="https://anuroopsriram.com/404.html">
 
   <script type="application/ld+json">
@@ -62,7 +65,7 @@
     "@id": "https://anuroopsriram.com/#website",
     "name": "Anuroop Sriram",
     "url": "https://anuroopsriram.com/",
-    "publisher": {"@id": "https://www.wikidata.org/entity/Q138516652"}
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
   }
   </script>
   
@@ -79,6 +82,7 @@
   
   <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
   <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
 
   <script type="speculationrules">
   {
@@ -92,26 +96,52 @@
   </script>
 
   
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
 </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
   <div class="site-container site-header__inner">
-    <a class="site-wordmark" href="index.html">Anuroop Sriram</a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <a class="site-wordmark" href="index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
       <a class="site-nav__link" href="index.html">Home</a>
       <a class="site-nav__link" href="publications/index.html">Publications</a>
       <a class="site-nav__link" href="datasets/index.html">Datasets</a>
       <a class="site-nav__link" href="allnews/index.html">News</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <span id="theme-icon">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
         </span>
       </button>
     </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="index.html">Home</a>
+        <a class="" href="publications/index.html">Publications</a>
+        <a class="" href="datasets/index.html">Datasets</a>
+        <a class="" href="allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
   </div>
 </header>
     
-    <main class="site-main">
+    <main class="site-main" id="main-content">
       <div class="site-container">
         
 <div id="gridid" class="layout-page">
@@ -140,10 +170,14 @@
     <footer class="site-footer">
   <div class="site-container site-footer__inner">
     <p>&copy; 2026 Anuroop Sriram</p>
-    <p><a href="aboutwebsite/index.html">About this site</a></p>
+    <p class="site-footer__links">
+      <a href="aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
   </div>
 </footer>
 
-<script src="static/js/theme.js"></script>
+<script src="static/js/theme.js" defer></script>
   </body>
 </html>

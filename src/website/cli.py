@@ -3,7 +3,7 @@
 import click
 
 from .app import create_app
-from .builder import build_site, compile_sass
+from .builder import build_site, compile_css
 
 
 @click.command()
@@ -12,7 +12,7 @@ from .builder import build_site, compile_sass
 @click.option("--debug/--no-debug", default=True, help="Enable debug mode")
 def dev(host: str, port: int, debug: bool) -> None:
     """Start development server."""
-    compile_sass(use_click=True)
+    compile_css(use_click=True)
     app = create_app("development")
 
     click.echo("Starting development server...")

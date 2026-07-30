@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Fine-Tuned Language Models Generate Stable Inorganic Materials as Text - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fine-Tuned Language Models Generate Stable Inorganic Materials as Text - Anuroop Sriram">
+  <meta property="og:description" content="Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/llm_materials23/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/llm_materials23.webp">
+  
+  <meta property="og:image:alt" content="Fine-Tuned Language Models Generate Stable Inorganic Materials as Text">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2024-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="Generative Modeling"><meta property="article:tag" content="AI for Science"><meta property="article:tag" content="LLMs">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fine-Tuned Language Models Generate Stable Inorganic Materials as Text - Anuroop Sriram">
+  <meta name="twitter:description" content="Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/llm_materials23.webp">
+  <meta name="twitter:image:alt" content="Fine-Tuned Language Models Generate Stable Inorganic Materials as Text">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/llm_materials23/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text", "item": "https://anuroopsriram.com/publications/llm_materials23/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/llm_materials23/#article", "url": "https://anuroopsriram.com/publications/llm_materials23/", "headline": "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text", "name": "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text", "author": [{"@type": "Person", "name": "Nate Gruver"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Andrea Madotto"}, {"@type": "Person", "name": "Andrew Wilson"}, {"@type": "Person", "name": "C Lawrence Zitnick"}, {"@type": "Person", "name": "Zachary Ulissi"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2024", "isPartOf": {"@type": "Periodical", "name": "International Conference on Learning Representations (ICLR) 2024"}, "publisher": {"@type": "Organization", "name": "ICLR"}, "abstract": "Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory (DFT). Large open computational materials databases such as the Materials Project or OQMD contain O(106) known structures, and it is now straightforward to search those databases for materials with exciting properties. However, these databases are limited to experimentally known materials or candidates discovered in high-throughput computational campaigns. Many state-of-the-art engineering advances in solar photovaltaics, battery electrodes, and catalysts are made by discovering materials with outstanding properties that have not yet been discovered. Generative models are a natural solution to expand families of interest through sampling. While popular methods are typically constructed from variational autoencoders or diffusion models, we propose fine-tuning large language models for generation of stable materials. While unorthodox, fine-tuning large language models on text-encoded atomistic data is simple to implement yet reliable, with around 90% of sampled structures obeying physical constraints on atom positions and charges. Using energy of hull calculations from both learned ML potentials and gold-standard DFT calculations, we show that our strongest model (fine-tuned LLaMA-2 70B) can generate materials predicted to be metastable at about twice the rate (49% vs 28%) of CDVAE, a competing diffusion model. Because of text prompting's inherent flexibility, our models can simultaneously be used for unconditional generation of stable material, infilling of partial structures and text-conditional generation. Finally, we show that language models' ability to capture key symmetries of crystal structures improves with model scale, suggesting that the biases of pretrained LLMs are surprisingly well-suited for atomistic data.", "keywords": "Generative Modeling, AI for Science, LLMs", "sameAs": ["https://arxiv.org/abs/2402.04379"], "image": "https://anuroopsriram.com/static/images/pubpic/llm_materials23.webp", "codeRepository": "https://github.com/facebookresearch/crystal-llm"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2024</span>
+      <span>International Conference on Learning Representations (ICLR) 2024</span>
+    </div>
+    <h1>Fine-Tuned Language Models Generate Stable Inorganic Materials as Text</h1>
+    <p class="publication-detail__authors">Nate Gruver, <strong>Anuroop Sriram</strong>, Andrea Madotto, Andrew Wilson, C Lawrence Zitnick, Zachary Ulissi</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>Generative Modeling</li><li>AI for Science</li><li>LLMs</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/llm_materials23.webp" alt="Figure from Fine-Tuned Language Models Generate Stable Inorganic Materials as Text" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        <a href="https://arxiv.org/abs/2402.04379" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+        
+        
+        <a href="https://github.com/facebookresearch/crystal-llm" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">Deep learning models have drastically accelerated materials discovery by accelerating predictive computational simulations like density functional theory (DFT). Large open computational materials databases such as the Materials Project or OQMD contain O(10<sup>6</sup>) known structures, and it is now straightforward to search those databases for materials with exciting properties. However, these databases are limited to experimentally known materials or candidates discovered in high-throughput computational campaigns. Many state-of-the-art engineering advances in solar photovaltaics, battery electrodes, and catalysts are made by discovering materials with outstanding properties that have not yet been discovered. Generative models are a natural solution to expand families of interest through sampling. While popular methods are typically constructed from variational autoencoders or diffusion models, we propose fine-tuning large language models for generation of stable materials. While unorthodox, fine-tuning large language models on text-encoded atomistic data is simple to implement yet reliable, with around 90% of sampled structures obeying physical constraints on atom positions and charges. Using energy of hull calculations from both learned ML potentials and gold-standard DFT calculations, we show that our strongest model (fine-tuned LLaMA-2 70B) can generate materials predicted to be metastable at about twice the rate (49% vs 28%) of CDVAE, a competing diffusion model. Because of text prompting's inherent flexibility, our models can simultaneously be used for unconditional generation of stable material, infilling of partial structures and text-conditional generation. Finally, we show that language models' ability to capture key symmetries of crystal structures improves with model scale, suggesting that the biases of pretrained LLMs are surprisingly well-suited for atomistic data.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{llm_materials23,
+  title = {Fine-Tuned Language Models Generate Stable Inorganic Materials as Text},
+  author = {Nate Gruver, Anuroop Sriram, Andrea Madotto, Andrew Wilson, C Lawrence Zitnick, Zachary Ulissi},
+  year = {2024},
+  journal = {International Conference on Learning Representations (ICLR) 2024},
+  url = {https://arxiv.org/abs/2402.04379},
+  eprint = {2402.04379},
+  archivePrefix = {arXiv}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

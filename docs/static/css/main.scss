@@ -1,13 +1,7 @@
 /* ============================================
-   Academic Website — main.scss
-   Custom design system (no CSS framework).
-
-   Notes for maintainers:
-   - Compiled by libsass: use SCSS nesting, not
-     plain-CSS nesting.
-   - Color tokens live in custom properties so
-     oklch()/light-dark() pass through libsass
-     verbatim (never apply SCSS math to them).
+   Academic Website — native CSS source.
+   This file retains its historical .scss name,
+   but website-build concatenates it unchanged.
    ============================================ */
 
 /* ============================================
@@ -779,8 +773,3 @@ summary:focus-visible {
     scroll-behavior: auto !important;
   }
 }
-
-/* ----- Page-specific layers (each owned by its own module) ----- */
-@import "home";
-@import "pages";
-@import "motion";

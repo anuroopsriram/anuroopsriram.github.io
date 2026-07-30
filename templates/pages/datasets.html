@@ -5,7 +5,7 @@
 <header class="page-head">
   <p class="eyebrow">Open science</p>
   <h1>Datasets</h1>
-  <p class="page-head__meta">Openly released data for the research community</p>
+  <p class="page-head__meta">{{ site.data.datalist | length }} open data programs for atoms, medical imaging, and speech</p>
 </header>
 
 {% set categories = site.data.datalist | map(attribute='category') | unique | list %}
@@ -23,7 +23,7 @@
         <img src="{{ url_for('static', filename='images/datapic/' + dataset.image) }}" alt="{{ dataset.title }}" loading="lazy" decoding="async" />
         {% endif %}
         {% if dataset.video %}
-        <video src="{{ url_for('static', filename='images/datapic/' + dataset.video) }}" autoplay loop muted playsinline title="{{ dataset.title }}"></video>
+        <video src="{{ url_for('static', filename='images/datapic/' + dataset.video) }}" autoplay loop muted playsinline preload="metadata" title="{{ dataset.title }}"></video>
         {% endif %}
       </div>
       {% endif %}
@@ -31,9 +31,9 @@
         <h3 class="dataset-card__title">{{ dataset.title }}</h3>
         <p class="dataset-card__desc">{{ dataset.description }}</p>
         <div class="pub-links dataset-card__links">
-        {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank" class="btn-common">PROJECT</a> {% endif %}
-        {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank" class="btn-common">DATA</a> {% endif %}
-        {% if dataset.code_url %}<a href="{{ dataset.code_url }}" target="_blank" class="btn-common">CODE</a> {% endif %}
+        {% if dataset.project_url %}<a href="{{ dataset.project_url }}" target="_blank" rel="noopener" class="btn-common">PROJECT</a> {% endif %}
+        {% if dataset.data_url %}<a href="{{ dataset.data_url }}" target="_blank" rel="noopener" class="btn-common">DATA</a> {% endif %}
+        {% if dataset.code_url %}<a href="{{ dataset.code_url }}" target="_blank" rel="noopener" class="btn-common">CODE</a> {% endif %}
         </div>
       </div>
     </article>

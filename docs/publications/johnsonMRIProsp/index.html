@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI - Anuroop Sriram">
+  <meta property="og:description" content="Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/johnsonMRIProsp/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/mri_prosp.webp">
+  
+  <meta property="og:image:alt" content="Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2023-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Healthcare"><meta property="article:tag" content="Computer Vision">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI - Anuroop Sriram">
+  <meta name="twitter:description" content="Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/mri_prosp.webp">
+  <meta name="twitter:image:alt" content="Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/johnsonMRIProsp/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI", "item": "https://anuroopsriram.com/publications/johnsonMRIProsp/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/johnsonMRIProsp/#article", "url": "https://anuroopsriram.com/publications/johnsonMRIProsp/", "headline": "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI", "name": "Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI", "author": [{"@type": "Person", "name": "Patricia M. Johnson"}, {"@type": "Person", "name": "Dana J. Lin"}, {"@type": "Person", "name": "Jure Zbontar"}, {"@type": "Person", "name": "C. Lawrence Zitnick"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Matthew Muckley"}, {"@type": "Person", "name": "James S. Babb"}, {"@type": "Person", "name": "Mitchell Kline"}, {"@type": "Person", "name": "Gina Ciavarra"}, {"@type": "Person", "name": "Erin Alaia"}, {"@type": "Person", "name": "Mohammad Samim"}, {"@type": "Person", "name": "William R. Walter"}, {"@type": "Person", "name": "Liz Calderon"}, {"@type": "Person", "name": "Thomas Pock"}, {"@type": "Person", "name": "Daniel K. Sodickson"}, {"@type": "Person", "name": "Michael P. Recht"}, {"@type": "Person", "name": "and Florian Knoll"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2023", "isPartOf": {"@type": "Periodical", "name": "Radiology"}, "abstract": "Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time reduction, improved image quality, and had equivalent diagnostic utility. Background MRI is a powerful diagnostic tool with a long acquisition time. Recently, deep learning (DL) methods have provided accelerated high-quality image reconstructions from undersampled data, but it is unclear if DL image reconstruction can be reliably translated to everyday clinical practice. Purpose To determine the diagnostic equivalence of prospectively accelerated DL-reconstructed knee MRI compared with conventional accelerated MRI for evaluating internal derangement of the knee in a clinical setting. Materials and Methods A DL reconstruction model was trained with images from 298 clinical 3-T knee examinations. In a prospective analysis, patients clinically referred for knee MRI underwent a conventional accelerated knee MRI protocol at 3 T followed by an accelerated DL protocol between January 2020 and February 2021. The equivalence of the DL reconstruction of the images relative to the conventional images for the detection of an abnormality was assessed in terms of interchangeability. Each examination was reviewed by six musculoskeletal radiologists. Analyses pertaining to the detection of meniscal or ligament tears and bone marrow or cartilage abnormalities were based on four-point ordinal scores for the likelihood of an abnormality. Additionally, the protocols were compared with use of four-point ordinal scores for each aspect of image quality: overall image quality, presence of artifacts, sharpness, and signal-to-noise ratio. Results A total of 170 participants (mean age ± SD, 45 years ± 16; 76 men) were evaluated. The DL-reconstructed images were determined to be of diagnostic equivalence with the conventional images for detection of abnormalities. The overall image quality score, averaged over six readers, was significantly better (P Conclusion In a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol.", "keywords": "AI for Healthcare, Computer Vision", "sameAs": ["https://pubs.rsna.org/doi/10.1148/radiol.220425"], "image": "https://anuroopsriram.com/static/images/pubpic/mri_prosp.webp", "codeRepository": "https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/RadiologyJohnson2022"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2023</span>
+      <span>Radiology</span>
+    </div>
+    <h1>Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI</h1>
+    <p class="publication-detail__authors">Patricia M. Johnson, Dana J. Lin, Jure Zbontar, C. Lawrence Zitnick, <strong>Anuroop Sriram</strong>, Matthew Muckley, James S. Babb, Mitchell Kline, Gina Ciavarra, Erin Alaia, Mohammad Samim, William R. Walter, Liz Calderon, Thomas Pock, Daniel K. Sodickson, Michael P. Recht, and Florian Knoll</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Healthcare</li><li>Computer Vision</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/mri_prosp.webp" alt="Figure from Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        
+        
+        <a href="https://pubs.rsna.org/doi/10.1148/radiol.220425" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/facebookresearch/fastMRI/tree/main/fastmri_examples/RadiologyJohnson2022" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">Compared with conventional reconstruction, deep learning reconstruction of prospectively accelerated knee MRI enabled an almost two fold scan time reduction, improved image quality, and had equivalent diagnostic utility.<br/><br/> <b>Background</b><br/>MRI is a powerful diagnostic tool with a long acquisition time. Recently, deep learning (DL) methods have provided accelerated high-quality image reconstructions from undersampled data, but it is unclear if DL image reconstruction can be reliably translated to everyday clinical practice.<br/><br/> <b>Purpose</b><br/>To determine the diagnostic equivalence of prospectively accelerated DL-reconstructed knee MRI compared with conventional accelerated MRI for evaluating internal derangement of the knee in a clinical setting.<br/><br/> <b>Materials and Methods</b><br/>A DL reconstruction model was trained with images from 298 clinical 3-T knee examinations. In a prospective analysis, patients clinically referred for knee MRI underwent a conventional accelerated knee MRI protocol at 3 T followed by an accelerated DL protocol between January 2020 and February 2021. The equivalence of the DL reconstruction of the images relative to the conventional images for the detection of an abnormality was assessed in terms of interchangeability. Each examination was reviewed by six musculoskeletal radiologists. Analyses pertaining to the detection of meniscal or ligament tears and bone marrow or cartilage abnormalities were based on four-point ordinal scores for the likelihood of an abnormality. Additionally, the protocols were compared with use of four-point ordinal scores for each aspect of image quality: overall image quality, presence of artifacts, sharpness, and signal-to-noise ratio.<br/><br/> <b>Results</b><br/>A total of 170 participants (mean age ± SD, 45 years ± 16; 76 men) were evaluated. The DL-reconstructed images were determined to be of diagnostic equivalence with the conventional images for detection of abnormalities. The overall image quality score, averaged over six readers, was significantly better (P < .001) for the DL than for the conventional images.<br/><br/> <b>Conclusion</b><br/>In a clinical setting, deep learning reconstruction enabled a nearly twofold reduction in scan time for a knee MRI and was diagnostically equivalent with the conventional protocol.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{johnsonMRIProsp,
+  title = {Deep Learning Reconstruction Enables Prospectively Accelerated Clinical Knee MRI},
+  author = {Patricia M. Johnson, Dana J. Lin, Jure Zbontar, C. Lawrence Zitnick, Anuroop Sriram, Matthew Muckley, James S. Babb, Mitchell Kline, Gina Ciavarra, Erin Alaia, Mohammad Samim, William R. Walter, Liz Calderon, Thomas Pock, Daniel K. Sodickson, Michael P. Recht, and Florian Knoll},
+  year = {2023},
+  journal = {Radiology},
+  url = {https://pubs.rsna.org/doi/10.1148/radiol.220425}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+      <section class="publication-detail__press" aria-labelledby="press-heading">
+        <p class="eyebrow">Selected coverage</p>
+        <h2 id="press-heading">In the world</h2>
+        <ul>
+          
+          <li>
+            <span>CBS News</span>
+            <a href="https://www.youtube.com/watch?v=9ncABdfkzuU" target="_blank" rel="noopener">Breakthrough MRI technology uses AI for faster scans</a>
+          </li>
+          
+          <li>
+            <span>Radiology Editorial</span>
+            <a href="https://pubs.rsna.org/doi/full/10.1148/radiol.222872" target="_blank" rel="noopener">Editorial: The Role of Speed and Possible Implications</a>
+          </li>
+          
+          <li>
+            <span>NYU Langone Health</span>
+            <a href="https://nyulangone.org/news/artificial-intelligence-reconstructs-missing-data-rapid-mri-scans" target="_blank" rel="noopener">Artificial Intelligence Reconstructs Missing Data from Rapid MRI Scans</a>
+          </li>
+          
+          <li>
+            <span>Reuters</span>
+            <a href="https://www.reuters.com/article/health-rounds/health-rounds-ai-speeds-mri-exams-idINL1N3421K1" target="_blank" rel="noopener">Health Rounds: AI speeds MRI exams</a>
+          </li>
+          
+          <li>
+            <span>Medical Xpress</span>
+            <a href="https://medicalxpress.com/news/2023-01-deep-reconstruction-enables-knee-mri.html" target="_blank" rel="noopener">Deep learning reconstruction enables accelerated knee MRI</a>
+          </li>
+          
+        </ul>
+      </section>
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

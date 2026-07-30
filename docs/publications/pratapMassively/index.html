@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters - Anuroop Sriram">
+  <meta property="og:description" content="We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/pratapMassively/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/mmasr.webp">
+  
+  <meta property="og:image:alt" content="Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2020-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="Speech"><meta property="article:tag" content="Model Scaling">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters - Anuroop Sriram">
+  <meta name="twitter:description" content="We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/mmasr.webp">
+  <meta name="twitter:image:alt" content="Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/pratapMassively/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters", "item": "https://anuroopsriram.com/publications/pratapMassively/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/pratapMassively/#article", "url": "https://anuroopsriram.com/publications/pratapMassively/", "headline": "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters", "name": "Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters", "author": [{"@type": "Person", "name": "Vineel Pratap"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Paden Tomasello"}, {"@type": "Person", "name": "Awni Hannun"}, {"@type": "Person", "name": "Vitaliy Liptchinsky"}, {"@type": "Person", "name": "Gabriel Synnaeve"}, {"@type": "Person", "name": "Ronan Collobert"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2020", "isPartOf": {"@type": "Periodical", "name": "Interspeech 2020"}, "abstract": "We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource languages, and over-all simplifying deployment of ASR systems that support diverse languages. We perform an extensive benchmark on 51 languages, with varying amount of training data by language(from 100 hours to 1100 hours). We compare three variants of multilingual training from a single joint model without knowing the input language, to using this information, to multiple heads (one per language cluster). We show that multilingual training of ASR models on several languages can improve recognition performance, in particular, on low resource languages. We see 20.9%, 23% and 28.8% average WER relative reduction compared to monolingual baselines on joint model, joint model with language input and multi head model respectively. To our knowledge, this is the first work studying multilingual ASR at massive scale, with more than 50 languages and more than 16,000 hours of audio across them.", "keywords": "Speech, Model Scaling", "sameAs": ["https://arxiv.org/abs/2007.03001"], "image": "https://anuroopsriram.com/static/images/pubpic/mmasr.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2020</span>
+      <span>Interspeech 2020</span>
+    </div>
+    <h1>Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters</h1>
+    <p class="publication-detail__authors">Vineel Pratap, <strong>Anuroop Sriram</strong>, Paden Tomasello, Awni Hannun, Vitaliy Liptchinsky, Gabriel Synnaeve, Ronan Collobert</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>Speech</li><li>Model Scaling</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/mmasr.webp" alt="Figure from Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        <a href="https://arxiv.org/abs/2007.03001" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+        
+        
+        
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">We study training a single acoustic model for multiple languages with the aim of improving automatic speech recognition (ASR) performance on low-resource languages, and over-all simplifying deployment of ASR systems that support diverse languages. We perform an extensive benchmark on 51 languages, with varying amount of training data by language(from 100 hours to 1100 hours). We compare three variants of multilingual training from a single joint model without knowing the input language, to using this information, to multiple heads (one per language cluster). We show that multilingual training of ASR models on several languages can improve recognition performance, in particular, on low resource languages. We see 20.9%, 23% and 28.8% average WER relative reduction compared to monolingual baselines on joint model, joint model with language input and multi head model respectively. To our knowledge, this is the first work studying multilingual ASR at massive scale, with more than 50 languages and more than 16,000 hours of audio across them.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{pratapMassively,
+  title = {Massively Multilingual ASR: 50 Languages, 1 Model, 1 Billion Parameters},
+  author = {Vineel Pratap, Anuroop Sriram, Paden Tomasello, Awni Hannun, Vitaliy Liptchinsky, Gabriel Synnaeve, Ronan Collobert},
+  year = {2020},
+  journal = {Interspeech 2020},
+  url = {https://arxiv.org/abs/2007.03001},
+  eprint = {2007.03001},
+  archivePrefix = {arXiv}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+      <section class="publication-detail__press" aria-labelledby="press-heading">
+        <p class="eyebrow">Selected coverage</p>
+        <h2 id="press-heading">In the world</h2>
+        <ul>
+          
+          <li>
+            <span>VentureBeat</span>
+            <a href="https://venturebeat.com/ai/facebooks-speech-recognition-model-supports-51-different-languages/" target="_blank" rel="noopener">Facebook&#39;s speech recognition model supports 51 different languages</a>
+          </li>
+          
+          <li>
+            <span>Voicebot AI</span>
+            <a href="https://voicebot.ai/2020/07/09/facebook-builds-speech-recognition-engine-combining-51-languages-in-one-model/" target="_blank" rel="noopener">Facebook Builds Speech Recognition Engine Combining 51 Languages in One Model</a>
+          </li>
+          
+        </ul>
+      </section>
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

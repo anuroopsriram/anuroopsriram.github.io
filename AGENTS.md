@@ -27,15 +27,15 @@ With pip:
   - `data_loader.py` - Loads YAML data files
   - `filters.py` - Jinja2 template filters
   - `routes.py` - URL route definitions
-  - `builder.py` - Shared build logic (SASS compilation, static file copying, site freezing)
+  - `builder.py` - Shared build logic (native CSS bundling, static file copying, site freezing)
   - `cli.py` - Click-based CLI entry points
 - **`templates/`** - Jinja2 templates
   - `layouts/` - Base layouts (base.html, homelay.html, gridlay.html)
   - `includes/` - Reusable components (head, header, footer, sidebar, pub_card)
   - `pages/` - Page templates (home, publications, datasets, allnews, aboutwebsite, llms_full.txt)
 - **`static/`** - Static assets
-  - `css/main.scss` - design tokens, layout, and shared components; imports the page-specific partials `_home.scss`, `_pages.scss`, and `_motion.scss`
-  - `js/theme.js` - light/dark theme toggle; `js/hero.js` - self-contained WebGL2 home-page hero
+  - `css/main.scss` - native CSS tokens/layout source (historical extension); the builder concatenates it with `_home.scss`, `_pages.scss`, `_motion.scss`, and `_vision.scss`, and separately compacts `critical.scss` for the home first viewport
+  - `js/theme.js` - light/dark theme toggle; `js/research-field.js` - WebGPU home-page field; `js/hero.js` - WebGL2 fallback
   - `images/`, `fonts/`
 - **`data/`** - YAML data files driving site content
   - `publist.yml` - Publications list with metadata
@@ -48,11 +48,11 @@ With pip:
 ### Key Features
 - Publication management via YAML data files, grouped by year, with keyword filters and a sticky year-jump rail
 - Custom design system (no CSS framework): oklch/`light-dark()` color tokens, Fraunces/Inter/Spline Sans Mono fonts, light/dark theme toggle
-- WebGL2 "crystal lattice" hero on the home page (`static/js/hero.js`) with reduced-motion and no-WebGL fallbacks
+- Data-driven WebGPU research field on the home page (`static/js/research-field.js`) with WebGL2 and static reduced-motion/Save-Data fallbacks
 - Cross-document view transitions, speculation-rules prerendering, and CSS scroll-driven reveal animations (all progressive enhancement)
 - Google Analytics integration
 - Academic paper image thumbnails and links
-- SCSS compiled via libsass. Gotchas: use SCSS nesting (plain CSS nesting does not compile), `@supports selector(...)` conditions are rejected, and `min(var(--x), ...)` fails because SCSS shadows CSS `min()`; unknown plain-CSS functions like `oklch()` and `light-dark()` pass through fine
+- CSS sources use browser-native nesting and modern platform features. They retain historical `.scss` filenames, but are concatenated unchanged; do not use Sass variables, mixins, interpolation, or Sass-only functions.
 
 ### Content Management
 - Publications are managed in `data/publist.yml` with fields for title, authors, venue, year, arxiv, code, data, etc.
@@ -62,7 +62,7 @@ With pip:
 
 ### Build Process
 `uv run website-build` runs the shared build logic in `src/website/builder.py`:
-1. Compiles SCSS from `static/css/main.scss` (and its `_*.scss` partials) to `static/css/main.css`
+1. Compacts the ordered native CSS sources into `static/css/main.css` and emits the home critical path as `static/css/critical.css`
 2. Freezes all Flask routes into static HTML in `docs/`
 3. Copies the entire `static/` tree into `docs/` for deployment
 

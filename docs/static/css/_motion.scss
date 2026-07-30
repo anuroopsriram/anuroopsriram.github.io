@@ -69,7 +69,7 @@
    Keyframes end at the element's natural state (opacity 1, no transform). */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .pub-card,
+    .pub-index .pub-card,
     .dataset-card {
       animation: reveal-fade-up linear both;
       animation-timeline: view();

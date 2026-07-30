@@ -1,6 +1,7 @@
 """Flask application factory for the academic website."""
 
 from datetime import datetime, timezone
+from typing import Any
 
 from flask import Flask
 
@@ -24,7 +25,7 @@ def create_app(config_name: str = "default") -> Flask:
 
     # Register template context processor
     @app.context_processor
-    def inject_site_data():
+    def inject_site_data() -> dict[str, Any]:
         """Inject site configuration and data into all templates."""
         site_config = config[config_name].get_site_config()
         site_config["data"] = data_loader.get_all_data()

@@ -54,7 +54,7 @@ website-build
 │   ├── includes/         # Reusable components
 │   └── pages/            # Page-specific templates
 ├── static/               # Static assets
-│   ├── css/              # Stylesheets (SCSS)
+│   ├── css/              # Native CSS sources and generated bundle
 │   ├── js/               # JavaScript files
 │   ├── images/           # Images and media
 │   └── fonts/            # Web fonts
@@ -161,7 +161,7 @@ Edit `src/website/config.py` to update:
 - **Flask**: Web framework
 - **Frozen-Flask**: Static site generation
 - **PyYAML**: YAML data processing
-- **libsass**: SCSS compilation
+- **Native CSS pipeline**: ordered source concatenation without preprocessing
 - **Jinja2**: Template engine
 
 ### Development Dependencies

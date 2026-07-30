@@ -1,14 +1,26 @@
 {% extends "layouts/homelay.html" %}
 
 {% block hero %}
-<section class="home-hero" aria-label="Introduction">
+<section class="home-hero" aria-labelledby="hero-name" data-research-field>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="home-hero__scrim" aria-hidden="true"></div>
   <div class="home-hero__inner">
-    <!-- <p class="eyebrow home-hero__eyebrow">AI for Science</p> -->
-    <h1 class="home-hero__name">Anuroop Sriram</h1>
-    <p class="home-hero__role">Founding AI Research Scientist, <a href="https://www.prometheus.ai/" target="_blank">Prometheus</a></p>
+    <p class="eyebrow home-hero__eyebrow"><span class="signal-dot" aria-hidden="true"></span> AI for science &amp; engineering</p>
+    <h1 class="home-hero__name" id="hero-name">Anuroop<br>Sriram</h1>
+    <p class="home-hero__thesis">Building intelligence for the physical world.</p>
+    <p class="home-hero__role">Founding AI Research Scientist at <a href="https://www.prometheus.ai/" target="_blank" rel="noopener">Prometheus</a>, developing the <em>Artificial General Engineer</em>.</p>
+    <div class="home-hero__actions" role="group" aria-label="Primary links">
+      <a class="hero-action hero-action--primary" href="#research-arc">Explore the research <span aria-hidden="true">↓</span></a>
+      <a class="hero-action" href="https://scholar.google.com/citations?user=D4uRc_UAAAAJ&hl=en" target="_blank" rel="me noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+    </div>
+    <dl class="impact-rail">
+      <div><dt>Publications</dt><dd>65</dd></div>
+      <div><dt>Citations</dt><dd>15,000+</dd></div>
+      <div><dt>h-index</dt><dd>42</dd></div>
+      <div><dt>Focus</dt><dd>AI × Physical Science</dd></div>
+    </dl>
   </div>
+  <p class="home-hero__field-label" aria-hidden="true">A living map of research across models, matter, and measurement</p>
 </section>
 {% endblock %}
 
@@ -17,7 +29,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.wikidata.org/entity/Q138516652",
+  "@id": "https://anuroopsriram.com/#person",
   "name": "Anuroop Sriram",
   "givenName": "Anuroop",
   "familyName": "Sriram",
@@ -117,33 +129,87 @@
   ]
 }
 </script>
-<div class="home-bio">
-<p>
-I build AI foundation models, with a focus on using them to accelerate science and engineering. I am a founding AI Research Scientist at <a href="https://www.prometheus.ai/" target="_blank">Prometheus</a>, where we are building the <em>Artificial General Engineer</em>: AI systems that change how the physical world is designed and engineered.
-</p>
+<section class="home-intro" aria-labelledby="intro-heading">
+  <p class="section-index" aria-hidden="true">00 / Thesis</p>
+  <div class="home-intro__body">
+    <h2 id="intro-heading">AI should do more than understand the world. It should help us <em>design what comes next.</em></h2>
+    <div class="home-intro__copy">
+      <p>I build foundation models, generative systems, and the training infrastructure behind them, with a focus on accelerating science and engineering.</p>
+      <p>My work has moved across speech recognition, medical imaging, and atomic simulation: from <a href="https://arxiv.org/abs/1512.02595" target="_blank" rel="noopener">Deep Speech 2</a> and billion-parameter multilingual models, to <a href="https://fastmri.org/" target="_blank" rel="noopener">fastMRI</a>, <a href="https://arxiv.org/abs/2506.23971" target="_blank" rel="noopener">UMA</a>, and generative models for matter.</p>
+    </div>
+  </div>
+</section>
 
-<p>
-Before Prometheus, I was a technical lead in the FAIR Chemistry team at <a href="https://ai.meta.com/" target="_blank">Meta</a>, where I worked on universal machine-learning interatomic potentials (<a href="https://arxiv.org/abs/2506.23971" target="_blank">UMA</a>), generative models for materials (<a href="https://arxiv.org/abs/2410.23405" target="_blank">FlowLLM</a>, <a href="https://arxiv.org/abs/2406.04713" target="_blank">FlowMM</a>), and some of the <a href="https://fair-chem.github.io/" target="_blank">largest open datasets</a> in the field, including Open Catalyst and Open DAC. I also created <a href="https://arxiv.org/abs/2508.02641" target="_blank">FastCSP</a>, which cuts crystal structure prediction from weeks to hours. I helped build the <a href="https://github.com/facebookresearch/fairchem" target="_blank">fairchem</a> library and invented <a href="https://arxiv.org/abs/2203.09697" target="_blank">Graph Parallelism</a>, the distributed-training method behind today's largest interatomic potentials, used to train models at billion-parameter scale.
-</p>
-
-<p>
-I also led <a href="https://fastmri.org/" target="_blank">fastMRI</a>, a collaboration between Meta and NYU Langone to accelerate MRI using deep learning. fastMRI delivers up to 4× faster scans, and methods based on it have been deployed in clinical MRI systems worldwide.
-</p>
-
-<p>
-Earlier, I built and led the speech team at Meta FAIR, where we trained some of the first billion-parameter speech models and built highly efficient ASR systems that were deployed to billions of users. Before that, at Baidu, I co-created <a href="https://arxiv.org/abs/1512.02595" target="_blank">Deep Speech 2</a>, the first end-to-end model to achieve human-level speech recognition in both English and Mandarin.
-</p>
-
-<p>
-I hold a Master's in Language Technologies from <a href="https://www.lti.cs.cmu.edu/" target="_blank">Carnegie Mellon University</a>.
-</p>
-</div>
+<section class="research-arc" id="research-arc" aria-labelledby="research-heading">
+  <header class="section-head">
+    <p class="section-index">01 / Research arc</p>
+    <h2 id="research-heading">One question, pursued across domains</h2>
+    <p>What becomes possible when models, data, and compute scale together?</p>
+  </header>
+  <div class="research-arc__chapters">
+    {% for chapter in site.data.research %}
+    <article class="research-chapter" data-field-chapter="{{ loop.index0 }}" data-keys="{{ chapter['keys'] | join(',') }}">
+      <div class="research-chapter__meta">
+        <span>{{ chapter.number }}</span>
+        <span>{{ chapter.period }}</span>
+      </div>
+      <div class="research-chapter__body">
+        <p class="eyebrow">{{ chapter.kicker }}</p>
+        <h3>{{ chapter.title }}</h3>
+        <p class="research-chapter__statement">{{ chapter.statement }}</p>
+        <ul class="research-chapter__proof">
+          {% for item in chapter.proof %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
 
 {% from "includes/pub_card.html" import render as pub_card with context %}
-<div class="home-selected">
-  <h2 class="home-selected__heading">Selected Publications</h2>
+<section class="home-selected" aria-labelledby="selected-heading">
+  <header class="section-head section-head--split">
+    <div>
+      <p class="section-index">02 / Landmark work</p>
+      <h2 id="selected-heading">Selected publications</h2>
+    </div>
+    <a class="text-link" href="{{ url_for('main.publications') }}">All publications <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="home-selected__list">
   {% for publi in site.data.publist if publi.highlight %}
     {{ pub_card(publi, compact=true) }}
   {% endfor %}
-</div>
+  </div>
+</section>
+
+<section class="home-now" aria-labelledby="now-heading">
+  <div class="home-now__statement">
+    <p class="section-index">03 / Now</p>
+    <h2 id="now-heading">Building the Artificial General Engineer.</h2>
+    <p>At <a href="https://www.prometheus.ai/" target="_blank" rel="noopener">Prometheus</a>, I am working on AI systems that change how the physical world is designed and engineered.</p>
+  </div>
+  <div class="home-now__news">
+    <p class="eyebrow">Recent signals</p>
+    <ol>
+    {% for item in site.data.news[:3] %}
+      <li><span>{{ item.date }}</span><div>{{ item.headline | safe }}</div></li>
+    {% endfor %}
+    </ol>
+    <a class="text-link" href="{{ url_for('main.allnews') }}">All news <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+{% for member in site.data.pi %}
+<section class="home-contact" aria-labelledby="contact-heading">
+  <p class="eyebrow">Collaborate / Follow</p>
+  <h2 id="contact-heading">Let’s advance what AI can do for science.</h2>
+  <div class="home-contact__links">
+    <a href="mailto:{{ member.email }}">Email <span aria-hidden="true">↗</span></a>
+    <a href="{{ member.scholar }}" target="_blank" rel="me noopener">Scholar <span aria-hidden="true">↗</span></a>
+    <a href="{{ member.orcid }}" target="_blank" rel="me noopener">ORCID <span aria-hidden="true">↗</span></a>
+    <a href="{{ member.github }}" target="_blank" rel="me noopener">GitHub <span aria-hidden="true">↗</span></a>
+    <a href="https://www.wikidata.org/entity/Q138516652" target="_blank" rel="me noopener">Wikidata <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+{% endfor %}
 {% endblock %}

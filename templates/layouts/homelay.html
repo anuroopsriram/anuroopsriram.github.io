@@ -2,13 +2,8 @@
 
 {% block content %}
 {% block hero %}{% endblock %}
-<div class="layout-home">
-  <div id="homeid">
-    {% block page_content %}{% endblock %}
-  </div>
-  <aside id="newsid">
-    {% include 'includes/sidebar.html' %}
-  </aside>
+<div class="home-content" id="homeid">
+  {% block page_content %}{% endblock %}
 </div>
-<script src="{{ url_for('static', filename='js/hero.js') }}" defer></script>
+<script type="module" src="{{ url_for('static', filename='js/research-field.js') }}"></script>
 {% endblock %}

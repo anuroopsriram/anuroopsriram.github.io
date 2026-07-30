@@ -1,0 +1,409 @@
+/* Above-the-fold home styles. The full bundle loads asynchronously. */
+@font-face {
+  font-family: "Newsreader Hero";
+  src: url("../fonts/newsreader-hero.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: optional;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(oklch(97.2% 0.009 92), oklch(14.5% 0.018 166));
+  --ink: light-dark(oklch(19% 0.028 166), oklch(94.5% 0.01 88));
+  --line: light-dark(oklch(84% 0.014 92), oklch(29% 0.018 166));
+  --font-body: "Instrument Sans", "Avenir Next", system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono", "SFMono-Regular", monospace;
+  --container-max: 76rem;
+  --container-wide: 90rem;
+  --container-pad: clamp(1.1rem, 3.5vw, 3.5rem);
+}
+
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(1.03rem, 0.99rem + 0.17vw, 1.13rem);
+  font-feature-settings: "ss01", "ss02", "cv11";
+  line-height: 1.7;
+  background: var(--bg);
+}
+
+body:has(.home-hero) {
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 auto auto 1rem;
+  translate: 0 -120%;
+}
+
+.site-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.site-header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  min-height: 4.4rem;
+  background: color-mix(in oklab, var(--bg) 88%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.4rem;
+  padding-block: 0.65rem;
+}
+
+.site-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 630;
+}
+
+.site-wordmark__mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  aspect-ratio: 1;
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  background: var(--ink);
+  border-radius: 50%;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.65rem;
+}
+
+.site-nav__link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+}
+
+.theme-toggle svg {
+  width: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+}
+
+.site-menu {
+  display: none;
+}
+
+.site-main {
+  flex: 1;
+  padding-top: clamp(2rem, 5vw, 4rem);
+  overflow: clip;
+}
+
+.site-main > .site-container {
+  max-width: var(--container-wide);
+}
+
+.home-hero {
+  --hero-bg: oklch(11.5% 0.025 172);
+  --hero-paper: oklch(96% 0.012 88);
+  --hero-muted: oklch(76% 0.025 92);
+  --hero-line: oklch(90% 0.02 90 / 0.2);
+  --hero-cyan: oklch(79% 0.13 187);
+  --hero-pull-up: clamp(2rem, 5vw, 4rem);
+
+  position: relative;
+  min-height: min(52rem, calc(100svh - 4.4rem));
+  margin-inline: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--hero-pull-up));
+  padding-block: clamp(3.5rem, 8vh, 6.5rem) 2rem;
+  color: var(--hero-paper);
+  background:
+    radial-gradient(circle at 76% 22%, oklch(43% 0.12 188 / 0.11), transparent 30rem),
+    var(--hero-bg);
+  isolation: isolate;
+}
+
+.home-hero canvas,
+.home-hero__scrim {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-hero canvas {
+  inset-inline-start: 38%;
+  width: 62%;
+  height: 100%;
+}
+
+.home-hero__scrim {
+  background: linear-gradient(90deg, var(--hero-bg) 4%, transparent 78%);
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.home-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 clamp(2rem, 5vh, 4rem);
+  color: var(--hero-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.signal-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.home-hero__name {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--hero-paper);
+  font-family: "Newsreader Hero", "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(4.5rem, 11.5vw, 10.8rem);
+  font-weight: 380;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.065em;
+  line-height: 0.72;
+  text-wrap: nowrap;
+}
+
+.home-hero__thesis {
+  max-width: 18ch;
+  margin: clamp(2.1rem, 5vh, 3.8rem) 0 0;
+  font-family: "Newsreader Hero", "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.75rem, 3.4vw, 3.3rem);
+  font-weight: 380;
+  font-variation-settings: "opsz" 48;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-wrap: pretty;
+}
+
+.home-hero__role {
+  max-width: 38rem;
+  margin: 1.2rem 0 0;
+  color: var(--hero-muted);
+  font-size: clamp(1.03rem, 0.99rem + 0.17vw, 1.13rem);
+  line-height: 1.55;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  border: 1px solid var(--hero-line);
+}
+
+.hero-action--primary {
+  color: var(--hero-bg);
+  background: var(--hero-cyan);
+  border-color: var(--hero-cyan);
+}
+
+.impact-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 52rem;
+  margin: clamp(3.5rem, 8vh, 6rem) 0 0;
+  border-top: 1px solid var(--hero-line);
+}
+
+.impact-rail > div {
+  padding: 0.85rem 1rem 0 0;
+  border-right: 1px solid var(--hero-line);
+}
+
+.impact-rail dt {
+  color: var(--hero-muted);
+  font-family: var(--font-mono);
+  font-size: 0.61rem;
+  text-transform: uppercase;
+}
+
+.impact-rail dd {
+  margin: 0.3rem 0 0;
+  font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1.1;
+}
+
+.impact-rail > div:last-child dd {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.home-hero__field-label {
+  position: absolute;
+  right: var(--container-pad);
+  bottom: 1.5rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+}
+
+.pub-links a,
+.pub-links button,
+.home-contact__links a,
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 860px) {
+  .site-nav--desktop {
+    display: none;
+  }
+
+  .site-menu {
+    display: block;
+  }
+
+  .site-menu summary {
+    min-height: 2.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .site-menu nav {
+    position: fixed;
+    z-index: 110;
+    inset: 4.4rem 0 auto;
+    display: grid;
+    padding: 1rem var(--container-pad) 1.5rem;
+    background: var(--bg);
+  }
+
+  .site-menu nav a {
+    padding-block: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-hero canvas {
+    inset-inline-start: 18%;
+    width: 82%;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-hero {
+    min-height: calc(100svh - 4.4rem);
+    padding-top: 2.5rem;
+  }
+
+  .home-hero__eyebrow {
+    margin-bottom: 2.6rem;
+  }
+
+  .home-hero__name {
+    font-size: clamp(4.3rem, 22vw, 7rem);
+    line-height: 0.75;
+  }
+
+  .home-hero__thesis {
+    font-size: clamp(1.65rem, 8vw, 2.5rem);
+  }
+
+  .home-hero__role {
+    font-size: 0.94rem;
+  }
+
+  .home-hero__actions {
+    display: grid;
+  }
+
+  .impact-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 3rem;
+  }
+
+  .impact-rail > div {
+    border-bottom: 1px solid var(--hero-line);
+  }
+
+  .home-hero__field-label {
+    display: none;
+  }
+}

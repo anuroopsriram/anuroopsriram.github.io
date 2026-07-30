@@ -2,37 +2,282 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://anuroopsriram.com/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://anuroopsriram.com/publications/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://anuroopsriram.com/datasets/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://anuroopsriram.com/allnews/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://anuroopsriram.com/feed.xml</loc>
+    <lastmod>2026-07-30</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://anuroopsriram.com/aboutwebsite/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://anuroopsriram.com/llms.txt</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://anuroopsriram.com/llms-full.txt</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/omc25/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/fastcsp25/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/odac25/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/wood2025Uma/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/havens25AdjointSampling/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/adit25/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/shaulDFM24/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramFlowllm24/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/flowmm24/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/llm_materials23/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/odac23/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/dac_nist24/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/molreg24/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/tranOc22/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/cfPatent2023/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/johnsonMRIProsp/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/radmaneshMRIAccel/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/dasOC21/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/zitnickSphericalChannels/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramWav2vecaug/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/gasteigerGemnetOC/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramGraphParallel/</loc>
+    <lastmod>2022-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/shuaibiSpinconv/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/chanussotOC20/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/muckleyFastmri2020/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/rsganPatent2021/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/hsuRobustWav2Vec/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/huForcenet/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramCovid/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/cfPatent2020/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/pratapMLS/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/rechtInterch/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/knollFastmri2019/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/zitnickOcpwhitepaper/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramVarNet/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/pratapMassively/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/biasPatent2020/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/knollFastmri/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramGrappaNet/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/synnaeveE2EASR/</loc>
+    <lastmod>2020-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/jainRNNT/</loc>
+    <lastmod>2019-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramRobustGAN/</loc>
+    <lastmod>2018-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramFusion/</loc>
+    <lastmod>2018-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/battenbergTransducers/</loc>
+    <lastmod>2017-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/battenbergBias/</loc>
+    <lastmod>2017-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/amodeiDS2/</loc>
+    <lastmod>2016-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/grefFRED/</loc>
+    <lastmod>2013-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anuroopsriram.com/publications/sriramCentrality/</loc>
+    <lastmod>2009-01-01</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

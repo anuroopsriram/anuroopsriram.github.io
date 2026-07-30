@@ -2,8 +2,19 @@
 
 import re
 from datetime import datetime, timezone
+from typing import Any
 
-from flask import Blueprint, current_app, make_response, render_template
+from flask import (
+    Blueprint,
+    Response,
+    abort,
+    current_app,
+    make_response,
+    render_template,
+)
+
+from .data_loader import DataLoader
+from .filters import publication_bibtex_filter, publication_ris_filter
 
 main = Blueprint("main", __name__)
 
@@ -134,14 +145,14 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 
 
 @main.route("/")
-def home():
+def home() -> str:
     return render_template(
         "pages/home.html", page={"title": None, "permalink": "/"}, active_page="home"
     )
 
 
 @main.route("/publications/")
-def publications():
+def publications() -> str:
     description = (
         "Publications by Anuroop Sriram spanning AI for science, model scaling, "
         "diffusion and flow matching, MRI acceleration, and speech recognition."
@@ -157,8 +168,58 @@ def publications():
     )
 
 
+def _publication_by_key(key: str) -> dict[str, Any]:
+    """Return one publication by its stable content key."""
+    publications = DataLoader().load_yaml_file("publist.yml")
+    publication = next((item for item in publications if item.get("key") == key), None)
+    if publication is None:
+        abort(404)
+    return publication
+
+
+@main.route("/publications/<key>/")
+def publication_detail(key: str) -> str:
+    publication = _publication_by_key(key)
+    abstract = re.sub(r"<[^>]+>", "", str(publication.get("abstract", "")))
+    description = (
+        abstract[:157].rsplit(" ", 1)[0] + "…"
+        if len(abstract) > 160
+        else abstract
+    )
+    return render_template(
+        "pages/publication.html",
+        publication=publication,
+        page={
+            "title": publication["title"],
+            "permalink": f"/publications/{key}/",
+            "description": description,
+            "image": publication.get("image"),
+            "type": "article",
+        },
+        active_page="publications",
+    )
+
+
+@main.route("/publications/<key>/citation.bib")
+def publication_bibtex(key: str) -> Response:
+    publication = _publication_by_key(key)
+    response = make_response(publication_bibtex_filter(publication))
+    response.headers["Content-Type"] = "application/octet-stream"
+    response.headers["Content-Disposition"] = f'attachment; filename="{key}.bib"'
+    return response
+
+
+@main.route("/publications/<key>/citation.ris")
+def publication_ris(key: str) -> Response:
+    publication = _publication_by_key(key)
+    response = make_response(publication_ris_filter(publication))
+    response.headers["Content-Type"] = "application/x-research-info-systems; charset=utf-8"
+    response.headers["Content-Disposition"] = f'attachment; filename="{key}.ris"'
+    return response
+
+
 @main.route("/datasets/")
-def datasets():
+def datasets() -> str:
     description = (
         "Open scientific datasets created or co-created by Anuroop Sriram, including "
         "Open Catalyst (OC20, OC22), Open DAC (ODAC23, ODAC25), Open Molecular Crystals "
@@ -176,20 +237,31 @@ def datasets():
 
 
 @main.route("/allnews/")
-def allnews():
+def allnews() -> str:
     description = (
         "Recent news and updates from Anuroop Sriram, including new papers, dataset releases, "
         "conference acceptances, and career milestones."
     )
+    news_items = []
+    for index, item in enumerate(DataLoader().load_yaml_file("news.yml")):
+        date = _news_date(str(item.get("date", "")))
+        news_items.append(
+            {
+                **item,
+                "anchor": _news_slug(date, index),
+                "date_iso": date.strftime("%Y-%m-%d"),
+            }
+        )
     return render_template(
         "pages/allnews.html",
         page={"title": "News", "permalink": "/allnews/", "description": description},
+        news_items=news_items,
         active_page="news",
     )
 
 
 @main.route("/aboutwebsite/")
-def aboutwebsite():
+def aboutwebsite() -> str:
     description = "About anuroopsriram.com — built with Flask and Frozen-Flask, deployed on GitHub Pages."
     return render_template(
         "pages/aboutwebsite.html",
@@ -203,7 +275,7 @@ def aboutwebsite():
 
 
 @main.route("/404.html")
-def not_found():
+def not_found() -> str:
     """Custom 404 page served by GitHub Pages for unknown URLs."""
     return render_template(
         "pages/404.html",
@@ -218,24 +290,37 @@ def not_found():
 
 
 @main.route("/sitemap.xml")
-def sitemap():
+def sitemap() -> Response:
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     pages = [
-        {"loc": "/", "priority": "1.0"},
-        {"loc": "/publications/", "priority": "0.8"},
-        {"loc": "/datasets/", "priority": "0.8"},
-        {"loc": "/allnews/", "priority": "0.5"},
-        {"loc": "/aboutwebsite/", "priority": "0.3"},
-        {"loc": "/llms.txt", "priority": "0.5"},
-        {"loc": "/llms-full.txt", "priority": "0.5"},
+        {"loc": "/", "priority": "1.0", "lastmod": today},
+        {"loc": "/publications/", "priority": "0.8", "lastmod": today},
+        {"loc": "/datasets/", "priority": "0.8", "lastmod": today},
+        {"loc": "/allnews/", "priority": "0.5", "lastmod": today},
+        {"loc": "/feed.xml", "priority": "0.3", "lastmod": today},
+        {"loc": "/aboutwebsite/", "priority": "0.3", "lastmod": today},
+        {"loc": "/llms.txt", "priority": "0.5", "lastmod": today},
+        {"loc": "/llms-full.txt", "priority": "0.5", "lastmod": today},
     ]
+    for publication in DataLoader().load_yaml_file("publist.yml"):
+        key = publication.get("key")
+        if not key:
+            continue
+        year = publication.get("year")
+        pages.append(
+            {
+                "loc": f"/publications/{key}/",
+                "priority": "0.6",
+                "lastmod": f"{year}-01-01" if year else today,
+            }
+        )
     site_url = current_app.config.get("SITE_URL", "https://anuroopsriram.com")
-    lastmod = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p in pages:
         xml += "  <url>\n"
         xml += f"    <loc>{site_url}{p['loc']}</loc>\n"
-        xml += f"    <lastmod>{lastmod}</lastmod>\n"
+        xml += f"    <lastmod>{p['lastmod']}</lastmod>\n"
         xml += f"    <priority>{p['priority']}</priority>\n"
         xml += "  </url>\n"
     xml += "</urlset>"
@@ -267,8 +352,13 @@ def _news_date(date_str: str) -> datetime:
         return datetime(1970, 1, 1, tzinfo=timezone.utc)
 
 
+def _news_slug(date: datetime, index: int) -> str:
+    """Stable fragment shared by the news page and Atom feed."""
+    return "news-" + date.strftime("%Y-%m") + f"-{index}"
+
+
 @main.route("/feed.xml")
-def feed():
+def feed() -> Response:
     """Atom feed of news items."""
     from xml.sax.saxutils import escape
 
@@ -290,10 +380,10 @@ def feed():
     for idx, (date, item) in enumerate(dated):
         headline_html = str(item.get("headline", ""))
         title = re.sub(r"<[^>]+>", "", headline_html)
-        slug = date.strftime("%Y-%m") + f"-{idx}"
+        slug = _news_slug(date, idx)
         xml += "  <entry>\n"
         xml += f"    <title>{escape(title)}</title>\n"
-        xml += f'    <link href="{site_url}/allnews/"/>\n'
+        xml += f'    <link href="{site_url}/allnews/#{slug}"/>\n'
         xml += f"    <id>{site_url}/allnews/#{slug}</id>\n"
         xml += f"    <updated>{date.strftime('%Y-%m-%dT%H:%M:%SZ')}</updated>\n"
         xml += f'    <content type="html">{escape(headline_html)}</content>\n'
@@ -307,7 +397,7 @@ def feed():
 
 
 @main.route("/robots.txt")
-def robots():
+def robots() -> Response:
     site_url = current_app.config.get("SITE_URL", "https://anuroopsriram.com")
     txt = (
         "User-agent: *\n"
@@ -325,14 +415,14 @@ def robots():
 
 
 @main.route("/llms.txt")
-def llms_txt():
+def llms_txt() -> Response:
     resp = make_response(LLMS_TXT_BODY)
     resp.headers["Content-Type"] = "text/plain; charset=utf-8"
     return resp
 
 
 @main.route("/llms-full.txt")
-def llms_full_txt():
+def llms_full_txt() -> Response:
     """Full-corpus LLM-friendly summary: bio + every publication, dataset, and news item."""
     txt = render_template("pages/llms_full.txt", bio=LLMS_TXT_BODY)
     resp = make_response(txt)

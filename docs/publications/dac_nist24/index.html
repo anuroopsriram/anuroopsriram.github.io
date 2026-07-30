@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change - Anuroop Sriram">
+  <meta property="og:description" content="This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/dac_nist24/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/dac_nist24.webp">
+  
+  <meta property="og:image:alt" content="Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2024-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Science">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change - Anuroop Sriram">
+  <meta name="twitter:description" content="This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/dac_nist24.webp">
+  <meta name="twitter:image:alt" content="Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/dac_nist24/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change", "item": "https://anuroopsriram.com/publications/dac_nist24/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/dac_nist24/#article", "url": "https://anuroopsriram.com/publications/dac_nist24/", "headline": "Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change", "name": "Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change", "author": [{"@type": "Person", "name": "Eric Cockayne"}, {"@type": "Person", "name": "Austin McDannald"}, {"@type": "Person", "name": "Winnie Wong-Ng"}, {"@type": "Person", "name": "Yu-Sheng Chen"}, {"@type": "Person", "name": "Felipe Gándara"}, {"@type": "Person", "name": "Jason Benedict"}, {"@type": "Person", "name": "Christopher H Hendon"}, {"@type": "Person", "name": "David A Keen"}, {"@type": "Person", "name": "Ute Kolb"}, {"@type": "Person", "name": "Lan Li"}, {"@type": "Person", "name": "Shengqian Ma"}, {"@type": "Person", "name": "William Morris"}, {"@type": "Person", "name": "Aditya Nandy"}, {"@type": "Person", "name": "Tomče Runčevski"}, {"@type": "Person", "name": "Mustapha Soukri"}, {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Janice A Steckel"}, {"@type": "Person", "name": "John Findley"}, {"@type": "Person", "name": "Christopher Eli Wilmer"}, {"@type": "Person", "name": "Taner Yildirim"}, {"@type": "Person", "name": "Wei Zhou"}, {"@type": "Person", "name": "Igor Levin"}, {"@type": "Person", "name": "Craig M Brown"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2024", "isPartOf": {"@type": "Periodical", "name": "Journal of Materials Chemistry A"}, "abstract": "This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at the recent NIST workshop \"Integrating Crystallographic and Computational Approaches to Carbon-Capture Materials for the Mitigation of Climate Change\". The continual rise in anthropogenic CO2 concentration and its effect on climate change call for the implementation of carbon capture technologies to reduce the CO2 concentration in the atmosphere. Porous solids, including metal–organic frameworks (MOFs), are feasible candidates for gas capture and storage applications. However, determining the structure of these materials represents a significant obstacle in their development into advanced sorbents. The existing difficulties can be overcome by integrating crystallographic methods and theoretical modeling. The workshop gathered experimentalists and theorists from academia, government, and industry to review this field and identify approaches, including collaborative opportunities, required to develop tools for rapid determination of the structures of porous solid sorbents and the effect of structure on the carbon capture performance. We highlight the findings of that workshop, especially in the need for reference materials, standardized procedures and reporting of sorbent activation and adsorption measurements, standardized reporting of theoretical calculations, and round-robin structure determination.", "keywords": "AI for Science", "sameAs": ["https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta04136d"], "image": "https://anuroopsriram.com/static/images/pubpic/dac_nist24.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2024</span>
+      <span>Journal of Materials Chemistry A</span>
+    </div>
+    <h1>Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change</h1>
+    <p class="publication-detail__authors">Eric Cockayne, Austin McDannald, Winnie Wong-Ng, Yu-Sheng Chen, Felipe Gándara, Jason Benedict, Christopher H Hendon, David A Keen, Ute Kolb, Lan Li, Shengqian Ma, William Morris, Aditya Nandy, Tomče Runčevski, Mustapha Soukri, <strong>Anuroop Sriram</strong>, Janice A Steckel, John Findley, Christopher Eli Wilmer, Taner Yildirim, Wei Zhou, Igor Levin, Craig M Brown</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Science</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/dac_nist24.webp" alt="Figure from Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        
+        
+        <a href="https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta04136d" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+        
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">This article presents an overview of the current state of the art in the structure determination of microporous carbon-capture materials, as discussed at the recent NIST workshop "Integrating Crystallographic and Computational Approaches to Carbon-Capture Materials for the Mitigation of Climate Change". The continual rise in anthropogenic CO2 concentration and its effect on climate change call for the implementation of carbon capture technologies to reduce the CO2 concentration in the atmosphere. Porous solids, including metal–organic frameworks (MOFs), are feasible candidates for gas capture and storage applications. However, determining the structure of these materials represents a significant obstacle in their development into advanced sorbents. The existing difficulties can be overcome by integrating crystallographic methods and theoretical modeling. The workshop gathered experimentalists and theorists from academia, government, and industry to review this field and identify approaches, including collaborative opportunities, required to develop tools for rapid determination of the structures of porous solid sorbents and the effect of structure on the carbon capture performance. We highlight the findings of that workshop, especially in the need for reference materials, standardized procedures and reporting of sorbent activation and adsorption measurements, standardized reporting of theoretical calculations, and round-robin structure determination.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{dac_nist24,
+  title = {Integrating crystallographic and computational approaches to carbon-capture materials for the mitigation of climate change},
+  author = {Eric Cockayne, Austin McDannald, Winnie Wong-Ng, Yu-Sheng Chen, Felipe Gándara, Jason Benedict, Christopher H Hendon, David A Keen, Ute Kolb, Lan Li, Shengqian Ma, William Morris, Aditya Nandy, Tomče Runčevski, Mustapha Soukri, Anuroop Sriram, Janice A Steckel, John Findley, Christopher Eli Wilmer, Taner Yildirim, Wei Zhou, Igor Levin, Craig M Brown},
+  year = {2024},
+  journal = {Journal of Materials Chemistry A},
+  url = {https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta04136d}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

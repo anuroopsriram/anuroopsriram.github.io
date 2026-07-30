@@ -1,16 +1,31 @@
 <header class="site-header">
   <div class="site-container site-header__inner">
-    <a class="site-wordmark" href="{{ url_for('main.home') }}">{{ site.title | escape }}</a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <a class="site-wordmark" href="{{ url_for('main.home') }}">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>{{ site.title | escape }}</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
       <a class="site-nav__link{% if active_page == 'home' %} is-active{% endif %}" href="{{ url_for('main.home') }}">Home</a>
       <a class="site-nav__link{% if active_page == 'publications' %} is-active{% endif %}" href="{{ url_for('main.publications') }}">Publications</a>
       <a class="site-nav__link{% if active_page == 'datasets' %} is-active{% endif %}" href="{{ url_for('main.datasets') }}">Datasets</a>
       <a class="site-nav__link{% if active_page == 'news' %} is-active{% endif %}" href="{{ url_for('main.allnews') }}">News</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <span id="theme-icon">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
         </span>
       </button>
     </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="{% if active_page == 'home' %}is-active{% endif %}" href="{{ url_for('main.home') }}">Home</a>
+        <a class="{% if active_page == 'publications' %}is-active{% endif %}" href="{{ url_for('main.publications') }}">Publications</a>
+        <a class="{% if active_page == 'datasets' %}is-active{% endif %}" href="{{ url_for('main.datasets') }}">Datasets</a>
+        <a class="{% if active_page == 'news' %}is-active{% endif %}" href="{{ url_for('main.allnews') }}">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
   </div>
 </header>

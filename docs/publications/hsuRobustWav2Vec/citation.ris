@@ -1,0 +1,17 @@
+TY  - JOUR
+TI  - Robust Wav2vec 2.0: Analyzing Domain Shift in Self-Supervised Pre-Training
+AU  - Wei-Ning Hsu
+AU  - Anuroop Sriram
+AU  - Alexei Baevski
+AU  - Tatiana Likhomanenko
+AU  - Qiantong Xu
+AU  - Vineel Pratap
+AU  - Jacob Kahn
+AU  - Ann Lee
+AU  - Ronan Collobert
+AU  - Gabriel Synnaeve
+AU  - Michael Auli
+PY  - 2021
+JO  - Interspeech 2021
+UR  - https://arxiv.org/abs/2104.01027
+ER  -

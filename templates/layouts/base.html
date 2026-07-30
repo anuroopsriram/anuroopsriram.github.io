@@ -2,9 +2,10 @@
 <html lang="en">
   {% include 'includes/head.html' %}
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {% include 'includes/header.html' %}
     
-    <main class="site-main">
+    <main class="site-main" id="main-content">
       <div class="site-container">
         {% block content %}{% endblock %}
       </div>

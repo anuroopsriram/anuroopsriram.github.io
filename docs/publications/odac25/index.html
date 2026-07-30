@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture - Anuroop Sriram">
+  <meta property="og:description" content="Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/odac25/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/odac25.webp">
+  
+  <meta property="og:image:alt" content="The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2025-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Science"><meta property="article:tag" content="Datasets">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture - Anuroop Sriram">
+  <meta name="twitter:description" content="Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/odac25.webp">
+  <meta name="twitter:image:alt" content="The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/odac25/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture", "item": "https://anuroopsriram.com/publications/odac25/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/odac25/#article", "url": "https://anuroopsriram.com/publications/odac25/", "headline": "The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture", "name": "The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture", "author": [{"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, {"@type": "Person", "name": "Logan M. Brabson"}, {"@type": "Person", "name": "Xiaohan Yu"}, {"@type": "Person", "name": "Sihoon Choi"}, {"@type": "Person", "name": "Kareem Abdelmaqsoud"}, {"@type": "Person", "name": "Elias Moubarak"}, {"@type": "Person", "name": "Pim de Haan"}, {"@type": "Person", "name": "Sindy Löwe"}, {"@type": "Person", "name": "Johann Brehmer"}, {"@type": "Person", "name": "John R. Kitchin"}, {"@type": "Person", "name": "Max Welling"}, {"@type": "Person", "name": "C. Lawrence Zitnick"}, {"@type": "Person", "name": "Zachary Ulissi"}, {"@type": "Person", "name": "Andrew J. Medford"}, {"@type": "Person", "name": "David S. Sholl"}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2025", "abstract": "Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a significant expansion and improvement upon ODAC23 (Sriram et al., ACS Central Science, 10 (2024) 923), comprising nearly 70 million DFT single-point calculations for CO2, H2O, N2, and O2 adsorption in 15,000 MOFs. ODAC25 introduces chemical and configurational diversity through functionalized MOFs, high-energy GCMC-derived placements, and synthetically generated frameworks. ODAC25 also significantly improves upon the accuracy of DFT calculations and the treatment of flexible MOFs in ODAC23. Along with the dataset, we release new state-of-the-art machine-learned interatomic potentials trained on ODAC25 and evaluate them on adsorption energy and Henry's law coefficient predictions.", "keywords": "AI for Science, Datasets", "sameAs": ["https://arxiv.org/abs/2508.03162"], "image": "https://anuroopsriram.com/static/images/pubpic/odac25.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2025</span>
+      
+    </div>
+    <h1>The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture</h1>
+    <p class="publication-detail__authors"><strong>Anuroop Sriram</strong>, Logan M. Brabson, Xiaohan Yu, Sihoon Choi, Kareem Abdelmaqsoud, Elias Moubarak, Pim de Haan, Sindy Löwe, Johann Brehmer, John R. Kitchin, Max Welling, C. Lawrence Zitnick, Zachary Ulissi, Andrew J. Medford, David S. Sholl</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Science</li><li>Datasets</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/odac25.webp" alt="Figure from The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        <a href="https://arxiv.org/abs/2508.03162" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+        
+        
+        
+        <a href="https://huggingface.co/facebook/ODAC25" target="_blank" rel="noopener">Data <span aria-hidden="true">↗</span></a>
+        <a href="https://huggingface.co/facebook/ODAC25" target="_blank" rel="noopener">Models <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">Identifying useful sorbent materials for direct air capture (DAC) from humid air remains a challenge. We present the Open DAC 2025 (ODAC25) dataset, a significant expansion and improvement upon ODAC23 (Sriram et al., ACS Central Science, 10 (2024) 923), comprising nearly 70 million DFT single-point calculations for CO2, H2O, N2, and O2 adsorption in 15,000 MOFs. ODAC25 introduces chemical and configurational diversity through functionalized MOFs, high-energy GCMC-derived placements, and synthetically generated frameworks. ODAC25 also significantly improves upon the accuracy of DFT calculations and the treatment of flexible MOFs in ODAC23. Along with the dataset, we release new state-of-the-art machine-learned interatomic potentials trained on ODAC25 and evaluate them on adsorption energy and Henry's law coefficient predictions.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{odac25,
+  title = {The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture},
+  author = {Anuroop Sriram, Logan M. Brabson, Xiaohan Yu, Sihoon Choi, Kareem Abdelmaqsoud, Elias Moubarak, Pim de Haan, Sindy Löwe, Johann Brehmer, John R. Kitchin, Max Welling, C. Lawrence Zitnick, Zachary Ulissi, Andrew J. Medford, David S. Sholl},
+  year = {2025},
+  url = {https://arxiv.org/abs/2508.03162},
+  eprint = {2508.03162},
+  archivePrefix = {arXiv}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

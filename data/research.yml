@@ -1,0 +1,43 @@
+- number: "01"
+  period: "2015–2022"
+  kicker: Scaling intelligence
+  title: From speech to billion-parameter systems
+  statement: "Co-created Deep Speech 2, then built and led FAIR Speech as the field moved from task-specific models toward large-scale, multilingual learning."
+  proof:
+    - "Human-level English and Mandarin speech recognition"
+    - "Billion-parameter, 50+ language speech models"
+    - "Production systems serving billions of users"
+  keys: [deepspeech2, scaling-asr, mms]
+
+- number: "02"
+  period: "2018–2023"
+  kicker: Seeing faster
+  title: AI-accelerated MRI, from benchmark to clinic
+  statement: "Led fastMRI with NYU Langone, opening the datasets and models that helped establish the clinical standard for learned MRI reconstruction."
+  proof:
+    - "Up to 4× faster clinical scans"
+    - "Prospective deployment at NYU Langone"
+    - "Open benchmark adopted across the field"
+  keys: [fastmri, varnet, grappanet]
+
+- number: "03"
+  period: "2020–2026"
+  kicker: Modeling matter
+  title: Foundation models and open data for atoms
+  statement: "Helped build FAIR Chemistry and the open data, distributed training methods, and universal atomic models that changed the scale of computational chemistry."
+  proof:
+    - "~500M unique structures used to train UMA"
+    - "Graph Parallel training at billion-parameter scale"
+    - "Hundreds of millions of open DFT calculations"
+  keys: [oc20, graphparallel, uma]
+
+- number: "04"
+  period: "2024–present"
+  kicker: Designing the physical world
+  title: Generative AI that moves from prediction to invention
+  statement: "Developing flow-matching systems, high-throughput crystal discovery, and the foundations of an Artificial General Engineer at Prometheus."
+  proof:
+    - "FlowMM and FlowLLM for materials generation"
+    - "FastCSP cuts crystal prediction from weeks to hours"
+    - "Now building at Prometheus"
+  keys: [flowmm, flowllm, fastcsp]

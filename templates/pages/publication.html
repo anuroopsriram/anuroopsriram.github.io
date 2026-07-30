@@ -1,0 +1,77 @@
+{% extends "layouts/gridlay.html" %}
+
+{% block page_content %}
+<script type="application/ld+json">{{ publication | publication_jsonld(site.url) }}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="{{ url_for('main.publications') }}">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>{{ publication.year }}</span>
+      {% if publication.venue %}<span>{{ publication.venue }}</span>{% endif %}
+    </div>
+    <h1>{{ publication.title }}</h1>
+    <p class="publication-detail__authors">{{ publication.authors | bold_name }}</p>
+    {% if publication.keywords %}
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      {% for keyword in publication.keywords %}<li>{{ keyword }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      {% if publication.image %}
+      <img src="{{ url_for('static', filename='images/pubpic/' + publication.image) }}" alt="Figure from {{ publication.title }}" width="800" height="520" decoding="async">
+      {% endif %}
+      <div class="publication-detail__actions">
+        {% if publication.doi %}<a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.arxiv %}<a href="https://arxiv.org/abs/{{ publication.arxiv }}" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.journal %}<a href="{{ publication.journal }}" target="_blank" rel="noopener">Journal <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.link %}<a href="{{ publication.link }}" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.code %}<a href="{{ publication.code }}" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.data %}<a href="{{ publication.data }}" target="_blank" rel="noopener">Data <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if publication.models %}<a href="{{ publication.models }}" target="_blank" rel="noopener">Models <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      {% if publication.abstract %}
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">{{ publication.abstract | newline_to_br }}</p>
+      </section>
+      {% endif %}
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>{{ publication | publication_bibtex }}</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="{{ url_for('main.publication_bibtex', key=publication.key) }}">Download .bib</a>
+          <a href="{{ url_for('main.publication_ris', key=publication.key) }}">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      {% if publication.press %}
+      <section class="publication-detail__press" aria-labelledby="press-heading">
+        <p class="eyebrow">Selected coverage</p>
+        <h2 id="press-heading">In the world</h2>
+        <ul>
+          {% for article in publication.press %}
+          <li>
+            <span>{{ article.source }}</span>
+            <a href="{{ article.link }}" target="_blank" rel="noopener">{{ article.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+    </div>
+  </div>
+</article>
+<script type="module" src="{{ url_for('static', filename='js/citation.js') }}"></script>
+{% endblock %}

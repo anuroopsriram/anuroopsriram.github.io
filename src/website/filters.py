@@ -6,11 +6,12 @@ import json
 import re
 from typing import Any
 
+from flask import Flask
 from markupsafe import Markup
 
 CREATOR_PERSON = {
     "@type": "Person",
-    "@id": "https://www.wikidata.org/entity/Q138516652",
+    "@id": "https://anuroopsriram.com/#person",
     "name": "Anuroop Sriram",
     "url": "https://anuroopsriram.com",
     "sameAs": [
@@ -128,6 +129,8 @@ def publication_jsonld_filter(
     article: dict[str, Any] = {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
+        "@id": f"{site_url}/publications/{publi.get('key', '')}/#article",
+        "url": f"{site_url}/publications/{publi.get('key', '')}/",
         "headline": _clean_text(publi.get("title")),
         "name": _clean_text(publi.get("title")),
         "author": _parse_authors(publi.get("authors")),
@@ -174,6 +177,51 @@ def publication_jsonld_filter(
         article["codeRepository"] = publi["code"]
 
     return Markup(json.dumps(article, ensure_ascii=False))
+
+
+def publication_bibtex_filter(publi: dict[str, Any]) -> str:
+    """Create a compact BibTeX record from verified publication metadata."""
+    key = re.sub(r"[^A-Za-z0-9_:-]", "", str(publi.get("key") or "sriram"))
+    fields = [
+        ("title", _clean_text(publi.get("title"))),
+        ("author", _clean_text(publi.get("authors"))),
+        ("year", str(publi.get("year") or "")),
+        ("journal", _clean_text(publi.get("venue"))),
+        ("doi", str(publi.get("doi") or "")),
+        ("url", _item_url(publi) or ""),
+    ]
+    if publi.get("arxiv"):
+        fields.extend(
+            [
+                ("eprint", str(publi["arxiv"])),
+                ("archivePrefix", "arXiv"),
+            ]
+        )
+    body = ",\n".join(
+        f"  {name} = {{{value.replace('{', '').replace('}', '')}}}"
+        for name, value in fields
+        if value
+    )
+    return f"@article{{{key},\n{body}\n}}\n"
+
+
+def publication_ris_filter(publi: dict[str, Any]) -> str:
+    """Create an RIS record from verified publication metadata."""
+    lines = ["TY  - JOUR", f"TI  - {_clean_text(publi.get('title'))}"]
+    for author in str(publi.get("authors") or "").split(","):
+        if author.strip() and author.strip().lower() not in {"et al", "et al."}:
+            lines.append(f"AU  - {author.strip()}")
+    if publi.get("year"):
+        lines.append(f"PY  - {publi['year']}")
+    if publi.get("venue"):
+        lines.append(f"JO  - {_clean_text(publi.get('venue'))}")
+    if publi.get("doi"):
+        lines.append(f"DO  - {publi['doi']}")
+    url = _item_url(publi)
+    if url:
+        lines.append(f"UR  - {url}")
+    lines.append("ER  -")
+    return "\n".join(lines) + "\n"
 
 
 def dataset_jsonld_filter(
@@ -236,9 +284,6 @@ def itemlist_jsonld_filter(
     name_key: str = "title",
 ) -> Markup:
     """Build a Schema.org CollectionPage wrapping an ItemList of named items."""
-    if items is None:
-        items = []
-
     item_list_elements = []
     for idx, item in enumerate(items, start=1):
         element: dict[str, Any] = {
@@ -246,7 +291,11 @@ def itemlist_jsonld_filter(
             "position": idx,
             "name": _clean_text(item.get(name_key) or ""),
         }
-        url = _item_url(item)
+        url: str | None
+        if item.get("key") and "/publications/" in page_url:
+            url = f"{page_url.rstrip('/')}/{item['key']}/"
+        else:
+            url = _item_url(item)
         if url:
             element["url"] = url
         item_list_elements.append(element)
@@ -265,7 +314,7 @@ def itemlist_jsonld_filter(
     return Markup(json.dumps(obj, ensure_ascii=False))
 
 
-def register_filters(app):
+def register_filters(app: Flask) -> None:
     """Register all template filters with the Flask app."""
     app.template_filter("newline_to_br")(newline_to_br_filter)
     app.template_filter("strip_html")(strip_html_filter)
@@ -274,5 +323,7 @@ def register_filters(app):
     app.template_filter("truncate_authors")(truncate_authors_filter)
     app.template_filter("bold_name")(bold_name_filter)
     app.template_filter("publication_jsonld")(publication_jsonld_filter)
+    app.template_filter("publication_bibtex")(publication_bibtex_filter)
+    app.template_filter("publication_ris")(publication_ris_filter)
     app.template_filter("dataset_jsonld")(dataset_jsonld_filter)
     app.template_filter("itemlist_jsonld")(itemlist_jsonld_filter)

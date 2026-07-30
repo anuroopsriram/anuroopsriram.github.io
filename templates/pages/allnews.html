@@ -1,16 +1,17 @@
 {% extends "layouts/gridlay.html" %}
 
 {% block page_content %}
-<script type="application/ld+json">{{ site.data.news | itemlist_jsonld(site.url + '/allnews/', 'News - Anuroop Sriram', name_key='headline') }}</script>
+<script type="application/ld+json">{{ news_items | itemlist_jsonld(site.url + '/allnews/', 'News - Anuroop Sriram', name_key='headline') }}</script>
 <header class="page-head">
   <p class="eyebrow">Updates</p>
   <h1>News</h1>
+  <p class="page-head__meta">New research, open releases, and career milestones</p>
 </header>
 
 <ol class="news-timeline" reversed>
-{% for article in site.data.news %}
-  <li class="news-item">
-    <span class="news-date">{{ article.date }}</span>
+{% for article in news_items %}
+  <li class="news-item" id="{{ article.anchor }}">
+    <time class="news-date" datetime="{{ article.date_iso }}">{{ article.date }}</time>
     <div class="news-headline">{{ article.headline | safe }}</div>
   </li>
 {% endfor %}

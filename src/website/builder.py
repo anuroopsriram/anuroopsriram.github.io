@@ -3,15 +3,25 @@
 from __future__ import annotations
 
 import os
+import re
 import shutil
+from collections.abc import Iterator
 from pathlib import Path
 
-import sass
 from flask_frozen import Freezer
 
 from .app import create_app
+from .data_loader import DataLoader
 
 DEFAULT_OUTPUT_DIR = "docs"
+CSS_SOURCES = (
+    "static/css/main.scss",
+    "static/css/_home.scss",
+    "static/css/_pages.scss",
+    "static/css/_motion.scss",
+    "static/css/_vision.scss",
+)
+CRITICAL_CSS_SOURCE = "static/css/critical.scss"
 
 
 def log(message: str, use_click: bool = False) -> None:
@@ -23,14 +33,28 @@ def log(message: str, use_click: bool = False) -> None:
         print(message)
 
 
-def compile_sass(use_click: bool = False) -> None:
-    """Compile SASS files to CSS."""
-    log("Compiling SASS...", use_click)
+def _compact_css(css: str) -> str:
+    """Remove comments and formatting while preserving CSS token boundaries."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)
+    return "\n".join(line.strip() for line in css.splitlines() if line.strip()) + "\n"
+
+
+def compile_css(use_click: bool = False) -> None:
+    """Bundle native CSS and emit a small home-page critical stylesheet."""
+    log("Bundling native CSS...", use_click)
     os.makedirs("static/css", exist_ok=True)
-    css_content = sass.compile(filename="static/css/main.scss")
-    with open("static/css/main.css", "w") as f:
-        f.write(css_content)
-    log("SASS compilation complete.", use_click)
+    chunks = []
+    for source in CSS_SOURCES:
+        with open(source, encoding="utf-8") as css_file:
+            chunks.append(css_file.read())
+            chunks.append("\n")
+    with open("static/css/main.css", "w", encoding="utf-8") as css_file:
+        css_file.write(_compact_css("".join(chunks)))
+    with open(CRITICAL_CSS_SOURCE, encoding="utf-8") as critical_file:
+        critical_css = _compact_css(critical_file.read())
+    with open("static/css/critical.css", "w", encoding="utf-8") as css_file:
+        css_file.write(critical_css)
+    log("Native CSS bundle complete.", use_click)
 
 
 def copy_static_files(use_click: bool = False) -> None:
@@ -71,10 +95,20 @@ def build_site(output_dir: str | None = None, use_click: bool = False) -> None:
     app.config["FREEZER_IGNORE_404_NOT_FOUND"] = True
     freezer = Freezer(app)
 
+    @freezer.register_generator  # type: ignore[misc]
+    def publication_routes() -> Iterator[tuple[str, dict[str, str]]]:
+        for publication in DataLoader().load_yaml_file("publist.yml"):
+            key = publication.get("key")
+            if not key:
+                continue
+            yield "main.publication_detail", {"key": key}
+            yield "main.publication_bibtex", {"key": key}
+            yield "main.publication_ris", {"key": key}
+
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
-    compile_sass(use_click)
+    compile_css(use_click)
     copy_static_files(use_click)
     freezer.freeze()
 

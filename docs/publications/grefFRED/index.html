@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Set theme before first paint to avoid dark-mode FOUC (theme.js takes over after load).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  
+    <title>FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations - Anuroop Sriram</title>
+  
+
+  
+  
+  
+  
+
+  <meta name="description" content="Background
+
+ Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions,…">
+  <meta name="theme-color" content="#0b1b19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f1e7" media="(prefers-color-scheme: light)">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations - Anuroop Sriram">
+  <meta property="og:description" content="Background
+
+ Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions,…">
+  <meta property="og:url" content="https://anuroopsriram.com/publications/grefFRED/">
+  <meta property="og:image" content="https://anuroopsriram.com/static/images/pubpic/fred.webp">
+  
+  <meta property="og:image:alt" content="FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations">
+  <meta property="og:site_name" content="Anuroop Sriram">
+  <meta property="og:locale" content="en_US">
+  
+  <meta property="article:published_time" content="2013-01-01">
+  <meta property="article:author" content="https://anuroopsriram.com/#person">
+  <meta property="article:tag" content="AI for Healthcare">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations - Anuroop Sriram">
+  <meta name="twitter:description" content="Background
+
+ Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions,…">
+  <meta name="twitter:image" content="https://anuroopsriram.com/static/images/pubpic/fred.webp">
+  <meta name="twitter:image:alt" content="FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations">
+  <meta name="twitter:site" content="@anuroopsriram">
+  <meta name="twitter:creator" content="@anuroopsriram">
+
+  
+  <link rel="stylesheet" href="../../static/css/main.css">
+  
+  <link rel="canonical" href="https://anuroopsriram.com/publications/grefFRED/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://anuroopsriram.com/#website",
+    "name": "Anuroop Sriram",
+    "url": "https://anuroopsriram.com/",
+    "publisher": {"@id": "https://anuroopsriram.com/#person"}
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anuroopsriram.com/"},
+      {"@type": "ListItem", "position": 2, "name": "FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations", "item": "https://anuroopsriram.com/publications/grefFRED/"}
+    ]
+  }
+  </script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="News - Anuroop Sriram" href="https://anuroopsriram.com/feed.xml">
+  <link rel="alternate" type="text/plain" title="Machine-readable site summary" href="https://anuroopsriram.com/llms.txt">
+
+  <script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "urls": ["/", "/publications/", "/datasets/", "/allnews/"],
+        "eagerness": "moderate"
+      }
+    ]
+  }
+  </script>
+
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1K2L7JV60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1K2L7JV60');
+</script>
+  
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-wordmark" href="../../index.html">
+      <span class="site-wordmark__mark" aria-hidden="true">AS</span>
+      <span>Anuroop Sriram</span>
+    </a>
+    <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+      <a class="site-nav__link" href="../../index.html">Home</a>
+      <a class="site-nav__link is-active" href="../index.html">Publications</a>
+      <a class="site-nav__link" href="../../datasets/index.html">Datasets</a>
+      <a class="site-nav__link" href="../../allnews/index.html">News</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span data-theme-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </span>
+      </button>
+    </nav>
+    <details class="site-menu">
+      <summary><span>Menu</span><span aria-hidden="true">+</span></summary>
+      <nav aria-label="Mobile navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a class="is-active" href="../index.html">Publications</a>
+        <a class="" href="../../datasets/index.html">Datasets</a>
+        <a class="" href="../../allnews/index.html">News</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <span data-theme-icon aria-hidden="true"></span><span>Theme</span>
+        </button>
+      </nav>
+    </details>
+  </div>
+</header>
+    
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        
+<div id="gridid" class="layout-page">
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://anuroopsriram.com/publications/grefFRED/#article", "url": "https://anuroopsriram.com/publications/grefFRED/", "headline": "FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations", "name": "FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations", "author": [{"@type": "Person", "name": "John J Grefenstette"}, {"@type": "Person", "name": "Shawn T Brown"}, {"@type": "Person", "name": "Roni Rosenfeld"}, {"@type": "Person", "name": "Jay DePasse"}, {"@type": "Person", "name": "Nathan TB Stone"}, {"@type": "Person", "name": "Phillip C Cooley"}, {"@type": "Person", "name": "William D Wheaton"}, {"@type": "Person", "name": "Alona Fyshe"}, {"@type": "Person", "name": "David D Galloway"}, {"@type": "Person", "name": "Anuroop Sriram et al."}], "creator": {"@type": "Person", "@id": "https://anuroopsriram.com/#person", "name": "Anuroop Sriram", "url": "https://anuroopsriram.com", "sameAs": ["https://www.wikidata.org/entity/Q138516652", "https://scholar.google.com/citations?user=D4uRc_UAAAAJ", "https://github.com/anuroopsriram", "https://twitter.com/anuroopsriram", "https://www.linkedin.com/in/anuroopsriram", "https://orcid.org/0000-0001-6295-7535", "https://dblp.org/pid/200/7951", "https://www.semanticscholar.org/author/Anuroop-Sriram/3361230", "https://openreview.net/profile?id=~Anuroop_Sriram1"]}, "datePublished": "2013", "isPartOf": {"@type": "Periodical", "name": "BMC public health"}, "publisher": {"@type": "Organization", "name": "BioMed Central"}, "abstract": "Background Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions, especially for novel circumstances that cannot be examined through observational or controlled studies, such as pandemic influenza. The spread of diseases like influenza depends on the mixing patterns within the population, and these mixing patterns depend in part on local factors including the spatial distribution and age structure of the population, the distribution of size and composition of households, employment status and commuting patterns of adults, and the size and age structure of schools. Finally, public health planners must take into account the health behavior patterns of the population, patterns that often vary according to socioeconomic factors such as race, household income, and education levels. Results FRED (a Framework for Reconstructing Epidemic Dynamics) is a freely available open-source agent-based modeling system based closely on models used in previously published studies of pandemic influenza. This version of FRED uses open-access census-based synthetic populations that capture the demographic and geographic heterogeneities of the population, including realistic household, school, and workplace social networks. FRED epidemic models are currently available for every state and county in the United States, and for selected international locations. Conclusions State and county public health planners can use FRED to explore the effects of possible influenza epidemics in specific geographic regions of interest and to help evaluate the effect of interventions such as vaccination programs and school closure policies. FRED is available under a free open source license in order to contribute to the development of better modeling tools and to encourage open discussion of modeling tools being used to evaluate public health policies. We also welcome participation by other researchers in the further development of FRED.", "keywords": "AI for Healthcare", "sameAs": ["https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-940"], "image": "https://anuroopsriram.com/static/images/pubpic/fred.webp"}</script>
+<article class="publication-detail">
+  <a class="publication-detail__back text-link" href="../index.html">← All publications</a>
+
+  <header class="publication-detail__header">
+    <div class="publication-detail__meta">
+      <span>2013</span>
+      <span>BMC public health</span>
+    </div>
+    <h1>FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations</h1>
+    <p class="publication-detail__authors">John J Grefenstette, Shawn T Brown, Roni Rosenfeld, Jay DePasse, Nathan TB Stone, Phillip C Cooley, William D Wheaton, Alona Fyshe, David D Galloway, <strong>Anuroop Sriram</strong> et al.</p>
+    
+    <ul class="publication-detail__topics" aria-label="Research topics">
+      <li>AI for Healthcare</li>
+    </ul>
+    
+  </header>
+
+  <div class="publication-detail__body">
+    <aside class="publication-detail__aside">
+      
+      <img src="../../static/images/pubpic/fred.webp" alt="Figure from FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations" width="800" height="520" decoding="async">
+      
+      <div class="publication-detail__actions">
+        
+        
+        
+        <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-940" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+        
+        
+        
+      </div>
+    </aside>
+
+    <div class="publication-detail__content">
+      
+      <section aria-labelledby="abstract-heading">
+        <p class="eyebrow">Abstract</p>
+        <h2 id="abstract-heading">The work</h2>
+        <p class="publication-detail__abstract">Background<br/><br/> Mathematical and computational models provide valuable tools that help public health planners to evaluate competing health interventions, especially for novel circumstances that cannot be examined through observational or controlled studies, such as pandemic influenza. The spread of diseases like influenza depends on the mixing patterns within the population, and these mixing patterns depend in part on local factors including the spatial distribution and age structure of the population, the distribution of size and composition of households, employment status and commuting patterns of adults, and the size and age structure of schools. Finally, public health planners must take into account the health behavior patterns of the population, patterns that often vary according to socioeconomic factors such as race, household income, and education levels.<br/><br/> Results<br/> FRED (a Framework for Reconstructing Epidemic Dynamics) is a freely available open-source agent-based modeling system based closely on models used in previously published studies of pandemic influenza. This version of FRED uses open-access census-based synthetic populations that capture the demographic and geographic heterogeneities of the population, including realistic household, school, and workplace social networks. FRED epidemic models are currently available for every state and county in the United States, and for selected international locations.<br/><br/> Conclusions<br/> State and county public health planners can use FRED to explore the effects of possible influenza epidemics in specific geographic regions of interest and to help evaluate the effect of interventions such as vaccination programs and school closure policies. FRED is available under a free open source license in order to contribute to the development of better modeling tools and to encourage open discussion of modeling tools being used to evaluate public health policies. We also welcome participation by other researchers in the further development of FRED.</p>
+      </section>
+      
+
+      <section class="citation-panel" aria-labelledby="citation-heading">
+        <p class="eyebrow">Reference</p>
+        <h2 id="citation-heading">Cite this work</h2>
+        <pre data-citation-text>@article{grefFRED,
+  title = {FRED (A Framework for Reconstructing Epidemic Dynamics): an open-source software system for modeling infectious diseases and control strategies using census-based populations},
+  author = {John J Grefenstette, Shawn T Brown, Roni Rosenfeld, Jay DePasse, Nathan TB Stone, Phillip C Cooley, William D Wheaton, Alona Fyshe, David D Galloway, Anuroop Sriram et al.},
+  year = {2013},
+  journal = {BMC public health},
+  url = {https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-13-940}
+}
+</pre>
+        <div class="citation-panel__actions">
+          <button type="button" data-copy-citation>Copy BibTeX</button>
+          <a href="citation.bib">Download .bib</a>
+          <a href="citation.ris">Download .ris</a>
+        </div>
+        <p class="citation-panel__status" data-copy-status aria-live="polite"></p>
+      </section>
+
+      
+    </div>
+  </div>
+</article>
+<script type="module" src="../../static/js/citation.js"></script>
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>&copy; 2026 Anuroop Sriram</p>
+    <p class="site-footer__links">
+      <a href="../../aboutwebsite/index.html">About this site</a>
+      <a href="https://anuroopsriram.com/feed.xml">Atom feed</a>
+      <a href="https://anuroopsriram.com/llms.txt">Plain-text index</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../static/js/theme.js" defer></script>
+  </body>
+</html>

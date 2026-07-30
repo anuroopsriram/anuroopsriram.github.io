@@ -3,9 +3,16 @@ const moonSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><pa
 
 function setTheme(theme) {
     const html = document.documentElement;
-    const themeIcon = document.getElementById('theme-icon');
     html.setAttribute('data-theme', theme);
-    themeIcon.innerHTML = theme === 'dark' ? sunSVG : moonSVG;
+    document.querySelectorAll('[data-theme-icon]').forEach((themeIcon) => {
+        themeIcon.innerHTML = theme === 'dark' ? sunSVG : moonSVG;
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+        button.setAttribute(
+            'aria-label',
+            theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+        );
+    });
     localStorage.setItem('theme', theme);
 }
 
@@ -23,6 +30,9 @@ function initTheme() {
     } else {
         setTheme('light');
     }
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+        button.addEventListener('click', toggleTheme);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initTheme);
