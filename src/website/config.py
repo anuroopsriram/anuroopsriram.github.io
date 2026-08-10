@@ -12,9 +12,10 @@ class Config:
     # Site configuration
     SITE_TITLE = "Anuroop Sriram"
     SITE_DESCRIPTION = (
-        "Anuroop Sriram builds AI foundation models to accelerate science and "
-        "engineering. Founding AI Research Scientist at Prometheus; previously "
-        "technical lead of FAIR Chemistry at Meta."
+        "Anuroop Sriram builds foundation models, generative models, and automated "
+        "research systems. Founding AI Research Scientist at Prometheus, building "
+        "the Artificial General Engineer; previously led research teams at Meta FAIR "
+        "across materials, medical imaging, and speech."
     )
     SITE_BASEURL = ""
     SITE_URL = "https://anuroopsriram.com"
