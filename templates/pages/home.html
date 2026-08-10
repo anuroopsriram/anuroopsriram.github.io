@@ -123,7 +123,7 @@ I build AI foundation models, with a focus on using them to accelerate science a
 </p>
 
 <p>
-Before Prometheus, I was a technical lead in the FAIR Chemistry team at <a href="https://ai.meta.com/" target="_blank">Meta</a>, where I worked on universal machine-learning interatomic potentials (<a href="https://arxiv.org/abs/2506.23971" target="_blank">UMA</a>), generative models for materials (<a href="https://arxiv.org/abs/2410.23405" target="_blank">FlowLLM</a>, <a href="https://arxiv.org/abs/2406.04713" target="_blank">FlowMM</a>), and some of the <a href="https://fair-chem.github.io/" target="_blank">largest open datasets</a> in the field, including Open Catalyst and Open DAC. I also created <a href="https://arxiv.org/abs/2508.02641" target="_blank">FastCSP</a>, which cuts crystal structure prediction from weeks to hours. I helped build the <a href="https://github.com/facebookresearch/fairchem" target="_blank">fairchem</a> library and invented <a href="https://arxiv.org/abs/2203.09697" target="_blank">Graph Parallelism</a>, the distributed-training method behind today's largest interatomic potentials, used to train models at billion-parameter scale.
+Before Prometheus, I led research teams at <a href="https://ai.meta.com/" target="_blank">Meta</a> FAIR for eight years, working across materials, medical imaging, and speech. Most recently, my work in materials spanned foundation models and generative modeling (<a href="https://arxiv.org/abs/2410.23405" target="_blank">FlowLLM</a>, <a href="https://arxiv.org/abs/2406.04713" target="_blank">FlowMM</a>, <a href="https://arxiv.org/abs/2506.23971" target="_blank">UMA</a>), large-scale training infrastructure (<a href="https://arxiv.org/abs/2203.09697" target="_blank">Graph Parallelism</a>, enabling billion-parameter interatomic potentials), and <a href="https://fair-chem.github.io/" target="_blank">community-standard datasets</a> (Open Catalyst, Open DAC, OMC). I also created <a href="https://arxiv.org/abs/2508.02641" target="_blank">FastCSP</a>, which cuts crystal structure prediction from weeks to hours, and helped build the <a href="https://github.com/facebookresearch/fairchem" target="_blank">fairchem</a> library.
 </p>
 
 <p>
@@ -142,8 +142,21 @@ I hold a Master's in Language Technologies from <a href="https://www.lti.cs.cmu.
 {% from "includes/pub_card.html" import render as pub_card with context %}
 <div class="home-selected">
   <h2 class="home-selected__heading">Selected Publications</h2>
-  {% for publi in site.data.publist if publi.highlight %}
-    {{ pub_card(publi, compact=true) }}
+  {% set selected_publication_keys = [
+    'sriramFlowllm24',
+    'wood2025Uma',
+    'sriramGraphParallel',
+    'flowmm24',
+    'sriramVarNet',
+    'chanussotOC20',
+    'knollFastmri',
+    'sriramFusion',
+    'amodeiDS2'
+  ] %}
+  {% for key in selected_publication_keys %}
+    {% for publi in site.data.publist if publi.key == key %}
+      {{ pub_card(publi, compact=true) }}
+    {% endfor %}
   {% endfor %}
 </div>
 {% endblock %}
