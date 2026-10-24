@@ -126,7 +126,19 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 
 # Publications
 
-Total unique publications: 48.
+Total unique publications: 49.
+
+
+## EVA-Flow: Learning Shared Chemistry for Unified Environment-Aware Molecular Conformation Generation
+
+- Authors: Bing Yan, Anuroop Sriram, Zachary W. Ulissi, Kyunghyun Cho, Ricky T. Q. Chen, Benjamin Kurt Miller
+- Year: 2026
+- Venue: Transactions on Machine Learning Research (TMLR) 2026
+- Keywords: Generative Modeling, AI for Science, Diffusion/Flow Matching
+- Link: https://openreview.net/forum?id=pD4Smou3Xp
+
+Molecular 3D structures underpin simulations of thermodynamics, kinetics, crystallization, and nucleation, making their accurate prediction central to drug discovery and materials design. However, molecular geometry can change dramatically across environments. Existing models either ignore environmental effects or train separate models for each environment. We hypothesize that transfer learning between different contexts is possible in conformer generation and that a general model will perform better in environments with limited training data: A very common and important setting including ligand binding and crystallization. We introduce EVA-Flow, a unified framework for environment-aware molecular conformation generation that learns shared chemical structure and adapts it through environment-conditioned generative modeling. Across vacuum, protein-ligand docking, solvation, and crystal packing, pretraining and cross-environment finetuning provide their largest gains in the three data-scarce settings. Multi-reference Solvation evaluation demonstrates broad ensemble coverage, while expanded same-molecule analyses support environment-specific generation beyond a single canonical geometry. Docking and Packing, for which only one physical reference is available, are evaluated as environment-conditioned structure-prediction tasks.
+
 
 
 ## Open Molecular Crystals 2025 (OMC25) Dataset and Models
