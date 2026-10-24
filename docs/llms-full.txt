@@ -146,7 +146,7 @@ Molecular 3D structures underpin simulations of thermodynamics, kinetics, crysta
 - Authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
 - Year: 2026
 - Preprint year: 2025
-- Venue: Scientific Data
+- Venue: Nature Scientific Data
 - Keywords: AI for Science, Datasets
 - arXiv: https://arxiv.org/abs/2508.02651
 - Journal: https://www.nature.com/articles/s41597-026-06628-2
