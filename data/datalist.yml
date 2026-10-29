@@ -11,7 +11,7 @@
 
 - title: Open DAC 2023 & 2025
   category: Materials
-  description: "Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 70 million DFT single-point calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials."
+  description: "Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 60 million DFT single-point calculations across ~15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials."
   image: odac25.webp
   data_url: https://huggingface.co/facebook/ODAC25
   project_url: https://open-dac.github.io/

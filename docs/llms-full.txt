@@ -32,7 +32,7 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 ### AI for Materials Science and Chemistry (Meta FAIR, 2020–2026)
 - Founding member of FAIR Chemistry and one of its technical leads, on the Meta team behind the largest open datasets and foundation models in computational chemistry.
 - Co-led the creation of Open Catalyst 2020 (OC20), one of the largest datasets in computational chemistry, with ~260 million DFT calculations across 1.3 million molecular relaxations (ACS Catalysis, 2021). Contributed to the follow-on Open Catalyst 2022 (OC22) for oxide electrocatalysis.
-- Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~70M DFT calculations respectively.
+- Led the creation of Open DAC 2023 (ACS Central Science, 2024) and Open DAC 2025 — the largest datasets for AI-driven direct air capture sorbent discovery, with ~38M and ~60M DFT calculations respectively.
 - Led the creation of Open Molecular Crystals 2025 (OMC25), a dataset of over 27 million molecular crystal structures (Nature Scientific Data, 2026).
 - Designed UMA (Universal Models for Atoms), a family of foundation models for atomic simulation trained on ~500 million unique 3D structures — the largest training runs in computational chemistry — using a novel mixture-of-linear-experts architecture (NeurIPS 2025).
 - Led FastCSP as both lead and senior author (listed last to reflect senior authorship), a high-throughput molecular crystal structure prediction workflow powered entirely by the UMA MLIP. FastCSP accelerated organic CSP by approximately three orders of magnitude at high accuracy by replacing classical force fields and gold-standard DFT re-ranking with machine learning interatomic potentials — reducing CSP for a single system from weeks to hours on tens of GPUs.
@@ -784,7 +784,7 @@ GPGPU has received a lot of attention recently as a cost effective solution for 
 ## Open DAC 2023 & 2025
 
 - Category: Materials
-- Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 70 million DFT single-point calculations across 15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials.
+- Datasets for sorbent discovery in Direct Air Capture. ODAC23 provides more than 38 million DFT calculations across more than 8,800 MOFs; ODAC25 expands to nearly 60 million DFT single-point calculations across ~15,000 MOFs with four adsorbate species. Released with machine-learned interatomic potentials.
 - Project: https://open-dac.github.io/
 - Data: https://huggingface.co/facebook/ODAC25
 - Code: https://github.com/facebookresearch/fairchem
