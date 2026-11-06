@@ -153,7 +153,7 @@ Engineering economical and scalable processes for direct air capture (DAC) from 
 - Year: 2026
 - Venue: Transactions on Machine Learning Research (TMLR) 2026
 - Keywords: Generative Modeling, AI for Science, Diffusion/Flow Matching
-- arXiv: https://arxiv.org/abs/2610.3628
+- arXiv: https://arxiv.org/abs/2610.36280
 - Link: https://openreview.net/forum?id=pD4Smou3Xp
 - Code: https://huggingface.co/facebook/eva-flow/tree/main
 - Models: https://huggingface.co/facebook/eva-flow
