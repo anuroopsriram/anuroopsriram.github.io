@@ -129,34 +129,6 @@ Founding AI Research Scientist at Prometheus (2026–present), building the Arti
 Total unique publications: 49.
 
 
-## EVA-Flow: Learning Shared Chemistry for Unified Environment-Aware Molecular Conformation Generation
-
-- Authors: Bing Yan, Anuroop Sriram, Zachary W. Ulissi, Kyunghyun Cho, Ricky T. Q. Chen, Benjamin Kurt Miller
-- Year: 2026
-- Venue: Transactions on Machine Learning Research (TMLR) 2026
-- Keywords: Generative Modeling, AI for Science, Diffusion/Flow Matching
-- Link: https://openreview.net/forum?id=pD4Smou3Xp
-
-Molecular 3D structures underpin simulations of thermodynamics, kinetics, crystallization, and nucleation, making their accurate prediction central to drug discovery and materials design. However, molecular geometry can change dramatically across environments. Existing models either ignore environmental effects or train separate models for each environment. We hypothesize that transfer learning between different contexts is possible in conformer generation and that a general model will perform better in environments with limited training data: A very common and important setting including ligand binding and crystallization. We introduce EVA-Flow, a unified framework for environment-aware molecular conformation generation that learns shared chemical structure and adapts it through environment-conditioned generative modeling. Across vacuum, protein-ligand docking, solvation, and crystal packing, pretraining and cross-environment finetuning provide their largest gains in the three data-scarce settings. Multi-reference Solvation evaluation demonstrates broad ensemble coverage, while expanded same-molecule analyses support environment-specific generation beyond a single canonical geometry. Docking and Packing, for which only one physical reference is available, are evaluated as environment-conditioned structure-prediction tasks.
-
-
-
-## Open Molecular Crystals 2025 (OMC25) Dataset and Models
-
-- Authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
-- Year: 2026
-- Preprint year: 2025
-- Venue: Nature Scientific Data
-- Keywords: AI for Science, Datasets
-- arXiv: https://arxiv.org/abs/2508.02651
-- Journal: https://www.nature.com/articles/s41597-026-06628-2
-- Data: https://huggingface.co/facebook/OMC25
-- Models: https://huggingface.co/facebook/OMC25
-
-The development of accurate and efficient machine learning models for predicting the structure and properties of molecular crystals has been hindered by the scarcity of publicly available datasets of structures with property labels. To address this challenge, we introduce the Open Molecular Crystals 2025 (OMC25) dataset, a collection of over 27 million molecular crystal structures containing 12 elements and up to 300 atoms in the unit cell. The dataset was generated from dispersion-inclusive density functional theory (DFT) relaxation trajectories of over 230,000 randomly generated molecular crystal structures of around 50,000 organic molecules. OMC25 comprises diverse chemical compounds capable of forming different intermolecular interactions and a wide range of crystal packing motifs. We provide detailed information on the dataset's construction, composition, structure, and properties. To demonstrate the quality and use cases of OMC25, we further trained and evaluated state-of-the-art open-source machine learning interatomic potentials. By making this dataset publicly available, we aim to accelerate the development of more accurate and efficient machine learning models for molecular crystals.
-
-
-
 ## An Open Dataset of Gas Adsorption in Deformable Metal–Organic Frameworks for Direct Air Capture
 
 - Authors: Anuroop Sriram, Logan M. Brabson, Xiaohan Yu, Sihoon Choi, Kareem Abdelmaqsoud, Elias Moubarak, Pim de Haan, Sindy Löwe, Johann Brehmer, Muhammed Shuaibi, John R. Kitchin, Max Welling, C. Lawrence Zitnick, Zachary Ulissi, Andrew J. Medford, David S. Sholl
@@ -172,6 +144,38 @@ The development of accurate and efficient machine learning models for predicting
 - Models: https://huggingface.co/facebook/ODAC25
 
 Engineering economical and scalable processes for direct air capture (DAC) from humid air relies on atomistic modeling to search and identify promising sorbent materials from a vast chemical space. Machine learning has emerged as a powerful tool for predicting material properties in an efficient yet accurate manner, but these models require large sets of carefully curated training data. Here we present the Open DAC 2025 (ODAC25) dataset comprising nearly 60 million DFT single-point calculations for CO2, H2O, N2 and O2 adsorption in ~15,000 metal–organic frameworks (MOFs). ODAC25 introduces functionalized MOFs, high-energy adsorbate placements and synthetically generated frameworks to maximize the versatility of models trained on the dataset. ODAC25 improves upon the accuracy of DFT calculations in previous works and applies engineering intuition from recent work regarding the treatment of adsorbate-induced MOF flexibility. We release state-of-the-art machine-learned interatomic potentials trained on ODAC25 and demonstrate their utility via Henry's coefficient predictions. ODAC25 enables MOF screening for DAC at a resolution previously unattainable.
+
+
+
+## EVA-Flow: Learning Shared Chemistry for Unified Environment-Aware Molecular Conformation Generation
+
+- Authors: Bing Yan, Anuroop Sriram, Zachary W. Ulissi, Kyunghyun Cho, Ricky T. Q. Chen, Benjamin Kurt Miller
+- Year: 2026
+- Venue: Transactions on Machine Learning Research (TMLR) 2026
+- Keywords: Generative Modeling, AI for Science, Diffusion/Flow Matching
+- arXiv: https://arxiv.org/abs/2610.3628
+- Link: https://openreview.net/forum?id=pD4Smou3Xp
+- Code: https://huggingface.co/facebook/eva-flow/tree/main
+- Models: https://huggingface.co/facebook/eva-flow
+
+Molecular 3D structures underpin simulations of thermodynamics, kinetics, crystallization, and nucleation, making their accurate prediction central to drug discovery and materials design. However, molecular geometry can change dramatically across environments. Existing models either ignore environmental effects or train separate models for each environment. We hypothesize that transfer learning between different contexts is possible in conformer generation and that a general model will perform better in environments with limited training data: A very common and important setting including ligand binding and crystallization. We introduce EVA-Flow, a unified framework for environment-aware molecular conformation generation that learns shared chemical structure and adapts it through environment-conditioned generative modeling. Across vacuum, protein-ligand docking, solvation, and crystal packing, pretraining and cross-environment finetuning provide their largest gains in the three data-scarce settings. Multi-reference Solvation evaluation demonstrates broad ensemble coverage, while expanded same-molecule analyses support environment-specific generation beyond a single canonical geometry. Docking and Packing, for which only one physical reference is available, are evaluated as environment-conditioned structure-prediction tasks.
+
+
+
+## Open Molecular Crystals 2025 (OMC25) Dataset and Models
+
+- Authors: Vahe Gharakhanyan, Luis Barroso-Luque, Yi Yang, Muhammed Shuaibi, Kyle Michel, Daniel S. Levine, Misko Dzamba, Xiang Fu, Meng Gao, Xingyu Liu, Haoran Ni, Keian Noori, Brandon M. Wood, Matt Uyttendaele, Arman Boromand, C. Lawrence Zitnick, Noa Marom, Zachary W. Ulissi, Anuroop Sriram
+- Year: 2026
+- Preprint year: 2025
+- Role: Lead and senior author; listed last to reflect senior authorship
+- Venue: Nature Scientific Data
+- Keywords: AI for Science, Datasets
+- arXiv: https://arxiv.org/abs/2508.02651
+- Journal: https://www.nature.com/articles/s41597-026-06628-2
+- Data: https://huggingface.co/facebook/OMC25
+- Models: https://huggingface.co/facebook/OMC25
+
+The development of accurate and efficient machine learning models for predicting the structure and properties of molecular crystals has been hindered by the scarcity of publicly available datasets of structures with property labels. To address this challenge, we introduce the Open Molecular Crystals 2025 (OMC25) dataset, a collection of over 27 million molecular crystal structures containing 12 elements and up to 300 atoms in the unit cell. The dataset was generated from dispersion-inclusive density functional theory (DFT) relaxation trajectories of over 230,000 randomly generated molecular crystal structures of around 50,000 organic molecules. OMC25 comprises diverse chemical compounds capable of forming different intermolecular interactions and a wide range of crystal packing motifs. We provide detailed information on the dataset's construction, composition, structure, and properties. To demonstrate the quality and use cases of OMC25, we further trained and evaluated state-of-the-art open-source machine learning interatomic potentials. By making this dataset publicly available, we aim to accelerate the development of more accurate and efficient machine learning models for molecular crystals.
 
 
 
